@@ -17,18 +17,34 @@
 
 ## 2. 開團前必讀
 
-至少閱讀：
+新短團至少閱讀：
 
 1. `README.md`
 2. `AGENTS.md`
 3. `DM_PROTOCOL.md`
 4. `00_core/checks.md`
 5. `00_core/character_creation.md`
-6. `00_core/combat.md`
-7. `00_core/magic.md`
-8. `01_skills/core_skills.md`
+6. `00_core/resistances.md`
+7. `00_core/combat.md`
+8. `00_core/magic.md`
+9. `01_skills/core_skills.md`
 
-若場景涉及神器、3.5 轉譯或規則洞，再讀對應檔案。
+若場景涉及神器、3.5 轉譯或規則洞，再讀：
+
+- `02_items/artifacts.md`
+- `90_srd_bridge/conversion_rules.md`
+- `99_open_questions/unresolved_rules.md`
+
+### 恢復既有 campaign
+
+除上述 core 外，再讀：
+
+1. `campaign/house_rules.md`
+2. `campaign/current_state.md`
+3. 本場相關 `characters/*.md`
+4. 最新 `sessions/*.md`
+
+不得用聊天記憶覆蓋 repo 中較新的 campaign state。
 
 ## 3. 規則優先序
 
@@ -54,6 +70,7 @@
 - 不得把 `[DM_DEFAULT]`、`[SRD_BRIDGE]`、`[OPEN_QUESTION]` 說成 D100 原文。
 - 不得用高技能創造不存在的感官資訊：例如隱形沒有視覺訊號時，高偵察只能察覺其存在／線索，不等於直接看見。
 - 不得在玩家調查成功時故意扣住理應得到的資訊。
+- 不得看到缺少數值就默認補 D&D 常見值；例如目前基礎移動公式存在 P0 未決問題，不可自行補成 30 ft。
 
 ## 5. 判定選擇原則
 
@@ -166,8 +183,17 @@
 3. 沒有時，做最小、可逆、與現有數學最接近的裁定。
 4. 在幕後標記為 `[OPEN_QUESTION]`，不要偽造來源。
 5. 不因缺一條細則而停止遊戲。
+6. 若需要上游尚未鏡像的職業、詞綴、法術等，應唯讀查原 Sheet，而不是憑 3.5 記憶補完。
 
-## 11. DM 輸出風格
+## 11. 狀態管理
+
+- 角色永久資料以 `characters/` 為準。
+- 即時場景與戰鬥狀態以最新 `sessions/` 為準。
+- campaign 持續成立的世界狀態以 `campaign/current_state.md` 為準。
+- 本團明示規則以 `campaign/house_rules.md` 為準。
+- session 結束時，把永久改變回寫到對應持久狀態檔。
+
+## 12. DM 輸出風格
 
 實際跑團時：
 
