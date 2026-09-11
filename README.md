@@ -23,10 +23,11 @@ DM／Agent 開始跑團前，依序閱讀：
 7. [`00_core/magic.md`](00_core/magic.md) — 施法者、法術位、SP、連續施法、法抗
 8. [`01_skills/core_skills.md`](01_skills/core_skills.md) — DM 常用技能語義
 9. [`02_items/artifacts.md`](02_items/artifacts.md) — 聖器／亞神器／神器的處理邊界
-10. [`90_srd_bridge/conversion_rules.md`](90_srd_bridge/conversion_rules.md) — D&D 3.5 SRD 只作補缺，不覆蓋 D100
-11. [`99_open_questions/unresolved_rules.md`](99_open_questions/unresolved_rules.md) — 尚未有正典答案的規則洞
+10. [`sources/GM_PROVISIONAL_2026-09-12.md`](sources/GM_PROVISIONAL_2026-09-12.md) — GM 粗答；有方向但尚未完整正典化
+11. [`90_srd_bridge/conversion_rules.md`](90_srd_bridge/conversion_rules.md) — D&D 3.5 SRD 只作補缺，不覆蓋 D100
+12. [`99_open_questions/unresolved_rules.md`](99_open_questions/unresolved_rules.md) — 尚未有正典答案的規則洞
 
-若只是要立刻開一場短團，至少讀完 1–8。
+若只是要立刻開一場短團，至少讀完 1–8；若裁定碰到目前的規則洞，再讀 10–12。
 
 ## 有 Campaign 時的追加閱讀
 
@@ -48,9 +49,15 @@ DM／Agent 開始跑團前，依序閱讀：
 
 - **`[D100_CANON]`**：直接來自目前 D100 Google Sheet。
 - **`[D100_DERIVED]`**：由 D100 明文公式或例子直接推出。
+- **`[GM_PROVISIONAL]`**：GM 已給出明確方向，但仍是粗答，尚未補成完整條文。
+- **`[GM_UNCERTAIN]`**：GM 有記憶／傾向，但自己也不確定。
+- **`[GM_UNANSWERED]`**：已提出問題，但 GM 尚未給完整答案。
+- **`[GM_SECRET]`**：DM 側知道機制存在，但玩家端不應被揭露完整觸發與效果。
 - **`[DM_DEFAULT]`**：原規則未明文時，本 repo 給 GPT 的暫定主持裁定；不是原作者正典。
 - **`[SRD_BRIDGE]`**：由 D&D 3.5 SRD 補充概念後轉譯的候選規則。
 - **`[OPEN_QUESTION]`**：資料不足，不得私自宣稱已有固定答案。
+
+`GM_PROVISIONAL / GM_UNCERTAIN` 不會自動覆蓋明確的 Sheet 正典；若兩者衝突，應把衝突標出並等待補答／角色卡／原始來源釐清，而不是偷偷選一邊。
 
 ## 規則來源與優先序
 
@@ -67,12 +74,13 @@ DM／Agent 開始跑團前，依序閱讀：
 1. 使用者／該團明示 house rule
 2. 上游 D100 Sheet 明文
 3. 本 repo 的 `[D100_CANON]` 鏡像
-4. 本 repo 的 `[D100_DERIVED]`
-5. 本 repo 的 `[DM_DEFAULT]`
-6. `[SRD_BRIDGE]`
-7. 原版 D&D 3.5 SRD
+4. 已釐清且不與正典衝突的 `[GM_PROVISIONAL]`
+5. 本 repo 的 `[D100_DERIVED]`
+6. 本 repo 的 `[DM_DEFAULT]`
+7. `[SRD_BRIDGE]`
+8. 原版 D&D 3.5 SRD
 
-**不得用較低順位規則覆蓋較高順位。**
+**不得用較低順位規則覆蓋較高順位。** `[GM_UNCERTAIN]` 只用來提示追問方向，不應直接當裁定依據。
 
 ## D100 不是什麼
 
@@ -83,7 +91,7 @@ D100 不是「把 D&D 的 d20 改成 d100」。目前系統具有：
 - 五大抗性
 - 強韌／精神／靈魂三種特殊判定
 - 百分骰與「過多少」成功餘裕
-- 對抗檢定
+- 至少一種數字總值式對抗（GM 粗答顯示控制可採 `d100 + 加值`）
 - CP 購買技能與 CP 重骰
 - 先宣告、後行動的戰鬥結構
 - **每輪只有 1 秒**
@@ -115,7 +123,8 @@ D100/
 ├─ 99_open_questions/
 │  └─ unresolved_rules.md
 ├─ sources/
-│  └─ SHEET_INDEX.md
+│  ├─ SHEET_INDEX.md
+│  └─ GM_PROVISIONAL_2026-09-12.md
 ├─ campaign/
 │  ├─ README.md
 │  ├─ house_rules.md
