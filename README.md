@@ -2,6 +2,14 @@
 
 這個 repository 的目的，是讓 GPT／其他 LLM 在讀取本 repo 後，可以**以 D100 規則扮演 DM**，而不是退回原版 D&D 3.5、CoC 或其他 d100 系統。
 
+## 最快啟動
+
+如果你的目標只是「把這個 repo 給 GPT，讓它開始當 D100 DM」，直接叫它先讀：
+
+[`START_DM.md`](START_DM.md)
+
+這個入口會告訴模型要讀哪些核心規則、如何恢復 campaign，以及哪些 D&D／CoC 習慣禁止偷帶進來。
+
 ## 起始閱讀順序
 
 DM／Agent 開始跑團前，依序閱讀：
@@ -89,6 +97,7 @@ D100 不是「把 D&D 的 d20 改成 d100」。目前系統具有：
 ```text
 D100/
 ├─ README.md
+├─ START_DM.md
 ├─ AGENTS.md
 ├─ DM_PROTOCOL.md
 ├─ 00_core/
