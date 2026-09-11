@@ -9,15 +9,30 @@ DM／Agent 開始跑團前，依序閱讀：
 1. [`AGENTS.md`](AGENTS.md) — 規則優先序、禁止事項、DM 行為
 2. [`DM_PROTOCOL.md`](DM_PROTOCOL.md) — 實際主持流程與資訊控制
 3. [`00_core/checks.md`](00_core/checks.md) — D100 判定核心
-4. [`00_core/character_creation.md`](00_core/character_creation.md) — 九大屬性、技能基礎、抗性、特殊判定、CP
-5. [`00_core/combat.md`](00_core/combat.md) — 宣告、行動、攻擊、閃避、傷害、1 秒輪
-6. [`00_core/magic.md`](00_core/magic.md) — 施法者、法術位、SP、連續施法、法抗
-7. [`01_skills/core_skills.md`](01_skills/core_skills.md) — DM 常用技能語義
-8. [`02_items/artifacts.md`](02_items/artifacts.md) — 聖器／亞神器／神器的處理邊界
-9. [`90_srd_bridge/conversion_rules.md`](90_srd_bridge/conversion_rules.md) — D&D 3.5 SRD 只作補缺，不覆蓋 D100
-10. [`99_open_questions/unresolved_rules.md`](99_open_questions/unresolved_rules.md) — 尚未有正典答案的規則洞
+4. [`00_core/character_creation.md`](00_core/character_creation.md) — 九大屬性、技能基礎、CP、HP/SP
+5. [`00_core/resistances.md`](00_core/resistances.md) — 五大抗性與強韌／精神／靈魂
+6. [`00_core/combat.md`](00_core/combat.md) — 宣告、行動、攻擊、閃避、傷害、1 秒輪
+7. [`00_core/magic.md`](00_core/magic.md) — 施法者、法術位、SP、連續施法、法抗
+8. [`01_skills/core_skills.md`](01_skills/core_skills.md) — DM 常用技能語義
+9. [`02_items/artifacts.md`](02_items/artifacts.md) — 聖器／亞神器／神器的處理邊界
+10. [`90_srd_bridge/conversion_rules.md`](90_srd_bridge/conversion_rules.md) — D&D 3.5 SRD 只作補缺，不覆蓋 D100
+11. [`99_open_questions/unresolved_rules.md`](99_open_questions/unresolved_rules.md) — 尚未有正典答案的規則洞
 
-若只是要立刻開一場短團，讀完 1–7 即可開始。
+若只是要立刻開一場短團，至少讀完 1–8。
+
+## 有 Campaign 時的追加閱讀
+
+恢復既有團務時，再依序讀：
+
+1. [`campaign/house_rules.md`](campaign/house_rules.md)
+2. [`campaign/current_state.md`](campaign/current_state.md)
+3. `characters/` 內本場相關角色檔
+4. `sessions/` 內最新 session state
+
+角色／session 建檔可直接使用：
+
+- [`templates/PC_TEMPLATE.md`](templates/PC_TEMPLATE.md)
+- [`templates/SESSION_STATE_TEMPLATE.md`](templates/SESSION_STATE_TEMPLATE.md)
 
 ## 規則狀態標籤
 
@@ -36,6 +51,8 @@ DM／Agent 開始跑團前，依序閱讀：
 `https://docs.google.com/spreadsheets/d/1d4nl6ByhbEtOhutjlB6FYrMVzglKG7I5DuanO0l4Mww/edit`
 
 此 repo 是為 GPT 跑團建立的**獨立 Markdown 鏡像／規則介面**。建立本 repo 時，上游 Sheet 僅被唯讀查閱，沒有修改內容或分享設定。
+
+完整來源 tab 與目前移植狀態見 [`sources/SHEET_INDEX.md`](sources/SHEET_INDEX.md)。
 
 衝突時採用：
 
@@ -67,6 +84,59 @@ D100 不是「把 D&D 的 d20 改成 d100」。目前系統具有：
 
 因此 DM 不得機械套用 3.5 的 BAB、AC、三豁免、6 秒輪、標準／移動動作經濟、CR、HD 或法術 DC。
 
+## Repository 結構
+
+```text
+D100/
+├─ README.md
+├─ AGENTS.md
+├─ DM_PROTOCOL.md
+├─ 00_core/
+│  ├─ checks.md
+│  ├─ character_creation.md
+│  ├─ resistances.md
+│  ├─ combat.md
+│  └─ magic.md
+├─ 01_skills/
+│  └─ core_skills.md
+├─ 02_items/
+│  └─ artifacts.md
+├─ 90_srd_bridge/
+│  └─ conversion_rules.md
+├─ 99_open_questions/
+│  └─ unresolved_rules.md
+├─ sources/
+│  └─ SHEET_INDEX.md
+├─ campaign/
+│  ├─ README.md
+│  ├─ house_rules.md
+│  └─ current_state.md
+├─ characters/
+│  └─ README.md
+├─ sessions/
+│  └─ README.md
+├─ templates/
+│  ├─ PC_TEMPLATE.md
+│  └─ SESSION_STATE_TEMPLATE.md
+└─ examples/
+   └─ ADJUDICATION_TESTS.md
+```
+
+## Regression 測試
+
+[`examples/ADJUDICATION_TESTS.md`](examples/ADJUDICATION_TESTS.md) 收錄一組用來檢查 GPT 是否跑偏的裁定案例，包括：
+
+- 飛箭陷阱
+- 舊日支配者血液眷屬化
+- 奪心魔抽魂
+- 奈瑟瑞爾古魔法書
+- 直視希瑞克化身
+- 位面級神器魔法背景
+
+換模型、改 DM 指令或修改核心規則後，可重跑這些案例作 smoke test。
+
 ## Repo 狀態
 
-目前版本定位為 **DM-ready core v0.1**：足以主持調查、一般技能、戰鬥、施法、抗性與超自然效果；職業專屬能力、完整詞綴、完整法術庫與所有世界觀內容仍以來源 Sheet／之後的 Markdown 移植為準。
+目前版本定位為 **DM-ready core v0.1**：已足以主持調查、一般技能、戰鬥、施法、抗性、超自然效果、神器裁定與 session 狀態管理。
+
+但這**還不是 31 個 Sheet tab 的完整逐條離線轉錄版**。職業專屬能力、完整詞綴、完整法術庫、高級／傳奇專長、完整世界觀等，若情境需要而 repo 尚未鏡像，仍應唯讀查上游 Sheet；不得由 GPT 靠 3.5 記憶自行補完。
