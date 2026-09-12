@@ -4,9 +4,13 @@
 >
 > 來源物種模型：`examples/TIME_DRAGON_DRAGON359_MODEL.md`
 >
-> **版本鎖定：** Mike McArtor, *Time Dragon: A Wyrm for the Ages*, Dragon #359 (September 2007), pp. 36–40。
+> 換算方法：`90_srd_bridge/COMMON_CONVERSION_REFERENCE.md`
 >
-> 本檔不是 D100 Sheet 正典。Dragon #359 原始資料標 `[SOURCE_PROFILE]`；D100 換算候選標 `[D100_ADAPTATION_CANDIDATE]`；本次遭遇個體設定標 `[ENCOUNTER_DEFAULT]`。
+> 目前換算工作表：`examples/ANCIENT_TIME_DRAGON_CONVERSION_WORKSHEET.md`
+>
+> **版本鎖定：** Mike McArtor, *Time Dragon: A Wyrm for the Ages*, Dragon #359 (September 2007), pp. 36–40。
+
+本檔不是 D100 Sheet 正典。來源資料標 `[SOURCE_PROFILE]`；換算候選標 `[D100_ADAPTATION_CANDIDATE]`；完成實戰校準後才可標 `[ENCOUNTER_CALIBRATED]`。
 
 ---
 
@@ -24,7 +28,7 @@ initial_attitude: 冷淡、警戒、非嗜殺
 encounter_role: 高階空戰／時間流／action-economy 壓力測試
 ```
 
-本次測試正式使用 **Ancient／上古時空龍**，不再使用先前臨時 Adult 個體作為主要敵人。
+本次正式使用 **Ancient／上古時空龍**。
 
 前面測試曾暫填的：
 
@@ -33,445 +37,364 @@ Attack 112
 Dodge 105
 ```
 
-**全部作廢。** 這兩個值不是 Dragon #359 原始數據，也不是完成的 D100 轉譯。
+全部作廢。
 
 ---
 
-# 2. Dragon #359 Ancient 原始能力值 `[SOURCE_PROFILE]`
-
-> 以下保留來源尺度，用來理解生物能力結構；不可把 3.5 AC / saves / HD / CR 直接當 D100 數值。
-
-| 項目 | Ancient Time Dragon |
-|---|---:|
-| Size | Colossal+ |
-| Hit Dice | 89d12+2403 |
-| 平均 HP（3.5來源） | 2931 |
-| STR | **83** |
-| DEX | **10** |
-| CON | **65** |
-| INT | **66** |
-| WIS | **73** |
-| CHA | **66** |
-| Land Speed | **100 ft.** |
-| Fly Speed | **380 ft. (clumsy)** |
-| Sorcerer Caster Level | **31** |
-| Spell Resistance | **85** |
-| Challenge Rating | **76** |
-
-來源的重要結構是：
+# 2. Dragon #359 Ancient 原始輪廓 `[SOURCE_PROFILE]`
 
 ```text
-肉體 DEX 很低（10）
-+
-時間控制極強
-+
-INT / WIS / CHA 極高
-+
-31級術士施法
-```
-
-因此不可把它主持成「因為是時空龍，所以裸 DEX 必定極高」。
-
----
-
-# 3. D100 排序候選 `[D100_ADAPTATION_CANDIDATE]`
-
-若暫時將 Dragon #359 的屬性值直接帶入 D100 現行 adjustment 公式：
-
-```text
-adjustment = ROUND((raw stat - 13) / 2)
-```
-
-則：
-
-### 行動順序候選
-
-```text
+Size: Colossal+
+HD: 89d12+2403 (2931 hp)
+STR 83
 DEX 10
-DEX adjustment = ROUND((10-13)/2) = -2
-行動順序候選 = 10 - 2 = 8
+CON 65
+INT 66
+WIS 73
+CHA 66
+Attack +118
+Fort +73
+Ref +47
+Will +77
+Land 100 ft
+Fly 380 ft (clumsy)
+Sorcerer CL31
+SR85
+CR76
 ```
 
-### 宣告順序候選
+來源身份：
 
 ```text
-INT 66
-INT adjustment = ROUND((66-13)/2) = 27
-宣告順序候選 = 66 + 27 = 93
+巨大、天然甲極厚
+普通 DEX，但不是以肉體敏捷為核心
+極高 INT / WIS / CHA
+高階術士
+時間控制專家
+不戀戰
 ```
-
-意義：
-
-- 它的**裸肉體行動順位可能很晚**；
-- 但 INT 極高，所以它能在宣告輪看到大量其他單位的宣告後才表態；
-- 真正的高速與額外行動應由 `Time Control / Time Mastery / Draconic Surge / Time Stop` 等時間能力進入「碼表」處理，而不是偷偷灌進 DEX。
-
-這兩個數字目前都不是 D100 正典怪物值。
 
 ---
 
-# 4. Ancient 已解鎖時間能力 `[SOURCE_PROFILE]`
+# 3. 目前 D100 九屬性工作值 `[D100_ADAPTATION_CANDIDATE]`
 
-上古時空龍至少具有：
+共享六屬性不再 raw 直搬，而使用 modifier-equivalent anchor。
+
+```text
+STR 85
+DEX 13
+SKI 25   [candidate]
+CON 67
+RES 46   [candidate]
+INT 69
+WIS 75
+CHA 69
+SPI 69   [candidate]
+```
+
+理由與計算見 `ANCIENT_TIME_DRAGON_CONVERSION_WORKSHEET.md`。
+
+其中：
+
+- `RES46` 來自 Fort / Ref / Will 拆掉來源能力 modifier 後的共同 chassis `46 / 47 / 46`；
+- `SPI69` 暫以其天生術士／史詩龍的 CHA 作保守 proxy；
+- `SKI25` 是依來源近戰可靠性反推的工作值，不是 BAB89 直接換算。
+
+---
+
+# 4. 目前 D100 基礎值候選
+
+```text
+戰鬥 123
+運動 105
+操作 169
+感知 184
+知識 216
+交涉 213
+
+抗毒素 113
+抗控制 121
+抗轉化 92
+抗噴吐 59
+抗魔法 115
+
+強韌 335
+精神 230
+靈魂 345
+
+行動順位 13
+宣告順位 97
+```
+
+這些是換算工作值，不是 D100 monster canon。
+
+`抗噴吐59` 暫不主動補高，因為來源 Reflex +47 本來就是三豁免的明顯弱項。
+
+---
+
+# 5. 防禦結構：不要做成高 Dodge 坦克
+
+來源 AC 大量來自 natural armor，且 touch defense 很低；飛行 maneuverability 為 `clumsy`。
+
+因此 D100 目標是：
+
+```text
+相對容易碰到龍體
++
+很難造成有效傷害
++
+時間能力提供位置／節奏防禦
+```
+
+而不是：
+
+```text
+Dodge 200
+```
+
+目前仍待 encounter calibration：
+
+```text
+Dodge
+Armor / 物抗
+DR
+HP
+自然武器最終 Attack
+自然武器 Damage
+SR 特殊層
+```
+
+---
+
+# 6. Ancient 已解鎖能力 `[SOURCE_PROFILE]`
 
 ```text
 Time Control
 Time Stop
-Draconic Surge 2/day
 Slow 3/day
+Draconic Surge 2/day
 Time Mastery
 Slow Aura
-兩種時間吐息
-Sorcerer casting CL 31
+Ravaging Time breath
+Time Expulsion breath
+Sorcerer casting CL31
 Frightful Presence
-高階 Knowledge / Speak Language 能力
+high Knowledge / languages
 ```
 
-它**沒有** Great Wyrm 才取得的 `Time Apotheosis`。
+**沒有** Great Wyrm 的 `Time Apotheosis`。
 
-因此本次上古個體：
+禁止混入：
 
-- 不能因「時空龍」就每次擲骰偷看兩個可能未來取佳者；
-- 不能在戰鬥中隨意回到過去改寫已發生事件；
-- 不能偷用 2023 Planescape 5e Time Dragon 的反應／Time Gate 等能力；
-- 不能偷用網路 homebrew 的 Temporal Flux / Aura of Time 等同名能力。
+- 5e Planescape Time Dragon abilities；
+- Pathfinder 同名生物；
+- 網路 homebrew；
+- Great Wyrm 才有的 possible-future reroll / combat-independent time travel。
 
 ---
 
-# 5. Time Stop `[SOURCE_PROFILE → D100_ADAPTATION PENDING]`
+# 7. Time Mastery — continuous haste，不是額外完整 action
 
-來源：
+這一點已依 conversion reference 修正。
 
-- at will；
-- Adult ～ Wyrm 兩次 Time Stop 之間需等待 **1d4 個 3.5 rounds**。
-
-Ancient 落在這一區間，所以來源冷卻也是：
+來源是：
 
 ```text
-1d4 × 3.5 rounds
+continuous haste
 ```
 
-但 D100：
+所以第一版只保留：
 
 ```text
-1 round = 1 second
+movement boost
+attack cadence / extra strike within attack action
+small attack / avoidance / reaction benefit
 ```
 
-因此正式開戰以前必須固定轉譯哲學：
+**不自動得到第二個一般動作，也不能因此同秒多施放一個普通法術。**
 
-### 世界時間保真
-
-先把 3.5 約六秒 round 換成世界秒數，再讓「碼表」切成 D100 一秒輪。
-
-### 戰術節奏保真
-
-將來源 round 視為 action window，轉成 D100 對應戰術窗口，而不是直接乘六。
-
-**戰鬥途中禁止因平衡需要切換兩套算法。**
+真正額外 standard / move action 來自 `Draconic Surge`。
 
 ---
 
-# 6. Time Mastery `[SOURCE_PROFILE → D100_ADAPTATION PENDING]`
+# 8. Draconic Surge `[D100_ADAPTATION_CANDIDATE]`
 
-Adult 起即獲得，Ancient 當然持有。
-
-來源意義：時空龍持續處於類似 `haste` 的時間加速狀態；即使被壓掉，也會自行恢復。
-
-D100 不可只把這句轉成：
+來源 Ancient：
 
 ```text
-DEX +N
+2/day
+extra standard OR move action
 ```
 
-因為它本質上首先是 **action economy / 時間流速能力**。
-
-正式轉譯時「碼表」至少要回答：
-
-- 外界 1 秒中它能得到哪些行動窗口？
-- 額外窗口可做一般動作、自由動作、施法、移動中的哪些？
-- 與 Draconic Surge 是否疊加？
-- Time Stop 內 Time Mastery 如何計時？
-- 其他生物的 buff / debuff 倒數是否跟隨外界時間、個體主觀時間或效果原文？
-
----
-
-# 7. Draconic Surge `[SOURCE_PROFILE → D100_ADAPTATION PENDING]`
-
-Old 起增加為 **2/day**；Ancient 因此是：
+第一版 D100：
 
 ```text
-Draconic Surge: 2/day
+2/day
+→ 本秒額外取得 1 個一般動作或完整移動 action window
 ```
 
-來源概念是從未來借取額外 standard / move action。
-
-這不是攻擊加值，也不是 DEX 加值；D100 必須轉成額外 action window。
-
-「碼表」要獨立追蹤：
+碼表：
 
 ```text
 Draconic Surge remaining: 2/2
 ```
 
-並記錄每一次究竟增加了哪種行動權。
+---
+
+# 9. Time Stop `[D100_ADAPTATION_CANDIDATE]`
+
+來源核心：施法者取得數個只有自己能行動的 rounds。
+
+Encounter mode v0.1 優先保留**戰術窗口數**：
+
+```text
+1d4+1 source rounds
+→ 2～5 private action windows
+```
+
+Ancient cooldown：
+
+```text
+1d4 source rounds
+→ 等待 1d4 個龍自己的正常 action windows
+```
+
+不機械 ×6，也不把 Time Stop 解釋成免費 12～30 個 D100 actions。
+
+若未來跑 world-time strict mode，再另建版本。
 
 ---
 
-# 8. Slow Aura — Ancient 的質變能力 `[SOURCE_PROFILE → D100_ADAPTATION PENDING]`
+# 10. Slow Aura `[D100_ADAPTATION_CANDIDATE]`
 
-Ancient 起取得。
-
-來源範圍：
+來源：
 
 ```text
-10 ft × age category
+radius = 10 ft × age category
+Ancient category 10 → 100 ft
+10 rounds/day total
+每回合 free action 維持
+開始 turn 時在 aura 中 → automatically slow, no save
 ```
 
-Ancient 為第 10 年齡階，因此：
+Encounter mode v0.1：
 
 ```text
-Slow Aura radius = 100 ft
+radius 100 ft
+10 tactical windows/day
+不必連續
 ```
 
-來源效果：
+沙漏仍保留來源世界語意「約一分鐘總量」；碼表則用 10 個戰術維持窗口。
 
-- 每一 3.5 round 由時空龍以 free action 決定是否維持；
-- 每日總共可維持 10 個 3.5 rounds；不必連續；
-- 生物若在自己的 round 開始時位於 aura 內，**自動受到 slow；no save**。
-
-這個能力在 D100 中不能簡化成固定 `-20`。
-
-真正要由「碼表」處理的是：
-
-```text
-誰在某一秒開始時位於 100 ft 內？
-→ 該個體的時間流被怎樣改變？
-→ 本秒哪些 action windows 消失／延後／改變？
-→ 離開 aura 後效果何時終止？
-→ Slow Aura 的每日 10 rounds 如何由 3.5 時間轉成 D100？
-```
-
-開場 ledger：
-
-```text
-Slow Aura source uses: 10 rounds total [3.5 scale; D100 conversion pending]
-Slow Aura active: false
-```
-
-它不會因為 NPC 是 Boss 就免費常駐；要依來源決定何時啟用並消耗總額。
+D100 `slow` 精確效果仍待轉譯。
 
 ---
 
-# 9. 兩種吐息 `[SOURCE_PROFILE → D100_ADAPTATION PENDING]`
+# 11. 移動 `[D100_ADAPTATION_CANDIDATE]`
+
+來源 world-speed seed：
+
+```text
+Land 100 / 6 ≈ 16.7 ft/s
+Fly 380 / 6 ≈ 63.3 ft/s
+```
+
+這只給沙漏／世界速度。
+
+戰鬥位置還要另外處理：
+
+- clumsy maneuverability；
+- Time Mastery；
+- Draconic Surge；
+- Time Stop reposition；
+- dive / turn / climb。
+
+---
+
+# 12. 兩種吐息
 
 ## Ravaging Time
 
-時間侵蝕線：
-
-- 生物被老化／侵蝕並承受 Constitution 層面的損害；
-- 物體 hardness 下降。
-
-D100 候選思路：
+來源 Ancient：
 
 ```text
-存在狀態／生理時間被改寫 → 抗轉化候選
-若另有獨立肉體承受階段 → 強韌候選
+老化10年
+CON damage 10，Fort half
+物體 hardness -10
 ```
 
-不可因原版是 Fortitude 就直接翻成 D100 強韌。
+D100 第一版可先把 `CON damage 10` 當 seed，但最終防禦接口仍需按效果語義決定，不因來源 Fort 就直接翻成強韌。
 
 ## Time Expulsion
 
-把目標送往未來，使其暫時從目前時間線消失，等待世界時間追上。
-
-D100 候選思路：
+來源：
 
 ```text
-時序／存在位置被改寫 → 抗轉化候選
+失敗 → 被送往未來10 source rounds
 ```
 
-不可因原版是 Will 就直接翻成抗控制。
-
-兩種吐息的 D100 判定值、範圍、recharge 都尚未定案。
-
----
-
-# 10. 個體性格／生態 `[SOURCE_PROFILE + ENCOUNTER_DEFAULT]`
-
-物種層：
-
-- 幾乎不會因年老自然死亡；
-- 多半獨居；
-- 偏好偏遠巢穴、半遊牧；
-- 不需要頻繁獵殺活物；
-- 對魔法、知識、藝術以及測量時間的器具特別有收藏興趣；
-- 不喜歡為無意義戰鬥冒險；
-- 真正決定開打時會積極使用最強手段快速結束；
-- 被壓過時會撤；
-- **不自願戰到死。**
-
-本次個體人格：
-
-- 對時間／空間異常具有專業興趣；
-- 對陌生高階施法者先判斷是否構成持續性威脅；
-- 不以殺死所有 PC 為必要勝利條件；
-- 使對手失能、驅逐、隔離或迫使撤退都可接受；
-- 若發現 `次元錨／禁空／其他永久拘束時間移動的效果` 真的能威脅自己，會顯著提高該施法者 threat priority；
-- 若風險高於收益則離開。
-
----
-
-# 11. 開戰前知識邊界 `[ENCOUNTER_DEFAULT]`
-
-它合理知道：
-
-- 自己的時間能力；
-- 常見高階時間／空間奧術；
-- 31級術士施法層級應具備的廣泛奧術知識；
-- 自己親眼觀察或成功辨識的 PC 效果。
-
-它**不能讀角色卡**，因此 T=0 不知道：
-
-- 亞黛兒的激勵戰歌確切提供 `閃避 +85`；
-- 卡蘭德每個戒指、藥劑與卷軸的效果及剩餘次數；
-- 莎緹拉持有 `次元錨／禁空／解析弱點` 等具體法術；
-- PC 下一秒的宣告。
-
-NPC 的 INT66 代表極高推理與學習能力，不等於全知。
-
----
-
-# 12. Ancient Time Dragon Action Palette `[SOURCE_PROFILE → D100_ADAPTATION PENDING]`
-
-正式戰鬥 Ledger 至少要有：
+這同時牽涉戰術窗口與世界時間，暫時保持 `[OPEN_QUESTION]`：
 
 ```text
-自然武器／飛行
-兩種吐息
-Sorcerer casting CL31
-Time Control
-Time Stop: available / cooldown
-Slow: 3/day
-Draconic Surge: 2/day
+10 tactical windows?
+約60 world seconds?
+或雙時計同時保存？
+```
+
+正式重跑前要固定，戰鬥途中不可改算法。
+
+---
+
+# 13. 個體人格／threat model
+
+本次個體：
+
+- 對時間／空間異常有專業興趣；
+- 不以殺光 PC 為勝利條件；
+- 失能、驅逐、隔離、迫退都可接受；
+- 開打後會優先使用真正有效能力，不保留「Boss phase」；
+- 發現永久拘束／封鎖時間能力的效果時，提高該來源的 threat priority；
+- 風險高於收益就撤；
+- 不戰到死。
+
+它可以學習 PC 能力，但**不能讀玩家角色卡**。
+
+INT69／宣告順位97代表高推理與資訊優勢，不代表全知。
+
+---
+
+# 14. T=0 Ledger
+
+```text
+HP: PENDING
+SP: PENDING
+Position: encounter start決定
+Facing: encounter start決定
+Altitude: encounter start決定
+
 Time Mastery: persistent
-Slow Aura: inactive/active + remaining daily duration
-Frightful Presence
-移動／朝向／高度
-已觀察到的 PC 能力
-當前 threat model
-撤退路線
+Time Stop: available
+Time Stop cooldown: 0
+Slow: 3/3
+Draconic Surge: 2/2
+Slow Aura: inactive
+Slow Aura pool: 10 tactical windows
+Breath recharge: PENDING
+
+Observed PC abilities: none beyond visible prebuffs
+Threat priorities: not yet resolved
+Retreat route: DM world model must establish
 ```
-
-不能再使用：
-
-```text
-一般動作：爪擊
-```
-
-代表整隻怪物。
 
 ---
 
-# 13. 三維位置與「碼表」狀態 `[ENCOUNTER_STATE]`
+# 15. 下一步
 
-正式重跑採新的 T=0；以前 regression run 的傷害、箭矢、鎖定目標與位置**全部不繼承**。
+正式重跑前只剩三個主要缺口：
 
-開戰前需另外建立：
+1. 用三名 PC 真實輸出回推 `HP / armor / DR`；
+2. 用 PC Attack / Dodge 做 `natural attack / Dodge` 概率校準；
+3. 完成 Slow、Time Expulsion、SR／法術穿透的 D100 接口。
 
-```text
-T = 0.000 s
-Ancient Time Dragon: x/y/z、朝向、速度向量
-亞黛兒: x/y/z、朝向、速度向量
-卡蘭德: x/y/z、朝向、速度向量
-莎緹拉: x/y/z、朝向、速度向量
-```
-
-「碼表」負責：
-
-- 宣告與行動順位；
-- 一般／自由／即時／瞬唱／觸發窗口；
-- Time Mastery；
-- Draconic Surge；
-- Time Stop 形成的內嵌時間區段；
-- Slow Aura 造成的個體時間差；
-- 同一秒內的因果順序。
-
-「沙漏」不負責逐秒戰鬥細節；它處理戰鬥前後較大尺度的移動、抵達、世界狀態變化與後續影響。
-
----
-
-# 14. 尚未完成的 D100 數值 `[OPEN_QUESTION / D100_ADAPTATION]`
-
-正式數值戰以前仍需建立：
-
-```text
-D100 HP / SP
-D100 攻擊／閃避
-D100 物抗／法抗
-五抗
-強韌／精神／靈魂
-自然武器傷害
-吐息 D100 判定與效果
-31級術士法術表／法術資源轉譯
-飛行每秒位移
-Time Stop 時長與冷卻
-Time Mastery action economy
-Slow 的 D100 行動效果
-Slow Aura 的 D100 時間換算
-Draconic Surge 的 D100 action window
-```
-
-禁止直接把以下 3.5 數值當成 D100：
-
-```text
-AC 81
-SR 85
-CR 76
-Fort / Ref / Will
-BAB / grapple
-89 HD / 2931 source HP
-```
-
-來源數值可以用來**理解相對能力層級**，但不能偷當轉換公式。
-
----
-
-# 15. 本次遭遇的戰術原則 `[ENCOUNTER_DEFAULT]`
-
-這隻上古時空龍不是固定腳本 Boss。它每秒重新根據已知資訊判斷：
-
-```text
-能否不用打？
-↓
-若要打，誰最能限制我的時間／空間能力？
-↓
-能否用 Time Stop / Slow Aura / spell positioning 建立不對稱？
-↓
-能否用失能、隔離、Time Expulsion 結束對方戰鬥能力？
-↓
-PC 新能力曝光 → 更新 threat model
-↓
-永久拘束風險或收益不足 → 撤退
-```
-
-它不會：
-
-- 故意前三輪只普通爪擊；
-- 因為「Boss 還沒半血」而不用時間能力；
-- 因為知道玩家角色卡所以完美 counter；
-- 為了劇情堅持戰到 0 HP。
-
----
-
-# 16. 重跑前最低條件
-
-正式重跑上古時空龍遭遇以前，同時準備：
-
-1. 亞黛兒／卡蘭德／莎緹拉三人的 encounter snapshot；
-2. 三人的 Action Palette 與本輪 Action Ledger；
-3. 本檔 Ancient Time Dragon Action Palette；
-4. T=0 三維位置；
-5. Time Stop / Time Mastery / Slow Aura / Draconic Surge 的 D100 時間轉譯；
-6. 雙方只依實際觀察形成 threat model。
-
-缺其中任何一項，都先標記為測試中的待轉譯項，不以臨時「Boss 數字」掩蓋缺口。
+完成後才把本檔從 `[D100_ADAPTATION_CANDIDATE]` 提升為 `[ENCOUNTER_CALIBRATED]`。
