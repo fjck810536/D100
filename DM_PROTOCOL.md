@@ -2,19 +2,26 @@
 
 本檔描述 GPT 在實際跑團中的行為順序。
 
+> Data contract：主持流程依 `DATA_ARCHITECTURE.md`。規則／來源資料不直接改 world state；Cabinet 模塊輸出 hypothesis / constraint / proposal；AO 結算 actual result；最後由 D100 DM Agent / orchestrator 寫回 authoritative state。Action Palette、threat model、combat doctrine 等 runtime view 不得被誤當成第二份角色／世界真相。
+
 ## 1. 場景迴圈
 
 每個場景遵循：
 
-1. **描述可感知狀態**：只給角色目前能合理知道的資訊。
-2. **接受玩家宣告**：不要替玩家補行動。
-3. **判斷是否需要擲骰**：若沒有風險／不確定性，不要為了擲骰而擲骰。
-4. **選擇判定接口**：技能、抗性、特殊判定、攻擊／閃避、施法等。
-5. **決定公開或秘密擲骰**：若骰名／結果會洩漏隱藏資訊，可由 DM 暗擲。
-6. **結算成功餘裕／對抗**。
-7. **描述後果**。
-8. **更新狀態**：HP、SP、位置、姿勢、持續效果、裝備、時間、已知情報。
-9. 回到 1。
+1. **讀取 authoritative state**：campaign、character、session 與必要 Entity / Site / Hazard record。
+2. **取得合法資訊 view**：若涉及祕密，先依 `MYSTERY_PROTOCOL.md` 取得各角色／模塊可知道的 representation。
+3. **描述可感知狀態**：只給角色目前能合理知道的資訊。
+4. **接受玩家宣告**：不要替玩家補行動。
+5. **判斷是否需要擲骰**：若沒有風險／不確定性，不要為了擲骰而擲骰。
+6. **選擇判定接口**：技能、抗性、特殊判定、攻擊／閃避、施法等。
+7. **決定公開或秘密擲骰**：若骰名／結果會洩漏隱藏資訊，可由 DM 暗擲。
+8. **結算成功餘裕／對抗**。
+9. **描述後果**。
+10. **更新 authoritative state**：HP、SP、位置、姿勢、持續效果、裝備、時間、已知／相信的情報等。
+11. **使受影響的 derived cache 失效／重算**。
+12. 回到 1。
+
+只有實際發生的結果寫回 state。分析師／生態學家／政治家／讀心者等模塊的預測或解釋，不因被產生就自動成為世界事實。
 
 ## 2. 何時不擲骰
 
@@ -73,6 +80,8 @@ D100：48
 - 文書解讀成功：給出文字的大意；不自動等於理解其中魔法理論。
 - 辨識法術成功：辨識施展中／作用中的法術性質；不自動等於知道神器全部權能。
 
+若調查讓角色真的取得新情報，更新該 actor 的 epistemic state；不要只在敘述中說過一次後讓世界忘掉。
+
 ## 5. 失敗後果
 
 失敗不一定等於「什麼也沒發生」。可以是：
@@ -97,6 +106,29 @@ D100：48
 - 尚未揭露的精神／轉化／控制效果。
 
 秘密擲骰仍應遵守角色實際數值，不得為劇情結果改骰。
+
+### 秘密擲骰 ≠ 秘密資料庫
+
+session 可以記：
+
+```text
+骰了什麼
+數值
+結果
+玩家是否知道結果
+```
+
+但尚未授權的祕密 payload 不因此複製進 session / character / campaign plaintext。祕密內容依：
+
+```text
+Secret ID
++ classification
++ clearance
++ need-to-know
++ role-safe representation
+```
+
+由 `MYSTERY_PROTOCOL.md` 管理。
 
 ## 7. 超自然效果選擇接口
 
@@ -148,6 +180,26 @@ D100：48
 
 除非該能力明文具有四個不同階段。
 
+### Triggered Hazard
+
+陷阱／警報／符文／自動裝置若適合資料化，使用：
+
+```text
+templates/TRIGGERED_HAZARD_TEMPLATE.md
+```
+
+流程應是：
+
+```text
+Sensor / world state
+→ AO 判斷 trigger predicate
+→ 碼表／沙漏處理 timing
+→ 依 D100 結算 effect
+→ orchestrator 更新 hazard / world state
+```
+
+不需要額外的「陷阱 AI」。
+
 ## 9. 探測與尺度
 
 探測至少分四件事：
@@ -160,6 +212,8 @@ D100：48
 成功偵測到魔法不保證能定位來源；尤其巨大均勻背景可能使局部差分為零。
 
 同理，偵察極高也不能看見不存在的視覺訊號。來源表已明文：**偵察大成功通常可察覺附近隱形生物，但仍然看不到。** `[D100_CANON]`
+
+若某角色因探測成功取得新 knowledge / belief，將結果寫進該 actor 的 epistemic state，而不是讓所有 NPC 自動共享。
 
 ## 10. 戰鬥切換
 
@@ -182,6 +236,8 @@ D100：48
 - 開戰前已經存在的持續效果與角色卡目前狀態。
 
 角色卡是 **affordance map（可做什麼的地圖）**，不是只有攻擊值、閃避值、HP 的數字表。
+
+**Action Palette 是 runtime capability view，不是第二份角色卡。** 它應可由角色 state＋規則重建；若 cache，底層能力／裝備／狀態改變時必須更新或失效。
 
 ### 10.2 每輪建立 Action Ledger
 
@@ -270,6 +326,7 @@ D100：48
 - 模擬者應把角色當成知道自己角色卡的熟練玩家。
 - 在合理情況下主動利用 Action Palette 做組合，而不是每輪只挑一個最顯眼能力。
 - 不必每輪把所有資源燒光，但應能看到瞬唱、即時備戰、自由動作、一心二用、物品啟動與觸發能力的存在。
+- 行動選擇可讀取 character evidence、epistemic state、preferences / constraints 與生態學家／分析師等合法 derived view；不得把 Operational Dossier 當固定 rotation。
 
 ## 11. 對玩家保持公平
 
@@ -280,3 +337,4 @@ D100：48
 - 成功調查真的改變資訊／選項。
 - 未知風險可以隱藏，但不能事後任意改規則。
 - NPC、怪物、神器使用與 PC 一致的接口，除非其條目明文例外。
+- 同一 authoritative state 對所有相關模塊一致；不能因某模塊忘記／另存一份狀態，就讓世界對不同角色使用不同真相。
