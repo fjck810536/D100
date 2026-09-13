@@ -16,18 +16,19 @@ DM／Agent 開始跑團前，依序閱讀：
 
 1. [`AGENTS.md`](AGENTS.md) — 規則優先序、禁止事項、DM 行為
 2. [`DM_PROTOCOL.md`](DM_PROTOCOL.md) — 實際主持流程與資訊控制
-3. [`00_core/checks.md`](00_core/checks.md) — D100 判定核心
-4. [`00_core/character_creation.md`](00_core/character_creation.md) — 九大屬性、技能基礎、CP、HP/SP
-5. [`00_core/resistances.md`](00_core/resistances.md) — 五大抗性與強韌／精神／靈魂
-6. [`00_core/combat.md`](00_core/combat.md) — 宣告、行動、攻擊、閃避、傷害、1 秒輪
-7. [`00_core/magic.md`](00_core/magic.md) — 施法者、法術位、SP、連續施法、法抗
-8. [`01_skills/core_skills.md`](01_skills/core_skills.md) — DM 常用技能語義
-9. [`02_items/artifacts.md`](02_items/artifacts.md) — 聖器／亞神器／神器的處理邊界
-10. [`sources/GM_PROVISIONAL_2026-09-12.md`](sources/GM_PROVISIONAL_2026-09-12.md) — GM 粗答；有方向但尚未完整正典化
-11. [`90_srd_bridge/conversion_rules.md`](90_srd_bridge/conversion_rules.md) — D&D 3.5 SRD 只作補缺，不覆蓋 D100
-12. [`99_open_questions/unresolved_rules.md`](99_open_questions/unresolved_rules.md) — 尚未有正典答案的規則洞
+3. [`DM_CABINET.md`](DM_CABINET.md) — AO、讀心者、圖書館員、會計師等認知角色；是行為吸引子，不是僵硬 SOP
+4. [`00_core/checks.md`](00_core/checks.md) — D100 判定核心
+5. [`00_core/character_creation.md`](00_core/character_creation.md) — 九大屬性、技能基礎、CP、HP/SP
+6. [`00_core/resistances.md`](00_core/resistances.md) — 五大抗性與強韌／精神／靈魂
+7. [`00_core/combat.md`](00_core/combat.md) — 宣告、行動、攻擊、閃避、傷害、1 秒輪
+8. [`00_core/magic.md`](00_core/magic.md) — 施法者、法術位、SP、連續施法、法抗
+9. [`01_skills/core_skills.md`](01_skills/core_skills.md) — DM 常用技能語義
+10. [`02_items/artifacts.md`](02_items/artifacts.md) — 聖器／亞神器／神器的處理邊界
+11. [`sources/GM_PROVISIONAL_2026-09-12.md`](sources/GM_PROVISIONAL_2026-09-12.md) — GM 粗答；有方向但尚未完整正典化
+12. [`90_srd_bridge/conversion_rules.md`](90_srd_bridge/conversion_rules.md) — D&D 3.5 SRD 只作補缺，不覆蓋 D100
+13. [`99_open_questions/unresolved_rules.md`](99_open_questions/unresolved_rules.md) — 尚未有正典答案的規則洞
 
-若只是要立刻開一場短團，至少讀完 1–8；若裁定碰到目前的規則洞，再讀 10–12。
+若只是要立刻開一場短團，至少讀完 1–9；若裁定碰到目前的規則洞，再讀 11–13。
 
 ## 有 Campaign 時的追加閱讀
 
@@ -36,7 +37,8 @@ DM／Agent 開始跑團前，依序閱讀：
 1. [`campaign/house_rules.md`](campaign/house_rules.md)
 2. [`campaign/current_state.md`](campaign/current_state.md)
 3. `characters/` 內本場相關角色檔
-4. `sessions/` 內最新 session state
+4. [`sources/characters/README.md`](sources/characters/README.md) 與本場角色 Operational Dossier；現行三人可先讀 [`sources/characters/OPERATIONAL_PROFILE_V1.md`](sources/characters/OPERATIONAL_PROFILE_V1.md)
+5. `sessions/` 內最新 session state
 
 角色／session 建檔可直接使用：
 
@@ -108,6 +110,7 @@ D100/
 ├─ START_DM.md
 ├─ AGENTS.md
 ├─ DM_PROTOCOL.md
+├─ DM_CABINET.md
 ├─ 00_core/
 │  ├─ checks.md
 │  ├─ character_creation.md
@@ -124,7 +127,10 @@ D100/
 │  └─ unresolved_rules.md
 ├─ sources/
 │  ├─ SHEET_INDEX.md
-│  └─ GM_PROVISIONAL_2026-09-12.md
+│  ├─ GM_PROVISIONAL_2026-09-12.md
+│  └─ characters/
+│     ├─ README.md
+│     └─ OPERATIONAL_PROFILE_V1.md
 ├─ campaign/
 │  ├─ README.md
 │  ├─ house_rules.md
