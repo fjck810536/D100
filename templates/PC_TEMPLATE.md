@@ -1,6 +1,8 @@
 # PC_TEMPLATE.md
 
 > 複製本檔建立 `characters/<name>.md`。DM 每次需要角色數值時以角色檔為準，不要靠聊天記憶猜。
+>
+> 本檔是角色 state / capability record，不是人格模塊。完整祕密不直接塞進角色檔；需要時用 Mystery Secret ref。架構見 `../DATA_ARCHITECTURE.md`。
 
 ```yaml
 name:
@@ -9,6 +11,8 @@ race:
 concept:
 current_cp:
 total_cp:
+agency:
+  type: autonomous
 ```
 
 ## 九大屬性
@@ -135,6 +139,22 @@ SP： /
 | 物品 | 加值 | 詞綴 | 調頻 | 使用次數／資源 |
 |---|---:|---|---|---|
 
+## Action Palette cache
+
+> 可由技能／專長／物品／當前狀態重建。若在此保存，是方便 runtime 的 capability cache，不是另一份規則來源。
+
+```text
+一般動作：
+自由動作：
+即時／反應：
+瞬唱：
+並行能力：
+移動能力：
+觸發式能力：
+物品啟動：
+每日／每場／充能資源：
+```
+
 ## 狀態
 
 ```text
@@ -147,11 +167,47 @@ DOT：
 藥水負荷：
 ```
 
+## Epistemic State
+
+> 只記角色目前實際知道／相信／誤信的內容，不記分析師眼中的「真正人格」。
+
+```yaml
+known_facts: []
+beliefs: []
+misbeliefs: []
+```
+
+## Preferences / Constraints
+
+> 用於 NPC／模擬角色時，可記穩定且有 evidence 的偏好與義務；真玩家 PC 不應被這區替玩家預決定行動。
+
+```yaml
+preferences: []
+constraints: []
+```
+
+核心分離：
+
+```text
+belief ≠ preference ≠ action
+```
+
+## Secret refs
+
+```yaml
+secret_refs: []
+```
+
+只放角色檔合法取得的 Secret ID / role-safe representation。完整 protected payload 依 `MYSTERY_PROTOCOL.md` 管理。
+
 ## 語言
 
 ## 背景與已知情報
 
 ## DM 注意
 
-- 本區只放角色實際已知或機械上需要記錄的資訊。
-- DM 秘密不要寫進玩家可見角色檔，應放 campaign/session DM state。
+- 角色檔內實際數值／持有能力優先於聊天記憶。
+- 擁有能力 ≠ 已啟動；持有物件 ≠ 願意消耗。
+- 真玩家控制 PC 時，角色檔不能替玩家決定「通常會做什麼」。
+- 若保存 combat doctrine / threat model 等推理，只能標為 derived cache，不能寫成 established character truth。
+- 秘密資料透過 Mystery refs 連接，不建立平行 plaintext DM secret 區。
