@@ -1,6 +1,6 @@
 # 聖器／亞神器／神器
 
-本檔故意區分 **D100 已有正典** 與 **D&D 3.5 artifact bridge**。不得混在一起。
+> 本檔是 D100 artifact 規則索引，不是神器人格模塊。D&D 3.5 只作 bridge / source reference，轉譯細節回到 `../90_srd_bridge/`。神器若具有自主意志，依 `../DATA_ARCHITECTURE.md` 的 Entity Agency 處理。
 
 ## 1. D100 已確認存在神器級分類 `[D100_CANON]`
 
@@ -61,11 +61,24 @@ DM 不得把它們當普通 +X 魔法物品處理。
 
 若需要這些性質，寫進該神器 statblock。
 
-## 6. 調查神器的分層 `[DM_DEFAULT]`
+## 6. Artifact Agency
+
+神器首先是 Entity / Item，不是預設人格。
+
+```yaml
+agency:
+  type: none | reactive | autonomous
+```
+
+- `none`：普通神器物件，由會計師追持有／流轉、圖書館員讀規則、AO處理世界效果。
+- `reactive`：依 trigger 回應，接 `TRIGGERED_HAZARD_TEMPLATE.md` 類型的 sensor / predicate / effect / reset 結構。
+- `autonomous`：具有自身感官、belief、preference、目的與行動能力；視為 actor，可進入分析師／生態學家／政治家等 pipeline，同時仍可被會計師追蹤其物件身分。
+
+`持有神器` 不等於 `神器意志屬於持有者`。
+
+## 7. 調查神器的分層 `[DM_DEFAULT]`
 
 面對一件外觀樸素的古代神器，不要一次檢定全知。
-
-建議層級：
 
 ### 物理層
 
@@ -93,7 +106,7 @@ DM 不得把它們當普通 +X 魔法物品處理。
 - 抽魂 → 靈魂
 - 法抗／穿透 → 抗魔法
 
-## 7. 神器的多階段效果 `[DM_DEFAULT]`
+## 8. 神器的多階段效果 `[DM_DEFAULT]`
 
 範例：古魔法書內同時有強大精神力與轉化機制。
 
@@ -110,21 +123,28 @@ DM 不得把它們當普通 +X 魔法物品處理。
 
 不要僅因它是「魔法神器」再額外塞一個無條件抗魔法。
 
-## 8. D&D 3.5 Artifact Bridge `[SRD_BRIDGE]`
+## 9. D&D 3.5 Artifact Bridge `[SRD_BRIDGE]`
 
-3.5 SRD 把 artifact 分 minor / major artifacts，並允許每件神器具有特殊效果與特殊摧毀方式。
+3.5 artifact 可以提供：
 
-3.5 的 Detect Magic 靈光表會把 artifact 納入 **Overwhelming aura**；這是 **3.5 SRD 規則，不是目前 D100 Sheet 已確認的通則**。
+- minor / major artifact 概念
+- 特殊啟動條件
+- 特殊副作用
+- 特殊摧毀條件
+- intelligent item / special purpose / Ego 等 agency 設計參考
+- Detect Magic 的 artifact aura 概念
 
-若一場 D100 明確採用這段 3.5 bridge，才可使用：
+但這些都是 source / schema inspiration，不是 D100 canon。
+
+若需要具體換算或 3.5 規則細節，回到：
 
 ```text
-artifact → overwhelming magic aura
+../90_srd_bridge/conversion_rules.md
 ```
 
-除非該神器自己的條文遮蔽、偽裝或改寫此偵測。
+不得讓 `02_items/artifacts.md` 變成第二份 3.5 規則庫。
 
-## 9. Overwhelming 不等於位面級範圍 `[SRD_BRIDGE]`
+## 10. Overwhelming 不等於位面級範圍 `[SRD_BRIDGE]`
 
 3.5 的 `Overwhelming` 描述的是靈光**強度**，不是自動代表靈光大小與整個位面相同。
 
@@ -134,7 +154,7 @@ artifact → overwhelming magic aura
 
 那是神器本身的特殊條目，而不是 artifact 分類的通則。
 
-## 10. 位面級背景與探測 `[DM_DEFAULT]`
+## 11. 位面級背景與探測 `[DM_DEFAULT]`
 
 若神器的魔法存在真的與整個位面重疊：
 
@@ -148,25 +168,17 @@ artifact → overwhelming magic aura
 偵測存在 ≠ 定位來源 ≠ 理解機制
 ```
 
-例：
-
-```text
-背景：Overwhelming
-書本：Overwhelming
-牆：位於同一 Overwhelming magical area
-空氣：位於同一背景
-```
-
-若局部差分接近零，玩家不能因偵測成功就直接知道書本是源頭。
-
-## 11. 建議神器 statblock `[DM_DEFAULT]`
+## 12. 建議神器 statblock `[DM_DEFAULT]`
 
 ```md
 # 名稱
 
+entity_id:
 狀態：神器／亞神器／聖器
+agency: none | reactive | autonomous
 外觀：
 已知來源：
+source_refs: []
 
 ## 可被調查的資訊
 - 搜索：
@@ -175,7 +187,7 @@ artifact → overwhelming magic aura
 - 辨識法術：
 - 知識：
 
-## 觸發
+## Trigger / Activation
 
 ## 主效果
 
@@ -195,7 +207,16 @@ artifact → overwhelming magic aura
 
 ## 摧毀／封印條件
 
-## DM秘密
+## 持有／流轉
+item_holder_ref:
+resource_state:
+
+## Secret refs
+secret_refs: []
 ```
 
-每個例外都應寫在神器自身，而不是由「神器」兩字自動產生。
+完整 protected payload 依 `MYSTERY_PROTOCOL.md` 保存；statblock 只取合法 view。
+
+若 `agency: reactive`，Trigger / Activation 可另接 `templates/TRIGGERED_HAZARD_TEMPLATE.md`。
+
+若 `agency: autonomous`，另外建立其 actor belief / preference / capability state，而不是把「智能神器」硬塞成物品備註文字。
