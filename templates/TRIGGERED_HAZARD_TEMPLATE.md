@@ -8,7 +8,7 @@ name:
 type:
 source_refs: []
 location_ref:
-agenc y: reactive
+agency: reactive
 ```
 
 > `agency` 固定預設為 `reactive`；若物件具有真正自主意志、belief 與目的，應升格為 autonomous Entity，而不是繼續塞在 hazard record。
