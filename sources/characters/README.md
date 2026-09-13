@@ -4,6 +4,10 @@
 >
 > 這些檔案不是 Google Sheet 的替代品；Google Sheet 仍是角色卡來源。Dossier 的工作是把容易在 DM 模擬中被漏掉的 Action Palette、法術、獨特能力、魔法物品、live state 分層整理。
 
+## 角色輪廓封存
+
+- [Operational Profile v1](./OPERATIONAL_PROFILE_V1.md) — 三名角色目前已足以供 DM 模擬的行為輪廓；法術 effect index 仍持續補完。
+
 ## 三名角色
 
 1. [莎緹拉](./SATHERA_OPERATIONAL_DOSSIER.md)
@@ -35,6 +39,28 @@ G. HP / SP / 法術位 / 儲魔池
 H. 連續施法懲罰等 live-session 計數
 ```
 
+## 法術 Effect Index 標準
+
+角色卡列出的法術，代表角色在實際戰鬥／探索中可能使用；因此不能只保存法術名稱。
+
+每個可用法術最終至少應能快速取得：
+
+```text
+名稱／來源
+環數與學派
+施法時間
+射程
+目標／範圍
+持續時間
+豁免／抗魔
+主要效果
+D100 已改寫接口／仍沿 3.5 的部分
+Action economy 接口
+重要 combo／反制關係
+```
+
+目標：角色宣告任何卡上法術時，DM 不是第一次理解它，而是直接取用已整理條目。
+
 ### 保險絲
 
 ```text
@@ -42,6 +68,7 @@ H. 連續施法懲罰等 live-session 計數
 卡面 TRUE ≠ 所有獨立測試都要繼承
 法術書有法術 ≠ 當前一定可直接施放
 魔法物品存在 ≠ DM 可以替玩家自動啟動
+持有物件 ≠ 角色願意在戰鬥中消耗
 熟練玩家模擬 ≠ 只做一個主要動作
 ```
 
