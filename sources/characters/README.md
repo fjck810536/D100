@@ -7,6 +7,7 @@
 ## 角色輪廓封存
 
 - [Operational Profile v1](./OPERATIONAL_PROFILE_V1.md) — 三名角色目前已足以供 DM 模擬的行為輪廓；法術 effect index 仍持續補完。
+- [CP Strength Audit v1](./CP_STRENGTH_AUDIT_V1.md) — 三名角色目前可追溯的 CP 投資強度帳，供 encounter calibration 使用。
 
 ## 三名角色
 
