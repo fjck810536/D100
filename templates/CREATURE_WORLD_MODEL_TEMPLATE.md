@@ -1,29 +1,53 @@
-# CREATURE_WORLD_MODEL_TEMPLATE.md — 生物／NPC 世界模型
+# CREATURE_WORLD_MODEL_TEMPLATE.md — 生物／NPC Actor State Record
 
-> 用途：處理重要 NPC、怪物、龍、異界生物、Boss 等**不能只靠一行 stat block 主持**的對象。
+> 用途：重要 NPC、怪物、龍、異界生物、Boss 等**不能只靠一行 stat block 主持**的對象。
 >
-> 核心原則：先建立「這是什麼生物、這一隻是誰、它現在想做什麼」，最後才是數值。
+> 本檔現在只負責保存 actor state / capability / evidence；不再同時充當生態學家、分析師、戰術 AI 與 AO。資料分層見 `../DATA_ARCHITECTURE.md`。
 
-## 0. 來源與版本
+核心原則：
+
+```text
+這是誰／是什麼
+→ 現在客觀狀態是什麼
+→ 它知道／相信什麼
+→ 它能做什麼
+→ 模塊可以據此產生可撤回的 derived view
+```
+
+而不是：
+
+```text
+模板預先決定它現在一定會怎麼行動
+```
+
+---
+
+## 0. Identity / Source
 
 ```yaml
+entity_id:
 name:
 species:
 source_version:
 source_reference:
 conversion_status:
+agency:
+  type: autonomous
 ```
 
-先確認來源版本。**同名生物跨版本／homebrew 不得混用。**
-
-將資料分成：
+來源標記：
 
 - `[SOURCE_PROFILE]`：外部原始來源直接支持的物種／能力／生態資訊。
 - `[D100_ADAPTATION]`：由外部規則轉成 D100 的機械；不是 D100 Sheet 正典。
-- `[ENCOUNTER_DEFAULT]`：為本次遭遇建立的個體設定／戰術／個性。
-- `[OPEN_QUESTION]`：轉譯或來源不足，不能假裝已解決。
+- `[ENCOUNTER_STATE]`：此個體目前真的成立的世界狀態。
+- `[DERIVED_VIEW]`：模塊推理出的暫時 interpretation / forecast。
+- `[OPEN_QUESTION]`：來源不足。
 
-## 1. 物種模型 Species Model
+同名生物跨版本／homebrew 不得混用。
+
+---
+
+## 1. Species / Body Data
 
 ### 身體／感官
 
@@ -39,12 +63,12 @@ conversion_status:
 
 ### 發育／年齡階段
 
-| 階段 | 體型／外觀 | 新增能力 | 行為／認知變化 | 備註 |
+| 階段 | 體型／外觀 | 新增能力 | 行為／認知變化證據 | 備註 |
 |---|---|---|---|---|
 
-若該物種的「生理成熟度」與實際經歷年數不同，分開記錄，不要用年齡階段直接推算出生年份。
+若生理成熟度與實際經歷年數不同，分開記錄。
 
-### 生態與習性
+### 生態 facts
 
 ```text
 食性：
@@ -57,22 +81,11 @@ conversion_status:
 天敵／避免對象：
 ```
 
-### 物種層認知與價值
+這些是生態學家的輸入資料，不是「生態學家已經做出的行為決策」。
 
-不要把 alignment 當人格。
+---
 
-```text
-通常重視：
-通常避免：
-通常如何看待陌生人：
-通常如何處理威脅：
-是否傾向殺死／驅逐／捕捉／談判：
-是否願意戰死：
-```
-
-## 2. 個體模型 Individual Model
-
-同種生物也必須是一個具體個體。
+## 2. Individual State
 
 ```yaml
 individual_name:
@@ -80,72 +93,92 @@ sex_or_gender_if_relevant:
 development_stage:
 chronological_age_if_known:
 current_condition:
+position:
+altitude:
+orientation:
+current_hp:
+current_sp:
+active_effects: []
+used_resources: []
+cooldowns: []
+retreat_status:
 ```
 
-### 性格
+世界狀態一旦成立，不得因劇情方便偷偷重置。
 
-用可預測行為的方式寫，不要只列形容詞。
+---
+
+## 3. Stable Evidence about Preferences / Constraints
+
+> 只寫有來源／歷史行為／設定支持的穩定 evidence；不要把模塊推測寫成角色本質。
+
+```yaml
+preferences: []
+aversions: []
+obligations: []
+orders: []
+taboos: []
+resource_constraints: []
+```
+
+可記：
 
 ```text
-遇到未知事物時：
-受到挑釁時：
-受到傷害時：
-發現對手比預期強時：
-發現有趣／珍貴事物時：
-談判時最重視：
-最容易犯的判斷偏誤：
+通常重視什麼
+通常避免什麼
+是否願意戰死（若有證據）
+既有誓言／職務／命令
+長期目標
 ```
 
-### 當前目標
+不要只寫「殘忍／聰明／膽小」等無法預測行為的形容詞。
 
-```text
-主要目標：
-次要目標：
-最不想發生：
-底線／禁忌：
-```
+---
 
-### Morale / Retreat
-
-```text
-什麼情況會撤退：
-什麼情況會投降／談判：
-什麼情況會升級武力：
-是否願意追擊逃跑者：
-是否願意戰死：
-```
-
-**不能因為它是 Boss 就默認戰到 HP=0。**
-
-## 3. 知識模型 Epistemic State
+## 4. Epistemic State — 它實際知道／相信什麼
 
 NPC／怪物不能讀角色卡。
 
-### 開戰前已知
-
-```text
-知道 PC 的：
-不知道 PC 的：
-誤判／既有假設：
+```yaml
+known_facts: []
+beliefs: []
+misbeliefs: []
+uncertainties: []
 ```
 
-### 戰鬥中更新
+戰鬥／場景中可追加 evidence update：
 
-| 事件 | 生物能觀察到什麼 | 可合理推論 | 不可直接知道 |
+| 事件 | 能觀察到什麼 | 可合理推論 | 不可直接知道 |
 |---|---|---|---|
 
-例如：
+例：
 
 ```text
 PC 開啟群體 buff
-→ 怪物可觀察「這人施術後大家突然更難命中」
-→ 可以提高『支援者』威脅順位
-→ 不能直接知道「75 ft、閃避 +85、剩 14 輪」
+→ 看見施術後整隊更難命中
+→ 可形成「此人可能是支援核心」的 belief
+→ 不能直接知道精確範圍、數值與剩餘輪數
 ```
 
-## 4. Action Palette
+核心分離：
 
-怪物也要像 PC 一樣建立完整行動介面。
+```text
+belief ≠ preference ≠ action
+```
+
+某 NPC 可以相信玩家說的是真的，仍因自身利益、命令、恐懼或其他 constraint 拒絕配合。
+
+涉及祕密時只保存此 actor 合法取得的 representation；完整 protected payload 不放這裡。
+
+```yaml
+secret_refs: []
+```
+
+---
+
+## 5. Action Palette / Capabilities
+
+怪物也要像 PC 一樣建立完整可做事項。
 
 ```text
 一般動作：
@@ -164,6 +197,8 @@ PC 開啟群體 buff
 逃生能力：
 ```
 
+Action Palette 是 capability cache；規則來源仍以 D100／bridge 條文為準。
+
 ### 本輪 Ledger
 
 ```text
@@ -176,24 +211,11 @@ PC 開啟群體 buff
 可觸發：
 ```
 
-## 5. 戰術人格 Combat Doctrine
+碼表負責戰術時間窗；此檔只保存 live state。
 
-不是「最優解腳本」，而是**這個生物根據自己的能力、性格、知識會怎麼打**。
+---
 
-```text
-開戰前傾向：
-第一輪傾向：
-優先控制／擊殺／驅逐的目標：
-如何利用地形：
-如何利用特殊移動：
-什麼時候使用最強能力：
-何時改變策略：
-何時脫離：
-```
-
-智能高不等於全知。它只能根據自己已得到的資訊改策略。
-
-## 6. D100 轉譯層
+## 6. D100 Mechanical State
 
 外部怪物先保留概念，再另建 D100 接口。
 
@@ -240,50 +262,117 @@ SP：
 
 **禁止直接把 AC、BAB、Fort / Reflex / Will、CR、HD 或 3.5 spell DC ×5。**
 
-## 7. 時間轉譯檢查
+轉譯方法見 `../90_srd_bridge/`。
 
-如果來源不是 D100：
+---
+
+## 7. Time Data
+
+如果來源不是 D100，分開：
 
 ```text
-來源一輪幾秒？
-D100 一輪 = 1 秒
+external world time
+subjective time
+action windows
+cooldown basis
 ```
 
-逐條檢查：
+- 碼表：tactical windows、reaction、per-turn cooldown。
+- 沙漏：物理秒數、旅行、增援、中毒、長期變化。
 
-- 持續 N 輪
-- 每輪一次
-- recharge N rounds
-- regeneration / DOT
-- 額外動作
-- time stop / haste / slow 等直接操作時間的能力
+不要把所有 source round 都機械換成同一個 D100 round 數。
 
-對「操縱時間」生物尤其禁止不經思考直接搬 round 數。
+---
 
-## 8. 可觀察線索
+## 8. Observable Evidence
 
-把「DM 知道」與「玩家可發現」拆開。
+把「世界真的有什麼」與「玩家／NPC能發現什麼」拆開。
 
-| 隱藏機制 | 無檢定可見 | 成功觀察可得 | 深度研究才可得 |
-|---|---|---|---|
+| 隱藏機制 | 無檢定可見 | 成功觀察可得 | 深度研究才可得 | Secret ref |
+|---|---|---|---|---|
 
-玩家若透過實驗、誘導、環境反應找到能力規律，該知識必須真的提高之後的預測能力。
+玩家若透過實驗、誘導、環境反應找到規律，所得知識必須真的進入其 epistemic state，並提高後續預測能力。
 
-## 9. Encounter State
+---
+
+## 9. Relations / Organization / Resources
 
 ```yaml
-position:
-altitude:
-orientation:
-current_hp:
-current_sp:
-active_effects:
-used_resources:
-cooldowns:
-current_target:
-current_goal:
-current_threat_model:
-retreat_status:
+faction_refs: []
+relationship_refs: []
+item_refs: []
+site_refs: []
+resource_refs: []
 ```
 
-世界狀態一旦成立，不得因為劇情方便偷偷重置。
+- 政治家讀勢力、義務、承諾、資源與權力關係。
+- 會計師讀物件持有、流轉、剩餘價值。
+- 生態學家讀生態、生存與 mechanical niche。
+
+本檔不複製它們各自的平行真相。
+
+---
+
+## 10. Derived Views — 可 cache，但不是 world fact
+
+以下內容可以由 Cabinet 產生並暫存：
+
+```yaml
+derived_views:
+  combat_doctrine:
+    value:
+    generated_from: []
+    generated_at:
+    invalidated_by: []
+  threat_model:
+    value:
+    generated_from: []
+    generated_at:
+    invalidated_by: []
+  analyst_structure:
+    value:
+    generated_from: []
+    generated_at:
+    invalidated_by: []
+```
+
+例如舊版模板中的：
+
+```text
+第一輪傾向
+優先擊殺目標
+何時用最強能力
+何時撤退
+```
+
+現在預設都是 derived view，而不是固定人格欄位。
+
+底層資訊一旦改變，例如：
+
+- 受傷
+- 收到新命令
+- 敵方露出能力
+- 發現自己誤判
+- 資源耗盡
+- 祕密揭露
+- 地形改變
+
+舊 view 應失效或重算。
+
+---
+
+## 11. Cabinet Projection
+
+```text
+圖書館員 → source / rules / provenance
+詭祕     → module-safe information view
+生態學家 → species、mechanical niche、environment、survival、behavior tendency
+分析師   → roles / self-image / behavioral residual
+政治家   → faction / obligation / resource / second-order response
+會計師   → held items / resource flow / unrealized value
+碼表     → Action Palette / tactical windows
+沙漏     → world time / schedules / long processes
+AO       → 整合合法 view，裁定實際世界結果
+```
+
+所有模塊輸出的 hypothesis / constraint / proposal 都不能直接冒充 world state；只有經實際世界事件／AO 結算後才寫回 state。
