@@ -1,6 +1,8 @@
 # SESSION_STATE_TEMPLATE.md
 
 > 複製為 `sessions/YYYY-MM-DD_session-N.md`。本檔是 GPT 在長團中避免失憶與狀態漂移的主要容器。
+>
+> 本檔只保存「目前真的成立的 session state」與合法的 Mystery references；不得另建 plaintext DM secret store。架構見 `../DATA_ARCHITECTURE.md`、`../MYSTERY_PROTOCOL.md`。
 
 ```yaml
 session_id:
@@ -17,9 +19,13 @@ world_time:
 
 ### 可見／可聽／可感知資訊
 
-### 尚未揭露的 DM 秘密
+### Secret refs
 
-> 這區只供 DM／Agent 使用，不應直接念給玩家。
+```yaml
+secret_refs: []
+```
+
+> 只記 `Secret ID` 與此 session 合法取得的 role-safe view。完整 protected payload 若屬 Mystery Vault，不得複製進 session state。
 
 ## PC 即時狀態
 
@@ -30,6 +36,8 @@ world_time:
 
 | 名稱 | HP | SP | 位置 | 狀態 | 敵對？ | 備註 |
 |---|---:|---:|---|---|---|---|
+
+> NPC 的 belief / knowledge 若需要持久化，記錄實際 belief state 或對應 Entity ref；不要把分析師／生態學家的暫時推測寫成既定人格真相。
 
 ## 戰鬥順位
 
@@ -81,6 +89,8 @@ world_time:
 | 對象 | 判定 | 數值 | D100 | 結果 | 玩家知道嗎？ |
 |---|---|---:|---:|---|---|
 
+> 「秘密擲骰」不等於「秘密 payload」。骰值與結果可放 session state；其背後尚未授權的秘密內容仍只以 `secret_refs` 連接 Mystery。
+
 ## 調查資訊階梯
 
 ### 物件／事件：
@@ -95,8 +105,15 @@ world_time:
 
 ## 神器／詛咒／轉化進度
 
-| 對象 | 機制 | 階段 | 已觸發 | 已知資訊 |
+| 對象 | 機制／Secret ref | 階段 | 已觸發 | 已知資訊 |
 |---|---|---:|---|---|
+
+## Triggered Hazard / Object State
+
+| Hazard ref | Armed | Triggered | Cooldown / Reset | 備註 |
+|---|---|---|---|---|
+
+> 詳細結構見 `TRIGGERED_HAZARD_TEMPLATE.md`；session 只追 live state，不重複整份 statblock。
 
 ## 本次臨時裁定
 
@@ -110,6 +127,14 @@ world_time:
 - `[DM_DEFAULT]`
 - `[SRD_BRIDGE]`
 - `[OPEN_QUESTION]`
+
+## Derived cache refs
+
+```yaml
+derived_refs: []
+```
+
+> 可連到 combat doctrine、threat model、political forecast 等昂貴推理結果，但 derived cache 不是 world fact；底層 state 改變時必須失效／重算。
 
 ## 世界狀態改變
 
