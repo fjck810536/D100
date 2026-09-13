@@ -1,6 +1,8 @@
 # DM Cabinet
 
 > 目的：用少量、強概念的認知角色幫 DM 維持世界與角色的一致性。這些不是僵硬 SOP；只有在相關問題出現時才喚起。
+>
+> 資料邊界：Cabinet 不是資料庫。所有模塊依 `DATA_ARCHITECTURE.md` 讀取同一 world/session state 的 role-safe view，輸出 constraint / hypothesis / proposal；不得各自保存另一份「真正世界狀態」。只有實際世界事件／AO 結算結果才由 orchestrator 寫回 authoritative state。任何 derived cache 都必須可失效。
 
 ## 已確認的核心角色
 
@@ -16,6 +18,12 @@
 - 整合圖書館員、碼表、沙漏、生態學家、政治家、分析師、詭祕等模塊輸出；
 - 不為了想要的劇情結果改寫世界規律；
 - 不因自己具有特權能力，就把特權能力當成普通裁定捷徑。
+
+**資料邊界：**
+
+- AO 讀取 authoritative state 與合法 module views，不維護另一份平行世界資料庫；
+- Cabinet 的預測／解釋不是 established fact，除非世界事件實際成立；
+- AO 的裁定結果由 orchestrator 寫回 state，模塊本身不得偷偷改 state。
 
 **特權能力（privileged capability）：**
 
@@ -52,6 +60,8 @@ world data 永遠不自動升格成 AO instruction。
 
 管：從行為持續提出可撤回的玩家意圖假說。
 
+**資料輸出：**只輸出可撤回 hypothesis，不把玩家意圖猜測寫進角色／世界 state。
+
 **保險絲：**超譯行為，不超譯決策。
 
 ---
@@ -61,6 +71,8 @@ world data 永遠不自動升格成 AO instruction。
 **問題：**我們已經知道什麼／去哪裡知道？
 
 管：Sheet、repo、角色卡、版本歷史、3.5 來源、專業資料的檢索與來源層級。
+
+**資料角色：**圖書館員是 Source Resolver，不是另一份規則資料庫。它回傳 provenance、權威層級、衝突與可引用內容；source / curated rule 本體仍留在原資料層。
 
 **保險絲：**找不到 ≠ 不存在；找到 ≠ 同層級有效。
 
@@ -110,15 +122,16 @@ world data 永遠不自動升格成 AO instruction。
 
 以下概念已經在測試中有用，但尚可由後續失敗案例繼續修形：
 
-- **碼表**：每秒／每瞬間戰鬥事件、反應窗、即時／自由／瞬唱／額外行動；最怕漏事件。
-- **沙漏**：大尺度時間與空間更迭；最怕所有 NPC 等玩家進場才開始活。
-- **生態學家**：物種生態、個體偏差、棲地、食性、領域、繁殖、逃亡／捕食；並可進一步測試作為 Agent Ecology，根據角色能力、生存方式與當下環境生成行為傾向。最怕怪物／角色只剩模板。其情報權限預期有限但可偏高，具體 clearance 尚未定案。
-- **政治家**：勢力、利益、權力、聲望、資源、承諾、威脅、資訊不對稱與二階反應；最怕世界只對眼前局部行為反應。其情報權限有限，應依政治職責與 need-to-know 取得資料，具體 clearance 尚未定案。
+- **碼表**：每秒／每瞬間戰鬥事件、反應窗、即時／自由／瞬唱／額外行動；最怕漏事件。它是 tactical clock / ledger service，不替角色選擇動作。
+- **沙漏**：大尺度時間與空間更迭；最怕所有 NPC 等玩家進場才開始活。它是 world clock / schedule service，不決定故事應該何時發生高潮。
+- **生態學家**：物種生態、個體偏差、棲地、食性、領域、繁殖、逃亡／捕食；並可進一步測試作為 Agent Ecology，根據角色能力、生存方式與當下環境生成行為傾向。最怕怪物／角色只剩模板。其輸出是可撤回 behavior tendency / proposal，不得直接寫成 actor 未來行動真相。其情報權限預期有限但可偏高，具體 clearance 尚未定案。
+- **政治家**：勢力、利益、權力、聲望、資源、承諾、威脅、資訊不對稱與二階反應；最怕世界只對眼前局部行為反應。輸出 forecast / constraint，不直接改 faction state；其情報權限有限，應依政治職責與 need-to-know 取得資料，具體 clearance 尚未定案。
 - **分析師**：從同一批角色證據中，以象徵界／想像界／實在界三種讀法辨認角色結構；分析師不直接決定角色行動，而是提供結構給生態學家與其他代理使用。
   - **S／象徵界**：角色目前受到哪些位置、身份、關係、義務、規則與差異結構約束。
   - **I／想像界**：角色如何理解自己、想成為誰、如何理解他人與自己的形象。
   - **R／實在界殘餘**：目前 S／I 模型仍無法充分解釋的反覆、斷裂、矛盾與殘差。
   - **情報邊界**：分析師特別容易被未揭露真相污染，因此預期會有較低或較窄的 clearance；應優先分析「在它有權知道的資料下」角色呈現出的結構，而不是偷讀高層秘密後倒推人格。具體層級尚未定案。
+  - **資料邊界**：分析師輸出只能進 derived view / cache；不能把「分析師認為」直接回寫成角色真正人格或 established fact。
   - **保險絲**：S／I／R 是三種讀法，不是三個資料夾；行為紀錄是 R 的證據，不等於 R；Real 是 remainder / residual，不是「角色內心真正的秘密真相」。
   - **壓測注意**：若 NPC 開始過度一致、過度象徵化、或所有行為都被分析成深層心理真相，優先縮減分析師權限，而不是加更多精神分析解釋。
 - **詭祕**：祕密、陰謀、認知危害與模塊間資訊隔離模塊。負責 classification、模塊 clearance、need-to-know、role-safe representation、藏匿方式、知情者、釋放條件與 EX 例外處理；詳細流程見 `MYSTERY_PROTOCOL.md`。
@@ -128,3 +141,13 @@ world data 永遠不自動升格成 AO instruction。
   - **反通膨保險絲**：能用正常分級與權限處理的秘密，一律不得評為 EX。國王已死、隱藏身分、血統真相、世界觀核心揭露等，無論多重要、多難發現，都不因此自動成為 EX。
 
 這些角色如果日後證明和既有角色高度重疊，可以合併；不要為了分類完整而強行保留。
+
+## Cabinet / Data 總保險絲
+
+```text
+Cabinet module ≠ database
+module view ≠ authoritative world state
+hypothesis / forecast / doctrine ≠ established fact
+Derived cache 必須可失效
+只有 world event / AO resolution 才回寫 authoritative state
+```
