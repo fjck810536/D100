@@ -127,7 +127,7 @@ plaintext DM Secrets
 
 ### Creature World Model 已拆腦留殼
 
-`t​​emplates/CREATURE_WORLD_MODEL_TEMPLATE.md` 已從：
+`templates/CREATURE_WORLD_MODEL_TEMPLATE.md` 已從：
 
 ```text
 state + ecology + personality + combat AI + epistemic model + AO-like decision
@@ -163,16 +163,27 @@ capability cache / evidence projection
 固定角色 AI / deterministic rotation / 真正人格資料庫
 ```
 
-### Bootstrap 已瘦身
+已 spot-check 亞黛兒、卡蘭德、莎緹拉三份個別 Dossier 的主要段落；目前看到的核心內容主要是數值、Action Palette、能力、物品、live-state 與來源警告，沒有發現需要立即刪除的獨立「角色 AI」。若日後某段開始被 runtime 當成固定戰術腳本，再局部降權即可。
+
+### Bootstrap / Authority 已接線
 
 已修改：
 
 ```text
 START_DM.md
 README.md
+AGENTS.md
+DM_CABINET.md
+DM_PROTOCOL.md
 ```
 
-入口文件現在以導航為主，不再重複保存完整 D100 公式與 AO policy。
+現在：
+
+- `START_DM.md` 只負責 bootstrap；
+- `AGENTS.md` 把 `DATA_ARCHITECTURE.md` 列入開團必讀並禁止平行 state / plaintext secret store；
+- `DM_CABINET.md` 明確規定 Cabinet 只產生 module views / hypotheses / forecasts；
+- `DM_PROTOCOL.md` 明確規定 AO 結算後由 orchestrator 寫回 authoritative state，並使 derived cache 失效／重算；
+- Action Palette 被定義為可重建的 runtime capability view，不是第三份角色卡。
 
 ---
 
@@ -246,64 +257,47 @@ Artifact Agent（除非 artifact 本身在世界內 autonomous）
 
 ---
 
-## 5. 尚待第二輪檢查
+## 5. 剩餘 migration debt
 
-以下不是目前已確認錯誤，而是仍值得逐檔確認的 migration debt：
+目前主要是**未來出現實例時的資料清理**，不是核心 runtime 還沒接好。
 
-### A. 個別 Operational Dossier
+### A. 個別 artifact / item / NPC 舊實例
 
-```text
-sources/characters/ADELE_OPERATIONAL_DOSSIER.md
-sources/characters/KALAND_OPERATIONAL_DOSSIER.md
-sources/characters/SATHERA_OPERATIONAL_DOSSIER.md
-```
-
-需確認是否仍有：
-
-- 固定 action priority
-- deterministic combat doctrine
-- plaintext secrets
-- 把玩家歷史偏好寫成未來必然行動
-
-若只有 capability / effect index / evidence，保留即可。
-
-### B. AGENTS.md boot list
-
-`START_DM.md` 與 `README.md` 已指向 `DATA_ARCHITECTURE.md`；仍可考慮下一輪把 `AGENTS.md` 的開團必讀列表也直接加入它，讓任何不經 START_DM 的 runtime 都不漏讀資料契約。
-
-### C. DM_PROTOCOL.md
-
-目前仍應保留 orchestrator 流程；下一輪只需確認：
-
-- 沒有 secretly owning world state
-- 沒有和碼表／沙漏重複成第二個時間模塊
-- Action Palette 是 runtime view，不是第三份角色卡
-
-### D. 個別 artifact / item records
-
-確認舊實例是否仍使用：
+若舊實例仍使用：
 
 ```text
 DM秘密:
 ```
 
-應逐步改為：
+應改為：
 
 ```text
 secret_refs:
 ```
 
-### E. campaign / session 歷史檔
+若舊 Creature / NPC record 把 combat doctrine 寫成固定人格真相，改成 derived cache 或 evidence。
 
-未來若已有真實歷史檔，migration 原則是：
+### B. campaign / session 歷史檔
+
+目前 campaign 尚未建立正式內容。未來若匯入真實歷史檔，migration 原則是：
 
 ```text
-保留歷史事件
+保留已發生世界歷史
+保留角色實際取得的 knowledge / belief
 移除／隔離不應存在於該 view 的 plaintext payload
 建立 Secret ID lineage
 ```
 
 不要為了清架構而刪掉已發生世界歷史。
+
+### C. 個別 Dossier 深層段落
+
+三份個別 Dossier 已完成主要段落 spot-check；不需要為了「格式純潔」先大改。後續只有在實際 runtime 出現以下 failure 時再局部處理：
+
+- dossier 被當固定 action priority；
+- 玩家過去偏好被當未來必然；
+- secret payload 被直接塞入 dossier；
+- derived interpretation 被誤當 established state。
 
 ---
 
@@ -334,4 +328,4 @@ secret_refs:
 Mystery-controlled module views
 ```
 
-這是後續所有 repo 清理的判準。
+核心 runtime 已完成第一輪接線；後續以實際壓測暴露的 failure 為主，不再為了分類完整繼續造模塊。
