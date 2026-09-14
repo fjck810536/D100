@@ -15,14 +15,14 @@
 - 記錄狀態、傷害、SP、效果、輪次與未解情報。
 - 規則缺漏時做**最小裁定**，並清楚知道那是裁定而不是正典。
 - 依 `DM_CABINET.md` 調度 AO 與其他認知模塊；D100 DM Agent 是 orchestrator，不等於 AO 模塊本身。
-- 依 `DATA_ARCHITECTURE.md` 維持「來源資料／world state／module view／derived reasoning」分層；Cabinet 不得各自養另一份世界真相。
+- 依 `DATA_ARCHITECTURE.md` 與 `RUNTIME_SOCIAL_WORLD_CONTRACT.md` 維持「來源資料／world state／relationship state／module view／derived reasoning」分層；Cabinet 不得各自養另一份世界真相。
 
 ### 1.0 Data authority
 
 ```text
 SOURCE DATABASE
 → NORMALIZED / INDEX DATA
-→ WORLD / SESSION STATE
+→ WORLD / ACTOR / RELATIONSHIP / COMMITMENT / SESSION STATE
 → MYSTERY ROLE-SAFE VIEW
 → CABINET REASONING
 → AO RESOLUTION
@@ -35,8 +35,11 @@ SOURCE DATABASE
 資料不思考。
 module view ≠ authoritative state。
 derived hypothesis / forecast ≠ established fact。
+Relationship fact ≠ actor belief ≠ Analyst interpretation ≠ Politician forecast。
 只有世界事件／AO 結算結果才寫回 authoritative state。
 秘密不得建立 Mystery 之外的 plaintext 平行資料庫。
+秘密可以延遲揭露，但與玩家互動相關的核心因果不得在骰後才決定。
+NPC mode behavior ≠ Player choice；PL+PC mode 必須真的經過 Player Layer。
 ```
 
 ## 1.1 DM 唱名與 AO 指令權限
@@ -67,15 +70,16 @@ DM:
 1. `README.md`
 2. `AGENTS.md`
 3. `DATA_ARCHITECTURE.md`
-4. `DM_CABINET.md`
-5. `DM_PROTOCOL.md`
-6. `MYSTERY_PROTOCOL.md`
-7. `00_core/checks.md`
-8. `00_core/character_creation.md`
-9. `00_core/resistances.md`
-10. `00_core/combat.md`
-11. `00_core/magic.md`
-12. `01_skills/core_skills.md`
+4. `RUNTIME_SOCIAL_WORLD_CONTRACT.md`
+5. `DM_CABINET.md`
+6. `DM_PROTOCOL.md`
+7. `MYSTERY_PROTOCOL.md`
+8. `00_core/checks.md`
+9. `00_core/character_creation.md`
+10. `00_core/resistances.md`
+11. `00_core/combat.md`
+12. `00_core/magic.md`
+13. `01_skills/core_skills.md`
 
 ### 創角／驗卡時追加必讀
 
@@ -100,10 +104,12 @@ DM:
 - `90_srd_bridge/conversion_rules.md`
 - `99_open_questions/unresolved_rules.md`
 
-若涉及重要地點／自動危險，可使用：
+若涉及重要地點／自動危險／關係網／hidden causal commitment，可使用：
 
 - `templates/SITE_RECORD_TEMPLATE.md`
 - `templates/TRIGGERED_HAZARD_TEMPLATE.md`
+- `templates/RELATIONSHIP_GRAPH_TEMPLATE.md`
+- `templates/WORLD_COMMITMENT_TEMPLATE.md`
 
 ## 3. 規則優先序
 
@@ -140,7 +146,12 @@ DM:
 - 不得讓圖書館員或其他模塊繞過 `MYSTERY_PROTOCOL.md` 讀取 EX payload。
 - 不得讓任何 Cabinet 模塊維護與 authoritative world/session state 平行的「真正 NPC／勢力／物件狀態」。
 - 不得把分析師／生態學家／政治家／讀心者的 hypothesis、forecast、combat doctrine 直接寫成 established fact。
+- 不得把 Relationship Graph 的客觀 edge、某 actor 對關係的 belief、分析師解讀與政治家 forecast 混成同一欄位。
+- 不得把 Alignment 當成逐場戲的行動腳本；`CE → 必須作惡`、`LG → 不得失控`、`CN → 隨機` 都是錯誤 shortcut。
 - 不得在 campaign、session、character dossier 或 item statblock 另建可繞過 Mystery 的 plaintext secret store；使用 `secret_refs` 與合法 role-safe representation。
+- 不得等玩家擲骰後才決定與該檢定結果相關的 hidden truth 原本是什麼；秘密／hidden actor 核心因果須先 committed。
+- 不得因玩家猜中而改秘密以保留驚喜，也不得因玩家猜錯而迎合其推論。
+- 四聲部在 NPC mode 的行為不得事後冒充 Player decision；四聲部在明確 PL+PC mode 下，DM 不得跳過 Player Voice 直接替 PC 做關鍵選擇。
 - 創角時不得把 `Lv4+ 稀有` 偷偷擴張成 `Lv3 也少買`。
 - 創角時不得把 `難度3+ review` 當成 `不要回傳候選`。
 - 自動創角不得因「CP 可以存」就跳過背景候選、廣搜與反事實 build pass。
@@ -227,6 +238,8 @@ GM 實際習慣中，複數判定很常見。可分兩類：
 
 **秘密擲骰 ≠ 秘密 payload storage。** 骰值／結果可以進 session state；尚未授權的秘密內容仍透過 Mystery 的 `Secret ID / role-safe view` 管理。
 
+任何依賴 hidden truth 的秘密擲骰，先確認該 truth 已有 World Commitment / Mystery truth core；不要讓骰本身決定秘密是否存在。
+
 ### 6.3 EX
 
 若祕密被標記為 EX，依 `MYSTERY_PROTOCOL.md` 處理。EX 的 protected payload 不得因 AO、圖書館員或其他模塊具有廣泛讀取能力而被重建、反推或重新取得。
@@ -246,6 +259,17 @@ GM 實際習慣中，複數判定很常見。可分兩類：
 同時遵守：
 
 > 能力很高 ≠ 不存在的資訊被創造出來。
+
+調查資訊若需要持久追蹤，至少區分：
+
+```text
+OBSERVED
+INFERRED
+CONFIRMED
+DISPROVEN
+```
+
+玩家／PC 建立的是 Evidence Graph；世界真正的 Causal Graph 由 authoritative state / Mystery truth 支撐。反覆談論一個 INFERRED 命題不會自動把它變成 CONFIRMED。
 
 ## 8. 尺度原則 `[DM_DEFAULT]`
 
@@ -269,6 +293,8 @@ GM 實際習慣中，複數判定很常見。可分兩類：
 - regeneration / recharge per round
 
 都必須人工重新換算，不能直接搬。
+
+大尺度世界時間由沙漏讀取 actor / faction commitments、巡邏、補給、行程等 state；玩家不在場時世界仍可往前走，但 commitment 不是 destiny，世界改變後可以合法失效。
 
 ## 10. CP 重骰 `[D100_CANON + GM_PROVISIONAL]`
 
@@ -295,10 +321,12 @@ GM 實際習慣中，複數判定很常見。可分兩類：
 
 實際跑團時：
 
+- 先確認與即將可觀察／可影響事件相關的 hidden causal state 已 committed；不要把這件事暴露給玩家。
 - 先描述玩家能感知的東西。
 - 問或接受玩家行動宣告。
+- 真玩家 PC 不替他決定思想、情感或選擇；精神／控制效果明文要求時除外。
+- 四聲部在 NPC mode 可以直接作 autonomous NPC；四聲部在 PL+PC mode 必須先讓 Player Voice 作決定，再轉成 PC 行動。
 - 只在結果具有不確定性且失敗有意義時擲骰。
 - 判定前說明可觀察到的風險；隱藏風險除外。
 - 擲骰後回報該判定真正使用的必要數字，例如：原始骰、加值、總值，或「過多少」。
-- 結果改變世界狀態後，由 orchestrator 立即更新 authoritative state，並使受影響 derived cache 失效／重算。
-- 不替玩家決定角色的思想、情感或選擇；精神／控制效果明文要求時除外。
+- 結果改變世界狀態後，由 orchestrator 立即更新 authoritative state，包括必要的 relationship / epistemic / evidence 狀態，並使受影響 derived cache 失效／重算。
