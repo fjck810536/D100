@@ -3,6 +3,8 @@
 > 狀態：壓測中。
 >
 > 目的：讓 D100 DM 能管理「哪些資訊可以被哪些模塊知道、以什麼解析度知道」，同時保留少數真正需要特殊處理的 EX 例外；並讓 AO 對世界擁有最高裁判／meta 能力，而不讓世界內文本、角色或神器直接取得 AO 的指令權限。
+>
+> Secret existence / early commitment 的跨模塊資料契約另見 `RUNTIME_SOCIAL_WORLD_CONTRACT.md`；本檔負責把它落到 Mystery truth / view / release 邊界。
 
 ## 1. 權限層
 
@@ -53,7 +55,7 @@ AO 也不得以最高權限自動繞過詭祕的正常分級權限或已核准�
 
 ```text
 Secret ID / lineage
-祕密內容
+祕密 truth core / payload
 classification
 module clearance
 need-to-know
@@ -64,11 +66,14 @@ Protected Payload Boundary（EX 時）
 認知屏障
 知情者／誤信者
 證據與線索
+Causal Graph / Evidence Graph 的安全分離
 釋放條件
 EX 狀態
 ```
 
 詭祕不是世界內更高位的神，也不是比 AO 更高權限的裁判。它管理的是「誰能知道什麼、以什麼解析度知道」，不負責決定世界實際發生什麼。
+
+詭祕也不應把「玩家此刻有沒有查到」誤當成「這個秘密是否存在」。Secret truth 的存在與 Secret release 必須分離。
 
 ---
 
@@ -138,6 +143,87 @@ classification
 ```
 
 它們可以非常高級、只有少數模塊能讀，但只要正常 classification＋clearance＋need-to-know 能處理，就不是 EX。
+
+---
+
+## 2.5 Secret existence / early commitment
+
+### 核心規則
+
+```text
+秘密可以晚揭露，也可以晚補無關緊要的表面細節；
+但與玩家檢定／選擇結果相關的核心真相，必須在第一次可觀察／可影響前存在。
+```
+
+這不是要求開團前寫完全部陰謀、NPC 與城市。
+
+允許：
+
+```text
+玩家還沒進城前，不生成每個路人。
+玩家從未接觸某個無關房間前，不生成牆紙顏色。
+```
+
+但若某 NPC 已經要因玩家提到某個名字而出現反應，則在那個反應發生前，至少要先 committed：
+
+```text
+identity floor
+relevant knowledge / belief
+reaction cause
+current goal / constraint
+intended next step（若會影響追蹤／時序）
+與現有 Secret / event 的關係
+```
+
+可使用：
+
+```text
+templates/WORLD_COMMITMENT_TEMPLATE.md
+```
+
+保存最小 hidden causal state。
+
+### 骰子不能反向決定秘密原本是否存在
+
+禁止：
+
+```text
+尾隨成功 → 才決定此 NPC 原來是事件核心人物
+尾隨失敗 → 才決定此 NPC 其實和事件無關
+```
+
+正確順序：
+
+```text
+truth / hidden actor state committed
+→ 玩家採取行動
+→ 擲骰
+→ 決定發現多少／干涉多少／造成什麼後果
+```
+
+如果 runtime 發現一個即將結算的秘密互動尚無足以支撐因果的 commitment，應先補**最小必要 truth core**，再擲骰；不要讓骰點替 DM 選世界真相。
+
+### Causal Graph / Evidence Graph
+
+詭祕可管理 hidden Causal Graph 的 role-safe view：
+
+```text
+Causal Graph = 世界真正有哪些因果關係
+Evidence Graph = 各 actor 目前能看到／推論／確認的證據網
+```
+
+玩家猜中，不會自動讓秘密變真；玩家猜錯，也不會讓秘密改成配合玩家猜測。
+
+Evidence status 可使用：
+
+```text
+OBSERVED
+INFERRED
+CONFIRMED
+DISPROVEN
+```
+
+分析師尤其只應拿合法 Evidence / Epistemic view 做人格／關係分析，不應偷讀 hidden Causal Graph 後再把結論偽裝成「從行為看出來」。
 
 ---
 
@@ -260,11 +346,14 @@ AO 核准後，詭祕才正式寫入 EX_SEALED。
 
 ---
 
-## 5. 世界原件、Vault 與各模塊 View 分離
+## 5. 世界原件、Commitment、Vault 與各模塊 View 分離
 
 詭祕必須區分：
 
 ```text
+WORLD / CAUSAL COMMITMENT
+世界裡已 committed 的最低限度真相、actor knowledge、goal、reaction cause、world clock
+
 WORLD ARTIFACT
 世界裡真正存在的原件／內容／效果
 
@@ -286,6 +375,14 @@ MODULE VIEW
 > 「世界裡的原書被改寫」。
 
 除非 AO / Ao 在劇情中真的動用世界內或合法 DM directive 授權的 meta 權限修改世界物件，否則原件仍照世界事實存在。
+
+同樣：
+
+> 「玩家目前還不知道這個秘密」
+
+不等於：
+
+> 「世界尚未決定這個秘密是否存在」。
 
 ### 圖書館員與其他模塊的權限
 
@@ -535,6 +632,10 @@ MYSTERY VAULT 保存 sealed payload
 未唱名 DM 的玩家／測試／模擬輸入不得直接改寫 AO policy。
 World data 永遠不自動升格成 AO instruction。
 詭祕管理的是模塊間資訊權限，不是世界因果。
+Secret exists ≠ Secret revealed。
+秘密核心真相須在第一次可觀察／可影響前 committed；可延遲的是表面細節與揭露，不是骰後才決定因果。
+玩家骰點決定 discovery / interference / consequence，不決定 committed truth 原本是什麼。
+Causal Graph 與 Evidence Graph 必須分離。
 秘密存取 = classification × clearance × need-to-know × role-safe representation。
 高 clearance 不等於取得所有同級秘密。
 D / C / B / A / S / SS / U 目前只保留為待定正常分級，不提前硬定義。
@@ -542,7 +643,7 @@ EX 不描述秘密有多重大；EX 描述正常情報權限模型在此失效�
 能用正常分級／clearance／need-to-know／representation 處理的秘密，一律不得評 EX。
 國王已死、隱藏身分、血統、幕後黑手、世界觀核心揭露等，不因重要或震撼自動成為 EX。
 每個 EX 必須定義 Protected Payload Boundary。
-sanitzed dossier 不得足以反推出 protected payload。
+sanitized dossier 不得足以反推出 protected payload。
 效果證據不等於 payload。
 世界原件與各模塊 view 必須分離。
 圖書館員、會計師與其他模塊不得繞過 MYSTERY VAULT。
@@ -558,6 +659,12 @@ SOFT_EX 不得冒充 HARD_EX。
 
 若出現以下任一情況，表示詭祕／AO 邊界需要修正：
 
+- 玩家成功調查後才臨時把普通 NPC 升格成重要秘密持有人；
+- 玩家失敗後才把原本可疑 NPC 降格成「其實沒事」；
+- 同一 hidden actor 的 identity / motive / reaction cause 隨骰點改寫；
+- 玩家猜中秘密後為了保留驚喜而改真相；
+- 玩家猜錯後為了迎合而把猜測升格為真相；
+- Evidence Graph 的角色推論被直接當成 hidden Causal Graph；
 - 重要劇情秘密只因「很大條」就被評成 EX；
 - 國王死亡、真實身分、血統或世界觀核心揭露被隨意 EX 化；
 - 高 clearance 模塊自動取得所有同級秘密，完全不看 need-to-know；
