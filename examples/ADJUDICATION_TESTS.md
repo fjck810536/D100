@@ -284,25 +284,180 @@ DM 不應說「神器因為太強所以 detect magic 看不到」；也不應說
 
 `法術瞬唱` 也不是「把一般法術變快但仍只做一件事」；同一輪仍可保有另一個一般動作，並可依戰鬥流程保留瞬唱使用權到適當時點插入。
 
-### 真玩家與模擬玩家要分開
+### 真玩家、NPC mode、PL+PC mode 要分開
 
 真玩家控制 PC：
 
 - DM 不替玩家自動燒瞬唱、藥水、物品或每日能力。
 - 但 DM 不得直接跳過合法反應窗口；必要時簡短確認玩家是否要插入。
 
-GPT 同時模擬玩家：
+四聲部／GPT 在 `npc` mode：
 
-- 要把 PC 當成熟悉自己角色卡的玩家。
-- 應主動考慮瞬唱、自由、即時、物品、一心二用、trigger 的組合。
-- 不代表每輪必須把全部資源燒完，但不能退化成「移動＋一個主動技能」。
+- 可以把角色當成熟悉自己能力的 autonomous actor。
+- 應合理考慮瞬唱、自由、即時、物品、一心二用、trigger 的組合。
+- 這些行動仍是 NPC／actor pipeline 行動，不得事後聲稱是「Player choice」。
+
+四聲部／GPT 在明確 `pl_pc` mode：
+
+- 必須先有 Player Voice decision。
+- Player Voice 可故意採取非最佳但有趣的選擇。
+- 再由 PC layer 翻譯成角色宣告／扮演。
 
 ### 不應做
 
 - 一個角色用完一般動作後直接宣布「本輪結束」，忽略尚未使用的自由／即時／瞬唱權。
 - 只讀攻擊、閃避、HP，而不讀技能、裝備啟動、被動與當前 buff。
 - 因為 Boss 很強而偷偷不給玩家使用原本合法的反應窗口。
-- 模擬玩家時把高階角色玩成不知道自己能力的新手。
+- NPC mode 的四聲部行動被事後解讀成「玩家偏好」。
+- PL+PC mode 仍由 DM 直接替四聲部 PC 做關鍵決策。
+
+---
+
+## Test 8 — Alignment 不是行動腳本
+
+### 情境
+
+某 PC / NPC 為：
+
+```text
+alignment: Chaotic Evil
+presented_persona: helpful, polite
+current_affect: calm
+```
+
+他正在救一名受傷陌生人，而且過去數日都表現得相當友善。
+
+### 分析師應做
+
+可以把以下張力當分析素材：
+
+```text
+alignment
+vs presented persona
+vs current affect
+vs actual behavior
+vs roles / obligations / relationship position
+```
+
+並提出可撤回解讀，例如：
+
+- 善行可能是形象、依附、策略、義務或真正價值變動；
+- 長期行為若真的改變，可以建議觀察 alignment 是否需由玩家／GM 顯式轉變。
+
+### 不應做
+
+- 因為 CE，就要求角色現在必須傷害傷者。
+- 因為角色做了善事，就自動把 alignment 改成 Neutral 或 Good。
+- 要玩家擲骰「能不能演得像 CE」。
+- 把分析師的其中一個解讀寫成角色真正內心。
+
+---
+
+## Test 9 — 四聲部 PL+PC 必須存在真正 Player Layer
+
+### 情境
+
+四聲部控制四名角色。
+
+Case A：DM 未特別要求 PL+PC。
+
+```yaml
+four_voice_control:
+  mode: npc
+```
+
+Case B：DM 明確說「四聲部現在作為玩家＋PC 一起跑」。
+
+```yaml
+four_voice_control:
+  mode: pl_pc
+```
+
+### Case A 應做
+
+四聲部可直接作為高品質 autonomous NPC 行動。
+
+但不得從其行動事後發明：
+
+> 「赫茲玩家偏好冒險」
+
+除非真的存在 Player Layer evidence。
+
+### Case B 應做
+
+至少保留：
+
+```text
+Player Voice
+→ agenda / interpretation / decision
+→ PC declaration
+→ DM resolution
+```
+
+例如玩家 voice 可以說：
+
+> 「我知道艾斯特理性上應該撤，但我想讓他因好奇心多看一眼。」
+
+PC 才再把這個選擇演出。
+
+### 不應做
+
+- 直接由 DM 讓四名 PC 自動做最合理選擇。
+- DM 演完 PC 再反推「玩家就是這個 playstyle」。
+- 讀心者 hypothesis 取代 Player Voice decision。
+
+---
+
+## Test 10 — 秘密必須在檢定前存在
+
+### 情境
+
+酒館內有一名不起眼男子。PC 故意談到「失蹤抄寫員」與「40gp 文件箱」，並觀察誰有反應。
+
+### 正確順序
+
+在男子第一次產生可被觀察的特殊反應之前，至少 committed：
+
+```text
+identity floor
+relevant knowledge / belief
+為何該詞會引發反應
+current goal / constraint
+原本下一步要去哪裡（若會影響尾隨）
+與事件是否真的有關
+```
+
+之後才：
+
+```text
+PC 察言觀色
+→ 成功／失敗
+→ 決定 PC 發現多少
+```
+
+如果 PC 再尾隨：
+
+```text
+男子原本要去哪裡已先存在
+→ 尾隨檢定只決定是否跟住／被發現／能看到多少
+```
+
+### 不應做
+
+- 察言觀色成功後才決定「好，那他其實是學院間諜」。
+- 尾隨失敗後才決定「其實他只是普通書記」。
+- 玩家猜中後臨時改真相，因為「太容易被猜到」。
+- 玩家猜錯後直接迎合其理論，讓世界變成那樣。
+
+### 允許
+
+沒有因果負擔的 surface detail 可以之後生成，例如：
+
+- 路上某家店名；
+- 不重要的衣服顏色；
+- 巷道裝飾。
+
+前提是不反向改寫已 committed 的真相核心。
 
 ---
 
@@ -321,3 +476,9 @@ GPT 同時模擬玩家：
 - 規則缺漏時標記 open/default，而不是編造原文。
 - 戰鬥中把角色卡視為 Action Palette，而不是每輪一個動作的數值表。
 - 不跳過自由動作、即時動作、法術瞬唱、一心二用與觸發式能力的合法窗口。
+- Alignment 是分析座標，不是行動腳本。
+- Relationship fact、Actor belief、Analyst interpretation、Politician forecast 分層。
+- 四聲部 NPC mode 與 PL+PC mode 行為路徑不同。
+- PL+PC mode 不跳過 Player Layer。
+- hidden truth 在第一次可觀察／可影響前 committed。
+- Causal Graph 與 Evidence Graph 分離；骰子改變發現與後果，不反向決定世界原本是什麼。
