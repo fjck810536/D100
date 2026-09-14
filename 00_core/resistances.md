@@ -2,17 +2,27 @@
 
 本檔把現行 D100 的公式與目前可由技能／效果推得的語義分開記錄。
 
-## 1. 五大抗性公式 `[D100_CANON]`
+> 屬性計算口徑與 `character_creation.md` 對齊：五大抗性使用 `屬性總值 = current raw stat + adjustment`；三種特殊判定則明文不把 adjustment 再算入。
+
+## 1. 五大抗性公式 `[D100_CANON + PLAY_CONVENTION]`
 
 ```text
-抗毒素 = RES + CON
-抗控制 = RES + WIS
-抗轉化 = RES + RES
-抗噴吐 = RES + DEX
-抗魔法 = RES + INT
+RES總值 = current raw RES + RES adjustment
+CON總值 = current raw CON + CON adjustment
+WIS總值 = current raw WIS + WIS adjustment
+DEX總值 = current raw DEX + DEX adjustment
+INT總值 = current raw INT + INT adjustment
+
+抗毒素 = RES總值 + CON總值
+抗控制 = RES總值 + WIS總值
+抗轉化 = RES總值 + RES總值
+抗噴吐 = RES總值 + DEX總值
+抗魔法 = RES總值 + INT總值
 ```
 
-共同都有 `RES`，可視為角色面對外來作用時的基本抵抗底盤；第二屬性描述抵抗方式。這一語義是 `[D100_DERIVED]`。
+上游創角表原文要求先將九大屬性與各自 adjustment 加總，再計算五抗；多張角色卡實作也與此一致。
+
+共同都有 `RES總值`，可視為角色面對外來作用時的基本抵抗底盤；第二屬性描述抵抗方式。這一語義是 `[D100_DERIVED]`。
 
 ## 2. 抗毒素
 
@@ -62,7 +72,13 @@
 
 ## 4. 抗轉化
 
-公式為 `RES + RES` `[D100_CANON]`。
+公式為：
+
+```text
+抗轉化 = RES總值 + RES總值
+```
+
+`[D100_CANON + PLAY_CONVENTION]`
 
 種族表的神魔裔「烏波=薩斯拉的禁忌之子」具有**抗轉化 +10**，同一種族又具有黏菌性質、軀體分離與重新黏合等高度異質的肉體性質。這至少進一步支持抗轉化與形態／身體存在狀態變動有直接關聯 `[D100_DERIVED]`。
 
@@ -108,7 +124,13 @@
 
 ## 6. 抗魔法
 
-公式 `RES + INT` `[D100_CANON]`。
+公式：
+
+```text
+抗魔法 = RES總值 + INT總值
+```
+
+`[D100_CANON + PLAY_CONVENTION]`
 
 現行表最明確的機械互動來自 `法術穿透` 與 `高等法術穿透`：
 
@@ -133,13 +155,15 @@ DM 不得把：
 
 若某個魔法物品／詞綴明文要求「敵方進行抗魔法檢定」，則依該條文執行。
 
-## 7. 三種特殊判定 `[D100_CANON]`
+## 7. 三種特殊判定 `[D100_CANON + PLAY_CONVENTION]`
 
 ```text
-強韌 = CON × 5
-精神 = RES × 5
-靈魂 = SPI × 5
+強韌 = current raw CON × 5 + 額外特殊修正
+精神 = current raw RES × 5 + 額外特殊修正
+靈魂 = current raw SPI × 5 + 額外特殊修正
 ```
+
+三者明文不計由 raw stat 導出的 adjustment；若 raw stat 本身因裝備／永久／臨時效果改變，使用當前 raw，再加個別技能／物品／效果的特殊修正。
 
 ### 強韌 `[D100_DERIVED]`
 
