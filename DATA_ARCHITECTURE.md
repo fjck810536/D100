@@ -80,6 +80,65 @@ sources/GM_*.md                    GM 補答、暫定、歷史證據
 
 ---
 
+## 2.5 Character Build Working Data — 創角暫存層
+
+創角／驗卡不是 world runtime；在角色正式接受前，需要一層**暫時的 meta working data**。
+
+由：
+
+```text
+CHARACTER_CREATION_PROTOCOL.md
+Character Builder / Validator
+Build Ledger
+```
+
+共同使用。
+
+可暫存：
+
+```text
+base / adjusted / bonus CP
+候選技能／專長
+marginal CP cost
+prerequisite status
+review flags
+qualifying melee/spell CP working ledger
+reward HP/SP working rolls
+50 / 100 CP counterfactual build
+reserve plan candidate
+required-player-field checklist
+```
+
+這些不是世界事實。
+
+特別區分：
+
+```text
+候選技能 ≠ 角色已學會
+生態學家 competence proposal ≠ 背景既定事實
+review flag ≠ 世界中的標籤
+counterfactual build ≠ 角色能力
+reserved CP ≠ 世界內貨幣
+```
+
+只有創角 final validation 通過後，orchestrator 才把**被接受的結果**投影到 `characters/*.md`：
+
+- 實際屬性／技能／專長；
+- final CP ledger snapshot；
+- 語言；
+- 信仰／領域／師承等已確認身分資料；
+- reward HP/SP 結果；
+- 起始裝備；
+- resolved review provenance。
+
+未採用候選、反事實 build、模塊 proposal 不應混入 authoritative character state。
+
+若創角背景含秘密，working data 也不得建立 plaintext secret payload；照 `MYSTERY_PROTOCOL.md` 使用 Secret ID / role-safe representation。
+
+創角完成後，暫存工作資料可以丟棄；需要留 audit 時只留可追溯的 final ledger / review notes，不保留平行角色版本當「真正角色」。
+
+---
+
 ## 3. World / Session State — 唯一世界狀態層
 
 世界中「目前真的成立什麼」只放在 state layer。
@@ -115,9 +174,10 @@ State 不應保存：
 「生態學家認為他下一輪應該逃跑」
 「分析師認為他的真正人格是……」
 「政治家認為這個國家一定會宣戰」
+「Character Builder 曾考慮讓他買某技能」
 ```
 
-這些屬於 derived reasoning，不是 world fact。
+這些屬於 derived reasoning / build working data，不是 world fact。
 
 ---
 
@@ -150,6 +210,7 @@ secret_refs:
 - creature template
 - module scratch state
 - source cache
+- character-build working data
 
 ---
 
@@ -177,6 +238,8 @@ source conflicts
 尚未解決的缺口
 ```
 
+創角模式下可依 `CHARACTER_CREATION_PROTOCOL.md` 額外輸出候選技能／專長與 source-gap candidates；這些仍屬 working proposal，不是角色 state。
+
 不決定角色行動或世界結果。
 
 ### 會計師
@@ -192,7 +255,7 @@ transfer history
 unrealized value
 ```
 
-不負責判斷物件規則，也不決定世界因果。
+不負責判斷物件規則，也不決定世界因果。CP 屬創角 meta budget，不進會計師帳；起始物品 final 後才進 holder/origin tracking。
 
 ### 碼表
 
@@ -237,6 +300,8 @@ observed behavior
 
 輸出可撤回的行為傾向；不把傾向寫成 world fact。
 
+創角模式下亦可讀取年齡、教育、工作、旅行與組織經歷，提出 lived-experience competence domains；不直接指定技能等級或 CP。
+
 ### 分析師
 
 讀取：
@@ -248,7 +313,7 @@ roles / obligations
 behavior history
 ```
 
-輸出 S / I / R 結構與 residual；不直接決定下一步行動。
+輸出 S / I / R 結構與 residual；不直接決定下一步行動，也不是一般創角技能推薦的預設來源。
 
 ### 政治家
 
@@ -274,6 +339,8 @@ known political information
 整合合法 module views 與世界事實，回答：
 
 > 如果沒有人為了劇情方便作弊，世界現在實際會發生什麼？
+
+創角時只在稀有／世界尺度 review 上提供 plausibility constraints，不參與普通 build optimization。
 
 AO 的輸出經 orchestrator 寫回 state。
 
@@ -486,8 +553,9 @@ Lineage conversion 與 Encounter calibration 分開。
 - Intelligent item agency
 - NPC attitude 作 relationship primitive
 - belief 與 compliance 分離
+- character class culture / class-related language 作缺漏偵測線索
 
-不新增對應人格模塊。
+不新增對應人格模塊，也不把 raw 3.5 class skill 直接升格為 D100 hard gate。
 
 ---
 
@@ -526,6 +594,7 @@ SESSION / CAMPAIGN secrets
 新的「某種資料＝一個人格模塊」
 模塊各自保存平行 NPC 真相
 把 derived prediction 寫成 established fact
+把創角候選／counterfactual build 寫成角色既定能力
 ```
 
 ---
@@ -541,6 +610,19 @@ SESSION / CAMPAIGN secrets
 6. AO 整合並裁定世界實際結果。
 7. Orchestrator 將結果寫回唯一 state。
 8. 任何受影響的 derived cache 失效或重算。
+```
+
+### 創角最小循環
+
+```text
+1. Character Builder 讀 source / normalized rules 與 creation working data。
+2. 圖書館員枚舉合法候選與 provenance。
+3. 生態學家只在需要時提出 lived-experience competence domains。
+4. Build Ledger 計 CP / prerequisite / qualifying pools / reward working values。
+5. 稀有或世界尺度 review 才喚起 AO；秘密走 Mystery。
+6. final validation。
+7. Orchestrator 只把被接受的 final build 寫入 character state。
+8. 丟棄未採用候選與 counterfactual working data。
 ```
 
 最終目標：
