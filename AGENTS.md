@@ -84,6 +84,7 @@ DM:
 - `CHARACTER_CREATION_PROTOCOL.md`
 - `01_skills/languages.md`
 - `sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md`
+- `99_open_questions/character_creation.md`
 - `99_open_questions/unresolved_rules.md`
 
 只有在需要用 3.5 反查職業文化／自由 CP 化缺漏時，再讀：
@@ -288,7 +289,7 @@ GM 實際習慣中，複數判定很常見。可分兩類：
 5. 在幕後標記為 `[OPEN_QUESTION]`，不要偽造來源。
 6. 不因缺一條細則而停止遊戲。
 
-創角／驗卡缺規則時，先看 `sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md` 與 `CHARACTER_CREATION_PROTOCOL.md`；如果只是 3.5 職業文化線索，只能標成 `[SRD_BRIDGE]` candidate。
+創角／驗卡缺規則時，先看 `sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md`、`CHARACTER_CREATION_PROTOCOL.md` 與 `99_open_questions/character_creation.md`；如果只是 3.5 職業文化線索，只能標成 `[SRD_BRIDGE]` candidate。
 
 ## 12. DM 輸出風格
 
