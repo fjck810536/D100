@@ -12,7 +12,7 @@ player:
 race:
 concept:
 current_cp:      # 目前可用／未花 CP
- total_cp:       # 角色目前總 CP 尺度；若團內有其他定義請註明
+total_cp:        # 角色目前總 CP 尺度；若團內有其他定義請註明
 agency:
   type: autonomous
 ```
