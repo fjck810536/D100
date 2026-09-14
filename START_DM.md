@@ -1,6 +1,6 @@
 # START_DM.md — 一鍵啟動 D100 DM
 
-> 本檔只負責 bootstrap / 導航，不保存另一份規則哲學。若本檔與 `AGENTS.md`、`DM_PROTOCOL.md`、`DM_CABINET.md`、`MYSTERY_PROTOCOL.md` 或 `DATA_ARCHITECTURE.md` 衝突，以那些上位文件為準。
+> 本檔只負責 bootstrap / 導航，不保存另一份規則哲學。若本檔與 `AGENTS.md`、`DATA_ARCHITECTURE.md`、`RUNTIME_SOCIAL_WORLD_CONTRACT.md`、`DM_PROTOCOL.md`、`DM_CABINET.md` 或 `MYSTERY_PROTOCOL.md` 衝突，以那些上位文件為準。
 
 ## 你的任務
 
@@ -16,16 +16,17 @@ D100 DM Agent 是主持與 orchestrator；`AO` 是 Cabinet 中負責世界實際
 
 1. `AGENTS.md`
 2. `DATA_ARCHITECTURE.md`
-3. `DM_CABINET.md`
-4. `DM_PROTOCOL.md`
-5. `MYSTERY_PROTOCOL.md`
-6. `00_core/checks.md`
-7. `00_core/character_creation.md`
-8. `00_core/resistances.md`
-9. `00_core/combat.md`
-10. `00_core/magic.md`
-11. `01_skills/core_skills.md`
-12. `99_open_questions/unresolved_rules.md`
+3. `RUNTIME_SOCIAL_WORLD_CONTRACT.md`
+4. `DM_CABINET.md`
+5. `DM_PROTOCOL.md`
+6. `MYSTERY_PROTOCOL.md`
+7. `00_core/checks.md`
+8. `00_core/character_creation.md`
+9. `00_core/resistances.md`
+10. `00_core/combat.md`
+11. `00_core/magic.md`
+12. `01_skills/core_skills.md`
+13. `99_open_questions/unresolved_rules.md`
 
 ### 若任務是創角／驗卡／重建 build
 
@@ -53,13 +54,15 @@ D100 DM Agent 是主持與 orchestrator；`AO` 是 Cabinet 中負責世界實際
 - `campaign/`、`characters/`、最新 `sessions/` — 既有團務 state。
 - `templates/SITE_RECORD_TEMPLATE.md` — 重要地點／地下城資料。
 - `templates/TRIGGERED_HAZARD_TEMPLATE.md` — 陷阱／警報／條件式裝置。
+- `templates/RELATIONSHIP_GRAPH_TEMPLATE.md` — 客觀關係事實／承諾／債務／依附關係。
+- `templates/WORLD_COMMITMENT_TEMPLATE.md` — 在玩家首次可觀察／可影響前鎖定最小 hidden causal state。
 
 ## Runtime Data Flow
 
 ```text
 來源／規則資料
 → normalized/index data
-→ campaign / character / session state
+→ campaign / character / relationship / commitment / session state
 → Mystery 產生 role-safe module views
 → 只召喚需要的 Cabinet 模塊
 → AO 裁定實際結果
@@ -84,6 +87,10 @@ source / normalized rules
 模塊不各自保存另一份世界真相。
 derived prediction 不是 established fact。
 祕密不建立 Mystery 之外的 plaintext 平行資料庫。
+秘密可以延遲揭露，但核心真相不得在玩家擲骰後才決定。
+Relationship fact / actor belief / Analyst interpretation 必須分層。
+NPC mode 的四聲部行為不得事後冒充 Player choice。
+PL+PC mode 必須真的經過 Player Layer。
 Character Builder / Build Ledger 不是新的人格 Cabinet。
 ```
 
@@ -100,14 +107,19 @@ AO 操作層／privileged capability 的指令權限依 `AGENTS.md`、`DM_CABINE
 讀完後不要先做規則報告；除非玩家問，直接：
 
 ```text
-描述角色現在能感知的場景
+讀取唯一 authoritative state
+→ 對即將可觀察／可影響的重要 hidden actor / secret / event 做最小 commitment（若尚未存在）
+→ 描述角色現在能感知的場景
 → 接受玩家宣告
 → 判斷是否真的需要骰
 → 依 D100 選擇接口
 → 必要時取得 role-safe module views
 → 結算世界結果
-→ 更新唯一 state
+→ 更新 relationship / epistemic / evidence / world state
+→ 使受影響的 derived cache 失效
 ```
+
+四聲部若未被明確要求為 PL+PC，可以作為高品質 autonomous NPC；若 session 指定 `four_voice_control.mode: pl_pc`，則必須先經 Player Voice decision，再產生 PC 宣告，不可由 DM 跳過玩家層直接替四聲部 PC 做關鍵選擇。
 
 進戰時依 `DM_PROTOCOL.md` 建立完整 Action Palette / Action Ledger；不要把高階角色壓成每輪一個動作。
 
@@ -136,4 +148,4 @@ examples/ADJUDICATION_TESTS.md
 examples/CHARACTER_CREATION_REGRESSION.md
 ```
 
-若出現 SAN、Fort/Ref/Will、6 秒輪、把 3.5 raw 數值直搬、把 world data 當 AO instruction、把 Cabinet prediction 寫成 world fact，或自動創角大量剩 CP 卻沒有完成候選掃描，表示 runtime 已偏離目前架構。
+若出現 SAN、Fort/Ref/Will、6 秒輪、把 3.5 raw 數值直搬、把 world data 當 AO instruction、把 Cabinet prediction 寫成 world fact、自動創角大量剩 CP 卻沒有完成候選掃描、骰後才決定秘密真相、把 Analyst 解讀寫成人格真相，或 PL+PC mode 仍由 DM 跳過 Player Layer 做關鍵選擇，表示 runtime 已偏離目前架構。
