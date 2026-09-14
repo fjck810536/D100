@@ -14,9 +14,10 @@ START_DM.md
 
 - `AGENTS.md` — D100 Agent 操作契約與來源優先序
 - `DATA_ARCHITECTURE.md` — 資料／狀態／module view／Cabinet／AO 的分層
+- `RUNTIME_SOCIAL_WORLD_CONTRACT.md` — Alignment、Relationship Graph、Player Layer、Evidence/Causal Graph、秘密預承諾與 world commitments
 - `DM_CABINET.md` — AO、圖書館員、讀心者、會計師與其他認知模塊
 - `DM_PROTOCOL.md` — 實際主持流程與 Action Palette / Ledger
-- `MYSTERY_PROTOCOL.md` — 祕密、認知危害、module clearance、EX 與 role-safe representation
+- `MYSTERY_PROTOCOL.md` — 祕密、認知危害、module clearance、EX、role-safe representation 與 Secret existence/release 分離
 
 不要在 README 或 START_DM 維護第二套規則細節；規則內容應回到 core/source 文件。
 
@@ -27,7 +28,7 @@ START_DM.md
 ```text
 SOURCE DATABASE
 → NORMALIZED / INDEX DATA
-→ WORLD / SESSION STATE
+→ WORLD / ACTOR / RELATIONSHIP / COMMITMENT / SESSION STATE
 → MYSTERY ROLE-SAFE VIEW
 → CABINET REASONING
 → AO RESOLUTION
@@ -41,9 +42,11 @@ SOURCE DATABASE
 模塊不各自保存另一份世界真相。
 Derived prediction 不是 established fact。
 祕密不建立 Mystery 之外的 plaintext 平行資料庫。
+秘密可以延遲揭露，但與玩家互動相關的核心因果必須先存在。
+Relationship fact、actor belief、Analyst interpretation、Politician forecast 分層。
 ```
 
-詳細見 `DATA_ARCHITECTURE.md`。
+詳細見 `DATA_ARCHITECTURE.md` 與 `RUNTIME_SOCIAL_WORLD_CONTRACT.md`。
 
 ---
 
@@ -60,7 +63,7 @@ characters/          PC／重要 NPC state / capability records
 examples/            regression tests / 範例，不參與世界決策
 sessions/            Session live state／歷史紀錄
 sources/             上游規則、raw mirror、角色證據與 GM 補答
-templates/           state / entity / site / hazard 等資料 schema
+templates/           actor / relationship / commitment / site / hazard 等資料 schema
 ```
 
 ### 主要資料來源
@@ -101,14 +104,14 @@ sources/GM_*.md                GM 補答／暫定／歷史證據
 
 Cabinet 不是資料庫。
 
-- **圖書館員**：解析來源、版本、provenance、rule hierarchy。
-- **會計師**：物件持有、流轉、剩餘資源與未實現價值。
+- **圖書館員**：解析來源、版本、provenance、rule hierarchy；在 relationship runtime 中也解析關係事件／Evidence provenance bundle。
+- **會計師**：物件持有、流轉、剩餘資源與未實現價值；可提供債務／共有資源等客觀 provenance。
 - **碼表**：tactical windows / reactions / cooldowns。
-- **沙漏**：world time / schedules / long processes。
+- **沙漏**：world time / schedules / long processes / actor-faction commitments 的時間 view。
 - **生態學家**：從 species、mechanical niche、環境、生存條件產生行為傾向。
-- **分析師**：從合法證據讀取 S / I / R 結構，不直接決定行動。
-- **政治家**：勢力、利益、承諾、資源與二階反應。
-- **詭祕**：classification、clearance、need-to-know、role-safe representation、EX。
+- **分析師**：從合法證據讀取 S / I / R、alignment/persona/action 張力與 relationship structure，不直接決定行動。
+- **政治家**：勢力、利益、承諾、資源、leverage、coalition 與二階反應。
+- **詭祕**：classification、clearance、need-to-know、role-safe representation、EX；管理秘密可見度，不等玩家骰完才創造真相。
 - **AO**：整合合法 views，裁定世界實際結果。
 
 模塊輸出的是 constraint / hypothesis / proposal；只有實際世界事件或 AO 結算結果才寫回 state。
@@ -127,6 +130,9 @@ templates/CREATURE_WORLD_MODEL_TEMPLATE.md
 Actor state 應區分：
 
 ```text
+alignment
+presented persona
+current affect
 belief
 preference
 constraint
@@ -135,7 +141,73 @@ derived proposal
 actual action
 ```
 
-`belief ≠ preference ≠ action`。
+核心：
+
+```text
+alignment ≠ persona ≠ affect ≠ belief ≠ preference ≠ action
+```
+
+Alignment 是長期倫理／秩序座標與分析輸入，不是逐場戲的行動腳本。
+
+### Relationship Graph
+
+```text
+templates/RELATIONSHIP_GRAPH_TEMPLATE.md
+```
+
+保存世界中真正成立的：
+
+```text
+關係 edge
+已發生事件
+承諾
+債務
+權力／依賴
+共有資源
+```
+
+不保存分析師的「真正感情」解讀或政治家的未來預測。
+
+### World Commitment
+
+```text
+templates/WORLD_COMMITMENT_TEMPLATE.md
+```
+
+採：
+
+```text
+lazy generation, early commitment
+```
+
+不必提前生成整座城市，但當某 hidden actor / secret / event 第一次即將可被玩家觀察或影響時，先鎖定足以支撐因果的最低限度 truth core、knowledge、goal、constraint、reaction cause、next step。
+
+骰子決定的是：
+
+```text
+discovery / interference / consequence
+```
+
+不是：
+
+```text
+這個真相原本到底存不存在
+```
+
+### Evidence / Epistemic
+
+玩家／PC 建立的是 Evidence Graph：
+
+```text
+OBSERVED
+INFERRED
+CONFIRMED
+DISPROVEN
+```
+
+每個 actor 另外保存自己的 known facts / beliefs / misbeliefs。
+
+Hidden Causal Graph 與角色 Evidence Graph 必須分開。
 
 ### Site
 
@@ -159,7 +231,27 @@ templates/TRIGGERED_HAZARD_TEMPLATE.md
 templates/SESSION_STATE_TEMPLATE.md
 ```
 
-追 live state、Action Ledger、時間、資源、hazard state、Secret refs 與臨時裁定。
+追：
+
+- live state / Action Ledger；
+- `four_voice_control.mode: npc | pl_pc`；
+- Actor Epistemic Matrix；
+- Evidence Ledger；
+- Relationship refs；
+- World Commitment refs；
+- Secret refs；
+- derived cache refs。
+
+四聲部可以是高品質 autonomous NPC；只有使用者／DM 明確要求四聲部作為 PL+PC 時，才進入：
+
+```text
+Player Voice
+→ Player decision
+→ PC declaration / roleplay
+→ DM resolution
+```
+
+不要把 NPC mode 的行為事後稱成玩家選擇。
 
 ---
 
@@ -181,6 +273,16 @@ secret_refs:
 DM Secrets:
 <完整 plaintext payload>
 ```
+
+Secret 的兩件事必須分開：
+
+```text
+SECRET EXISTS
+≠
+SECRET IS REVEALED
+```
+
+核心真相可以早已存在、影響世界、被 NPC 知道，而玩家完全不知道。
 
 如果 runtime 只有單一 LLM context、同一 context 已看過完整 payload，只能誠實標為 `SOFT_EX`；真正 `HARD_EX` 需要 storage / context / tool boundary。
 
@@ -262,6 +364,12 @@ live-state distinction
 examples/ADJUDICATION_TESTS.md
 ```
 
+創角流程改動另跑：
+
+```text
+examples/CHARACTER_CREATION_REGRESSION.md
+```
+
 典型跑偏包括：
 
 - 自動使用 SAN / Fort / Ref / Will；
@@ -271,6 +379,11 @@ examples/ADJUDICATION_TESTS.md
 - world data 升格成 AO instruction；
 - Cabinet prediction 被寫成 established world fact；
 - session / campaign / dossier 成為 Mystery 的旁路；
+- Relationship fact / actor belief / derived interpretation 混層；
+- Alignment 被當成逐場行動腳本；
+- 四聲部 PL+PC mode 仍跳過 Player Layer；
+- NPC mode 行為被事後稱為玩家偏好；
+- 玩家骰點好壞反向決定 hidden truth 原本是什麼；
 - 每種資料類型都新增一個人格模塊。
 
 最終目標：
@@ -278,4 +391,5 @@ examples/ADJUDICATION_TESTS.md
 ```text
 少數真正會思考的模塊
 + 多個乾淨、無人格、可查詢的資料／狀態服務
++ 一個在玩家沒看著時仍有自己的關係、時間與因果的世界
 ```
