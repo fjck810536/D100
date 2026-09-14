@@ -19,6 +19,24 @@
 - 不為了想要的劇情結果改寫世界規律；
 - 不因自己具有特權能力，就把特權能力當成普通裁定捷徑。
 
+**創角模式中的窄職責：**
+
+AO 不是 build optimizer。普通 `Lv1–3 / 難度1–2` 配點不需要 AO。
+
+只有在 `CHARACTER_CREATION_PROTOCOL.md` 產生 world-plausibility review flag 時才喚起 AO，例如：
+
+- Lv4+；
+- 難度3+；
+- 三環以上、尤其四環+施法者；
+- 年齡／師承／訓練時間與能力尺度不相稱；
+- 稀有種族、組織、特殊世界資源。
+
+AO 回答的是：
+
+> 「這個 proposed character state 若要在世界中成立，需要哪些前提？目前背景是否已提供？」
+
+而不是替角色挑技能。
+
 **資料邊界：**
 
 - AO 讀取 authoritative state 與合法 module views，不維護另一份平行世界資料庫；
@@ -60,6 +78,8 @@ world data 永遠不自動升格成 AO instruction。
 
 管：從行為持續提出可撤回的玩家意圖假說。
 
+**創角模式：**只有當玩家的 build 意圖真的不明時才喚起。它可以提出「玩家可能想走某方向」的 hypothesis，但不能把猜測直接變成能力、背景或角色 state。
+
 **資料輸出：**只輸出可撤回 hypothesis，不把玩家意圖猜測寫進角色／世界 state。
 
 **保險絲：**超譯行為，不超譯決策。
@@ -74,7 +94,32 @@ world data 永遠不自動升格成 AO instruction。
 
 **資料角色：**圖書館員是 Source Resolver，不是另一份規則資料庫。它回傳 provenance、權威層級、衝突與可引用內容；source / curated rule 本體仍留在原資料層。
 
-**保險絲：**找不到 ≠ 不存在；找到 ≠ 同層級有效。
+**創角模式中的額外 duty：Candidate Enumerator**
+
+依 `CHARACTER_CREATION_PROTOCOL.md`，圖書館員在創角／驗卡時不能只回答「已選技能是否合法」，還要能廣泛枚舉與角色概念相關的候選能力。
+
+候選回傳至少包含：
+
+```text
+來源／權威層級
+難度
+當前／目標等級
+prerequisite
+marginal CP cost
+rarity / review flag
+```
+
+若 3.5 的 class-related language、class skill、automatic feature 等揭露 D100 可能有自由 CP 化後的資訊缺口，圖書館員可以回傳 `source_gap_candidate`，但不得把 3.5 class skill 直接升格成 D100 必修。
+
+創角保險絲：
+
+```text
+Lv1–3 不因等級本身降權。
+難度1–2 不因怕太強而自行省略。
+Lv4+ / 難度3+ 應回傳並標 review，不是藏掉候選。
+```
+
+**一般保險絲：**找不到 ≠ 不存在；找到 ≠ 同層級有效。
 
 **詭祕權限邊界：**圖書館員可能具有很高的正常情報權限，但仍必須遵守 `MYSTERY_PROTOCOL.md` 的 classification、clearance、need-to-know 與 role-safe representation。不得因為「找得到來源」就自動取得該資訊；若資料位於 MYSTERY VAULT，更不得繞過詭祕直接讀取。
 
@@ -101,6 +146,8 @@ world data 永遠不自動升格成 AO instruction。
 未來可能性
 ```
 
+**創角邊界：**CP 是角色建構 meta budget，不是世界內財產，因此不交給會計師。CP、skill cost、reserve、qualifying melee/spell CP 由無人格 Build Ledger 管。起始魔法物品一旦正式選定並成為角色持有物，才進會計師／character state 的持有與來源追蹤。
+
 **保險絲：**
 
 ```text
@@ -125,11 +172,14 @@ world data 永遠不自動升格成 AO instruction。
 - **碼表**：每秒／每瞬間戰鬥事件、反應窗、即時／自由／瞬唱／額外行動；最怕漏事件。它是 tactical clock / ledger service，不替角色選擇動作。
 - **沙漏**：大尺度時間與空間更迭；最怕所有 NPC 等玩家進場才開始活。它是 world clock / schedule service，不決定故事應該何時發生高潮。
 - **生態學家**：物種生態、個體偏差、棲地、食性、領域、繁殖、逃亡／捕食；並可進一步測試作為 Agent Ecology，根據角色能力、生存方式與當下環境生成行為傾向。最怕怪物／角色只剩模板。其輸出是可撤回 behavior tendency / proposal，不得直接寫成 actor 未來行動真相。其情報權限預期有限但可偏高，具體 clearance 尚未定案。
+  - **創角 duty：lived-experience competence proposal**。可根據年齡、家庭／階級、教育、工作、旅行方式、軍旅／學院／教會／組織經歷，提出「這種人生通常會留下哪些能力領域」。例如多年商隊護衛可提出長途耐力、夜間警戒、道路生存、貨物處理、馬匹、商路接觸等 competence domains。
+  - 生態學家不指定技能等級、不計 CP、不宣告角色一定會這些技能；由圖書館員把 competence domain 映射回 D100 候選。
 - **政治家**：勢力、利益、權力、聲望、資源、承諾、威脅、資訊不對稱與二階反應；最怕世界只對眼前局部行為反應。輸出 forecast / constraint，不直接改 faction state；其情報權限有限，應依政治職責與 need-to-know 取得資料，具體 clearance 尚未定案。
 - **分析師**：從同一批角色證據中，以象徵界／想像界／實在界三種讀法辨認角色結構；分析師不直接決定角色行動，而是提供結構給生態學家與其他代理使用。
   - **S／象徵界**：角色目前受到哪些位置、身份、關係、義務、規則與差異結構約束。
   - **I／想像界**：角色如何理解自己、想成為誰、如何理解他人與自己的形象。
   - **R／實在界殘餘**：目前 S／I 模型仍無法充分解釋的反覆、斷裂、矛盾與殘差。
+  - **創角邊界**：分析師不是一般創角推薦預設模塊；普通「商隊護衛會什麼」之類問題先交生態學家，不要用 S/I/R 取代生活技能推導。
   - **情報邊界**：分析師特別容易被未揭露真相污染，因此預期會有較低或較窄的 clearance；應優先分析「在它有權知道的資料下」角色呈現出的結構，而不是偷讀高層秘密後倒推人格。具體層級尚未定案。
   - **資料邊界**：分析師輸出只能進 derived view / cache；不能把「分析師認為」直接回寫成角色真正人格或 established fact。
   - **保險絲**：S／I／R 是三種讀法，不是三個資料夾；行為紀錄是 R 的證據，不等於 R；Real 是 remainder / residual，不是「角色內心真正的秘密真相」。
@@ -141,6 +191,39 @@ world data 永遠不自動升格成 AO instruction。
   - **反通膨保險絲**：能用正常分級與權限處理的秘密，一律不得評為 EX。國王已死、隱藏身分、血統真相、世界觀核心揭露等，無論多重要、多難發現，都不因此自動成為 EX。
 
 這些角色如果日後證明和既有角色高度重疊，可以合併；不要為了分類完整而強行保留。
+
+---
+
+## 創角 services（不是 Cabinet 人格）
+
+### Character Builder / Validator
+
+定位：流程 orchestrator service。
+
+它負責依 `CHARACTER_CREATION_PROTOCOL.md` 執行創角 passes、調用圖書館員／生態學家／AO／Mystery，整合候選與審核結果。
+
+它**不保存自己的角色真相、不發明規則、不成為另一個人格 Agent**。
+
+### Build Ledger
+
+定位：deterministic accounting service。
+
+只管：
+
+```text
+base / adjusted / bonus CP
+spent / reserved CP
+skill cost / next-level cost
+prerequisite status
+qualifying melee/spell CP
+reward HP/SP dice
+HP/SP purchase cost
+review flags
+```
+
+CP 不交會計師，因為 CP 不是世界內資產。
+
+---
 
 ## Cabinet / Data 總保險絲
 
