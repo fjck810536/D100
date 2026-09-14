@@ -2,7 +2,7 @@
 
 > 複製本檔建立 `characters/<name>.md`。DM 每次需要角色數值時以角色檔為準，不要靠聊天記憶猜。
 >
-> 本檔是角色 state / capability record，不是人格模塊。完整祕密不直接塞進角色檔；需要時用 Mystery Secret ref。架構見 `../DATA_ARCHITECTURE.md`。
+> 本檔是角色 state / capability record，不是人格模塊。完整祕密不直接塞進角色檔；需要時用 Mystery Secret ref。架構見 `../DATA_ARCHITECTURE.md` 與 `../RUNTIME_SOCIAL_WORLD_CONTRACT.md`。
 >
 > 創角／驗卡流程見 `../CHARACTER_CREATION_PROTOCOL.md`。創角 meta accounting 可以保存在角色檔，但不得誤當世界內財產。
 
@@ -11,11 +11,16 @@ name:
 player:
 race:
 concept:
+alignment:
+  law_chaos: lawful | neutral | chaotic
+  good_evil: good | neutral | evil
 current_cp:      # 目前可用／未花 CP
 total_cp:        # 角色目前總 CP 尺度；若團內有其他定義請註明
 agency:
   type: autonomous
 ```
+
+> `alignment` 是長期倫理／秩序座標，不是當下行為腳本。角色可以在任何陣營下維持不同公開形象、情緒狀態與具體行動；分析師依 `RUNTIME_SOCIAL_WORLD_CONTRACT.md` 把這些層分開讀。
 
 ## 創角帳本 / Creation Ledger
 
@@ -246,6 +251,17 @@ DOT：
 藥水負荷：
 ```
 
+## Presentation / Affect State
+
+> 此區只保存當前可成立或有 evidence 的公開呈現／情緒狀態，不取代 alignment，也不宣告「真正人格」。
+
+```yaml
+presented_persona: []
+current_affect: []
+```
+
+例如 `Chaotic Evil + presented_persona: [helpful, polite] + current_affect: [calm]` 完全合法；是否以及如何理解其中張力，由分析師產生 derived view。
+
 ## Epistemic State
 
 > 只記角色目前實際知道／相信／誤信的內容，不記分析師眼中的「真正人格」。
@@ -254,7 +270,18 @@ DOT：
 known_facts: []
 beliefs: []
 misbeliefs: []
+beliefs_about_others_knowledge: []
 ```
+
+## Relationship refs
+
+> 客觀關係事實放在共享 Relationship Graph，不把整張圖複製進每張角色卡。此處只留 edge refs 方便查找。
+
+```yaml
+relationship_refs: []
+```
+
+模板見 `RELATIONSHIP_GRAPH_TEMPLATE.md`。
 
 ## Preferences / Constraints
 
@@ -268,7 +295,7 @@ constraints: []
 核心分離：
 
 ```text
-belief ≠ preference ≠ action
+alignment ≠ presented persona ≠ affect ≠ belief ≠ preference ≠ action
 ```
 
 ## Secret refs
@@ -286,6 +313,8 @@ secret_refs: []
 - 角色檔內實際數值／持有能力優先於聊天記憶。
 - 擁有能力 ≠ 已啟動；持有物件 ≠ 願意消耗。
 - 真玩家控制 PC 時，角色檔不能替玩家決定「通常會做什麼」。
-- 若保存 combat doctrine / threat model 等推理，只能標為 derived cache，不能寫成 established character truth。
+- Alignment 是分析座標，不是每場戲的行動命令；不要用陣營替玩家或 NPC 自動選行動。
+- Relationship Graph 的客觀 edge 與 Analyst / Politician 的 derived interpretation 必須分開。
+- 若保存 combat doctrine / threat model / relationship interpretation 等推理，只能標為 derived cache，不能寫成 established character truth。
 - 秘密資料透過 Mystery refs 連接，不建立平行 plaintext DM secret 區。
 - 創角 review flag ≠ 世界真相；它是驗卡 provenance / administrative metadata。
