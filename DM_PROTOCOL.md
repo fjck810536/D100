@@ -2,26 +2,52 @@
 
 本檔描述 GPT 在實際跑團中的行為順序。
 
-> Data contract：主持流程依 `DATA_ARCHITECTURE.md`。規則／來源資料不直接改 world state；Cabinet 模塊輸出 hypothesis / constraint / proposal；AO 結算 actual result；最後由 D100 DM Agent / orchestrator 寫回 authoritative state。Action Palette、threat model、combat doctrine 等 runtime view 不得被誤當成第二份角色／世界真相。
+> Data contract：主持流程依 `DATA_ARCHITECTURE.md` 與 `RUNTIME_SOCIAL_WORLD_CONTRACT.md`。規則／來源資料不直接改 world state；Cabinet 模塊輸出 hypothesis / constraint / proposal；AO 結算 actual result；最後由 D100 DM Agent / orchestrator 寫回 authoritative state。Action Palette、threat model、combat doctrine、relationship interpretation 等 runtime view 不得被誤當成第二份角色／世界真相。
 
 ## 1. 場景迴圈
 
 每個場景遵循：
 
-1. **讀取 authoritative state**：campaign、character、session 與必要 Entity / Site / Hazard record。
-2. **取得合法資訊 view**：若涉及祕密，先依 `MYSTERY_PROTOCOL.md` 取得各角色／模塊可知道的 representation。
-3. **描述可感知狀態**：只給角色目前能合理知道的資訊。
-4. **接受玩家宣告**：不要替玩家補行動。
-5. **判斷是否需要擲骰**：若沒有風險／不確定性，不要為了擲骰而擲骰。
-6. **選擇判定接口**：技能、抗性、特殊判定、攻擊／閃避、施法等。
-7. **決定公開或秘密擲骰**：若骰名／結果會洩漏隱藏資訊，可由 DM 暗擲。
-8. **結算成功餘裕／對抗**。
-9. **描述後果**。
-10. **更新 authoritative state**：HP、SP、位置、姿勢、持續效果、裝備、時間、已知／相信的情報等。
-11. **使受影響的 derived cache 失效／重算**。
-12. 回到 1。
+1. **讀取 authoritative state**：campaign、character、relationship、session 與必要 Entity / Site / Hazard / Commitment record。
+2. **確認 causal commitment**：對即將第一次成為玩家可觀察／可影響來源的重要 hidden actor、secret、event、faction plan，若尚未存在最小 hidden state，先依 `RUNTIME_SOCIAL_WORLD_CONTRACT.md` / `templates/WORLD_COMMITMENT_TEMPLATE.md` committed；不可等骰後才決定真相。
+3. **取得合法資訊 view**：若涉及祕密，先依 `MYSTERY_PROTOCOL.md` 取得各角色／模塊可知道的 representation。
+4. **描述可感知狀態**：只給角色目前能合理知道的資訊。
+5. **取得玩家宣告**：不要替真玩家補行動；若四聲部處於 PL+PC mode，先取得 Player Voice decision，再轉成該 PC 的宣告／扮演。
+6. **判斷是否需要擲骰**：若沒有風險／不確定性，不要為了擲骰而擲骰。
+7. **選擇判定接口**：技能、抗性、特殊判定、攻擊／閃避、施法等。
+8. **決定公開或秘密擲骰**：若骰名／結果會洩漏隱藏資訊，可由 DM 暗擲。
+9. **結算成功餘裕／對抗**。
+10. **描述後果**。
+11. **更新 authoritative state**：HP、SP、位置、姿勢、持續效果、裝備、relationship facts、時間、已知／相信的情報、Evidence Ledger 等。
+12. **使受影響的 derived cache 失效／重算**。
+13. 回到 1。
 
 只有實際發生的結果寫回 state。分析師／生態學家／政治家／讀心者等模塊的預測或解釋，不因被產生就自動成為世界事實。
+
+## 1.1 Lazy generation, early commitment
+
+LLM 可以即時生成沒有因果負擔的 surface detail，例如：
+
+- 不重要路人的名字；
+- 尚未產生因果作用的店名／裝潢；
+- 非關鍵口頭禪；
+- 純質感描述。
+
+但若某個細節已經會影響玩家檢定或角色選擇，例如：
+
+- NPC 對關鍵詞產生反應；
+- 某人準備離店；
+- 某件貨物真的屬於某組織；
+- 某秘密導致價格上漲；
+
+其最低限度原因必須先 committed。
+
+核心：
+
+```text
+玩家行動可以揭露／改變真相
+玩家骰點不能倒過來決定真相原本是什麼
+```
 
 ## 2. 何時不擲骰
 
@@ -80,7 +106,22 @@ D100：48
 - 文書解讀成功：給出文字的大意；不自動等於理解其中魔法理論。
 - 辨識法術成功：辨識施展中／作用中的法術性質；不自動等於知道神器全部權能。
 
-若調查讓角色真的取得新情報，更新該 actor 的 epistemic state；不要只在敘述中說過一次後讓世界忘掉。
+若調查讓角色真的取得新情報：
+
+1. 更新該 actor 的 epistemic state；
+2. 若資訊是一條調查命題，更新 Evidence Ledger；
+3. 不要只在敘述中說過一次後讓世界忘掉。
+
+Evidence Ledger 至少使用：
+
+```text
+OBSERVED
+INFERRED
+CONFIRMED
+DISPROVEN
+```
+
+角色的推論可以進 `INFERRED`；不要把它直接寫成 Causal Graph。
 
 ## 5. 失敗後果
 
@@ -95,6 +136,8 @@ D100：48
 
 除非技能明文如此，不要因普通失敗故意提供錯誤情報。錯誤情報應有來源：偽裝、幻術、誤導、嚴重失敗條款等。
 
+若失敗仍得到「弱線索」，應把它記成 OBSERVED 或 INFERRED 的有限資料，例如「兩張告示補寫墨水看起來很像，但無法確認同源」，而不是偷偷讓失敗等於半個 CONFIRMED 真相。
+
 ## 6. 隱藏資訊與秘密檢定
 
 適合秘密擲骰：
@@ -107,7 +150,25 @@ D100：48
 
 秘密擲骰仍應遵守角色實際數值，不得為劇情結果改骰。
 
-### 秘密擲骰 ≠ 秘密資料庫
+### 6.1 秘密擲骰前先確保秘密存在
+
+若秘密骰的結果會依賴某個 hidden truth，該 truth / actor state 必須在擲骰前存在於 Mystery / World Commitment 中。
+
+禁止：
+
+```text
+先骰察覺
+→ 骰成功才決定這裡真的有伏兵
+```
+
+正確：
+
+```text
+伏兵／hidden actor state 已 committed
+→ 再骰是否發現
+```
+
+### 6.2 秘密擲骰 ≠ 秘密資料庫
 
 session 可以記：
 
@@ -200,7 +261,7 @@ Sensor / world state
 
 不需要額外的「陷阱 AI」。
 
-## 9. 探測與尺度
+## 9. 探測、調查與尺度
 
 探測至少分四件事：
 
@@ -214,6 +275,28 @@ Sensor / world state
 同理，偵察極高也不能看見不存在的視覺訊號。來源表已明文：**偵察大成功通常可察覺附近隱形生物，但仍然看不到。** `[D100_CANON]`
 
 若某角色因探測成功取得新 knowledge / belief，將結果寫進該 actor 的 epistemic state，而不是讓所有 NPC 自動共享。
+
+### 9.1 Evidence Graph ≠ Causal Graph
+
+玩家／PC 可以藉由搜索、察言觀色、文件解讀、打聽等建立 Evidence Graph。
+
+AO／Mystery 的 hidden truth 可以形成 Causal Graph。
+
+主持時不得因玩家提出一條漂亮推論就反向把 Causal Graph 改成符合它；也不得為了「不讓玩家猜中」而改寫已 committed 的因果。
+
+### 9.2 Relationship / Knowledge 分層
+
+Session update 至少分：
+
+```text
+Relationship Facts
+Actor Epistemic State
+Evidence Ledger
+Analyst derived view
+Politician derived forecast
+```
+
+不要再把它們合稱成一個模糊的 `Relationship / Knowledge State` 後互相污染。
 
 ## 10. 戰鬥切換
 
@@ -314,19 +397,41 @@ Sensor / world state
 
 不能把它簡化成「本輪已經施過法，所以結束」。
 
-### 10.7 真玩家 vs 模擬玩家
+### 10.7 真玩家、NPC mode、PL+PC mode
 
-若是真玩家控制 PC：
+#### 真玩家控制 PC
 
 - DM **不得替玩家自動使用**瞬唱、藥水、魔法物品或一心二用。
-- 但 DM 必須保留合法時間窗口；在窗口即將關閉而角色明顯有相關能力時，可簡短確認是否要插入反應，不要直接跳過。
+- DM 必須保留合法時間窗口；在窗口即將關閉而角色明顯有相關能力時，可簡短確認是否要插入反應，不要直接跳過。
 
-若 GPT 同時模擬玩家作為測試／NPC／範例：
+#### 四聲部／GPT 作 autonomous NPC 或一般模擬 actor
 
-- 模擬者應把角色當成知道自己角色卡的熟練玩家。
-- 在合理情況下主動利用 Action Palette 做組合，而不是每輪只挑一個最顯眼能力。
-- 不必每輪把所有資源燒光，但應能看到瞬唱、即時備戰、自由動作、一心二用、物品啟動與觸發能力的存在。
-- 行動選擇可讀取 character evidence、epistemic state、preferences / constraints 與生態學家／分析師等合法 derived view；不得把 Operational Dossier 當固定 rotation。
+當 `four_voice_control.mode: npc`，四聲部可以直接作高品質 NPC；其行動可依 character evidence、epistemic state、preferences / constraints 與合法 derived view 生成。
+
+但：
+
+- 不要事後把這些 DM／actor pipeline 生成的行為稱作「玩家偏好」。
+- 不要從 NPC 行為倒推出一個虛構 Player Layer，再拿它當證據。
+
+#### 四聲部明確作 PL+PC
+
+當 `four_voice_control.mode: pl_pc`：
+
+```text
+Player Voice
+→ agenda / current interest / risk tolerance / interpretation of PC
+→ Player decision
+→ PC declaration / roleplay
+→ DM adjudication
+```
+
+規則：
+
+- Player Voice 可以拒絕分析師／生態學家建議。
+- 玩家可以故意讓 PC 做不最佳化但有趣的選擇。
+- 若 Player Voice 沒理解其他角色的暗示，不要為了劇情流暢自動讓 PC 理解。
+- DM 不得跳過 Player Layer 直接替這四名 PC 做關鍵選擇。
+- Alignment 只提供角色解讀素材，不替 Player Voice 下決策。
 
 ## 11. 對玩家保持公平
 
@@ -336,5 +441,22 @@ Sensor / world state
 - 玩家可透過調查取得警告。
 - 成功調查真的改變資訊／選項。
 - 未知風險可以隱藏，但不能事後任意改規則。
+- 秘密可以晚揭露，但與檢定結果相關的核心因果不得在骰後才生成。
 - NPC、怪物、神器使用與 PC 一致的接口，除非其條目明文例外。
 - 同一 authoritative state 對所有相關模塊一致；不能因某模塊忘記／另存一份狀態，就讓世界對不同角色使用不同真相。
+- 玩家猜中 committed secret 時不要為了驚喜改真相；玩家猜錯時也不要為了迎合自動把推論改成真相。
+
+公平的調查遊戲依賴：
+
+```text
+Causal Graph 先存在
+→ Evidence Graph 隨角色行動成長
+→ 角色可以猜中、猜錯、只猜中一半
+```
+
+而不是：
+
+```text
+玩家提出理論
+→ DM 即時選一個最戲劇化版本當真相
+```
