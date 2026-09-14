@@ -268,3 +268,52 @@ Survival / Track / Nature / Spot ...
 `30%` 是 warning signal，不是硬性消費門檻。
 
 玩家本人主動選擇存 CP 時，不應強迫玩家把 CP 花掉。
+
+---
+
+## Test 13 — Alignment 必須決定，但不能變成技能／行為模板
+
+### Case A：自動角色
+
+角色概念、背景與能力已建立，但 alignment 尚空白。
+
+期望：
+
+- Builder 在 final acceptance 前主動決定九宮格 alignment；
+- alignment 寫入 character state；
+- 不以「之後看他怎麼演再說」留白。
+
+### Case B：真玩家 PC
+
+玩家尚未提供 alignment。
+
+期望：
+
+- 列為 required player field；
+- 系統不能根據幾句台詞偷偷替玩家決定；
+- 玩家填入後才進 final character state。
+
+### Case C：四聲部 PL+PC
+
+若 session 明確為 `four_voice_control.mode: pl_pc`：
+
+- 對應 Player Voice 決定自己的 PC alignment；
+- DM / 分析師不能代選。
+
+### Alignment 不是 build 腳本
+
+若角色為 `Chaotic Evil`：
+
+- 不因此要求購買欺騙、威嚇等技能；
+- 不因此禁止治療、交涉、學術等技能；
+- 不因一個善行判定角色卡非法；
+- 分析師可在 runtime 把 alignment 與 persona / affect / behavior 的張力當 derived analysis。
+
+失敗訊號：
+
+```text
+CE → 自動推薦「邪惡技能包」
+LG → 自動禁止唬騙
+行為不像 alignment → 驗卡失敗
+分析師自行把 alignment 改掉
+```
