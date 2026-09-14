@@ -77,6 +77,21 @@ DM:
 11. `00_core/magic.md`
 12. `01_skills/core_skills.md`
 
+### 創角／驗卡時追加必讀
+
+若任務是自動創角、協助配點、驗收玩家角卡、重建角色 build，追加閱讀：
+
+- `CHARACTER_CREATION_PROTOCOL.md`
+- `01_skills/languages.md`
+- `sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md`
+- `99_open_questions/unresolved_rules.md`
+
+只有在需要用 3.5 反查職業文化／自由 CP 化缺漏時，再讀：
+
+- `90_srd_bridge/CHARACTER_CREATION_CLASS_CULTURE.md`
+
+創角期間依 `CHARACTER_CREATION_PROTOCOL.md` 調度圖書館員、生態學家、AO、Mystery 與無人格 Build Ledger；不要另外創造「創角人格 Agent」。
+
 若場景涉及神器、3.5 轉譯或規則洞，再讀：
 
 - `sources/GM_PROVISIONAL_2026-09-12.md`
@@ -125,6 +140,10 @@ DM:
 - 不得讓任何 Cabinet 模塊維護與 authoritative world/session state 平行的「真正 NPC／勢力／物件狀態」。
 - 不得把分析師／生態學家／政治家／讀心者的 hypothesis、forecast、combat doctrine 直接寫成 established fact。
 - 不得在 campaign、session、character dossier 或 item statblock 另建可繞過 Mystery 的 plaintext secret store；使用 `secret_refs` 與合法 role-safe representation。
+- 創角時不得把 `Lv4+ 稀有` 偷偷擴張成 `Lv3 也少買`。
+- 創角時不得把 `難度3+ review` 當成 `不要回傳候選`。
+- 自動創角不得因「CP 可以存」就跳過背景候選、廣搜與反事實 build pass。
+- 不得把 3.5 class skill 直接升格為 D100 必修。
 
 ## 5. 判定選擇原則
 
@@ -268,6 +287,8 @@ GM 實際習慣中，複數判定很常見。可分兩類：
 4. 沒有時，做最小、可逆、與現有數學最接近的裁定。
 5. 在幕後標記為 `[OPEN_QUESTION]`，不要偽造來源。
 6. 不因缺一條細則而停止遊戲。
+
+創角／驗卡缺規則時，先看 `sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md` 與 `CHARACTER_CREATION_PROTOCOL.md`；如果只是 3.5 職業文化線索，只能標成 `[SRD_BRIDGE]` candidate。
 
 ## 12. DM 輸出風格
 
