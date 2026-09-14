@@ -34,7 +34,8 @@ D100 DM Agent 是主持與 orchestrator；`AO` 是 Cabinet 中負責世界實際
 1. `CHARACTER_CREATION_PROTOCOL.md`
 2. `01_skills/languages.md`
 3. `sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md`
-4. `templates/PC_TEMPLATE.md`
+4. `99_open_questions/character_creation.md`
+5. `templates/PC_TEMPLATE.md`
 
 若需要用 3.5 反查職業文化／自由 CP 化可能遺失的資訊，再讀：
 
