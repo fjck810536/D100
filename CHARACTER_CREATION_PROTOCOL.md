@@ -9,13 +9,14 @@
 ```text
 規則／來源由資料層與圖書館員提供
 背景生活痕跡由生態學家提出 competence-domain proposal
+Alignment 作為角色長期倫理／秩序座標寫入 character state
 CP / 前置 / 獎勵骰由無人格 Build Ledger 計算
 稀有／世界尺度例外才交 AO 做 plausibility review
 秘密背景走 Mystery
 最後由 orchestrator 寫入角色 state
 ```
 
-不得讓 Character Builder 自己發明 D100 規則，也不得把推薦 build 寫成角色「真正人格」。
+不得讓 Character Builder 自己發明 D100 規則，也不得把推薦 build、alignment 或分析師解讀寫成角色「此刻一定會做什麼」。Alignment 的 runtime 語義見 `RUNTIME_SOCIAL_WORLD_CONTRACT.md`。
 
 ---
 
@@ -111,6 +112,8 @@ Builder / character state 不建立 plaintext 平行秘密庫。
 
 不是一般創角推薦的預設模塊。只有當角色概念本身需要身份／關係結構分析時才喚起；不拿 S/I/R 去代替普通生活技能推導。
 
+若角色 alignment 已由玩家／自動創角程序明確決定，分析師可以把 alignment 當作後續結構分析的一個輸入，但不得從 alignment 反推「必須購買哪些技能」或「此刻必須怎麼演」。
+
 ## 會計師
 
 會計師只接世界內物件的 holder / origin / charges / unrealized value。
@@ -154,8 +157,24 @@ Build Ledger 不提供角色人格、不決定世界結果、不猜玩家意圖�
 - 起始魔法物品／金錢／補給；
 - 種族；
 - 名字／概念／背景；
+- **alignment 九宮格**；
 - 是否施法者／職業方向；
 - GM／玩家明示 house rule。
+
+Alignment 欄位使用：
+
+```yaml
+alignment:
+  law_chaos: lawful | neutral | chaotic
+  good_evil: good | neutral | evil
+```
+
+規則：
+
+- 真玩家 PC：由玩家明示；系統不因幾個行為片段代選或改寫。
+- 四聲部處於 PL+PC mode：由對應 Player Voice 決定自己的 PC alignment。
+- 自動生成 NPC／PC：Builder 必須依角色概念主動決定，不留空白；但它只是角色結構座標，不是行動模板。
+- 若 campaign / creature rule 明文指定 alignment，依更高權威來源。
 
 若自動創角且沒有另外指定，依目前 GM 補答優先使用：
 
@@ -192,6 +211,8 @@ Build Ledger 不提供角色人格、不決定世界結果、不猜玩家意圖�
 - 其他 D100 明文門檻。
 
 施法核心允許非同步預購；可用環數取所有必要核心技能的最低等級。
+
+Alignment 本身不是 Hard legality 的骰值或行動限制；除非某能力／信仰／模板有明文陣營前置，否則不因「看起來演得不像」判角色非法。
 
 ## Pass 4 — Core identity build
 
@@ -274,20 +295,24 @@ Lv3 是正常熟練級，不應因 Lv4+ 稀有而連帶壓低。
 
 ### A. 自動創角時必填
 
-系統可客觀驗證的硬資料，例如：
+系統可客觀完成／建立的資料，例如：
 
 - 起始配置；
 - 種族／屬性／derived values；
+- **alignment**；
 - 語言硬門檻；
 - prerequisite；
 - usable spell circle；
 - CP；
 - reward HP/SP。
 
+自動角色的 alignment 必須實際選定，不因「之後看演法再決定」而留白。
+
 ### B. 玩家繳交角卡時必填
 
 系統不能代選，但角色身分要求明示，例如：
 
+- **alignment**；
 - 牧師神祇／信仰與領域；
 - 誓約／教團／結社／傳承；
 - 三環以上施法者的教育、師承、年齡／時間背景。
@@ -302,6 +327,8 @@ Lv3 是正常熟練級，不應因 Lv4+ 稀有而連帶壓低。
 - 申報背景與能力輪廓明顯不相稱。
 
 存疑 ≠ 禁止。
+
+普通「行為看起來不像自己的 alignment」不是機械驗卡 review flag；若 campaign 真的在追蹤角色倫理轉變，應另作角色發展紀錄。
 
 ### D. 自動創角自由 build
 
@@ -327,7 +354,7 @@ Lv3 是正常熟練級，不應因 Lv4+ 稀有而連帶壓低。
 → 額外 CP 購買 HP/SP（若有）
 → 配置起始魔法物品／法術／資源
 → final validation
-→ orchestrator 寫入 character state
+→ orchestrator 寫入 character state（含 alignment）
 ```
 
 若後續大幅修改 qualifying investment，舊 reward roll 不得無條件沿用；依規則補差額／重建對應 ledger。
@@ -400,6 +427,7 @@ CP 還能存
 ```text
 Base CP / attribute-adjusted CP / bonus CP
 Spent / reserved CP
+Alignment
 九屬性 + adjustment
 六大基礎 / 五抗 / 三特殊
 語言與來源
