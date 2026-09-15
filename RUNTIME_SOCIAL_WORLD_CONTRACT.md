@@ -153,6 +153,42 @@ A 很可能三天後背叛 B
 
 除非這些已由角色／世界事件明確建立；否則只能是分析師／政治家的 derived view。
 
+## 2.2 新角色發展 ≠ 對既有歷史的無證據升格
+
+「目前不能證明角色早已愛上某人」只限制**對過去／既有狀態的斷言**，不等於「角色現在不能開始產生新情緒、意向或行動」。
+
+```text
+沒有既有 romance fact
+≠ 禁止 attraction candidate
+≠ 禁止 flirtation candidate
+≠ 禁止未來形成 romance
+```
+
+對真玩家 PC 與 `pl_pc` 四聲部：
+
+```text
+合法 Player Voice decision
+→ 可以從當下建立新的 actor affect / preference / intention
+→ PC 可以據此宣告新行動
+→ 世界結算後留下事件／關係事實
+```
+
+不需要先找到「角色以前已經有同種感情」的證據，才允許新感情出現。
+
+對 NPC：分析師／生態學家可以提出新發展 proposal；AO 依合法 actor state、情境與世界因果決定是否採用。分析師的 hypothesis 本身仍不等於 NPC 真正內心。
+
+例如：
+
+```text
+分析師：Nella 可能被 Elian 吸引 → hypothesis only
+蟬｜PL：我決定 Nella 現在開始被吸引 → 新 actor state 可以成立
+蟬｜PL：Nella 調情 → PC declaration / event
+Elian 是否被吸引 → 仍由 Elian 的玩家／合法效果決定
+雙方是否已成戀人 → 仍需真正成立的雙方事件／承諾，不自動升格
+```
+
+`OOC_AMBIGUOUS` 事件不得因後來允許新發展，就回收成先前的 IC 情感證據。
+
 ---
 
 # 3. Epistemic Matrix — 誰知道什麼
@@ -184,6 +220,17 @@ A 知道 ≠ B 知道
 知道某事 ≠ 相信某人
 相信某事 ≠ 願意配合
 ```
+
+地點／組織亦同：
+
+```text
+世界中某 site 已存在
+≠ 公開地圖一定標出其秘密身分
+≠ PC 知道它隸屬哪個組織
+≠ NPC 知道其全部功能
+```
+
+可以存在「公開場所 + 隱藏 affiliation」；世界後台先有同一 site，前台依 actor knowledge / visibility 顯示不同標籤，不為不同角色建立平行世界。
 
 ---
 
@@ -439,6 +486,19 @@ secret_refs: []
 → 骰子只決定玩家發現／影響多少
 ```
 
+## 7.4 最小承諾是底線，不是生成上限
+
+`lazy generation, early commitment` 不得被解讀成「能不生成就永遠不生成」。
+
+```text
+已成立事實 → 約束新生成
+來源未描述的可創作部分 → 可以提出具體候選
+合法 owner 採用 → 可以成為新的 authoritative state
+影響檢定的既存秘密 → 必須在檢定前固定
+```
+
+世界需要可走的地點、人物、制度、服務、師承或聯絡方式時，在不衝突且權限允許的情況下應完成足以支持互動的因果骨架，而不是把來源空白永久保留成不可進入的空洞。
+
 ---
 
 # 8. Secret existence 與 Secret release 分離
@@ -553,7 +613,46 @@ G. Secret / Commitment refs   hidden state refs, not plaintext duplication
 
 ---
 
-# 12. Anti-patterns
+# 12. Typed Deferral — 「尚未」必須有狀態轉移語義
+
+不得把「不能太早」「現在不適合」「以後再說」當作模糊的長期控制詞。每一個看似 `not yet` 的狀態都必須落到以下型別之一：
+
+| Type | 意義 | 必須能回答 |
+|---|---|---|
+| `NON_ASSERTION` | 現在不能把未確認命題宣稱為既有事實 | 哪個命題不能升格；**不封鎖候選生成** |
+| `DEFERRED` | 某具體操作正在等條件 | owner、blocked_operation、trigger、reevaluate_with |
+| `OWNER_DECISION` | 決定權屬特定 PL／AO／其他合法 owner | owner；不是世界禁令 |
+| `PROHIBITED` | 規則／既有事實真的禁止具體操作 | rule_or_fact_ref、scope、blocked_operation |
+| `NOT_SELECTED` | 此次沒有選某候選 | decision event；不得推成永久禁止 |
+
+保險絲：
+
+```text
+NON_ASSERTION ≠ PROHIBITED
+沒有 trigger 的 DEFERRED 無效
+沒有新規則／事實／權限邊界，不能把合法候選越修越少
+NOT_SELECTED ≠ NEVER
+hard prohibition 必須明說 prohibition，不用「還不能太早」安撫性包裝
+```
+
+重新評估觸發可以包括：
+
+```text
+新的 Player Voice decision
+新的角色內心／意向明示
+新的關係事件
+新的世界事件
+新的來源／使用者校正
+新的角色知識
+新的生成需求
+原 blocking fact 消失
+```
+
+相同依據沒有改變時不必每輪空轉；但一旦底層 state 改變，舊的 non-assertion / derived interpretation 必須可以失效重算。
+
+---
+
+# 13. Anti-patterns
 
 以下情形視為 runtime 偏移：
 
@@ -567,6 +666,9 @@ G. Secret / Commitment refs   hidden state refs, not plaintext duplication
 NPC mode 的四聲部行為被事後稱為「玩家選擇」
 PL+PC mode 下 DM 仍跳過 Player Layer 直接替 PC 做關鍵選擇
 Alignment 被當成每場戲的行為指令
+「目前未成立 romance」被當成禁止 attraction / flirtation / 新關係事件
+來源缺口被當成永久禁止世界生成
+沒有 trigger 的「不能太早」無限延宕
 ```
 
 理想狀態是：
@@ -577,5 +679,6 @@ Alignment 被當成每場戲的行為指令
 關係與秘密有 provenance
 模塊從同一資料層取得不同 view
 玩家不在場時世界仍會往前走
-LLM 用來具象化既有因果，而不是為玩家視線即席創造因果
+LLM 用來具象化既有因果，也能在未定部分做有據創作
+來源、決定權與生成 origin 始終可追溯
 ```
