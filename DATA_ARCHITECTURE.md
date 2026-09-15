@@ -24,6 +24,7 @@ SOURCE DATABASE
 AO 不維護另一份平行資料庫。
 同一世界事實只應有一個 authoritative state；各模塊取得的是 view。
 秘密可以延遲揭露，但與互動結果相關的核心因果必須在首次可觀察／可影響前 committed。
+來源缺口不是生成禁令；生成採用後也不得冒充原文。
 ```
 
 ---
@@ -53,6 +54,7 @@ sources/GM_*.md                    GM 補答、暫定、歷史證據
 - 不因某來源「看起來合理」就自行決定世界結果。
 - 不把 evidence 升格成 canon，除非來源層級允許。
 - 不在 source mirror 內修正文義、補缺或偷偷正規化。
+- 不把「精確字串沒有命中」直接當作「所有來源都不存在」；應依 `sources/SHEET_INDEX.md`、語義分頁、交叉引用與 state provenance 繼續解析。
 
 ---
 
@@ -80,6 +82,98 @@ sources/GM_*.md                    GM 補答、暫定、歷史證據
 但它不能自行決定：
 
 > 這個 NPC 現在要不要用即時動作。
+
+### 2.1 Claim provenance / fit / status / owner 四維分離
+
+任何具有設定含義、會被拿來導航、限制、結算、組織關係或角色發展的 claim，都不要只用一個 `canon / non-canon` 或 `confirmed / unconfirmed` 包辦所有問題。
+
+至少分開：
+
+| 維度 | 內容 |
+|---|---|
+| provenance | 原文、使用者校正、PL 決定、歷史裁定、creative addition、legacy generated；附來源 refs |
+| fit | 支持點、衝突點、已查版本／範圍、未解欄位、追加假設 |
+| status | hypothesis / proposed / committed / rejected / superseded |
+| owner | 真人 PL、對應四聲部 PL、AO／世界流程、其他合法決定者 |
+
+另保存：
+
+```text
+visibility
+recorded_at
+effective_from
+decision_event_ref
+```
+
+最小資料形狀：
+
+```yaml
+claim_id:
+subject_ref:
+predicate:
+value:
+scope:
+
+origin:
+  generated: false
+  kind: source-extraction | user-correction | pl-decision | creative-addition | legacy-generated
+  source_refs: []
+  contextual_support_refs: []
+  created_by:
+  created_at:
+
+fit_review:
+  checked_source_versions: []
+  checked_state_ref:
+  supporting_facts: []
+  conflicts: []
+  unresolved_fields: []
+  added_assumptions: []
+  judgment: supported | compatible | in-tension | conflicting | unknown
+
+status: proposed
+decision_owner:
+decision_event_ref:
+committed_at:
+effective_from:
+visibility_ref:
+```
+
+核心：
+
+```text
+source_refs 支持「原文寫了什麼」
+contextual_support_refs 支持「這項創作為什麼合理」
+兩者不可互換
+```
+
+同一 site / organization 的不同欄位可以有不同 origin。不要因為「名字在 Sheet 裡」就把整個地理、現任人員、權限、秘密一口氣洗成 canon；也不要因為其中一個欄位是 generated，就把已 source-backed 的部分全部降成生成。
+
+### 2.2 Grounded generation adoption path
+
+來源資料約束生成，但未定部分允許創作。合法資料流是：
+
+```text
+source / state / user correction
+→ Librarian source package
+→ unresolved lookup 與 creative space 分開
+→ relevant modules 形成具體 proposal
+→ 合法 owner 決定
+→ AO / PL adoption event
+→ orchestrator 寫回唯一 authoritative state
+```
+
+保險絲：
+
+```text
+SOURCE_GAP ≠ PROHIBITED
+沒有原文地址 ≠ 世界永久沒有地址
+proposal ≠ committed fact
+committed generated fact ≠ source text
+生成 origin 在採用後仍保留
+```
+
+若後來找到新原文：追加 source / fit review；不要抹掉「當初這個欄位是如何生成／採用」的歷史。若發生實質衝突，做局部 migration / supersede，不靜默重寫。
 
 ---
 
@@ -176,6 +270,7 @@ Relationship facts / commitments / debts
 Evidence Ledger status
 world / actor commitments
 trigger / cooldown / reset 狀態
+adopted claim refs / decision events / site refs
 ```
 
 State 不應保存：
@@ -207,6 +302,17 @@ DISPROVEN
 ```
 
 Evidence status 可以進 state；「這條 evidence 最終代表什麼深層真相」若尚未確認，不得提前升格。
+
+### Recorded time 與 world-effective time 分離
+
+後來補 provenance、site record 或 repair event，不代表該事物在補錄當天才出現在世界裡；同樣不能偽稱它在先前檢定前已經寫進後台。
+
+```text
+recorded_at = 何時把資料寫進 repo/state
+effective_from = 世界內從何時成立／本次採用如何追溯
+```
+
+歷史 commitment 缺口應誠實記為 migration / legacy-generated，而不是偽造舊 timestamp。
 
 ---
 
@@ -265,6 +371,8 @@ source conflicts
 已知 evidence
 relationship event provenance
 commitment / promise history
+entity / institution cross-references
+source indexes / semantic navigation
 ```
 
 輸出：
@@ -274,13 +382,17 @@ commitment / promise history
 可信度／權威層級
 尚未解決的缺口
 Relationship Graph / Evidence Ledger 的來源鏈
+resolved entity / alias candidates
+searched scope
+unresolved_lookup
+creative_space
 ```
 
 創角模式下可依 `CHARACTER_CREATION_PROTOCOL.md` 額外輸出候選技能／專長與 source-gap candidates；這些仍屬 working proposal，不是角色 state。
 
 圖書館員可以替分析師／政治家解析「這段關係是由哪些已發生事件建立」，但不替它們解讀心理或預測未來。
 
-不決定角色行動或世界結果。
+不決定角色行動或世界結果；但 source resolver 必須把查得資料交成**下游可使用**的 package，不以「找到條目」本身作為完成。
 
 ### 會計師
 
@@ -394,6 +506,20 @@ known political information
 創角時只在稀有／世界尺度 review 上提供 plausibility constraints，不參與普通 build optimization。
 
 AO 的輸出經 orchestrator 寫回 state。
+
+### 模塊協作不是停止條件
+
+模塊邊界用來分責任、來源、決定權與可見度，不是讓工作在邊界前停止。
+
+```text
+模塊發現自己的 proposal 缺來源前提
+→ 向圖書館員／相關模塊追問
+→ 收到資料
+→ 更新自己的 proposal
+→ 有權者決定
+```
+
+例如政治家需要地方據點與總部關係、分析師需要真實師承／職務、生态學家需要當地生活條件，都可以主動請求前置資料。Orchestrator 負責讓工作有人接、成果有去處。
 
 ---
 
@@ -606,23 +732,7 @@ Sensor / world state
 
 吸收 3.5 dungeon / environment 的因果資料，但不建立「地下城人格」。
 
-```yaml
-site_id:
-site_type:
-construction:
-current_occupants:
-access:
-materials:
-supplies:
-maintenance:
-patrols:
-communication:
-terrain:
-ecology:
-decay:
-resources:
-secret_refs:
-```
+使用 `templates/SITE_RECORD_TEMPLATE.md`。Site record 除了物理／控制／生態／資源 state，還必須能逐 claim 保留 provenance、generated origin、採用事件、effective time 與 map visibility。
 
 Projection：
 
@@ -632,6 +742,7 @@ AO        → 物理／空間／建築因果
 政治家     → 控制權／守衛／組織
 沙漏       → 巡邏／補給／腐敗／時間演進
 會計師     → 資源／財物／供給
+圖書館員   → provenance / source gap / cross-reference
 詭祕       → 隱藏區域／秘密機制的 view
 ```
 
@@ -703,6 +814,22 @@ Relationship / Knowledge mixed notes
 → Relationship Graph + Actor Epistemic Matrix + Evidence Ledger + derived views
 ```
 
+### Provenance repair
+
+既有 session 中已經對玩家呈現、但當時沒有留下 Librarian / generation trace 的設定，不直接刪除，也不偽造先前已完成查核：
+
+```text
+保留無衝突的既成世界／已發生事件
+→ 現在補查來源
+→ source-backed 部分補 source refs
+→ 使用者校正標 user-correction
+→ 舊生成標 legacy-generated
+→ 補 repair/adoption event
+→ 只在實質衝突處做最小 migration
+```
+
+不重骰、不回收已合法花掉的資源、不為了修 provenance 把世界倒回舊 checkpoint。
+
 ### 應避免再新增
 
 ```text
@@ -719,16 +846,21 @@ Relationship / Knowledge mixed notes
 ## 13. Runtime 最小循環
 
 ```text
-1. Orchestrator 讀取 relevant authoritative state。
-2. 對即將首次可觀察／可影響的重要 hidden actor / secret / event 建立或確認最小 World Commitment。
-3. 圖書館員解析需要的規則／來源／relationship provenance。
-4. 詭祕產生各模塊合法 view。
-5. 若四聲部處於 PL+PC mode，先取得 Player Voice decision，再形成 PC declaration。
-6. 只召喚相關 Cabinet 模塊。
-7. 模塊輸出 constraint / hypothesis / proposal，不直接寫世界。
-8. AO 整合並裁定世界實際結果。
-9. Orchestrator 將結果寫回唯一 state，包括 relationship / epistemic / evidence / world-clock 變化。
-10. 任何受影響的 derived cache 失效或重算。
+1. Orchestrator 讀取 relevant authoritative state 與最新 session，而不是用空白／舊 checkpoint 蓋掉已發生進度。
+2. 辨識輸入層與目的：DM / OOC-PL / PC 台詞 / PC 內心 / 行動宣告 / narrator addition。
+3. 解析本次要實際使用的 entities / claims / relations；保存原稱呼與可能 alias，不先把玩家用詞正規化成世界真相。
+4. 若 narrator / NPC / AO 要把設定 claim 用於地圖、導航、機構關係、限制、資源、角色發展或結算，圖書館員先解析來源或使用仍有效的 source cache；精確搜尋 miss 時改走 Sheet index、語義分頁與交叉引用。
+5. 圖書館員交付可使用的 source package：原文／user correction／state refs／cross-reference／conflicts／searched scope，並把 `unresolved_lookup` 與 `creative_space` 分開。
+6. 詭祕只在需要時產生 role-safe view；角色未知不代表後台停止工作。
+7. 相關 Cabinet 模塊使用 source package 形成具體人物／制度／環境／行動 proposal；缺前提就主動向圖書館員／其他模塊追問。
+8. 在可創作空間內產生有內容的 grounded proposal。`SOURCE_GAP` 不是拒絕理由；已有事實、硬衝突、Mystery 與 owner 權限仍是約束。
+9. PL+PC 關鍵選擇交 Player Voice；NPC／世界發展交 AO。合法 owner 採用後留下 decision event / provenance。
+10. 對即將首次可觀察／可影響、尤其會影響檢定的 hidden core 建立／確認最小 World Commitment。最小承諾是因果底線，不是世界生成上限。
+11. 主動把角色合理可知、與眼前理解／選擇相關的成果帶入敘事、對話、地圖與可行動入口；具體秘密依 Mystery / epistemic state 交付。
+12. 依 D100 結算需要的行動／骰點。
+13. Orchestrator 將實際結果與 adopted claims 寫回唯一 state，包括 relationship / epistemic / evidence / site / world-clock 變化。
+14. 任何受影響的 derived cache / source resolution cache 失效或重算。
+15. Completion check：查核是否真的有可定位結果、結果是否被下游使用、採用是否有 owner/state record、前台是否有可感知／可行動成果。缺什麼就派回對應工作補完。
 ```
 
 ### 創角最小循環
@@ -751,4 +883,5 @@ Relationship / Knowledge mixed notes
 少數真正會思考的模塊
 + 多個乾淨、無人格、可查詢的資料／狀態服務
 + 玩家不在場時仍會演進、但不因玩家骰點反向生成因果的世界
++ 來源查核不壓死創作、創作採用不冒充來源
 ```
