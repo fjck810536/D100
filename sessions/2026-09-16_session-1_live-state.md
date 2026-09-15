@@ -23,6 +23,8 @@ prior_state_refs:
   - sessions/2026-09-15_session-1_runtime-migration.md
 site_state_ref:
   - campaign/andor_sites.md
+public_map_ref:
+  - campaign/andor_public_map.md
 commitment_refs:
   - mystery_vault/ANDOR_SESSION1_MIGRATION.md
   - mystery_vault/ANDOR_WHISPERS_CONTACT.md
@@ -46,3 +48,5 @@ Resume from the Guild counter after registration. Do not roll merely to leave. D
 ## Provenance repair
 
 Use `campaign/andor_sites.md` for the current source/generated/user-correction split of Three Councils, Andor Imperial Magic Academy, John Academy, the old-city bard academy, and the Low Whisper contact venue.
+
+Use `campaign/andor_public_map.md` for stable public navigation.
