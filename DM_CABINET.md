@@ -143,6 +143,8 @@ conflicts: []
 searched_scope: []
 unresolved_lookup: []
 creative_space: []
+setting_anchors: []
+placement_clues: []
 visibility_or_secret_notes: []
 ```
 
@@ -151,6 +153,8 @@ visibility_or_secret_notes: []
 `creative_space` = 目前來源／state 沒寫、但沒有硬衝突，可交給相關模塊做 grounded proposal 的欄位。
 
 圖書館員本身不替世界生成地址／人物，但它必須把查核成果交成 downstream 可用的 package，不能以「我找到了原文」就結束。
+
+`setting_anchors` 指可引用的既有國家、城市、地域、位面等參照；`placement_clues` 記這些地方與待生成對象的文化、地理、制度、歷史或交通關聯及來源。生成器提出新城市時，圖書館員主動交叉讀國家與組織條目，給下游可比較的落點依據；查核對象也包括模塊自己新造的專名，不只玩家原話。
 
 **Relationship / Evidence runtime duty：provenance gateway**
 
@@ -363,6 +367,22 @@ Orchestrator 不只負責 routing 正確，還負責確認工作有完成結果�
 ```
 
 模板填滿、模塊被唱名、沒有產生錯誤陳述都不等於完成。
+
+### 生成實體的關係交接
+
+依 `DM_PROTOCOL.md` 1.5，orchestrator 把「新城市尚未接到已知國家／地域」等必要前提留作本次工作，而不是用 source gap 結案。跨模塊交接保存簡短的請求、來源回覆與 proposal 更新即可；這是工作結果摘要，不收集逐字內部思考。
+
+| 接手者 | 交回的工作結果 |
+|---|---|
+| 圖書館員 | 既有世界參照、可支持落點的原文、相反證據與可創作欄位 |
+| 生態學家 | 把地域條件接成人群活動、地形、日常生計與往來的具體方案 |
+| 政治家 | 比較候選制度環境，交代組織在該地如何生存、接近權力及與外地接續 |
+| 分析師／沙漏等 | 按實際問題補人物位置／教習關係／行程等，將回覆送回提出問題的模塊 |
+| AO／orchestrator | 整合並選出可用落點，確認新節點接回既有世界，按執行模式交付與寫回 |
+
+同一共享 proposal 逐次吸收合法回覆；例如政治家收到某國限制施法的原文後，更新該國候選所需的生活方式或改選其他地域，而不是僅附上一句警告。一次回覆若又引入必要的新地名或機構，接續其定位／關係工作；已可用的分支照常交付。
+
+`isolated_dry_run` 依 `DM_PROTOCOL.md` 1.6 交付完整推薦而不建立正式 state。每項交接須看得到下游實際採用了什麼，不以全員唱名代替協作；單一 LLM context 的角色分工如實稱為模塊流程，不冒稱獨立模型已互驗。
 
 ---
 

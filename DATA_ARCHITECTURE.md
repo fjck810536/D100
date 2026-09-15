@@ -177,6 +177,14 @@ committed generated fact ≠ source text
 
 ---
 
+## 2.3 生成工作資料與隔離推演
+
+跨模塊生成可在本次 working context 共用一份 proposal：新實體 refs、需要補齊的關係、接手模塊、來源回覆、候選比較與更新結果。它是 `derived/proposed` 工作資料；來源事實、候選假設及實際採用維持各自 provenance。地理與組織依賴的交接及完成方式依 `DM_PROTOCOL.md` 1.5，無需增加人格模塊或平行世界資料庫。
+
+隔離測試的 working context 標記 `execution_mode: isolated_dry_run`、`baseline_ref` 與 `writeback: false`。`selected_proposal` 表示該次推演推薦，claim 仍為 `proposed`，`adoption_event_ref: null`；它不新增 campaign/session/actor/Mystery state，也不更新正式地圖、角色知情或 runtime fact cache。詳見 `DM_PROTOCOL.md` 1.6。
+
+`examples/` 的測例與推演輸出屬測試資料，不能經搜尋、摘要、恢復 context 或 source package 變成某團已存在的地點／關係。正式採用要有另一次明確的 owner 決定與當時 state 核對。
+
 ## 2.5 Character Build Working Data — 創角暫存層
 
 創角／驗卡不是 world runtime；在角色正式接受前，需要一層**暫時的 meta working data**。

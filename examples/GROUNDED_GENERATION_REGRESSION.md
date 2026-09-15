@@ -42,13 +42,14 @@ Players find a local Low Whisper contact node and ask how to seek training / int
 
 ### Pass
 
-Librarian checks source-backed Low Whisper identity/style and any directly relevant parent/lineage clues; relevant modules use that package to propose an actionable local teaching/contact path. If headquarters is still unresolved, it remains unresolved **without blocking the local node**.
+Librarian checks source-backed Low Whisper identity/style and relevant parent/lineage clues; relevant modules consume that package to develop the local path and relevant wider relationships. A missing source address becomes grounded placement work under `DM_PROTOCOL.md` 1.5. If the answer introduces a headquarters city, modules also connect that city to established geography and deliver the relevant knowable location without a second user prompt. A real lookup/access blocker remains specific; useful local work continues alongside it.
 
 ### Fail
 
 - “This is not confirmed HQ, therefore no useful next step.”
 - fixed two-hop limit causes an obvious directly relevant parent relation to be ignored.
 - Librarian returns source text but no downstream module uses it.
+- The local node works, so the runtime abandons a relevant parent-location task or leaves its own newly generated city floating outside known geography.
 
 ---
 
@@ -305,16 +306,67 @@ All views refer to one stable site ID; labels/knowledge differ by projection.
 
 ---
 
+## Test G14 — New destination connects to existing world anchors
+
+Test-only fixture: an academy answer introduces `TEST-TOWN` as its main teaching center. No country is assigned. The player asked about training, not the town's country. No access or state conflict blocks placement.
+
+Pass: orchestrator detects the new location dependency; Librarian cross-reads country/geography and academy/culture sources; relevant modules compare grounded placements and return a selected proposal with an existing world anchor, useful regional placement/connection, provenance and role-safe delivery. Follow-up is automatic. A local teaching option can remain available too.
+
+Fail: a town name alone; a second equally unanchored new region; an unused list of countries; requiring the player to ask "where is that?"; stopping at "not in source".
+
+## Test G15 — Source replies change the proposal
+
+Test-only source bundle: Country A has a court that supports performance and overseas cultural trade; Country B has major ports and several competing ruling families. A bard academy maintains a teaching center and discreet access to patrons. Neither country is a campaign fact.
+
+Pass: the source bundle informs at least one concrete ecology/institution proposal, an inter-module question receives a sourced response, and the returned proposal visibly uses that response. Compare cultural support, access to power, logistics and added assumptions, then choose a placement. Either A or B may win with a coherent account; agreement alone is not evidence.
+
+Perturbation: add a fixture fact that A excludes all permanent magical teaching institutions. The next run must address that fact and revise location or institutional form; unchanged reuse of the old selection with no accommodation fails. This tests responsiveness, not a hardcoded country answer.
+
+## Test G16 — A name does not impose geography
+
+Hold the test sources and functional description constant; rename `TEST-TOWN` to a name containing "bay", then to a name without it.
+
+Pass: placement still follows the world/cultural evidence. A new bay/port may be creatively proposed and marked generated; name morphology is not reported as proof of a coastline, cardinal direction or real-world map position. Existing authored terrain or location remains authoritative.
+
+## Test G17 — Anchor is not necessarily a nation or fixed building
+
+Fixtures: an independent city in an established coastal region; a moving school within an established plane; a distributed tradition with several known contact centers.
+
+Pass: complete the appropriate region/movement/contact relationships and a usable answer. Preserve each entity's form. Do not force national ownership, a single headquarters, or additional permission checks just to fill a template.
+
+## Test G18 — Isolated selection has no campaign side effects
+
+Run G14 with `execution_mode: isolated_dry_run`, a baseline ref, and `writeback: false`.
+
+Pass: deliver a concrete `selected_proposal`, evidence and generated fields; claims remain `proposed`, `adoption_event_ref` is null. Campaign/session/character/Mystery contents, live pointers, public map, actor knowledge and runtime fact caches remain unchanged. A later normal resume uses the original baseline; searching test output never establishes that the selected town exists.
+
+Fail: "no writeback" becomes refusal to choose; a dry-run recommendation gets an adoption event; test content leaks into a map, saved knowledge or restored world state.
+
+## Test G19 — Location completion and disclosure are separate
+
+Fixture: the backend has a located town and a hidden academy affiliation; the PC can reasonably know the town's ordinary country and public contact route.
+
+Pass: backend location/affiliation work completes through legal views, and the frontend provides the useful knowable country/route. Specific protected affiliation stays with its existing disclosure conditions. Missing generator work is not performed as an NPC's ignorance.
+
+## Test G20 — Adequate world connection permits completion
+
+Fixture: a destination is connected to an established country, has a usable regional description/contact route, and the scene needs an introduction rather than a measured journey. Exact street coordinates and travel hours are not established.
+
+Pass: deliver the rich usable answer and finish the present task. If a later action needs travel duration or a street entrance, resolve it then with the appropriate sources/modules. Neither fixed-hop truncation nor exhaustive atlas generation replaces completion of the actual dependencies.
+
+---
+
 # Completion checklist
 
-A run passes the grounded-generation architecture only if the answer to all five is yes:
+A run passes the grounded-generation architecture only if each applicable completion check is satisfied:
 
 ```text
 1. Did required source/cross-reference work actually occur or use a valid cache?
 2. Did downstream modules actually consume the result?
 3. Did creative gaps produce concrete proposals where play required them?
-4. Did the proper owner decide/adopt key changes and leave provenance/state?
-5. Did role-safe, relevant results actually reach the player/PC as information, options, or navigable world state?
+4. Did newly introduced entities acquire the necessary world relations, including an existing geographic anchor for a new destination?
+5. Did the proper owner decide/adopt key changes and leave provenance/state in normal mode, or select a proposed result with zero authoritative writes in isolated_dry_run?
+6. Did role-safe, relevant results actually reach the player/PC (or test requester) as usable information, options, or navigable descriptions?
 ```
 
-“Nothing false was stated” is not sufficient if the system also failed to investigate, generate, decide, persist, or deliver.
+“Nothing false was stated” is not sufficient if the system also failed to investigate, consume results, generate, connect, decide or deliver. Persistence is expected only in normal adopted execution; isolation must complete the reasoning task while preserving its baseline.

@@ -68,6 +68,22 @@ map_projection:
   visibility_ref:
 ```
 
+### 0.1 Location / World Anchor
+
+一個可作為目的地或解釋其他地點的 site，依 `../DM_PROTOCOL.md` 1.5 接到既有世界參照。`parent_site` 保存直接空間包含關係；組織 affiliation、實際控制者與地理所在分開記錄。
+
+```yaml
+location:
+  world_anchor_ref: # 既有國家／城市／地域／位面 ref
+  placement_summary: # 在哪裡；區域／地形或與已知節點的相對關係
+  connection_refs: [] # 已採用的道路／航線／聯絡關係，按需要引用
+  claim_refs: [] # 逐項位置 provenance；新增落點／交通保留 generated
+```
+
+沿 `parent_site` 或 `world_anchor_ref` 可追到有來源／既有 state 的參照；必要的新中間節點一起定位。移動據點可接位面、活動地域與移動方式；獨立城可接已知地理區域。導航精度依目前用途提供，文化相似或名稱含「灣」的線索留在 fit/proposal，不冒充原文座標。
+
+隔離推演可用相同形狀描述 proposed location；其內容留在 test working context，正式 site 實例依正常 adoption 才更新。
+
 ## 1. Construction / Physical State
 
 ```yaml

@@ -125,6 +125,7 @@ AO 操作層／privileged capability 的指令權限依 `AGENTS.md`、`DM_CABINE
 → 將 unresolved_lookup 與 creative_space 分開
 → 讓相關模塊實際使用 source package；缺前提就互相索取
 → 在 creative_space 做 grounded proposal
+→ 依 DM_PROTOCOL.md 1.5 把 proposal 引入的新實體接回已知世界，完成跨模塊定位／關係交接
 → 由合法 owner 決定並留下 decision/provenance
 → 對即將可觀察／可影響的重要 hidden core 做最小 commitment
 → 主動交付角色合理可知且與眼前選擇相關的結果
@@ -138,6 +139,8 @@ AO 操作層／privileged capability 的指令權限依 `AGENTS.md`、`DM_CABINE
 ```
 
 四聲部若未被明確要求為 PL+PC，可以作為高品質 autonomous NPC；若 session 指定 `four_voice_control.mode: pl_pc`，則必須先經 Player Voice decision，再產生 PC 宣告，不可由 DM 跳過玩家層直接替四聲部 PC 做關鍵選擇。
+
+使用者要求隔離推演／不寫入存檔時，整個 loop 改依 `DM_PROTOCOL.md` 1.6 執行：完整推演與交付推薦，正式 adoption、state、map、epistemic 與 runtime fact cache 寫回均由該模式處理。
 
 PL+PC 的新情緒／意向／互動方向可以由對應 Player Voice 從當下建立；「先前沒有已確認的同類狀態」只限制回溯斷言，不構成未來禁止。
 

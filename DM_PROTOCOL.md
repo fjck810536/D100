@@ -15,7 +15,7 @@
 5. **取得可使用的 source package**：至少分出 source-backed facts、user corrections、session/world commitments、alias/referent candidates、conflicts、已查範圍、`unresolved_lookup` 與 `creative_space`。找不到 ≠ 不存在；查到一個名字也 ≠ 整包設定自動變 canon。
 6. **取得合法資訊 view**：若涉及祕密，依 `MYSTERY_PROTOCOL.md` 取得各角色／模塊可知道的 representation。角色目前不知道某秘密，不等於後台停止 source resolution / world generation。
 7. **相關模塊主動接續**：生態學家把資料用於生活／環境／行為，政治家用於權力／授權／資源／上下層聯絡，分析師用於角色在師承／機構／義務中的位置；缺前提就主動向圖書館員或相關模塊追問，收到結果後更新 proposal。
-8. **在 creative space 生成可用發展**：已有事實與秘密約束生成；未定部分可生成具體人物、地點、制度、服務、教習、聯絡方式與事件候選。`SOURCE_GAP` 本身不是拒絕理由。生成內容須能回答來源／擬合依據／決定權，並保留 generated origin。
+8. **在 creative space 生成可用發展**：已有事實與秘密約束生成；未定部分可生成具體人物、地點、制度、服務、教習、聯絡方式與事件候選。`SOURCE_GAP` 本身不是拒絕理由。依 1.5 把生成答案引入的新實體與關係接回已知世界；新地名的定位工作自動交接給相關模塊。生成內容須能回答來源／擬合依據／決定權，並保留 generated origin。
 9. **由有權者決定**：四聲部 `pl_pc` 的關鍵角色選擇交對應 Player Voice；真玩家 PC 交真人玩家；NPC 與世界發展走 AO。普通 grounded generation 使用既有世界裁定權，不需要每個無衝突小欄位都額外向頂層 DM 請示。
 10. **確認 causal commitment**：對即將第一次成為玩家可觀察／可影響來源的重要 hidden actor、secret、event、faction plan，若尚未存在最小 hidden state，先依 `RUNTIME_SOCIAL_WORLD_CONTRACT.md` / `templates/WORLD_COMMITMENT_TEMPLATE.md` committed；不可等骰後才決定真相。最小 commitment 是因果底線，不是世界豐富性上限。
 11. **主動交付可知成果**：描述角色目前能合理知道且與眼前理解／選擇相關的結果；普通常識、公開資訊、已知地圖與合理可知的接續方法不必等玩家逐項問。具體秘密依 actor epistemic / evidence / Mystery release 演出。
@@ -27,7 +27,7 @@
 17. **描述後果**。
 18. **更新 authoritative state**：HP、SP、位置、姿勢、持續效果、裝備、relationship facts、時間、已知／相信的情報、Evidence Ledger、site / adopted claim / decision event 等。
 19. **使受影響的 derived / source-resolution cache 失效／重算**。
-20. **Completion check**：實際查核是否有可定位結果？查得資料是否被下游使用？生成採用是否有 owner / provenance / decision event？角色合理可知且與本幕相關的成果是否真的交付？缺什麼就派回對應工作；不得把「未完成」說成「世界沒有」。
+20. **Completion check**：實際查核是否有可定位結果？下游如何使用新資料、更新了哪個 proposal？生成的新地點是否依 1.5 接到已知世界？生成採用是否有 owner / provenance / decision event？角色合理可知且與本幕相關的成果是否真的交付？缺什麼就派回對應工作；不得把「未完成」說成「世界沒有」。隔離推演的完成與寫入方式依 1.6。
 21. 回到 1。
 
 只有實際發生／合法採用的結果寫回 state。分析師／生態學家／政治家／讀心者等模塊的預測或解釋，不因被產生就自動成為世界事實。
@@ -103,6 +103,29 @@ NOT_SELECTED
 ```
 
 其中真正 `DEFERRED` 必須有 `owner + blocked_operation + trigger + reevaluate_with`。沒有 trigger 的無限等待不是合法 deferral。`NON_ASSERTION` 只阻止把未確認命題當成既有事實，不阻止產生新的相容發展。
+
+## 1.5 把生成的實體接回已知世界
+
+當答案用一個新實體解釋另一個實體，orchestrator 接著處理它所引入的必要關係。例如「學院的主要中心在新城甲」已經引入新城甲的地理定位工作；即使玩家只問教習／學院，這項工作也由 runtime 主動完成。
+
+1. **接住新依賴。** 檢視 proposal 自己新增的地名、上級機構、師承、交通與資源來源。對支持本次答案所需的關係，指定接手模塊及要交回的結果。「總院在哪座城」和「這座城在已知世界哪裡」一起處理。
+2. **跨來源找正向依據。** 圖書館員交叉讀組織／職業文化、國家／地理、歷史／商路與相關 state。地名精確字串未命中時，改查哪些既有地域適合容納它。包裡同時提供正向擬合依據與具體限制。既有 state 中的 `unresolved / unknown` 欄位接續查核與創作；已明確採用的位置則作為固定參照。
+3. **模塊交換並修訂方案。** 生態學家提出生活、地形與往來條件；政治家對照政治制度、藝文支持、權力接近方式及施法環境；涉及人物角色時分析師提供合法結構解讀，涉及行程時沙漏接續。下游可要求補查，圖書館員回覆後，下游明確更新原 proposal；交接方法見 `DM_CABINET.md`。
+4. **比較後作出選擇。** 有多個有根據的候選時，對照各自的支持、衝突及需新增的設定，再交 AO 選出本次方案；不要求湊固定候選數或假造機率。相容性不保證唯一答案，仍可依世界與人物特徵採取有差異的創作。
+5. **給出可理解的位置。** 新城市接到既有國家／地域／位面，並交代區域、地形或與已知節點的往來關係；城內據點接到已知城市與區域。必要的新中間節點一起完成定位，直到接上已知參照。獨立城市、跨國組織、分散傳承及移動中心依實際形態接上地理與聯絡關係。
+6. **把完成結果說出來。** 主動交付合理可知的國家／地域與接續方法。公開城市的所在地、組織的秘密 affiliation、總院的隱藏入口分開處理；後台完成與角色揭露是兩件事。正式演出依正常 adoption flow；隔離推演依 1.6。
+
+完成判準是「新實體有足以支撐本次使用的世界關係，相關資料已被模塊採用，前台能理解／使用答案」。只加一個漂亮地名、再用另一個未定位的新地名解釋它，仍有工作要接續。查核與生成往返到必要關係可用，不設固定跳數，也不需要先畫完無關國家與街道。
+
+位置採用後依同一 state 延續；公開地圖只投影已採用的位置。`generated` 同時保留在新增的國家內落點、地形、商路與機構關係上。國家有藝文傳統、港口或特殊制度可支持選址，並不等於原文已指定了新城市，也不授予組織王室支持／施法豁免。
+
+## 1.6 隔離推演：完整作答，正式 state 保持原樣
+
+使用者要求隔離測試、假設生成或「不寫入存檔」時，orchestrator 在本次 working context 設定 `execution_mode: isolated_dry_run`，指定所讀 baseline，並令 `writeback: false`。本模式保留 1.5 的完整查核、模塊往返、候選比較與具體推薦；AO 輸出 `selected_proposal`，`status` 仍為 `proposed`，`adoption_event_ref` 為空。
+
+交付明示「本次會選哪個位置、為何、哪些是生成」，可以示範前台台詞。正式 adoption、commitment、角色知情、世界時間及 map/cache 更新留在正常執行模式；本次不寫入 `campaign/`、`sessions/`、`characters/`、`mystery_vault/`，也不把測試結果放進 runtime 會當既定事實載入的來源／快取。
+
+測試告一段落後回到原 baseline；同一對話若接著正式跑團，測試輸出仍屬 test-only。將來要採用時依當時 state 重新核對，再走正常 owner/adoption 流程。修正程式／契約可以另行保存；具體世界候選與正式存檔分離。此模式不是新的世界分支資料庫，也不改變 Mystery 既有權限。
 
 ---
 

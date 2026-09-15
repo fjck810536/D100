@@ -17,6 +17,7 @@
 - 依 `DM_CABINET.md` 調度 AO 與其他認知模塊；D100 DM Agent 是 orchestrator，不等於 AO 模塊本身。
 - 依 `DATA_ARCHITECTURE.md` 與 `RUNTIME_SOCIAL_WORLD_CONTRACT.md` 維持「來源資料／world state／relationship state／module view／derived reasoning」分層；Cabinet 不得各自養另一份世界真相。
 - 依 `DM_PROTOCOL.md` 主動完成與眼前場景相關的來源追查、跨模塊接續、grounded generation、採用與資訊交付；模塊邊界不是停止工作的理由。
+- 依 `DM_PROTOCOL.md` 1.5 將生成答案中新引入的實體接回已知世界：新地名接到既有國家／地域，模塊互相索取並使用相關資料。隔離推演依 1.6 完整選址與交付，正式存檔維持原樣。
 
 ### 1.0 Data authority
 
@@ -357,9 +358,12 @@ DISPROVEN
 查核 → 有可定位來源／已查範圍／真正缺口
 接續 → 下游模塊真的使用查核結果
 生成 → creative space 有具體可互動 proposal
+接回世界 → 新實體的必要關係有落點；新城市接上已知國家／地域
 決定 → 有合法 owner / decision event
 寫回 → claim provenance / state 持久化
 交付 → 角色合理可知的相關結果真的到前台
 ```
 
 若新增一條保險絲後，同一份 state、來源與權限下，原本合法的追查、世界發展、PL 候選或資訊交付反而走不通，視為 regression；除非確實新增了衝突事實、祕密限制或 owner 邊界，否則要修回能完成工作的路徑。
+
+隔離推演的完成標準是同樣完整的查核、模塊接續與 `selected_proposal` 交付；它依 `DM_PROTOCOL.md` 1.6 跳過正式 adoption／寫回，保留 `proposed` 與 `writeback: false`。
