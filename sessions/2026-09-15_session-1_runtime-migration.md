@@ -16,19 +16,38 @@ world_time: Day 1 afternoon, exact clock unset
 runtime_migration_boundary: after Oren Pell exits Grey Antler, before Nella tail resolution
 
 four_voice_control:
-  mode: npc
+  mode: pl_pc
+  switched_at: out_of_scene_card_check_before_tail_resolution
   mappings:
-    - 鮫島 -> Rook (inactive player mapping; NPC mode)
-    - 赫茲 -> Aster (inactive player mapping; NPC mode)
-    - 彌生 -> Mileia (inactive player mapping; NPC mode)
-    - 蟬 -> Nella (inactive player mapping; NPC mode)
+    - 鮫島 -> Rook
+    - 赫茲 -> Aster
+    - 彌生 -> Mileia
+    - 蟬 -> Nella
 ```
 
-## Migration note
+## Migration / control note
 
 此前由 DM 直接生成的 Rook / Aster / Mileia / Nella 行為，全部保留為已發生的 **NPC-mode actual actions**；不得事後回填成四聲部 Player choice。
 
-若之後 DM 明確切換 `pl_pc`，先建立新的 Player Layer，再由 Player Voice 宣告決策。四名角色的 migration alignment 可在切換時獲得一次 player ratification / revision，再成為 PL+PC 長期角卡資料。
+從本次場外宣告起，四聲部切換為 `pl_pc`。之後相關決策必須走：
+
+```text
+Player Voice
+→ Player decision
+→ PC interpretation / declaration
+→ DM resolution
+```
+
+四名 Player Voice 已對 migration alignment 做第一次 ratification：
+
+```text
+鮫島 / Rook   → Lawful Neutral   RATIFIED
+赫茲 / Aster  → Neutral Good     RATIFIED
+彌生 / Mileia → Neutral Good     RATIFIED
+蟬 / Nella    → Chaotic Neutral  RATIFIED
+```
+
+Alignment 仍不是行動腳本；若角色經長期劇情發展發生倫理／秩序取向轉變，應以顯式角色發展事件更新。
 
 ---
 
@@ -69,15 +88,15 @@ Role-safe summary：
 
 ---
 
-# 3. Character control / alignment migration
+# 3. Character control / alignment
 
-| Actor | Current control | Alignment state | Note |
+| Actor | Current control | Alignment | Status |
 |---|---|---|---|
-| Rook | autonomous NPC | Lawful Neutral (migration provisional) | duty / contract / order orientation; not an action script |
-| Aster | autonomous NPC | Neutral Good (migration provisional) | decent scholar; not an action script |
-| Mileia | autonomous NPC | Neutral Good (migration provisional) | Life cleric care orientation; not an action script |
-| Nella | autonomous NPC | Chaotic Neutral (migration provisional) | independent gray-work orientation; not an action script |
-| Elian | human-player PC | UNSET / player-required | DM must not infer alignment from behavior |
+| Rook | 鮫島 PL+PC | Lawful Neutral | ratified |
+| Aster | 赫茲 PL+PC | Neutral Good | ratified |
+| Mileia | 彌生 PL+PC | Neutral Good | ratified |
+| Nella | 蟬 PL+PC | Chaotic Neutral | ratified |
+| Elian | human-player PC | UNSET / player-required | DM must not infer |
 
 ```text
 alignment ≠ presented_persona ≠ current_affect ≠ actual_action
@@ -85,7 +104,81 @@ alignment ≠ presented_persona ≠ current_affect ≠ actual_action
 
 ---
 
-# 4. PC / actor live resources
+# 4. Player Layer
+
+> Player Layer 是 meta working data，不是 PC 內心。以下只保存各 Player Voice 對自己 PC 的玩法解讀與目前決策權；可隨遊戲發展修正。
+
+## 鮫島 → Rook
+
+```yaml
+agenda:
+  - keep Rook grounded in practical road / guard experience
+  - do not force leadership merely because he is the fighter
+current_interest:
+  - understand whether the group is becoming worth staying with
+  - keep track of practical risk while others investigate
+risk_tolerance: moderate
+interpretation_of_pc:
+  - values duty, contracts, order, and competent procedure
+  - may break from authority if authority loses practical legitimacy, but does not romanticize disorder
+current_decision:
+  - remain at Grey Antler table for the moment; do not interfere with Nella's tail until new information returns
+```
+
+## 赫茲 → Aster
+
+```yaml
+agenda:
+  - play Aster as a real scholar, not an exposition terminal
+  - let curiosity compete with caution
+current_interest:
+  - understand why Academy access changed
+  - find out why he drew attention without walking blindly into Academy
+risk_tolerance: low_to_moderate
+interpretation_of_pc:
+  - fundamentally decent and knowledge-seeking
+  - prefers evidence before escalation
+current_decision:
+  - stay put, preserve cover, and avoid visibly reacting to being watched
+```
+
+## 彌生 → Mileia
+
+```yaml
+agenda:
+  - keep care, medicine, and social presence active without turning into party-mother autopilot
+  - notice who is being harmed, frightened, or excluded
+current_interest:
+  - make sure the table does not turn suspicion into reckless harm
+  - understand the group's emerging bonds without forcing intimacy
+risk_tolerance: moderate_when_someone_needs_help
+interpretation_of_pc:
+  - good-oriented, care-first, but not institutionally rigid
+  - faith is part of her life rather than a command menu
+current_decision:
+  - remain with Rook and Aster and maintain normal social cover
+```
+
+## 蟬 → Nella
+
+```yaml
+agenda:
+  - play through gaps, omissions, routes, doors, and people who do not want to be noticed
+  - do not magically understand every hint or become a flawless spy
+current_interest:
+  - test whether the departing man actually leads somewhere useful
+  - preserve plausible deniability and avoid escalating a weak clue into a confrontation
+risk_tolerance: moderate_high_for_information, low_for_pointless_exposure
+interpretation_of_pc:
+  - independent, opportunistic, gray-work comfortable, not malicious by default
+  - values freedom of movement and information more than institutional legitimacy
+current_decision:
+  - attempt to acquire and maintain the tail; cloak remains unused unless a later Player decision activates it through a resolved interface
+```
+
+---
+
+# 5. PC / actor live resources
 
 | Actor | HP | SP | Current location | Important live resource/state |
 |---|---:|---:|---|---|
@@ -97,7 +190,7 @@ alignment ≠ presented_persona ≠ current_affect ≠ actual_action
 
 ---
 
-# 5. Evidence Ledger
+# 6. Evidence Ledger
 
 | Evidence ID | Proposition | Status | Observed by | Notes |
 |---|---|---|---|---|
@@ -118,7 +211,7 @@ alignment ≠ presented_persona ≠ current_affect ≠ actual_action
 
 ---
 
-# 6. Actor Epistemic Matrix
+# 7. Actor Epistemic Matrix
 
 ## Elian
 
@@ -160,7 +253,7 @@ Actor epistemic state is Mystery-gated; session only records that he has case-re
 
 ---
 
-# 7. Relationship Fact Updates
+# 8. Relationship Fact Updates
 
 Objective facts only:
 
@@ -175,7 +268,7 @@ Not objective facts："trust", "romantic interest", "loyalty", "friendship depth
 
 ---
 
-# 8. Roll Ledger
+# 9. Roll Ledger
 
 | Roll | Interface | Target | d100 | Result | State consequence |
 |---|---|---:|---:|---|---|
@@ -187,7 +280,7 @@ No tail roll has yet occurred.
 
 ---
 
-# 9. Item state
+# 10. Item state
 
 ## ITEM-ELIAN-CLOAK-001
 
@@ -226,22 +319,6 @@ Elian: 50 gp start -> -1 gp wagon -> -4 gp Grey Antler meal = **45 gp**.
 
 ---
 
-# 10. Four-voice Player Layer
-
-```yaml
-status: INACTIVE
-mode: npc
-legacy_faux_player_notes: deprecated
-```
-
-There are currently **no authoritative 鮫島／赫茲／彌生／蟬 player agendas, risk tolerances, or player decisions** for this session.
-
-Earlier statements such as "鮫島玩家偏實際" were generated after DM-created character behavior and are now treated as invalid circular inference, not Player Layer state.
-
-If mode changes to `pl_pc`, initialize Player Layer fresh before the next four-voice decision.
-
----
-
 # 11. Human Player meta record
 
 Explicitly established player/runtime preferences in this test:
@@ -258,7 +335,7 @@ Derived gameplay tendencies may be recorded separately, but must remain revocabl
 
 ---
 
-# 12. Module status at migration boundary
+# 12. Module status
 
 - AO: ACTIVE; must resolve future world evolution from committed state, not desired plot outcome.
 - Librarian: ACTIVE / provenance gateway; resolves rules and relationship/evidence history.
@@ -268,9 +345,9 @@ Derived gameplay tendencies may be recorded separately, but must remain revocabl
 - Hourglass: ACTIVE coarse world time; exact city clock still unset.
 - Ecologist: LOW; available for lived behavior / environmental constraints.
 - Politician: AVAILABLE; current city/faction consequences not yet strong enough to force active forecast.
-- Analyst: AVAILABLE; Alignment input now exists for four NPC-mode actors, but current derived relationship analysis should be regenerated after migration rather than reusing old mixed snapshot.
-- Mystery: ACTIVE; SECRET-ANDOR-001 + commitment refs now exist before tail resolution.
-- Orchestrator: ACTIVE; migration snapshot is the new authoritative session boundary.
+- Analyst: AVAILABLE; Alignment input is ratified for four PL+PC actors; derived relationship analysis may now use Player interpretation as meta input without confusing it with PC fact.
+- Mystery: ACTIVE; SECRET-ANDOR-001 + commitment refs exist before tail resolution.
+- Orchestrator: ACTIVE; PL+PC switch is now authoritative session control state.
 - Character Builder / Build Ledger: SUSPENDED runtime service; unresolved qualifying CP remains technical debt, not active scene blocker.
 
 ---
@@ -293,5 +370,6 @@ Derived gameplay tendencies may be recorded separately, but must remain revocabl
 Nella leaves Grey Antler ~5–6 seconds after Oren Pell.
 Oren's pre-tail identity / knowledge / goal / intended next step are committed.
 Oren has not yet identified Nella as a tail at the migration boundary.
-Next resolution may determine whether Nella acquires, keeps, loses, or exposes the tail — but cannot rewrite who Oren had been or why he left.
+蟬 has declared the Player decision: acquire and maintain the tail without pointless exposure.
+Next DM resolution may determine whether Nella acquires, keeps, loses, or exposes the tail — but cannot rewrite who Oren had been or why he left.
 ```
