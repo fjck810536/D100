@@ -1,22 +1,22 @@
 # Session 1 — Andor Live State
 
-> Current role-safe pointer. Earlier checkpoint and migration files remain history, not current-state replacements.
+> Current role-safe pointer. Earlier checkpoint/migration/live revisions remain history, not current-state replacements.
 
 ```yaml
 session_id: D100-TEST-ANDOR-001
 date_recorded: 2026-09-16
-scene: public bard academy common hall / bar, Elian observing audience interest patterns; Nella remains near performance area
-world_time: Day 1 after evening; exact clock unset
+scene: Old City / just outside the public bard academy after first social-observation pass
+world_time: Day 1 night; exact clock unset
 four_voice_control: pl_pc
 ```
 
 ## Current party positions
 
-- Elian: inside `SITE-ANDOR-BARD-COLLEGE`, at the common-hall bar with two beers; currently watching several patrons who reacted to a private-instruction conversation.
-- Nella: inside the same public hall, seated nearer the performance area; Elian earlier asked her to watch the show and notice anything worthwhile.
-- Rook: remained at the Mercenary Guild when Elian/Nella departed; later intentions not auto-resolved.
-- Aster: remained at the Mercenary Guild when Elian/Nella departed; later intentions not auto-resolved.
-- Mileia: split earlier toward the south-district chapel / dispensary; has not silently rejoined.
+- Elian: leaving `SITE-ANDOR-BARD-COLLEGE` after the first common-hall social pass.
+- Nella: with Elian at departure unless 蟬 immediately chooses otherwise; current PL intention remains cooperative observation rather than surveillance.
+- Rook: off-camera at Mercenary Guild; pending convoy questions not auto-resolved.
+- Aster: off-camera at Mercenary Guild; pending arcane-residue scheduling/registration not auto-resolved.
+- Mileia: off-camera on south chapel / dispensary route; has not silently rejoined.
 
 ## Current refs
 
@@ -33,116 +33,109 @@ commitment_refs:
   - mystery_vault/ANDOR_SESSION1_MIGRATION.md
   - mystery_vault/ANDOR_WHISPERS_CONTACT.md
   - mystery_vault/ANDOR_BARD_HALL_OBSERVERS_01.md
+  - mystery_vault/ANDOR_BARD_HALL_DEPARTURE_01.md
 runtime_incident_refs:
   - OOC-AMBIG-ANDOR-001
 ```
 
-## Established earlier state
+## Stable prior state
 
-- Nella's tail of Oren resolved successfully; she observed his message/office route, returned, and returned Elian's cloak unused.
-- Checkpoint 01 CP reserves remain: Elian 13, Rook 41, Aster 52, Mileia 15, Nella 23.
-- Elian registered the one-day document/inventory verification job at the Mercenary Guild. `Elian, Three Silver Coins` was given as name/contact-lodging answer; this does not itself prove a room booking or payment.
-- Rook had interest in the two-day convoy job but had not accepted it.
-- Aster had interest in the arcane-residue identification job but had not accepted it.
-- The 18 gp overnight escort remained open at last established Guild state.
+- Nella's Oren tail succeeded and was reported; no hidden causal truth was promoted from the evidence.
+- CP reserves remain: Elian 13, Rook 41, Aster 52, Mileia 15, Nella 23 unless explicitly spent later.
+- Elian registered the one-day document/inventory verification job at the Mercenary Guild; `Elian, Three Silver Coins` was used as name/contact-lodging answer, without proving a paid room.
+- Rook's convoy interest and Aster's arcane-residue interest remain pending, not accepted/resolved by off-camera time.
+- Elian player-authored backstory additions remain committed: no prior bardic training; old home/family discouraged it; older brother remembered as more eloquent/charismatic; Elian values useful methods and delegation.
 
-## Events after leaving the Guild
+## Bard academy common-hall events
 
-1. Elian asked for the bard/poet academy and chose to visit the Old City evening scene.
-2. PL+PC split at departure:
-   - 鮫島 / Rook stayed at the Guild and intended to ask more about the normal convoy job before deciding.
-   - 赫茲 / Aster stayed at the Guild and intended to ask whether the arcane-residue job could be done tomorrow, possibly register if compatible, then later seek Mileia/church.
-   - 蟬 / Nella chose to accompany Elian.
-3. On the walk Elian talked about people hiding in corners versus behind attractive clothes, masks, songs and dance; he openly said he wanted inspiration and would welcome encountering people of the Low Whisper tradition.
-4. Elian's private/player-authorized intention also includes useful information exchange and, if possible, learning bardic techniques. Nella does not automatically know this private portion.
-5. Elian later voluntarily told Nella aloud that:
-   - he had not previously learned bardic arts;
-   - his old home/family environment did not allow/encourage it;
-   - he had instead been expected to shoulder intellectual/administrative work around his older brother;
-   - in Elian's memory his older brother was the genuinely eloquent, charismatic one;
-   - Elian's present attitude is pragmatic: if a method is usable/useful he will try it; if he cannot do it himself, he will use people who can.
-6. Elian and Nella entered the public bard academy without going directly to the reception desk. Elian chose the most natural public waiting/social area rather than announcing a formal purpose.
-7. The public common hall visibly supports ordinary visitors, students, performers and patrons: seating, public performances, posted lessons, private instruction inquiries, drinks and light food. This is ordinary site state, not a hidden clue network.
-8. Elian offered to get drinks, asked Nella what she wanted, and went to the bar. Nella remained near the performance area rather than following him.
-9. Elian ordered two beers, drank from his own, and noticed an academy staff member discussing private instruction with a middle-aged visitor. Publicly audible fragments established that short-term/private instruction can exist outside formal enrollment, subject to what the student wants and whether a teacher accepts.
-10. Elian also noticed that some nearby patrons briefly reacted to that discussion. No coordinated surveillance pattern was established from passive observation alone.
-11. Before Elian's active attempt to interpret those patrons, minimum hidden actor commitments were written in `ANDOR_BARD_HALL_OBSERVERS_01.md`; the roll cannot retroactively decide who they are or what they wanted.
-
-## Elian background / actor-state additions
+1. Elian and Nella entered the public bard academy and used the ordinary common-hall/performance/bar space without formal registration.
+2. Publicly visible site behavior established ordinary performances, drinks/light food, short/private instruction inquiries and post-performance patron/student networking.
+3. Elian ordered drinks and observed an academy staff member discussing private instruction with a middle-aged visitor.
+4. Before motive-reading, nearby observer identities/goals were minimally committed in `ANDOR_BARD_HALL_OBSERVERS_01.md`.
+5. Elian attempted an audience-interest read:
 
 ```yaml
-origin_kind: player-decision / player-authored-backstory
-status: committed
-claims:
-  - no prior bardic training
-  - family/old-home environment discouraged or prevented bardic study
-  - family expected Elian to carry intellectual/administrative work around his older brother
-  - Elian remembers his older brother as more naturally eloquent/charismatic
-  - Elian currently values useful methods over identity purity and is willing to delegate to capable people
+ROLL-ANDOR-BARD-001:
+  interface: 察言觀色 / historical runtime value
+  value: 54
+  d100: 56
+  result: fail by 2
+  cp_reroll_spent: false
 ```
 
-Exact family title, inheritance order, brother's present status and the exact family reason for opposing bardic study remain uncommitted.
+Failure produced no false motive. Visible behavior remained evidence only.
 
-## Current roll ledger
-
-### ROLL-ANDOR-BARD-001 — audience-interest read
+6. Elian changed method and examined what kinds of people the older patron watched after a performance ended:
 
 ```yaml
-actor: Elian
-intent: keep attention on patrons who reacted to the private-instruction conversation and infer what kinds of things interest them
-interface: 察言觀色 / Sense Motive historical runtime value
-value: 54
-provenance: RUNTIME_PROVISIONAL (formal source/interface remains open)
-d100: 56
-margin: -2
-result: ordinary failure by 2
-cp_reroll_declared: false
+ROLL-ANDOR-BARD-002:
+  interface: 搜索
+  value: 56
+  d100: 31
+  result: success by 25
 ```
 
-Result boundary:
+Player-visible conclusion: the older patron disproportionately watches post-performance relationship flow—who approaches whom, who exchanges names/cards, who appears to recruit/connect—rather than simply the best-dressed or loudest audience members. This is an observed pattern; motive remains unconfirmed.
 
-- failure does not create false motives;
-- Elian may retain directly visible behavior patterns;
-- he does not yet get a confident read of underlying motives from this roll;
-- a legal CP reroll remains a player choice if the player elects to spend 1 CP under the standing reroll rule.
-
-## Player-visible observations relevant to ROLL-ANDOR-BARD-001
+7. Elian earlier sent a tasteful sweet drink to a young woman/regular near the performance area under both Elian and Nella's names; she accepted and acknowledged both. No romance/trust fact was created.
+8. Elian then returned to Nella. After a coordinated wink/banter cue, 蟬 chose to have Nella cooperate with a louder social performance using Elian's wallet.
+9. Elian's social act—playing an affluent, playful outsider willing to spend on selected social nodes—was resolved as:
 
 ```yaml
-EVID-BARD-001:
-  status: OBSERVED
-  proposition: the young woman near the performance area has looked toward private-instruction/referral talk more than once
-
-EVID-BARD-002:
-  status: OBSERVED
-  proposition: the older patron at the far side of the bar has paid attention both to performances and to people involved in private arrangements
-
-EVID-BARD-003:
-  status: OBSERVED
-  proposition: other glances in the room still include ordinary room-scanning/noise; Elian has not established a shared coordinated purpose among observers
+ROLL-ANDOR-BARD-003:
+  interface: 唬騙
+  value: 54
+  d100: 23
+  result: success by 31
 ```
 
-Do not promote hidden motives from the commitment file into Elian's knowledge unless later evidence/rolls establish them.
+10. Nella selectively sent drinks to the older patron and other visibly active post-performance connectors rather than randomly treating the whole room. The older patron visibly noticed the selection pattern and acknowledged Elian/Nella as coordinated participants in the same social field. This does not reveal hidden affiliation or create a conspiracy link.
+11. Elian quietly told Nella she had only understood half, finished his drink, placed three literal silver coins on the table, announced departure and gave an undirected farewell.
+12. `ANDOR_BARD_HALL_DEPARTURE_01.md` commits interpretation boundaries before resolving reactions:
+   - three literal silver coins are not an established secret code;
+   - the older patron knows `Three Silver Coins` as a public Andor establishment/contact point and can recognize a plausible double reading (tip vs deliberate reference) without certainty;
+   - Nella can infer the gesture is intentionally layered, but exact intent remains hers to interpret unless Elian explains it;
+   - no Low Whisper/Oren/blue-wax connection is created.
+13. Elian visually acknowledges only people with whom eye contact naturally occurs; no extra forced contact is created.
 
-## OOC / IC ambiguity preserved
+## Evidence / knowledge boundary
 
-`OOC-AMBIG-ANDOR-001` remains a renderer/runtime incident concerning the earlier generated question about whether Elian had studied bardic arts. Elian later answered the topic aloud voluntarily, so Nella legitimately knows the newly spoken answer from that later point. The old ambiguous utterance still cannot be used as proof of earlier Nella IC knowledge, attraction, intimacy or relationship state.
+```yaml
+EVID-BARD-001: young woman/regular repeatedly noticed private-instruction/referral talk — OBSERVED
+EVID-BARD-002: older patron watches performances plus post-performance social connections — OBSERVED
+EVID-BARD-003: no coordinated purpose among background gazes established — OBSERVED
+EVID-BARD-004: older patron noticed Elian/Nella's selective drink-sending pattern — OBSERVED
+EVID-BARD-005: older patron may have noticed the three-silver-coins departure gesture; any deeper reading is not player-confirmed unless later evidence establishes it — OBSERVED/INFERRED boundary
+```
 
-## Low Whisper / site knowledge boundary
+Do not promote commitment-file motives into player knowledge.
 
-- Low Whisper College/tradition exists in source-backed D100 material and commonly conceals affiliation.
-- `SITE-ANDOR-WHISPERS-CONTACT` / 曲聞會館 exists as a separate public Old City venue with ordinary services; any additional non-public relation is Mystery-gated.
-- The public bard academy and 曲聞會館 are separate stable sites; do not silently merge them.
-- Elian currently knows/has spoken about the Low Whisper concept/tradition, but backend knowledge does not automatically reveal local hidden affiliations to him or Nella.
+## Money / item accounting note
+
+- Elian explicitly leaves **3 silver coins** on the table at departure; those are spent/left behind unless later world events return them.
+- Multiple drinks were purchased during this scene. Exact menu prices were not numerically committed in play, so do not invent a precise remaining gp total retroactively. Before a future purchase where exact funds matter, reconcile prices via ordinary site/economy state or GM ruling.
+- No CP was spent in the bard hall.
+
+## Low Whisper boundary
+
+- Low Whisper College/tradition exists in source-backed D100 material.
+- `SITE-ANDOR-WHISPERS-CONTACT` / 曲聞會館 is a separate public Old City site; any additional non-public relation is Mystery-gated.
+- Bard academy != 曲聞會館. Do not silently merge them.
+- No bard-hall observer is automatically Low Whisper affiliated.
+
+## OOC / IC incident
+
+`OOC-AMBIG-ANDOR-001` remains preserved. Elian later voluntarily disclosed his bardic/family background aloud, so Nella legitimately knows that later disclosure. The earlier ambiguous renderer line still cannot prove earlier IC knowledge/attraction/intimacy.
 
 ## Resume boundary
 
-Resume at the bard-academy bar immediately after resolving `ROLL-ANDOR-BARD-001` (54 vs d100 56, fail by 2), before Elian chooses whether to spend CP, approach anyone, continue passive observation, return to Nella, or do something else.
+Resume **as Elian and Nella leave the public bard academy into the Old City night**, after Elian's layered three-silver-coins farewell gesture.
 
 At resume:
 
-- Elian controls his own next action and CP spending.
-- 蟬 controls Nella's important PL+PC choices.
-- Public ordinary environment can be described without a roll.
-- Specific hidden motives/affiliations stay behind committed actor/Mystery state until legitimately observed or inferred.
-- Rook/Aster/Mileia remain off-camera without auto-resolution of their pending plans.
+- Elian controls his next destination/action.
+- 蟬 controls Nella's reaction to the layered gesture and whether/how she follows up on it.
+- The older patron does not chase them immediately; any future contact must arise from his committed remembered interest/opportunity, not retroactive destiny.
+- Public ordinary environment requires no roll.
+- Hidden affiliations/motives remain commitment/Mystery-gated until legitimate evidence appears.
+- Rook/Aster/Mileia remain off-camera without auto-resolution.
