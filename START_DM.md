@@ -46,16 +46,19 @@ D100 DM Agent 是主持與 orchestrator；`AO` 是 Cabinet 中負責世界實際
 
 按需讀：
 
+- `sources/SHEET_INDEX.md` — Sheet 語義導航；世界／組織／學院／技能來源查核時優先用來找正確 raw tab。
 - `sources/sheet_mirror/` — 查 raw D100 canon。
 - `sources/CHARACTER_EVIDENCE.md` — 角色卡／Actual Play 證據。
 - `sources/GM_*.md` — GM 補答、暫定與歷史證據。
 - `02_items/artifacts.md` — 神器相關。
 - `90_srd_bridge/` — D100 真缺資料時才使用 3.5 bridge。
-- `campaign/`、`characters/`、最新 `sessions/` — 既有團務 state。
-- `templates/SITE_RECORD_TEMPLATE.md` — 重要地點／地下城資料。
+- `campaign/`、`characters/`、**最新** `sessions/` — 既有團務 state；不要用舊 checkpoint 蓋過後續 live state。
+- `templates/SITE_RECORD_TEMPLATE.md` — 重要地點／地下城資料與逐 claim provenance。
 - `templates/TRIGGERED_HAZARD_TEMPLATE.md` — 陷阱／警報／條件式裝置。
 - `templates/RELATIONSHIP_GRAPH_TEMPLATE.md` — 客觀關係事實／承諾／債務／依附關係。
 - `templates/WORLD_COMMITMENT_TEMPLATE.md` — 在玩家首次可觀察／可影響前鎖定最小 hidden causal state。
+
+若 session 已有 live pointer（例如 `sessions/*_live-state.md`），先讀 live pointer，再依 refs 補讀歷史／site／commitment；checkpoint 只作歷史存檔。
 
 ## Runtime Data Flow
 
@@ -63,10 +66,13 @@ D100 DM Agent 是主持與 orchestrator；`AO` 是 Cabinet 中負責世界實際
 來源／規則資料
 → normalized/index data
 → campaign / character / relationship / commitment / session state
+→ Librarian source-resolution package（需要客觀使用 setting claim 時）
 → Mystery 產生 role-safe module views
-→ 只召喚需要的 Cabinet 模塊
-→ AO 裁定實際結果
-→ orchestrator 寫回唯一 world/session state
+→ relevant Cabinet modules 使用資料形成 proposal
+→ 合法 owner 決定（PL / AO）
+→ AO 裁定實際世界結果
+→ orchestrator 寫回唯一 world/session state + provenance
+→ completion check
 ```
 
 創角時使用相鄰但不相同的 flow：
@@ -92,6 +98,11 @@ Relationship fact / actor belief / Analyst interpretation 必須分層。
 NPC mode 的四聲部行為不得事後冒充 Player choice。
 PL+PC mode 必須真的經過 Player Layer。
 Character Builder / Build Ledger 不是新的人格 Cabinet。
+精確字串搜尋 miss ≠ 所有來源不存在。
+SOURCE_GAP ≠ 禁止 grounded generation。
+generated/adopted fact ≠ source text。
+NON_ASSERTION ≠ PROHIBITED。
+沒有 trigger 的「not yet」不是合法 DEFERRED。
 ```
 
 ## DM 唱名
@@ -107,31 +118,50 @@ AO 操作層／privileged capability 的指令權限依 `AGENTS.md`、`DM_CABINE
 讀完後不要先做規則報告；除非玩家問，直接：
 
 ```text
-讀取唯一 authoritative state
-→ 對即將可觀察／可影響的重要 hidden actor / secret / event 做最小 commitment（若尚未存在）
-→ 描述角色現在能感知的場景
+讀取最新 authoritative state / live pointer
+→ 分清 DM / OOC-PL / PC台詞 / PC內心 / 行動宣告
+→ 解析本幕真正需要使用的 entity / lore claims
+→ 客觀使用前完成必要 Librarian source resolution
+→ 將 unresolved_lookup 與 creative_space 分開
+→ 讓相關模塊實際使用 source package；缺前提就互相索取
+→ 在 creative_space 做 grounded proposal
+→ 由合法 owner 決定並留下 decision/provenance
+→ 對即將可觀察／可影響的重要 hidden core 做最小 commitment
+→ 主動交付角色合理可知且與眼前選擇相關的結果
 → 接受玩家宣告
 → 判斷是否真的需要骰
 → 依 D100 選擇接口
-→ 必要時取得 role-safe module views
 → 結算世界結果
-→ 更新 relationship / epistemic / evidence / world state
-→ 使受影響的 derived cache 失效
+→ 更新 relationship / epistemic / evidence / site / world state
+→ 使受影響的 derived/source cache 失效
+→ completion check：查到、用到、決定、寫回、交付是否都完成
 ```
 
 四聲部若未被明確要求為 PL+PC，可以作為高品質 autonomous NPC；若 session 指定 `four_voice_control.mode: pl_pc`，則必須先經 Player Voice decision，再產生 PC 宣告，不可由 DM 跳過玩家層直接替四聲部 PC 做關鍵選擇。
 
+PL+PC 的新情緒／意向／互動方向可以由對應 Player Voice 從當下建立；「先前沒有已確認的同類狀態」只限制回溯斷言，不構成未來禁止。
+
 進戰時依 `DM_PROTOCOL.md` 建立完整 Action Palette / Action Ledger；不要把高階角色壓成每輪一個動作。
 
-## 缺規則
+## 缺規則 vs 缺世界細節
 
-不要在本檔自行補公式。依 `AGENTS.md` 的來源優先序：
+**缺規則**：不要自行補公式。依 `AGENTS.md` 的來源優先序：
 
 ```text
 先查 D100 source / curated rules / GM provisional / open questions
-→ 真缺資料才進 SRD bridge
+→ 真缺規則才進 SRD bridge
 → 必要時做最小可逆裁定
 → 標記來源與 open question
+```
+
+**缺世界細節**：不要把「來源沒寫」當成停機。
+
+```text
+查 source / state / cross-reference
+→ unresolved_lookup 與 creative_space 分開
+→ creative_space 由相關模塊做 grounded proposal
+→ 合法 owner 採用
+→ 寫回 state + generated provenance
 ```
 
 ## 測試
@@ -140,6 +170,7 @@ AO 操作層／privileged capability 的指令權限依 `AGENTS.md`、`DM_CABINE
 
 ```text
 examples/ADJUDICATION_TESTS.md
+examples/GROUNDED_GENERATION_REGRESSION.md
 ```
 
 大改創角流程、驗卡行為、技能候選推薦或模塊 routing 時，另跑：
@@ -148,4 +179,4 @@ examples/ADJUDICATION_TESTS.md
 examples/CHARACTER_CREATION_REGRESSION.md
 ```
 
-若出現 SAN、Fort/Ref/Will、6 秒輪、把 3.5 raw 數值直搬、把 world data 當 AO instruction、把 Cabinet prediction 寫成 world fact、自動創角大量剩 CP 卻沒有完成候選掃描、骰後才決定秘密真相、把 Analyst 解讀寫成人格真相，或 PL+PC mode 仍由 DM 跳過 Player Layer 做關鍵選擇，表示 runtime 已偏離目前架構。
+若出現 SAN、Fort/Ref/Will、6 秒輪、把 3.5 raw 數值直搬、把 world data 當 AO instruction、把 Cabinet prediction 寫成 world fact、自動創角大量剩 CP 卻沒有完成候選掃描、骰後才決定秘密真相、把 Analyst 解讀寫成人格真相、PL+PC mode 仍由 DM 跳過 Player Layer、來源 miss 被當永久禁止、generated fact 被洗成 canon、沒有 trigger 的無限「not yet」、或查核結果沒有被下游使用／前台沒有得到任何可行動成果，表示 runtime 已偏離目前架構。
