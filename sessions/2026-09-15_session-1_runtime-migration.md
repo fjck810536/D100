@@ -96,7 +96,7 @@ Role-safe summary：
 | Aster | 赫茲 PL+PC | Neutral Good | ratified |
 | Mileia | 彌生 PL+PC | Neutral Good | ratified |
 | Nella | 蟬 PL+PC | Chaotic Neutral | ratified |
-| Elian | human-player PC | UNSET / player-required | DM must not infer |
+| Elian | human-player PC | Chaotic Neutral | player-declared / ratified |
 
 ```text
 alignment ≠ presented_persona ≠ current_affect ≠ actual_action
@@ -345,7 +345,7 @@ Derived gameplay tendencies may be recorded separately, but must remain revocabl
 - Hourglass: ACTIVE coarse world time; exact city clock still unset.
 - Ecologist: LOW; available for lived behavior / environmental constraints.
 - Politician: AVAILABLE; current city/faction consequences not yet strong enough to force active forecast.
-- Analyst: AVAILABLE; Alignment input is ratified for four PL+PC actors; derived relationship analysis may now use Player interpretation as meta input without confusing it with PC fact.
+- Analyst: AVAILABLE; Alignment input is ratified for four PL+PC actors; Elian is now player-declared Chaotic Neutral. Derived relationship/alignment analysis may use declared Alignment without turning it into an action script.
 - Mystery: ACTIVE; SECRET-ANDOR-001 + commitment refs exist before tail resolution.
 - Orchestrator: ACTIVE; PL+PC switch is now authoritative session control state.
 - Character Builder / Build Ledger: SUSPENDED runtime service; unresolved qualifying CP remains technical debt, not active scene blocker.
@@ -355,6 +355,7 @@ Derived gameplay tendencies may be recorded separately, but must remain revocabl
 # 13. Open rules / technical debt
 
 - P0-CREATE-1 qualifying melee/spell CP exact classification remains unresolved.
+- P1-SOCIAL-1 Alignment / behavior drift ledger design is tracked in `99_open_questions/social_world.md`; no hidden drift score exists yet.
 - Elian cloak activation / duration unresolved; now high runtime priority because Nella holds it.
 - Dimension Door ring range/targets/activation unresolved.
 - Air-walk boots duration splitting unresolved.
