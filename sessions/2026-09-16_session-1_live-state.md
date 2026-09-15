@@ -5,18 +5,19 @@
 ```yaml
 session_id: D100-TEST-ANDOR-001
 date_recorded: 2026-09-16
-scene: Old City / just outside the public bard academy after first social-observation pass
-world_time: Day 1 night; exact clock unset
+scene: camera cut from Old City bard-academy departure to Mileia on the south-district chapel / dispensary route
+world_time: Day 1 night; exact clock unset; split-thread chronology is approximate and must not be silently synchronized beyond established facts
 four_voice_control: pl_pc
+active_camera: Mileia
 ```
 
 ## Current party positions
 
-- Elian: leaving `SITE-ANDOR-BARD-COLLEGE` after the first common-hall social pass.
-- Nella: with Elian at departure unless 蟬 immediately chooses otherwise; current PL intention remains cooperative observation rather than surveillance.
+- Elian: just outside / leaving `SITE-ANDOR-BARD-COLLEGE` after the first common-hall social pass. His thread is intentionally paused here.
+- Nella: with Elian at the same departure point unless 蟬 later chooses otherwise. Her thread is intentionally paused here.
 - Rook: off-camera at Mercenary Guild; pending convoy questions not auto-resolved.
 - Aster: off-camera at Mercenary Guild; pending arcane-residue scheduling/registration not auto-resolved.
-- Mileia: off-camera on south chapel / dispensary route; has not silently rejoined.
+- Mileia: active camera now switches to her south-district chapel / dispensary route. No off-camera outcome has yet been auto-resolved for her.
 
 ## Current refs
 
@@ -46,7 +47,7 @@ runtime_incident_refs:
 - Rook's convoy interest and Aster's arcane-residue interest remain pending, not accepted/resolved by off-camera time.
 - Elian player-authored backstory additions remain committed: no prior bardic training; old home/family discouraged it; older brother remembered as more eloquent/charismatic; Elian values useful methods and delegation.
 
-## Bard academy common-hall events
+## Bard academy common-hall events — paused thread
 
 1. Elian and Nella entered the public bard academy and used the ordinary common-hall/performance/bar space without formal registration.
 2. Publicly visible site behavior established ordinary performances, drinks/light food, short/private instruction inquiries and post-performance patron/student networking.
@@ -96,7 +97,8 @@ ROLL-ANDOR-BARD-003:
    - the older patron knows `Three Silver Coins` as a public Andor establishment/contact point and can recognize a plausible double reading (tip vs deliberate reference) without certainty;
    - Nella can infer the gesture is intentionally layered, but exact intent remains hers to interpret unless Elian explains it;
    - no Low Whisper/Oren/blue-wax connection is created.
-13. Elian visually acknowledges only people with whom eye contact naturally occurs; no extra forced contact is created.
+13. Elian visually acknowledged only people with whom eye contact naturally occurred; no extra forced contact was created.
+14. Elian/Nella thread now pauses cleanly after they exit into the Old City night. The older patron does not chase them immediately.
 
 ## Evidence / knowledge boundary
 
@@ -127,15 +129,14 @@ Do not promote commitment-file motives into player knowledge.
 
 `OOC-AMBIG-ANDOR-001` remains preserved. Elian later voluntarily disclosed his bardic/family background aloud, so Nella legitimately knows that later disclosure. The earlier ambiguous renderer line still cannot prove earlier IC knowledge/attraction/intimacy.
 
-## Resume boundary
+## Active resume boundary — Mileia
 
-Resume **as Elian and Nella leave the public bard academy into the Old City night**, after Elian's layered three-silver-coins farewell gesture.
+Resume with **Mileia on the south-district chapel / dispensary route**, at the first ordinary public point where she can see/reach the local religious/medical activity she set out to investigate.
 
 At resume:
 
-- Elian controls his next destination/action.
-- 蟬 controls Nella's reaction to the layered gesture and whether/how she follows up on it.
-- The older patron does not chase them immediately; any future contact must arise from his committed remembered interest/opportunity, not retroactive destiny.
-- Public ordinary environment requires no roll.
-- Hidden affiliations/motives remain commitment/Mystery-gated until legitimate evidence appears.
-- Rook/Aster/Mileia remain off-camera without auto-resolution.
+- 彌生 controls Mileia's important choices; DM may frame the public environment but must not decide her purpose beyond the already-established chapel/dispensary split.
+- Do not retroactively claim she already spoke to clergy, patients, healers or officials.
+- Do not auto-resolve Rook/Aster while the camera is on Mileia.
+- Elian/Nella remain paused after bard-academy departure; no hidden follow-up occurs off-camera unless separately committed and later surfaced lawfully.
+- Public ordinary environment can be described without a roll; meaningful uncertainty/consequence uses D100.
