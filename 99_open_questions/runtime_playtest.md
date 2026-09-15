@@ -187,6 +187,56 @@ DM 給出：
 
 ---
 
+## P1-RUNTIME-3 — Save Point / Checkpoint 時的情境式 CP 發放
+
+### 觸發案例
+
+GM 明確補充：過去實際跑團中，DM 會在一次「存檔」／階段性 checkpoint 時，視角色當段情況分別發放一部分 CP。
+
+Andor Session 1 Checkpoint 01 先採用保守 `[GM_PROVISIONAL]` 樣本：
+
+```text
+Elian  +3 CP
+Nella  +3 CP
+Aster  +2 CP
+Rook   +1 CP
+Mileia +1 CP
+```
+
+這一筆是已發放的實際 session reward，不因後續校準而自動撤銷。
+
+### 尚缺
+
+目前 repo 尚未找到固定公式，因此需要確認：
+
+- 每次 save point 是否一定發 CP，還是 DM 視情況才發；
+- reward 是否看：參與、角色扮演、風險、推進、情報、戰鬥、創意、失敗中的學習等；
+- 個別 CP 差距的合理尺度；
+- 一次 checkpoint 常見總量／個人上下限；
+- 是否應避免把「骰得成功」本身直接等同更多 CP；
+- 是否存在重大章節／任務完成的額外 reward；
+- PL+PC 四聲部與真人 PC 是否用完全相同標準。
+
+### 保險絲
+
+```text
+checkpoint CP ≠ 成功骰獎金
+checkpoint CP ≠ 只有主線推進才有
+一次 provisional 分配 ≠ 固定公式
+已發放 CP ≠ 後續規則修正時自動回收
+```
+
+### 目前安全處理
+
+在舊 DM 慣例尺度尚未恢復前：
+
+- 使用小額、可解釋的個別 situational award；
+- 每次留下 before / delta / after；
+- 記錄發放理由作為未來校準樣本；
+- 不宣稱存在全域固定數學。
+
+---
+
 ## P2-RUNTIME-1 — Coarse world time 何時升格為 exact clock
 
 ### 觸發案例
