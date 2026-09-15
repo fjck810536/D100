@@ -24,6 +24,7 @@ resolved provenance may remain here as a short pointer if useful
 - `character_creation.md` — 創角、CP、語言、qualifying reward 等未決問題。
 - `unresolved_rules.md` — 核心／戰鬥／技能／物品等未決規則。
 - `social_world.md` — Alignment、角色行為、社會世界與關係層的待設計問題。
+- `runtime_playtest.md` — 實際跑團暴露出的 runtime interface / provenance / timing / investigation 缺口；只收可泛化問題，不收單一 session 尚未填完的普通 state。
 
 ## 與 Architecture Audit 的差異
 
