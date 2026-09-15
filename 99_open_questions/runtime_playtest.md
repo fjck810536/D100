@@ -237,6 +237,73 @@ checkpoint CP ≠ 只有主線推進才有
 
 ---
 
+## P1-RUNTIME-4 — PL+PC 模式下的 OOC / IC 語句分類與台詞滲漏
+
+### 觸發案例
+
+Andor Session 1，Elian 與 Nella 前往舊城／吟遊詩人學院途中，生成了：
+
+> Nella：「不過你說『傳授吟遊詩人的技法』……你以前學過？還是你現在才突然想當一個？」
+
+GM 後續指出：在四聲部 `pl_pc` 模式下，這一句存在另一個合理解讀——它可能是 **蟬作為 Player Voice 對真人 Player 的 OOC 場外詢問**，但生成器把它直接包進了 Nella 的 PC 台詞。
+
+這不是重大世界狀態錯誤，但顯示目前：
+
+```text
+Player Voice utterance
+PC utterance
+OOC table talk
+meta interpretation
+```
+
+之間缺少可靠的輸出分類／標示層。
+
+### 本次事件紀錄
+
+```yaml
+event_id: OOC-AMBIG-ANDOR-001
+session: D100-TEST-ANDOR-001
+scene: road_to_old_city_bard_college
+speaker_layer: 蟬 / Nella
+classification: OOC_AMBIGUOUS
+observed_problem: possible Player-Voice OOC question rendered as in-character Nella dialogue
+retroactive_adjustment: none
+```
+
+目前不把這次事件強行重判成 IC 或 OOC；也不因它建立新的客觀關係、信任、親密或角色知識證據。
+
+### 待討論
+
+- PL+PC 生成時是否要先產生 `Player Voice` 決策／OOC，再決定是否轉成 PC 台詞；
+- 何時允許 Player Voice 直接對真人玩家 OOC 說話；
+- OOC 是否需要顯式標籤（例如 `蟬｜OOC`）或只在有歧義時標；
+- 一句話同時含「玩家層詢問」與「PC 可自然說出口內容」時如何處理；
+- OOC 事件是否應進獨立 event log，而不是 world Evidence / Relationship Graph；
+- OOC 對話可否影響下一個 Player decision，但不得直接變成 PC epistemic state。
+
+### 保險絲
+
+```text
+Player Voice 說了 ≠ PC 說了。
+OOC table talk ≠ world event。
+OOC 理解 ≠ PC 自動知道。
+PC 自然能說出口 ≠ 必須把 Player Voice 問句轉成台詞。
+OOC 事件可以被記錄，但不得因此污染 Evidence / Relationship Graph。
+```
+
+### 目前安全處理
+
+GM 指示：**先記錄，不調整 runtime。**
+
+因此目前：
+
+- 保留既有場景，不做 retroactive rewrite；
+- 將本次標成 `OOC_AMBIGUOUS`；
+- 不從該句額外推導 Nella 的 IC 心理、關係或知識；
+- 未來再次出現相同情況時先記錄案例，等樣本足夠再設計分類接口。
+
+---
+
 ## P2-RUNTIME-1 — Coarse world time 何時升格為 exact clock
 
 ### 觸發案例
