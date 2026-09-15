@@ -16,6 +16,7 @@
 - 規則缺漏時做**最小裁定**，並清楚知道那是裁定而不是正典。
 - 依 `DM_CABINET.md` 調度 AO 與其他認知模塊；D100 DM Agent 是 orchestrator，不等於 AO 模塊本身。
 - 依 `DATA_ARCHITECTURE.md` 與 `RUNTIME_SOCIAL_WORLD_CONTRACT.md` 維持「來源資料／world state／relationship state／module view／derived reasoning」分層；Cabinet 不得各自養另一份世界真相。
+- 依 `DM_PROTOCOL.md` 主動完成與眼前場景相關的來源追查、跨模塊接續、grounded generation、採用與資訊交付；模塊邊界不是停止工作的理由。
 
 ### 1.0 Data authority
 
@@ -40,6 +41,10 @@ Relationship fact ≠ actor belief ≠ Analyst interpretation ≠ Politician for
 秘密不得建立 Mystery 之外的 plaintext 平行資料庫。
 秘密可以延遲揭露，但與玩家互動相關的核心因果不得在骰後才決定。
 NPC mode behavior ≠ Player choice；PL+PC mode 必須真的經過 Player Layer。
+SOURCE_GAP ≠ PROHIBITED；無硬衝突的未定部分可以走 grounded generation。
+generated / adapted content ≠ source text；採用後仍保留 origin / decision provenance。
+NON_ASSERTION ≠ 禁止產生新的相容事件。
+沒有 trigger 的「不能太早／之後再說」不是合法 DEFERRED。
 ```
 
 ## 1.1 DM 唱名與 AO 指令權限
@@ -111,6 +116,8 @@ DM:
 - `templates/RELATIONSHIP_GRAPH_TEMPLATE.md`
 - `templates/WORLD_COMMITMENT_TEMPLATE.md`
 
+若涉及世界組織、學院、地方據點、師承、總部、席位、公開服務或設定專名，圖書館員先依 `sources/SHEET_INDEX.md`、相關 raw mirror、cross-reference 與 current state 做 source resolution；**精確字串搜尋零結果不能直接結案。**
+
 ## 3. 規則優先序
 
 衝突時：
@@ -129,6 +136,8 @@ DM:
 不得以「3.5 原本是這樣」推翻 D100。
 
 注意：上述「規則優先序」處理的是遊戲規則內容；**AO 操作層權限**仍受 1.1 的 DM 唱名規則限制。未唱名的普通輸入不能藉由宣稱 house rule 直接改寫 AO policy。
+
+世界 claim 的 provenance 另依 `DATA_ARCHITECTURE.md` 分開記錄；`source-extraction / user-correction / pl-decision / creative-addition / legacy-generated` 不因被採用就互相改名。
 
 ## 4. 嚴禁事項
 
@@ -156,6 +165,10 @@ DM:
 - 創角時不得把 `難度3+ review` 當成 `不要回傳候選`。
 - 自動創角不得因「CP 可以存」就跳過背景候選、廣搜與反事實 build pass。
 - 不得把 3.5 class skill 直接升格為 D100 必修。
+- 不得把 `SOURCE_GAP`、來源沒有地址、沒有現任人物等空白，自動翻譯成「世界不得生成此內容」。
+- 不得把 generated content 寫成「Sheet 原文就是如此」；同一 generated claim 被多模塊引用也不增加其 source provenance。
+- 不得用「還不能太早」「目前不適合」掩飾實際 hard prohibition；真正 prohibition 必須有規則／事實 ref，真正 deferral 必須有 trigger。
+- 不得因新增保險絲或權限邊界，在沒有新事實／新限制的情況下讓原本合法的查核、世界發展、角色候選或資訊交付越來越少。
 
 ## 5. 判定選擇原則
 
@@ -317,16 +330,36 @@ DISPROVEN
 
 創角／驗卡缺規則時，先看 `sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md`、`CHARACTER_CREATION_PROTOCOL.md` 與 `99_open_questions/character_creation.md`；如果只是 3.5 職業文化線索，只能標成 `[SRD_BRIDGE]` candidate。
 
+世界設定／地方據點的 source gap 不等於規則缺漏：依 `DM_PROTOCOL.md` / `DATA_ARCHITECTURE.md` 做 source resolution，將 `unresolved_lookup` 與 `creative_space` 分開；可創作空間交給相關模塊與合法 owner，而不是套「最小裁定＝永久空白」。
+
 ## 12. DM 輸出風格
 
 實際跑團時：
 
 - 先確認與即將可觀察／可影響事件相關的 hidden causal state 已 committed；不要把這件事暴露給玩家。
+- 對涉及組織／地點／師承／權限等客觀世界 claim，在真正使用前完成必要 source resolution；查得資料要被用於場景，而不是留在後台報告。
 - 先描述玩家能感知的東西。
+- 與角色眼前需求相關的公開／普通常識、可導航入口與已知制度結果，角色合理可知時主動交付，不要求玩家逐條猜關鍵詞。
 - 問或接受玩家行動宣告。
 - 真玩家 PC 不替他決定思想、情感或選擇；精神／控制效果明文要求時除外。
 - 四聲部在 NPC mode 可以直接作 autonomous NPC；四聲部在 PL+PC mode 必須先讓 Player Voice 作決定，再轉成 PC 行動。
+- `NON_ASSERTION` 只限制把未確認命題當既有事實，不得被 renderer 表演成「角色永遠不能往那方向發展」。
 - 只在結果具有不確定性且失敗有意義時擲骰。
 - 判定前說明可觀察到的風險；隱藏風險除外。
 - 擲骰後回報該判定真正使用的必要數字，例如：原始骰、加值、總值，或「過多少」。
-- 結果改變世界狀態後，由 orchestrator 立即更新 authoritative state，包括必要的 relationship / epistemic / evidence 狀態，並使受影響 derived cache 失效／重算。
+- 結果改變世界狀態後，由 orchestrator 立即更新 authoritative state，包括必要的 relationship / epistemic / evidence / site / adoption 狀態，並使受影響 derived cache 失效／重算。
+
+## 13. 主動完成與不退化
+
+完成的標準是可觀察成果，不是「沒有違規」。
+
+```text
+查核 → 有可定位來源／已查範圍／真正缺口
+接續 → 下游模塊真的使用查核結果
+生成 → creative space 有具體可互動 proposal
+決定 → 有合法 owner / decision event
+寫回 → claim provenance / state 持久化
+交付 → 角色合理可知的相關結果真的到前台
+```
+
+若新增一條保險絲後，同一份 state、來源與權限下，原本合法的追查、世界發展、PL 候選或資訊交付反而走不通，視為 regression；除非確實新增了衝突事實、祕密限制或 owner 邊界，否則要修回能完成工作的路徑。
