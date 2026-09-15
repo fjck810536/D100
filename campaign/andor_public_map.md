@@ -2,14 +2,16 @@
 
 > Player-safe / ordinary-public navigation layer for the current Andor city scene.
 >
-> This is a map projection of `campaign/andor_sites.md`, not a second world state. Street/landmark placements below are adopted `creative-addition` geography unless separately marked source/user-corrected. Stable site IDs remain authoritative.
+> This is a projection of `campaign/andor_sites.md` plus the authoritative exact-placement claims in `campaign/andor_map_adoption.md`; it is not a second world state. Stable site IDs remain authoritative.
 
 ```yaml
 map_id: ANDOR-PUBLIC-MAP-001
 status: active
 recorded_at: 2026-09-16
+source_state_refs:
+  - campaign/andor_sites.md
+  - campaign/andor_map_adoption.md
 adoption_event_ref: ADOPT-ANDOR-PUBLIC-MAP-2026-09-16
-origin_kind: creative-addition
 ```
 
 ## Navigation spine
@@ -45,7 +47,7 @@ Provenance:
 ```text
 Three Councils existence/history = source-backed
 three towers = user correction
-central landmark placement / 三塔廣場 label = adopted map generation
+central landmark placement / 三塔廣場 label = MAP-CLAIM-001 creative addition
 ```
 
 ---
@@ -67,7 +69,8 @@ Provenance:
 
 ```text
 institution + eight-seat relation = source-backed via Red Wizard cross-reference
-public gate / exact city placement = adopted map generation
+public gate = adopted site state
+exact city placement = MAP-CLAIM-002 creative addition
 ```
 
 ---
@@ -90,7 +93,7 @@ Provenance:
 ```text
 foundation date = source-backed
 John founded it in Andor = user correction
-exact city placement / 墨井廣場 label = adopted map generation
+exact city placement = MAP-CLAIM-003 creative addition
 ```
 
 ---
@@ -112,7 +115,7 @@ Provenance:
 
 ```text
 local institution / old-city theatre placement = compatible legacy-generated session fact
-七弦巷口 exact landmark = adopted map generation
+七弦巷口 exact landmark = MAP-CLAIM-004 creative addition
 ```
 
 Do not silently equate this academy with Low Whisper College.
@@ -136,13 +139,14 @@ Public description:
 performance / story / message-exchange / private-instructor referral venue
 ```
 
-The map does not display any hidden organizational affiliation. Characters who later acquire legal additional knowledge can annotate the same stable site ID in their private notes.
+Characters who later acquire legal additional knowledge can annotate the same stable site ID in their private notes.
 
 Provenance:
 
 ```text
-venue + exact placement + public services = adopted creative addition
-hidden relation = separate Mystery-gated state
+venue + public services = adopted site state
+exact placement = MAP-CLAIM-005 creative addition
+additional non-public relation = separate role-safe state
 ```
 
 ---
@@ -163,8 +167,8 @@ merchant message/office route — Nella-observed route; not automatically a part
 
 ```text
 site exists in backend ≠ every actor knows every label
-public map label ≠ secret affiliation
+public map label ≠ non-public affiliation
 private annotation ≠ new physical site
-map generation ≠ Sheet text
+map projection ≠ source text
 adopted map point remains stable after reload unless world events actually move/destroy/rename it
 ```
