@@ -3,6 +3,8 @@
 > 複製為 `sessions/YYYY-MM-DD_session-N.md`。本檔是 GPT 在長團中避免失憶與狀態漂移的主要容器。
 >
 > 本檔只保存「目前真的成立的 session state」、actor-specific epistemic state refs、relationship/evidence/commitment refs 與合法 Mystery references；不得另建 plaintext DM secret store。架構見 `../DATA_ARCHITECTURE.md`、`../RUNTIME_SOCIAL_WORLD_CONTRACT.md`、`../MYSTERY_PROTOCOL.md`。
+>
+> 若本 session 接受了 grounded generation / user correction / legacy repair，必須保留來源與採用事件；存檔後重新載入不得把 generated claim 洗成 D100 原文，也不得重抽已採用的地址、身份或關係。
 
 ```yaml
 session_id:
@@ -15,6 +17,12 @@ world_time:
 four_voice_control:
   mode: npc | pl_pc
   mappings: []
+
+site_refs: []
+source_resolution_refs: []
+decision_event_refs: []
+deferral_refs: []
+repair_event_refs: []
 ```
 
 > `four_voice_control.mode` 只有在使用者／DM 明確要求四聲部作為 PL+PC 時才設為 `pl_pc`；普通情況可保持 `npc`。過去由 DM 直接生成的 NPC mode 行為不得事後回填成 Player choice。
@@ -24,6 +32,34 @@ four_voice_control:
 ### 地點
 
 ### 可見／可聽／可感知資訊
+
+### Site / map refs
+
+```yaml
+site_refs:
+  - site_ref:
+    current_relation: at | approaching | known | mapped | mentioned
+    visible_label:
+    visibility_ref:
+```
+
+> 世界中 site 存在、玩家地圖上怎麼標、角色是否知道秘密隸屬是三件不同的事。
+
+### Source resolution / claim provenance
+
+```yaml
+source_resolution_refs:
+  - resolution_id:
+    claim_refs: []
+    source_refs: []
+    user_correction_refs: []
+    generated_claim_refs: []
+    searched_scope: []
+    unresolved_lookup: []
+    creative_space: []
+```
+
+> 全文搜尋零命中不是 `source missing` 的充分證明；圖書館員若有語義索引／交叉引用路徑，應把實際查讀結果留成 ref。來源缺口與可創作空間分開記。
 
 ### Secret refs
 
@@ -108,6 +144,31 @@ player_layers:
 ```
 
 Player Layer 可以拒絕分析師／生態學家 proposal；DM 不得把 derived recommendation 當成 Player decision。
+
+新感情、意向或角色發展若由對應 PL 明確決定，可以從該時點成為新的 actor state；不需要先證明「角色以前早就有同一感情」。但 Player Layer 決定不自動決定另一名 PC 的內心或雙方關係狀態。
+
+## Typed deferral / non-assertion
+
+> 禁止用沒有狀態轉移語義的「還不能太早／之後再說」長期掛住候選。
+
+```yaml
+deferral_refs:
+  - deferral_id:
+    type: NON_ASSERTION | DEFERRED | OWNER_DECISION | PROHIBITED | NOT_SELECTED
+    proposition_or_candidate_ref:
+    blocked_operation:
+    owner:
+    trigger:
+    reevaluate_with:
+    rule_or_fact_ref:
+    last_updated:
+```
+
+- `NON_ASSERTION`：目前不能把命題宣稱成既有事實；不封鎖新候選生成。
+- `DEFERRED`：真的在等條件；必須有 trigger + reevaluate_with。
+- `OWNER_DECISION`：決定權在特定 PL／AO；不是世界禁令。
+- `PROHIBITED`：有規則／事實明確禁止，必須有 ref。
+- `NOT_SELECTED`：本次沒選，不是永久禁止。
 
 ## 戰鬥順位
 
@@ -203,6 +264,20 @@ Player Layer 可以拒絕分析師／生態學家 proposal；DM 不得把 derive
 
 > 只記客觀成立的事件／承諾／債務／依賴。分析師解讀、政治家預後不要填在這裡。
 
+## Decision / adoption events
+
+| Event ref | Owner | Proposed claim / action | Decision | Effective from | Provenance |
+|---|---|---|---|---|---|
+
+> `proposed → committed` 必須有合法 owner。PL+PC 關鍵角色決定屬 Player Layer；NPC／世界發展由 AO flow 採用。普通 grounded generation 不需要逐項向頂層 DM 請示，但不得繞過真正的 owner。
+
+## Provenance repair events
+
+| Repair ref | Old representation | New representation | Reason | Source / correction refs | Affected state |
+|---|---|---|---|---|---|
+
+> 後來補錄來源不代表它早先已被查過；後來補存 site 不代表建築在世界時間上剛出現。`recorded_at` 與 `effective_from` 分開。
+
 ## 本次臨時裁定
 
 | 問題 | 裁定 | 標籤 | 下次是否需確認 |
@@ -239,16 +314,34 @@ derived_refs:
 
 ### NPC
 
+### Site / Map refs
+
 ### Relationship Facts
 
 ### Actor Epistemic State
 
 ### Evidence Ledger
 
+### Source / Decision / Repair refs
+
 ### Secret / Commitment refs
+
+### Typed deferrals / owner decisions
 
 ### Derived views to invalidate / keep
 
 ### 未完成事件
 
 ### 下次開場必讀
+
+## Completion check
+
+在相關工作結束前，orchestrator 最少核對：
+
+```text
+需要的 source / cross-reference 是否真的讀過或有仍有效的 cache？
+查得資料是否真的被下游模塊使用？
+採用的新 claim 是否有 owner / decision event / provenance？
+角色合理可知且與眼前選擇相關的成果是否真的交付？
+尚未完成的工作是否被記成未完成，而不是被說成世界沒有？
+```
