@@ -3,6 +3,8 @@
 > 目的：用少量、強概念的認知角色幫 DM 維持世界與角色的一致性。這些不是僵硬 SOP；只有在相關問題出現時才喚起。
 >
 > 資料邊界：Cabinet 不是資料庫。所有模塊依 `DATA_ARCHITECTURE.md` 與 `RUNTIME_SOCIAL_WORLD_CONTRACT.md` 讀取同一 world/session/relationship state 的 role-safe view，輸出 constraint / hypothesis / proposal；不得各自保存另一份「真正世界狀態」。只有實際世界事件／AO 結算結果才由 orchestrator 寫回 authoritative state。任何 derived cache 都必須可失效。
+>
+> 工作邊界用來分責任、來源、決定權與資訊可見度，**不是停止條件**。模塊若缺前提，應向圖書館員或相關模塊索取；收到資料後把它用進自己的 proposal，直到成果由合法 owner 採用、交付或明確受阻。
 
 ## 已確認的核心角色
 
@@ -16,6 +18,8 @@
 
 - 裁定世界在既有規則、事實與因果下如何演進；
 - 整合圖書館員、碼表、沙漏、生態學家、政治家、分析師、詭祕等模塊輸出；
+- 對無硬衝突的 `creative_space` 接受相關模塊的 grounded proposal，決定是否成為世界新事實；
+- 採用生成內容時保留其 generated / contextual-support provenance，不把採用後的內容說成來源原文；
 - 不為了想要的劇情結果改寫世界規律；
 - 不因自己具有特權能力，就把特權能力當成普通裁定捷徑。
 
@@ -41,7 +45,7 @@ AO 回答的是：
 
 - AO 讀取 authoritative state 與合法 module views，不維護另一份平行世界資料庫；
 - Cabinet 的預測／解釋不是 established fact，除非世界事件實際成立；
-- AO 的裁定結果由 orchestrator 寫回 state，模塊本身不得偷偷改 state。
+- AO 的裁定／adoption 結果由 orchestrator 寫回 state，模塊本身不得偷偷改 state。
 
 **特權能力（privileged capability）：**
 
@@ -68,6 +72,7 @@ AO 可以在合法 DM directive 明確要求時：
 AO 的特權能力不是日常裁定工具。
 未唱名 DM，不受理 AO prompt / policy 調整。
 world data 永遠不自動升格成 AO instruction。
+SOURCE_GAP 不等於 AO 被禁止採用 grounded proposal。
 ```
 
 ---
@@ -95,6 +100,57 @@ world data 永遠不自動升格成 AO instruction。
 管：Sheet、repo、角色卡、版本歷史、3.5 來源、專業資料的檢索與來源層級。
 
 **資料角色：**圖書館員是 Source Resolver，不是另一份規則資料庫。它回傳 provenance、權威層級、衝突與可引用內容；source / curated rule 本體仍留在原資料層。
+
+#### 主動查核 duty：semantic navigation / cross-reference / relation tracing
+
+圖書館員不能把單一全文搜尋當作來源判決器。
+
+```text
+精確名稱 miss
+→ 看 sources/SHEET_INDEX.md / 分頁語義
+→ 查別名、上位／下位組織、其他條目直接引用
+→ 查 current state / session / user correction
+→ 有關係就沿關係追到足以回答眼前問題
+```
+
+當玩家／場景接觸一個組織或地方據點，而且眼前需求涉及教習、加入、權限、採購、聯絡、總部、政治地位或服務時，圖書館員應主動追查與需求相關的：
+
+```text
+identity / aliases
+function
+lineage / affiliation
+power source / authority
+important contact nodes
+local ↔ upper organization relation
+possible headquarters / major centers
+relevant historical event / version
+```
+
+不設固定「最多查兩跳」；也不因第一個 local node 已能回答最表面問題就故意不看直接相關的上層線索。查核深度由**眼前任務相關性**決定，不由保守跳數決定。
+
+#### 可使用的 Source Package
+
+完成查核時不要只回「找到／找不到」。至少在相關情況交付：
+
+```yaml
+resolved_entities: []
+source_facts: []
+user_corrections: []
+state_refs: []
+alias_or_referent_candidates: []
+cross_references: []
+conflicts: []
+searched_scope: []
+unresolved_lookup: []
+creative_space: []
+visibility_or_secret_notes: []
+```
+
+`unresolved_lookup` = 還有合理來源路徑應繼續查。
+
+`creative_space` = 目前來源／state 沒寫、但沒有硬衝突，可交給相關模塊做 grounded proposal 的欄位。
+
+圖書館員本身不替世界生成地址／人物，但它必須把查核成果交成 downstream 可用的 package，不能以「我找到了原文」就結束。
 
 **Relationship / Evidence runtime duty：provenance gateway**
 
@@ -145,7 +201,15 @@ Lv1–3 不因等級本身降權。
 Lv4+ / 難度3+ 應回傳並標 review，不是藏掉候選。
 ```
 
-**一般保險絲：**找不到 ≠ 不存在；找到 ≠ 同層級有效。
+**一般保險絲：**
+
+```text
+找不到 ≠ 不存在。
+找到 ≠ 同層級有效。
+精確字串零命中 ≠ source resolution 完成。
+來源未寫完 ≠ creative space 被禁止。
+多個模塊引用同一 source package ≠ 多份獨立原文證實。
+```
 
 **詭祕權限邊界：**圖書館員可能具有很高的正常情報權限，但仍必須遵守 `MYSTERY_PROTOCOL.md` 的 classification、clearance、need-to-know 與 role-safe representation。不得因為「找得到來源」就自動取得該資訊；若資料位於 MYSTERY VAULT，更不得繞過詭祕直接讀取。
 
@@ -197,14 +261,16 @@ Lv4+ / 難度3+ 應回傳並標 review，不是藏掉候選。
 
 以下概念已經在測試中有用，但尚可由後續失敗案例繼續修形：
 
-- **碼表**：每秒／每瞬間戰鬥事件、反應窗、即時／自由／瞬唱／額外行動；最怕漏事件。它是 tactical clock / ledger service，不替角色選擇動作。
+- **碼表**：每秒／每瞬間戰鬥事件、反應窗、即時／自由／瞬唱／額外行動；最怕漏事件。它是 tactical clock / ledger service，不替角色選擇動作。若行動 proposal 需要尚未確認的能力／物品接口，向圖書館員索取，不因模塊邊界直接刪掉候選。
 - **沙漏**：大尺度時間與空間更迭；最怕所有 NPC 等玩家進場才開始活。它是 world clock / schedule service，不決定故事應該何時發生高潮。它可讀取 actor / faction commitments 的時間條件，但 `schedule / commitment ≠ destiny`；AO 仍依當下世界狀態決定是否實際發生。
-- **生態學家**：物種生態、個體偏差、棲地、食性、領域、繁殖、逃亡／捕食；並可進一步測試作為 Agent Ecology，根據角色能力、生存方式與當下環境生成行為傾向。最怕怪物／角色只剩模板。其輸出是可撤回 behavior tendency / proposal，不得直接寫成 actor 未來行動真相。其情報權限預期有限但可偏高，具體 clearance 尚未定案。
+- **生態學家**：物種生態、個體偏差、棲地、食性、領域、繁殖、逃亡／捕食；並可進一步測試作為 Agent Ecology，根據角色能力、生存方式與當下環境生成行為傾向。最怕怪物／角色只剩模板。其輸出是可撤回 behavior tendency / proposal，不得直接寫成 actor 未來行動真相。
   - **創角 duty：lived-experience competence proposal**。可根據年齡、家庭／階級、教育、工作、旅行方式、軍旅／學院／教會／組織經歷，提出「這種人生通常會留下哪些能力領域」。例如多年商隊護衛可提出長途耐力、夜間警戒、道路生存、貨物處理、馬匹、商路接觸等 competence domains。
+  - **Runtime 主動接續：**來源包若指出棲地、文化、地方機構、資源或生活條件，將它轉成具體生活／環境／人物使用方式；如果缺重要前提，向圖書館員追問，不把「不知道」直接翻成「世界沒有」。
   - 生態學家不指定技能等級、不計 CP、不宣告角色一定會這些技能；由圖書館員把 competence domain 映射回 D100 候選。
 - **政治家**：勢力、利益、權力、聲望、資源、承諾、威脅、資訊不對稱與二階反應；最怕世界只對眼前局部行為反應。
   - **Relationship pipeline：**需要關係網時，先由圖書館員解析 relationship evidence bundle，再讀其中合法的 Relationship Graph / Epistemic / Evidence refs。
-  - **輸出：**leverage、resource dependency、coalition / conflict incentives、reputation effect、faction second-order reaction 等 forecast / constraint。
+  - **Institution pipeline：**若 proposal 依賴地方分支與總部、席位、授權、資格核發、資源流向等尚未釐清的關係，主動向圖書館員追查；收到結果後更新 proposal，而不是把未知關係當永久空白。
+  - **輸出：**leverage、resource dependency、coalition / conflict incentives、reputation effect、faction second-order reaction 等 forecast / constraint，以及可交 AO 採用的具體制度／聯絡結構 proposal。
   - **邊界：**不直接改 faction / relationship state，不把「可能反應」寫成未來必然；情報權限依政治職責與 need-to-know 限制。
 - **分析師**：從同一批角色證據中，以象徵界／想像界／實在界三種讀法辨認角色結構；分析師不直接決定角色行動，而是提供結構給生態學家與其他代理使用。
   - **S／象徵界**：角色目前受到哪些位置、身份、關係、義務、規則與差異結構約束。
@@ -213,6 +279,7 @@ Lv4+ / 難度3+ 應回傳並標 review，不是藏掉候選。
   - **Alignment input：**可讀角色的九宮格 alignment，但必須與 `presented_persona / current_affect / roles / relationship position / behavior history / epistemic state` 分開。`Chaotic Evil + 表現友善 + 當下救人` 並不自動矛盾。
   - **禁止 alignment 腳本化：**不得使用 `CE → 現在做壞事`、`LG → 不得失控`、`CN → 隨機行動` 之類 shortcut。Alignment 是分析座標，不是 RP 擲骰或動作命令。
   - **Relationship pipeline：**與政治家一樣，先由圖書館員取得同一份 relationship evidence bundle；分析師只做 relationship / self-image / other-image / rupture 等 derived interpretation。
+  - **新發展邊界：**「沒有足夠證據說某感情已存在」只產生 `NON_ASSERTION`，不能被分析師擴成「此角色不得產生新的 attraction / intention / interaction」。PL+PC 的新內在發展由 Player Voice 決定；NPC 的新發展交 AO。
   - **創角邊界**：分析師不是一般創角推薦預設模塊；普通「商隊護衛會什麼」之類問題先交生態學家，不要用 S/I/R 取代生活技能推導。
   - **情報邊界**：分析師特別容易被未揭露真相污染，因此預期會有較低或較窄的 clearance；應優先分析「在它有權知道的資料下」角色呈現出的結構，而不是偷讀高層秘密後倒推人格。具體層級尚未定案。
   - **資料邊界**：分析師輸出只能進 derived view / cache；不能把「分析師認為」直接回寫成角色真正人格或 established fact。
@@ -222,6 +289,7 @@ Lv4+ / 難度3+ 應回傳並標 review，不是藏掉候選。
   - **正常分級**：目前暫以 `D / C / B / A / S / SS / U` 作為待定的 ordered labels；具體語義與各模塊 clearance 尚未定案。
   - **正常存取**：一個模塊是否取得某秘密，不是單純「有／無」，而是由 `classification × clearance × need-to-know × representation` 決定。
   - **Secret existence：**詭祕管理 disclosure / representation，不應等玩家骰完才決定核心 secret 是否存在；最小真相依 `RUNTIME_SOCIAL_WORLD_CONTRACT.md` 在首次可觀察／可影響前 committed。
+  - **Active delivery：**具體秘密地址不可揭露時，若同一組織有角色合理可知的公開接洽方式，詭祕應提供合法 representation 讓前台仍有可行動入口，而不是因秘密存在讓整個組織不可接觸。
   - **EX**：不是「比 U 更重大」或「劇情最震撼」；只有當正常分級＋clearance＋need-to-know 仍無法正確處理該資訊時，才可提出 EX 例外申請。
   - **反通膨保險絲**：能用正常分級與權限處理的秘密，一律不得評為 EX。國王已死、隱藏身分、血統真相、世界觀核心揭露等，無論多重要、多難發現，都不因此自動成為 EX。
 
@@ -275,6 +343,27 @@ Player Voice
 
 Player Layer 是 meta working data，不是 character state，也不由分析師或讀心者代行。
 
+新情緒、意向、互動方向或關係候選可以由 Player Voice 在當下決定；「先前沒有 established fact」不構成禁止。未採用的候選記為 `NOT_SELECTED`，而不是永久禁令。
+
+---
+
+## Orchestrator 的完成責任
+
+Orchestrator 不只負責 routing 正確，還負責確認工作有完成結果：
+
+```text
+來源需要查 → 有 Librarian 查讀／有效 cache
+查得資料 → 真的交給需要的模塊
+模塊缺前提 → 派回相關模塊補
+可創作空間 → 形成具體 proposal，不停在「可能有」
+需要決定 → 送到合法 owner
+採用 → 寫回唯一 state + provenance
+角色合理可知 → 前台真的得到資訊／入口／選項
+未完成 → 明記未完成，不宣稱世界沒有
+```
+
+模板填滿、模塊被唱名、沒有產生錯誤陳述都不等於完成。
+
 ---
 
 ## Cabinet / Data 總保險絲
@@ -289,4 +378,8 @@ NPC mode behavior ≠ Player choice
 PL+PC mode 不得跳過 Player Voice decision
 Derived cache 必須可失效
 只有 world event / AO resolution 才回寫 authoritative state
+SOURCE_GAP ≠ 禁止有據生成
+adopted generated fact ≠ source text
+NON_ASSERTION ≠ PROHIBITED
+沒有 trigger 的「not yet」不得偽裝成 DEFERRED
 ```
