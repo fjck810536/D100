@@ -25,7 +25,18 @@ resolved provenance may remain here as a short pointer if useful
 - `unresolved_rules.md` — 核心／戰鬥／技能／物品等未決規則。
 - `social_world.md` — Alignment、角色行為、社會世界與關係層的待設計問題。
 - `economy.md` — 平民／勞工／專業者收入、基本生活開銷、可支配所得與日常經濟常識基線。
-- `runtime_playtest.md` — 實際跑團暴露出的 runtime interface / provenance / timing / investigation 缺口；只收可泛化問題，不收單一 session 尚未填完的普通 state。
+- `runtime_playtest.md` — 實際跑團暴露出的 runtime interface / timing / investigation 缺口；只收可泛化問題，不收單一 session 尚未填完的普通 state。
+
+## Resolved incident records
+
+以下可以保留完整考古／對話，**但不再代表 active open question**：
+
+- `librarian_routing_incident_2026-09-15.md` — 原始事故／對話保存；檔內的 `OPEN` 是當時的歷史狀態。
+- `librarian_routing_resolution_2026-09-16.md` — 已採用的修正：active source resolution、cross-reference、grounded generation、typed deferral、provenance、active delivery 與 completion contract。
+
+若兩者對「目前 runtime 應怎麼做」描述不同，以 resolution 與已更新的 `AGENTS.md / DATA_ARCHITECTURE.md / DM_PROTOCOL.md / DM_CABINET.md / RUNTIME_SOCIAL_WORLD_CONTRACT.md` 為準。
+
+特別注意：原 incident 的中間結論「未找到安道爾法術學院完整機構名」已被更深的 cross-reference 查核推翻；目前 source-backed referent 是 `安道爾帝國魔法學院`，來源在世界觀 mirror 的 `賽爾紅袍協會` 條目。
 
 ## 與 Architecture Audit 的差異
 
