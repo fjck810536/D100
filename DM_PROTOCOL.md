@@ -8,21 +8,29 @@
 
 每個場景遵循：
 
-1. **讀取 authoritative state**：campaign、character、relationship、session 與必要 Entity / Site / Hazard / Commitment record。
-2. **確認 causal commitment**：對即將第一次成為玩家可觀察／可影響來源的重要 hidden actor、secret、event、faction plan，若尚未存在最小 hidden state，先依 `RUNTIME_SOCIAL_WORLD_CONTRACT.md` / `templates/WORLD_COMMITMENT_TEMPLATE.md` committed；不可等骰後才決定真相。
-3. **取得合法資訊 view**：若涉及祕密，先依 `MYSTERY_PROTOCOL.md` 取得各角色／模塊可知道的 representation。
-4. **描述可感知狀態**：只給角色目前能合理知道的資訊。
-5. **取得玩家宣告**：不要替真玩家補行動；若四聲部處於 PL+PC mode，先取得 Player Voice decision，再轉成該 PC 的宣告／扮演。
-6. **判斷是否需要擲骰**：若沒有風險／不確定性，不要為了擲骰而擲骰。
-7. **選擇判定接口**：技能、抗性、特殊判定、攻擊／閃避、施法等。
-8. **決定公開或秘密擲骰**：若骰名／結果會洩漏隱藏資訊，可由 DM 暗擲。
-9. **結算成功餘裕／對抗**。
-10. **描述後果**。
-11. **更新 authoritative state**：HP、SP、位置、姿勢、持續效果、裝備、relationship facts、時間、已知／相信的情報、Evidence Ledger 等。
-12. **使受影響的 derived cache 失效／重算**。
-13. 回到 1。
+1. **讀取最新 authoritative state**：campaign、character、relationship、最新 session 與必要 Entity / Site / Hazard / Commitment record。Checkpoint 是存檔點，不得用舊 checkpoint 或空白 `campaign/current_state.md` 覆蓋後續已發生進度。
+2. **辨識輸入層與目的**：區分 `DM directive / OOC-PL / Player decision / PC 台詞 / PC 內心 / 行動宣告 / narrator addition`；先知道誰在什麼層級說了什麼，以及本幕真正想做到什麼。
+3. **解析實體／claim／關係**：保存玩家原稱呼，區分國家、城市、組織、學院、學派、建築、地方分支、總部；不要因名稱相似先合併，也不要因精確字串不同先宣布不存在。
+4. **客觀使用前做 source resolution**：若 narrator / NPC / AO 準備把某設定 claim 用於地圖、導航、制度、師承、隸屬、資源、限制、角色發展或結算，先由圖書館員解析來源或使用仍有效的 source cache。全文搜尋 miss 時必須考慮 Sheet index、語義分頁、其他條目交叉引用與本團 state。
+5. **取得可使用的 source package**：至少分出 source-backed facts、user corrections、session/world commitments、alias/referent candidates、conflicts、已查範圍、`unresolved_lookup` 與 `creative_space`。找不到 ≠ 不存在；查到一個名字也 ≠ 整包設定自動變 canon。
+6. **取得合法資訊 view**：若涉及祕密，依 `MYSTERY_PROTOCOL.md` 取得各角色／模塊可知道的 representation。角色目前不知道某秘密，不等於後台停止 source resolution / world generation。
+7. **相關模塊主動接續**：生態學家把資料用於生活／環境／行為，政治家用於權力／授權／資源／上下層聯絡，分析師用於角色在師承／機構／義務中的位置；缺前提就主動向圖書館員或相關模塊追問，收到結果後更新 proposal。
+8. **在 creative space 生成可用發展**：已有事實與秘密約束生成；未定部分可生成具體人物、地點、制度、服務、教習、聯絡方式與事件候選。`SOURCE_GAP` 本身不是拒絕理由。生成內容須能回答來源／擬合依據／決定權，並保留 generated origin。
+9. **由有權者決定**：四聲部 `pl_pc` 的關鍵角色選擇交對應 Player Voice；真玩家 PC 交真人玩家；NPC 與世界發展走 AO。普通 grounded generation 使用既有世界裁定權，不需要每個無衝突小欄位都額外向頂層 DM 請示。
+10. **確認 causal commitment**：對即將第一次成為玩家可觀察／可影響來源的重要 hidden actor、secret、event、faction plan，若尚未存在最小 hidden state，先依 `RUNTIME_SOCIAL_WORLD_CONTRACT.md` / `templates/WORLD_COMMITMENT_TEMPLATE.md` committed；不可等骰後才決定真相。最小 commitment 是因果底線，不是世界豐富性上限。
+11. **主動交付可知成果**：描述角色目前能合理知道且與眼前理解／選擇相關的結果；普通常識、公開資訊、已知地圖與合理可知的接續方法不必等玩家逐項問。具體秘密依 actor epistemic / evidence / Mystery release 演出。
+12. **取得玩家宣告**：不要替真玩家補行動；四聲部 `pl_pc` mode 先取得 Player Voice decision，再轉成 PC 宣告／扮演。
+13. **判斷是否需要擲骰**：若沒有風險／不確定性，不要為了擲骰而擲骰。
+14. **選擇判定接口**：技能、抗性、特殊判定、攻擊／閃避、施法等。
+15. **決定公開或秘密擲骰**：若骰名／結果會洩漏隱藏資訊，可由 DM 暗擲。
+16. **結算成功餘裕／對抗**。
+17. **描述後果**。
+18. **更新 authoritative state**：HP、SP、位置、姿勢、持續效果、裝備、relationship facts、時間、已知／相信的情報、Evidence Ledger、site / adopted claim / decision event 等。
+19. **使受影響的 derived / source-resolution cache 失效／重算**。
+20. **Completion check**：實際查核是否有可定位結果？查得資料是否被下游使用？生成採用是否有 owner / provenance / decision event？角色合理可知且與本幕相關的成果是否真的交付？缺什麼就派回對應工作；不得把「未完成」說成「世界沒有」。
+21. 回到 1。
 
-只有實際發生的結果寫回 state。分析師／生態學家／政治家／讀心者等模塊的預測或解釋，不因被產生就自動成為世界事實。
+只有實際發生／合法採用的結果寫回 state。分析師／生態學家／政治家／讀心者等模塊的預測或解釋，不因被產生就自動成為世界事實。
 
 ## 1.1 Lazy generation, early commitment
 
@@ -47,7 +55,56 @@ LLM 可以即時生成沒有因果負擔的 surface detail，例如：
 ```text
 玩家行動可以揭露／改變真相
 玩家骰點不能倒過來決定真相原本是什麼
+最小承諾是因果完整性的底線，不是「只准生成最小量」
 ```
+
+## 1.2 Source gap → grounded generation，不是停機
+
+當來源／state 沒寫完某個本幕需要的欄位：
+
+```text
+先查相關 source / state / cross-reference
+→ 真正未解的部分分成 unresolved_lookup 與 creative_space
+→ 有硬衝突／秘密／owner 限制的部分照限制處理
+→ 其餘 creative_space 產生具體 proposal
+→ 合法 owner 採用
+→ 寫回 state 並保留 generated origin
+```
+
+例：來源證明某機構存在，但沒有寫本城地址。若本團確實需要能前往的據點，而且沒有既有地址衝突，可以生成並採用一個本城落點／接洽入口；不能說「原文沒地址，所以角色永遠去不了」。反之，生成後也不能說「Sheet 原本就寫在這條街」。
+
+## 1.3 世界 claim 升格前，而不是每個專有名詞都強制查
+
+一句 PC 台詞可以只作為 actor claim 存在，不必每句立即查來源。例如 PC 說「三大議會那些怪人」而另一 PC 只回應他的態度，尚未需要客觀升格。
+
+但當 narrator / NPC / AO 準備把台詞內容用作客觀世界資訊或生成依據時，必須進 source resolution / grounded generation flow。
+
+```text
+角色說了 X
+≠ 世界一定是 X
+
+世界需要使用 X
+→ source resolution
+→ source-backed / correction / state / creative adoption
+```
+
+這個流程不是「來源沒寫就禁止」，而是避免未標記創作冒充既有事實。
+
+## 1.4 Typed deferral
+
+任何「不能太早／目前不適合／之後再說」若會阻擋候選，必須依 `RUNTIME_SOCIAL_WORLD_CONTRACT.md` 分型：
+
+```text
+NON_ASSERTION
+DEFERRED
+OWNER_DECISION
+PROHIBITED
+NOT_SELECTED
+```
+
+其中真正 `DEFERRED` 必須有 `owner + blocked_operation + trigger + reevaluate_with`。沒有 trigger 的無限等待不是合法 deferral。`NON_ASSERTION` 只阻止把未確認命題當成既有事實，不阻止產生新的相容發展。
+
+---
 
 ## 2. 何時不擲骰
 
@@ -445,6 +502,7 @@ Player Voice
 - NPC、怪物、神器使用與 PC 一致的接口，除非其條目明文例外。
 - 同一 authoritative state 對所有相關模塊一致；不能因某模塊忘記／另存一份狀態，就讓世界對不同角色使用不同真相。
 - 玩家猜中 committed secret 時不要為了驚喜改真相；玩家猜錯時也不要為了迎合自動把推論改成真相。
+- 來源查核不能成為壓死合理世界發展的藉口；合法生成也不能抹掉來源邊界。
 
 公平的調查遊戲依賴：
 
