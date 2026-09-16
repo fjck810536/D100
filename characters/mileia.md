@@ -40,17 +40,40 @@ identity_and_training:
 - D100 Sheet canon independently supports Lathander as an example deity associated with the Life Domain, but the reason these fields are authoritative for Mileia is the prior player/PL creation decision, not inference from the domain list.
 - Do not replace these fields with `unknown`, `NON_ASSERTION`, or a newly generated deity merely because an older session snapshot omitted them.
 
-## Current runtime resources
-
-The current session snapshot establishes:
+## Established attributes and derived values
 
 ```yaml
-hp: 20/20
-sp: 35/35
-cp_reserve: 15
+attributes_total:
+  STR: 7
+  DEX: 10
+  SKI: 8
+  CON: 18
+  RES: 18
+  INT: 16
+  WIS: 22
+  CHA: 19
+  SPI: 22
+bases:
+  combat: 25
+  athletic: 36
+  operation: 46
+  perception: 56
+  knowledge: 57
+  interaction: 63
+resources:
+  hp: 20/20
+  sp: 35/35
+  cp_reserve: 15
 ```
 
-These are live-session values and may change through play.
+These values are established runtime character data. Exact raw-vs-adjustment decomposition is still pending recovery.
+
+## Established character direction
+
+- Care / medicine / social-presence orientation; does not imply party-mother autopilot.
+- Moderate helping-risk tolerance.
+- Current Andor thread is the south-district chapel / dispensary route; no off-camera outcome has been auto-resolved.
+- Exact availability/preparation of Zone of Truth or any other specific spell is not established by this recovered minimum card unless separately recovered from the original build record.
 
 ## Capability-record recovery status
 
@@ -61,6 +84,7 @@ recovery_status:
   identity_core: recovered
   faith_and_domain: recovered
   alignment: recovered
+  attributes_total_and_bases: recovered
   hp_sp_cp_live_values: recovered_from_session
   full_creation_ledger: pending_recovery
   raw_stats_and_adjustments: pending_recovery
