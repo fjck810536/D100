@@ -28,7 +28,7 @@ storage:
   write_scope: self_only
   promotion_allowed: explicit_only
   provider_metadata:
-    branch: bootstrap-campaign-storage-v1
+    branch: main
 
 records:
   manifest_ref: campaign_instances/D100-TEST-ANDOR-001/manifest.md
@@ -73,9 +73,11 @@ persistence:
   last_error: null
 
 migration:
-  status: verified_ready_for_explicit_cutover
-  cutover: false
+  status: cutover_complete
+  cutover: true
   staging_branch: bootstrap-campaign-storage-v1
+  merged_to_main_commit: a1625f591c9eba20410ec24f3abb89bf7a27a631
+  post_merge_verification_ref: migrations/ANDOR_POST_MERGE_READBACK_2026-09-16.md
   legacy_source_refs:
     - migrations/ANDOR_PHASE_A_INVENTORY_2026-09-16.md
     - sessions/2026-09-16_session-1_live-state.md
@@ -84,7 +86,7 @@ migration:
     - characters/aster.md
     - characters/mileia.md
     - characters/nella.md
-  last_migration_ref: migrations/ANDOR_PHASE_E_READBACK_2026-09-16.md
+  last_migration_ref: migrations/ANDOR_POST_MERGE_READBACK_2026-09-16.md
   ref_alias_policy: exact_only
   ref_aliases:
     characters/elian.md: campaign_instances/D100-TEST-ANDOR-001/characters/elian.md
@@ -113,4 +115,4 @@ Inside records loaded through this selected campaign manifest, the exact legacy 
 
 Repo-level D100 source/rule refs such as `sources/`, `00_core/` and `90_srd_bridge/` remain repo source refs and are not remapped.
 
-> Verification passed in `migrations/ANDOR_PHASE_E_READBACK_2026-09-16.md`. The save is valid and initialized inside this feature branch, but `migration.cutover` remains false: it is not automatically selected elsewhere, legacy root records remain, and this branch is still not merged to `main`.
+> Post-merge verification passed in `migrations/ANDOR_POST_MERGE_READBACK_2026-09-16.md`. This repo-local persistent-test save is now cut over on `main`. Legacy root records remain audit/history and are not automatically cleaned up or treated as current Andor authority.
