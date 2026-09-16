@@ -1,0 +1,109 @@
+請直接啟動 D100 跑團，不要先替我摘要規則，也不要自行建立劇情。
+
+公開入口：
+https://fjck810536.github.io/D100/
+
+Canonical DM entrypoint：
+https://fjck810536.github.io/D100/START_DM.md
+
+你的網頁擷取工具可能只能開啟「已出現在我的訊息中的完整 URL」。因此我把這次允許使用、且不包含既有 mutable campaign / mystery / legacy state 的公開規則與來源 URL 全部列在下面。
+
+請：
+1. 先讀 START_DM.md。
+2. 完全依 START_DM.md / BOOTSTRAP_PROTOCOL.md 的要求讀必要文件。
+3. 需要查其他規則、來源、GM clarification、sheet mirror、SRD fallback、open questions 或 regression 時，從下列完整 URL 中選擇對應文件。
+4. 不要因為某個連結無法從頁面繼續點擊，就自行組 URL 或猜內容；優先使用我已列出的完整 URL。
+5. 如果任何「當下必讀」文件仍無法讀取，停止並明確告訴我是哪一份，不要用既有 RPG 常識補完。
+
+重要：
+- 不要把 D100 當成 D&D 3.5、CoC 或 generic d100。
+- 不要自行沿用 repository 中既有 campaign、character、session、mystery 或 legacy state。
+- 未選定 campaign 前不得進入正式場景。
+- persistent campaign 必須使用我自己具有持續 READ / CREATE / UPDATE 能力的 storage。
+- 公開的 fjck810536/D100 與 GitHub Pages 只作 rules/source，不是我的預設存檔位置。
+- ruleset 必須依 repo protocol pin 到 immutable commit SHA；不得把浮動 main 當作既有團的固定規則版本。
+- storage capability、manifest、ruleset pin 或 persistence readback 未完成前，不得宣稱初始化或存檔完成。
+- 必要文件成功讀取後，不要向我做規則報告；直接按照 START_DM.md 規定的第一個玩家可見畫面開始。
+
+以下是本訊息已明確提供的公開 URL 白名單：
+
+https://fjck810536.github.io/D100/START_DM.md
+https://fjck810536.github.io/D100/BOOTSTRAP_PROTOCOL.md
+https://fjck810536.github.io/D100/CAMPAIGN_STORAGE_PROTOCOL.md
+https://fjck810536.github.io/D100/templates/CAMPAIGN_MANIFEST_TEMPLATE.md
+https://fjck810536.github.io/D100/AGENTS.md
+https://fjck810536.github.io/D100/DATA_ARCHITECTURE.md
+https://fjck810536.github.io/D100/RUNTIME_SOCIAL_WORLD_CONTRACT.md
+https://fjck810536.github.io/D100/DM_CABINET.md
+https://fjck810536.github.io/D100/DM_PROTOCOL.md
+https://fjck810536.github.io/D100/MYSTERY_PROTOCOL.md
+https://fjck810536.github.io/D100/00_core/checks.md
+https://fjck810536.github.io/D100/00_core/character_creation.md
+https://fjck810536.github.io/D100/00_core/resistances.md
+https://fjck810536.github.io/D100/00_core/combat.md
+https://fjck810536.github.io/D100/00_core/magic.md
+https://fjck810536.github.io/D100/01_skills/core_skills.md
+https://fjck810536.github.io/D100/99_open_questions/unresolved_rules.md
+https://fjck810536.github.io/D100/README.md
+https://fjck810536.github.io/D100/CHARACTER_CREATION_PROTOCOL.md
+https://fjck810536.github.io/D100/storage_backends/GOOGLE_DRIVE.md
+https://fjck810536.github.io/D100/campaign_instances/README.md
+https://fjck810536.github.io/D100/01_skills/languages.md
+https://fjck810536.github.io/D100/sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md
+https://fjck810536.github.io/D100/99_open_questions/character_creation.md
+https://fjck810536.github.io/D100/templates/PC_TEMPLATE.md
+https://fjck810536.github.io/D100/90_srd_bridge/CHARACTER_CREATION_CLASS_CULTURE.md
+https://fjck810536.github.io/D100/templates/CREATURE_WORLD_MODEL_TEMPLATE.md
+https://fjck810536.github.io/D100/templates/RELATIONSHIP_GRAPH_TEMPLATE.md
+https://fjck810536.github.io/D100/templates/SESSION_STATE_TEMPLATE.md
+https://fjck810536.github.io/D100/templates/SITE_RECORD_TEMPLATE.md
+https://fjck810536.github.io/D100/templates/TRIGGERED_HAZARD_TEMPLATE.md
+https://fjck810536.github.io/D100/templates/WORLD_COMMITMENT_TEMPLATE.md
+https://fjck810536.github.io/D100/sources/CHARACTER_EVIDENCE.md
+https://fjck810536.github.io/D100/sources/GM_CLARIFICATIONS_2026-09-12_ROUND2.md
+https://fjck810536.github.io/D100/sources/GM_CLARIFICATIONS_2026-09-13_ROUND3.md
+https://fjck810536.github.io/D100/sources/GM_PROVISIONAL_2026-09-12.md
+https://fjck810536.github.io/D100/sources/SHEET_INDEX.md
+https://fjck810536.github.io/D100/sources/SOURCE_AUDIT_2026-09-12.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/README.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/00_character_creation.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/01_world_core.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/02_%E5%9F%BA%E6%9C%AC%E5%B0%88%E9%95%B7.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/03_%E4%B8%80%E8%88%AC%E5%B0%88%E9%95%B7.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/04_%E8%A3%BD%E4%BD%9C%E5%B0%88%E9%95%B7_to_%E8%B6%85%E9%AD%94%E5%B0%88%E9%95%B7.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/05_%E9%AB%98%E7%B4%9A%E5%B0%88%E9%95%B7_to_%E5%82%B3%E5%A5%87%E5%B0%88%E9%95%B7.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/06_%E5%BE%B7%E9%AD%AF%E4%BC%8A%E7%B5%90%E7%A4%BE.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/07_%E6%B3%95%E5%B8%AB%E5%AD%B8%E6%B4%BE%E5%B0%88%E7%B2%BE.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/08_%E8%A1%93%E5%A3%AB.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/09_%E5%90%9F%E9%81%8A%E8%A9%A9%E4%BA%BA%E7%89%B9%E6%AE%8A%E5%B0%88%E9%95%B7.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/10_%E7%89%A7%E5%B8%AB%E9%A0%98%E5%9F%9F.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/11_%E7%89%B9%E6%AE%8A%E8%81%B7%E6%A5%AD1.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/12_%E7%89%B9%E6%AE%8A%E8%81%B7%E6%A5%AD2.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/13_%E7%89%B9%E6%AE%8A%E8%81%B7%E6%A5%AD_%E6%AD%A6%E5%83%A7_.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/14_%E7%89%B9%E6%AE%8A%E8%81%B7%E6%A5%AD_warlock_.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/15_%E7%8B%A9%E7%8D%B5%E4%BB%BB%E5%8B%99.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/16_%E9%AD%94%E6%B3%95%E7%89%A9%E5%93%81%E5%83%B9%E6%A0%BC%E8%A1%A8.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/17_%E8%A9%9E%E5%A2%9C_%E4%BE%9D%E7%89%A9%E5%93%81%E5%88%86%E9%A1%9E_.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/18_%E4%B8%80%E8%88%AC%E8%A9%9E%E7%B6%B4.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/19_%E9%AB%98%E9%9A%8E%E8%A9%9E%E7%B6%B4.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/20_%E7%B4%A0%E6%9D%90%E8%A9%9E%E7%B6%B4.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/21_%E6%B0%B8%E6%81%86%E8%81%96%E5%99%A8%E8%A9%9E%E7%B6%B4.json.md
+https://fjck810536.github.io/D100/sources/sheet_mirror/22_Patch_note_to_FATE%E7%89%B9%E8%A6%8F.json.md
+https://fjck810536.github.io/D100/02_items/artifacts.md
+https://fjck810536.github.io/D100/90_srd_bridge/COMMON_CONVERSION_REFERENCE.md
+https://fjck810536.github.io/D100/90_srd_bridge/MONSTER_CONVERSION_PIPELINE.md
+https://fjck810536.github.io/D100/90_srd_bridge/OPEN_ALIGNMENT_QUESTIONS.md
+https://fjck810536.github.io/D100/90_srd_bridge/SRD_ALIGNMENT_2026-09-12.md
+https://fjck810536.github.io/D100/90_srd_bridge/conversion_rules.md
+https://fjck810536.github.io/D100/99_open_questions/README.md
+https://fjck810536.github.io/D100/99_open_questions/economy.md
+https://fjck810536.github.io/D100/99_open_questions/librarian_routing_incident_2026-09-15.md
+https://fjck810536.github.io/D100/99_open_questions/librarian_routing_resolution_2026-09-16.md
+https://fjck810536.github.io/D100/99_open_questions/runtime_playtest.md
+https://fjck810536.github.io/D100/99_open_questions/social_world.md
+https://fjck810536.github.io/D100/examples/ADJUDICATION_TESTS.md
+https://fjck810536.github.io/D100/examples/GROUNDED_GENERATION_REGRESSION.md
+https://fjck810536.github.io/D100/examples/BOOTSTRAP_REGRESSION.md
+https://fjck810536.github.io/D100/examples/CHARACTER_CREATION_REGRESSION.md
+https://fjck810536.github.io/D100/examples/GOOGLE_DRIVE_BACKEND_SMOKE_2026-09-16.md
+https://fjck810536.github.io/D100/examples/MIGRATION_REF_ALIAS_REGRESSION.md
