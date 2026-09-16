@@ -27,12 +27,14 @@ source_policy:
 
 storage:
   backend: ""                      # repo | google_drive | local_folder | external_git | other
-  root_ref: ""
+  root_ref: ""                     # stable campaign root locator
   schema_version: 1
   write_scope: self_only
   promotion_allowed: explicit_only
+  provider_metadata: {}
 
 records:
+  manifest_ref: ""                 # stable provider ID / path for this manifest when applicable
   current_state_ref: ""
   characters_root_ref: ""
   sessions_root_ref: ""
@@ -41,14 +43,24 @@ records:
   commitments_root_ref: ""
   mystery_root_ref: ""
 
+indexes:
+  characters: {}                    # optional: character_id -> stable record ref
+  active_live_session_ref: null
+
 four_voice_control:
   mode: npc                         # npc | pl_pc
   mappings: []
 
 bootstrap_status:
   storage_capability_verified: false
+  manifest_readback_verified: false
   ruleset_ref_verified: false
   initialized: false
+
+persistence:
+  last_verified_at: null
+  status: uninitialized             # uninitialized | clean | uncommitted | degraded
+  last_error: null
 
 migration:
   legacy_source_refs: []
@@ -64,10 +76,14 @@ storage.root_ref is stable and re-readable
 write_scope is self_only
 persistent_test cannot implicitly promote into another campaign
 records point to this campaign's own namespace
+manifest_ref / record refs use provider-stable locators when available
+character master lookup prefers character_id -> exact record ref, not global title search
 ```
 
 ## Notes
 
 - `isolated_dry_run` 通常不需要真正建立 manifest；若建立，只能作 working descriptor，不可因此取得 writeback 權限。
 - `multiplayer` 目前可記錄，但 runtime 必須標示 unsupported，不能假裝已有多使用者身份隔離。
-- provider-specific file / folder ids 可放入 `storage.provider_metadata` 或 `records.*_ref`；不要只依檔名搜尋。
+- provider-specific file / folder ids 放入 `storage.provider_metadata`、`records.*_ref` 或 `indexes`；不要只依檔名搜尋。
+- Google Drive backend 的 creation / self-reference / readback 順序見 `storage_backends/GOOGLE_DRIVE.md`。
+- Repo-local backend 的 instance root 見 `campaign_instances/README.md`。
