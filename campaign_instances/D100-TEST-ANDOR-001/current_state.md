@@ -9,7 +9,7 @@ record_status: active_selected_campaign_state
 ruleset_ref: fc868904c4d9ded6d2f408ee25001dac5b2a70d5
 
 world_time: split-thread chronology
-active_camera: Mileia
+active_camera: Elian/Nella boundary
 
 four_voice_control:
   mode: pl_pc
@@ -23,7 +23,7 @@ party:
   PC-ELIAN:
     actor_ref: campaign_instances/D100-TEST-ANDOR-001/characters/elian.md
     controller: human_player
-    current_boundary: just outside / leaving SITE-ANDOR-BARD-COLLEGE after common-hall departure
+    current_boundary: just outside / leaving SITE-ANDOR-BARD-COLLEGE after common-hall departure; no new action assumed
   PC-NELLA:
     actor_ref: campaign_instances/D100-TEST-ANDOR-001/characters/nella.md
     controller: 蟬_pl_pc
@@ -39,10 +39,11 @@ party:
   PC-MILEIA:
     actor_ref: campaign_instances/D100-TEST-ANDOR-001/characters/mileia.md
     controller: 彌生_pl_pc
-    current_boundary: immediate post-guild-split actor boundary from latest live-state pointer
+    current_boundary: completed first Morninghall visit; leaving with ordinary nearby-lodging directions; return for morning prayer planned; no lodging transaction established
 
-active_live_session_ref: campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-03.md
+active_live_session_ref: campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-04.md
 historical_session_refs:
+  - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-03.md
   - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-02.md
   - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state.md
   - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-15_session-1_checkpoint-01.md
@@ -69,19 +70,21 @@ runtime_incident_refs:
 migration_fuses:
   legacy_campaign_current_state_is_not_authority: true
   stale_active_pc_manifest_is_not_current_actor_index: true
-  morninghall_site_exists_without_implying_mileia_arrival: true
+  morninghall_site_exists_without_implying_mileia_arrival: false
   session_projection_does_not_replace_actor_master: true
 ```
 
 ## Interpretation boundary
 
-- `campaign_instances/D100-TEST-ANDOR-001/sites/andor_lathander_morninghall.md` remains a valid Andor world/site record.
-- Its existence does **not** establish that Mileia arrived there, met Cael, or acquired local knowledge. Mileia's actor pointer remains at the latest live-state boundary until play advances it.
+- `campaign_instances/D100-TEST-ANDOR-001/sites/andor_lathander_morninghall.md` is valid Andor world/site state.
+- Mileia's arrival there and meeting with Cael are now independently established **after** the rollback by `sessions/2026-09-16_session-1_live-state-04.md`.
+- The earlier deleted south-care-node branch remains VOID and supplies no premises.
 - Root `campaign/current_state.md` is a stale generic legacy placeholder and is not Andor authority.
 - `characters/ACTIVE_PC_MANIFEST.md` is historical recovery-gap evidence, not the current actor index.
 - Migrated records may retain literal legacy paths as historical text. Runtime resolution follows manifest `migration.ref_aliases` exactly; unaliased external mutable-state paths do not fall back to root.
-- Rook's convoy acceptance is authoritative campaign state from `sessions/2026-09-16_session-1_live-state-02.md`; exact departure time and future route events remain unestablished.
-- Aster's warehouse residue-job acceptance is authoritative campaign state from `sessions/2026-09-16_session-1_live-state-03.md`; exact warehouse location, client identity, residue nature, and future inspection results remain unestablished.
+- Rook's convoy acceptance is authoritative campaign state; exact departure time and future route events remain unestablished.
+- Aster's warehouse residue-job acceptance is authoritative campaign state; exact warehouse location, client identity, residue nature, and future inspection results remain unestablished.
+- Mileia has no established exact lodging, room price, payment, or stay yet.
 
 ## Verification status
 
