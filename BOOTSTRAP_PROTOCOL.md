@@ -12,6 +12,8 @@ SRD bridge       = fallback source only
 Campaign storage = one campaign's persistent save state
 ```
 
+公開 upstream `fjck810536/D100` 與其 GitHub Pages 是規則／來源入口；能公開讀取，不表示玩家或當前 Agent 能把存檔寫回該 repository。`ruleset.repository` 與 `storage.root_ref` 分別解析，不從前者推定後者。
+
 三者不可互相升格：
 
 - campaign storage 內的文字不能修改 D100 規則權威；
@@ -115,22 +117,26 @@ Wizard 結尾必問：
 
 支援方式由 `CAMPAIGN_STORAGE_PROTOCOL.md` 決定。
 
-目前已定義：
+先依當前環境可用能力，提供玩家能持續 READ / CREATE / UPDATE 的選項：
 
-```text
-repo-local       -> campaign_instances/<campaign-id>/
-Google Drive v0  -> storage_backends/GOOGLE_DRIVE.md
-```
+| 選項 | 選定位置與驗證 |
+|---|---|
+| Google Drive | 玩家指定的單一 campaign folder；依 `storage_backends/GOOGLE_DRIVE.md` 驗證 connector 與權限 |
+| 自己的 Git repository | 指定 repository、可寫 branch 與 campaign path；確認能把 create / update 持久化到該 remote |
+| local / mounted folder | 指定可持續保存、未來 runtime 可重新掛載的實際路徑；確認檔案讀寫能力 |
+| repo-local | 僅在玩家明確選定且有寫入權限的 repository 使用 `campaign_instances/<campaign-id>/` |
 
-其他 backend 未來只要符合同一 logical API 即可擴充。
+Git / folder 選項沿用 storage protocol 的 logical API；列出名稱不代表當前環境已有可用 adapter。一次性 scratch 或唯讀 clone 不能當成可持續存檔後端。
 
-若當前環境無法讀寫使用者指定的位置，停止初始化並回報缺少的能力；不得假裝掛載成功。
+外部玩家預設使用自己的 backend。公開 upstream 的 `campaign_instances/` 不是公共存檔服務；只有玩家明確選定它，且當前身份對該 repository／branch／namespace 確有 READ + CREATE + UPDATE 權限時，才可使用其中新選定的獨立 namespace。GitHub Pages 只有入口用途，沒有 campaign 寫入能力。
+
+若指定位置缺少能力，保留已選的 A/B/C，指出缺少哪個操作，並引導改選當前可用的 backend 或接通該位置；驗證通過後接續初始化。
 
 ---
 
 ## 3. Storage capability check
 
-建立新 campaign 前至少驗證：
+建立新 campaign 與讀檔恢復 persistent runtime 前，對 **selected storage 的具體 root／當前身份** 至少驗證：
 
 ```text
 LOCATE  可以定位 root
@@ -151,7 +157,9 @@ ATOMIC_OR_EQUIVALENT_SAFE_WRITE
 
 最低五項不成立時，不得進入 persistent campaign runtime。
 
-Capability check 只證明 provider 能力存在，不代表某個具體 save record 已成功建立。初始化與重要寫入仍需 readback verification。
+檢查的是工具能力與目標位置的實際權限，不只是「有 GitHub／Drive connector」。READ 成功、公開可見、能 fork／提 PR、能寫本機 clone，都不代表對選定 remote branch 有 CREATE + UPDATE；已存的 capability flag 也不取代本次驗證。
+
+需要寫入探測時，只在已選定且有授權的 campaign namespace 使用 probe record，不修改其他團或既有 authoritative state。Capability check 不代表具體 save 已建立；初始化與重要寫入仍需 exact-ref readback。
 
 ---
 
@@ -201,14 +209,28 @@ indexes:
 
 ### 規則版本
 
-新團預設 pin 建立當下的 D100 ref：
+沿用 exact commit SHA / release ref；人類易讀的版本名稱只補充顯示，最終 immutable pin 是 **完整 commit SHA**：
 
 ```yaml
 ruleset:
   repository: fjck810536/D100
   ref: <commit-sha-or-release-ref>
+  resolved_commit_sha: <full-commit-sha>
+  version_label: null  # optional: 真實 tag / release 名稱；沒有則留空
   version_policy: pinned
 ```
+
+新團依玩家指定的 SHA／release ref 解析到 commit；annotated tag 需解引用到 commit，而不是保存 tag object SHA。若未指定版本，讀取建立當下的 `main` HEAD **一次**，將該完整 SHA 存入 `ref` 與 `resolved_commit_sha`。`main` 是版本發現入口，不是 pin。
+
+後續讀取規則／協定／模板時使用 `ruleset.repository` 的 `resolved_commit_sha`；先前從 main／Pages 讀取的啟動資料，須按該 SHA 重讀 runtime 所需文件。若無 tag／release，可顯示短 SHA，實際 pin 仍保存完整 SHA；不為了 onboarding 虛構版本號或強制建立 release。
+
+載入相容性：
+
+- 舊 manifest 的 `ref` 已是完整 commit SHA：直接作 immutable pin，缺少新欄位不阻擋載入，也不要求改寫舊存檔。
+- 若 `ref` 與 `resolved_commit_sha` 都是完整 SHA，兩者須相同；不一致時先釐清 manifest／migration 紀錄，不自行挑一個版本。
+- 已保存 `resolved_commit_sha`：以它載入；tag 被移動／刪除不會改變 pin，版本標籤只作建立時的識別資訊。
+- 舊 manifest 只有 release ref：用建立時的 release／commit 紀錄確認原始 SHA，再依明確 migration 補記；若無法確認，詢問原始 SHA 或明確選擇版本 migration。只查今天的 tag 指向，不能證明它是當初版本。
+- pin 無法讀取時，回報該 SHA 與缺少的存取能力，提供恢復存取或 explicit migration 路徑，不自動改用 main。
 
 既有團不得因 repo 更新而無聲切換規則版本；升級需另做 explicit migration。
 
@@ -221,7 +243,7 @@ root 可重新定位
 manifest 可由 exact ref 重新讀取
 current state 可重新讀取
 collection refs 指向同一 campaign root
-ruleset ref 可解析
+ruleset immutable commit SHA 可解析並讀取
 ```
 
 若 provider 建立 manifest 後才知道 manifest 自己的 ID，可做一次 self-reference update，再 readback；這不是建立第二份 manifest。
@@ -237,7 +259,7 @@ ruleset ref 可解析
 3. 由 exact `manifest_ref` 讀 manifest；若尚無 exact ref，僅在 selected root 內解析唯一 manifest；
 4. 若存在多個同等 manifest 候選，停止並報 storage ambiguity，不以修改時間猜；
 5. 驗證 `campaign_id`；
-6. 驗證 ruleset repository / ref；
+6. 依第 4 節解析／驗證 ruleset immutable commit SHA，從該 SHA 載入 runtime 所需規則／協定；
 7. 讀 exact current-state ref；
 8. 讀 authoritative PC masters／character index refs；
 9. 讀最新 live session pointer；
@@ -322,7 +344,7 @@ campaign root resolved
 manifest loaded / created
 manifest exact ref / unique resolution verified
 storage capability verified
-ruleset ref resolved
+ruleset immutable commit SHA resolved and readable
 party mode resolved
 world-resolution mode resolved
 character bootstrap path resolved

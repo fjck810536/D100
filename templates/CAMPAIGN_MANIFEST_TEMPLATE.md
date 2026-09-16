@@ -18,6 +18,8 @@ character_bootstrap_mode: assisted  # assisted | import | auto | deferred
 ruleset:
   repository: fjck810536/D100
   ref: ""                         # commit SHA / release ref captured at campaign creation
+  resolved_commit_sha: ""          # full immutable commit SHA; resolve release/tag to commit
+  version_label: null               # optional display tag/release name; never the immutable pin
   version_policy: pinned            # pinned | explicit_migration_only
 
 source_policy:
@@ -75,7 +77,11 @@ migration:
 ```text
 campaign_id is unique within the selected storage root
 ruleset.ref is explicit before scene runtime starts
+new manifests store ruleset.resolved_commit_sha as the immutable full commit SHA for rules/protocol reads
+legacy full-SHA ruleset.ref remains a valid immutable pin without new fields (see bootstrap protocol)
 storage.root_ref is stable and re-readable
+storage.root_ref is independently selected, not inferred from ruleset.repository or public visibility
+selected storage identity/target has verified LOCATE/LIST/READ/CREATE/UPDATE capabilities
 write_scope is self_only
 persistent_test cannot implicitly promote into another campaign
 records point to this campaign's own namespace
@@ -110,6 +116,8 @@ This allows byte-identical migrated records to preserve audit history without ma
 
 ## Notes
 
+- Ruleset 解析、舊 release-only manifest 相容與 explicit migration 依 `BOOTSTRAP_PROTOCOL.md` 第 4 節；既有 full-SHA manifest 不需只為補欄位而改寫。`version_label` 可省略；無 tag 時顯示短 SHA、保存完整 SHA，`main` 不作 immutable pin。
+- Git storage 的 `provider_metadata` 記錄 repository / branch / campaign path；`root_ref` 與所有 records 指向玩家選定的可寫 namespace。公開 upstream／Pages 不自動提供 campaign 寫權。
 - `isolated_dry_run` 通常不需要真正建立 manifest；若建立，只能作 working descriptor，不可因此取得 writeback 權限。
 - `multiplayer` 目前可記錄，但 runtime 必須標示 unsupported，不能假裝已有多使用者身份隔離。
 - provider-specific file / folder ids 放入 `storage.provider_metadata`、`records.*_ref` 或 `indexes`；不要只依檔名搜尋。

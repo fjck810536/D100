@@ -345,3 +345,109 @@ D100 > SRD bridge > raw D&D 3.5
 ```
 
 Fail if quick mode makes raw 3.5 equal or superior to D100 canon。
+
+---
+
+## T19 — Public entry resolves main once, not a floating pin
+
+Given: 玩家從 Pages／main 啟動新團，未指定版本；建立時 HEAD=A，之後 HEAD=B；沒有 release tag。
+
+Expected:
+- `ruleset.ref=A`、`resolved_commit_sha=A`，均保存完整 commit SHA；`version_label` 可留空，前台可顯示短 SHA。
+- 初始化與重載的規則／協定／模板讀取都使用 A；若啟動曾讀 main，按 A 重讀 runtime 所需文件。
+- 存檔 backend 另行選定；不因 ruleset 指向 upstream 而推定 storage。
+
+Fail if: pin 寫成 `main`／`latest`，每次重解 HEAD，或為了沒有 tag 阻擋新團。
+
+---
+
+## T20 — Release label is not the immutable pin
+
+Given: 玩家選擇 release tag `v-test`，指向 commit A；分別測 lightweight 與 annotated tag。建立後 tag 移到 B 或被刪除，但 A 仍可讀。
+
+Expected:
+- 建立時保存原 ref／可選顯示名稱與 `resolved_commit_sha=A`；annotated tag 解到 commit，不保存 tag object SHA 作 pin。
+- 重載仍讀 A，標籤變動不更新 campaign pin，也不阻擋讀取仍可用的 A。
+
+Fail if: 把 tag 當 immutable，或讀今天的 tag 指向而默默改成 B。
+
+---
+
+## T21 — Existing manifests keep their version and state
+
+Given: 舊 manifest 只有完整 SHA `ref=A`，沒有新欄位；另測只有 release ref 的舊 manifest。
+
+Expected:
+- SHA-only manifest 直接載入 A，不需補欄位，不改既有 state。
+- Release-only manifest 用建立時的版本證據確認 A，再依 explicit migration 補記；證據不足時請求原始 SHA 或明確選擇 migration。
+- 若兩個 SHA 欄位互相矛盾，先釐清 manifest／migration，不猜版本。
+
+Fail if: 為了新欄位強制升級舊團，或把 release 今天指向的 B 當作原始 A。
+
+---
+
+## T22 — Public upstream is not a public save service
+
+Given: 外部玩家能讀 upstream／Pages；對 upstream 有 READ，但沒有 CREATE / UPDATE。已完成 A/B/C，要求「存 repo-local」。
+
+Expected:
+- 解釋 upstream 只提供規則／來源，取得玩家自己的 Git repo、Drive 或持久 folder locator。
+- 保留 A/B/C；對選定目標驗證能力，成功後接續初始化與 readback。
+- 不寫 upstream `campaign_instances/`，不選取 upstream 既有團，也不把 Pages 當存檔 API。
+
+Fail if: 只回「不能」而沒有可接續的 backend 路徑，或憑公開可讀／有 connector 宣稱存檔成功。
+
+---
+
+## T23 — Explicitly writable upstream namespace still works
+
+Given: 使用者明確選定 upstream 中新的獨立 namespace；當前身份對該 repository／branch 有完整 LOCATE / LIST / READ / CREATE / UPDATE 能力。
+
+Expected: 完成正常 repo-local 初始化與 exact-ref readback，只寫 selected namespace；既有 campaign state 不變。
+
+Fail if: 把「公開 upstream 非預設 storage」擴張成全面禁止有權使用者的 repo-local backend。
+
+---
+
+## T24 — Check the actual storage target, not generic tool access
+
+Given variants:
+- 可 fork／提 PR／寫本機 clone，但不能寫 selected remote branch。
+- 同一帳號的 repository A 可寫，selected repository B／branch 唯讀。
+- local folder 當前可寫，但只是不可跨 runtime 保存的 scratch。
+- 玩家自己的 Git remote，或可持續保存並重新掛載的 folder，具備完整 logical API。
+
+Expected: 前三種保留 wizard 選項並取得可用持久 backend；最後一種完成初始化與 exact-ref readback。Git locator 記錄 repository／branch／campaign path，local locator 指向持久路徑。
+
+Fail if: 本機寫檔成功被說成 remote 已保存，或提供了 backend 名稱就宣稱 adapter 可用。
+
+---
+
+## T25 — Reload rechecks target permissions
+
+Given: manifest 的 `storage_capability_verified=true`，但這次身份只有 READ，或 UPDATE 權限已被撤回。
+
+Expected: 顯示缺少的操作，保留選定 campaign，恢復權限或明確遷移後續跑；不把舊 flag 當本次驗證。任何 probe 只在選定且授權的 namespace，不改既有 authoritative state。
+
+Fail if: 先進 persistent scene 再發現不能存、默默改寫 upstream，或自行降成 dry-run。
+
+---
+
+## T26 — An unavailable pin does not fall back to main
+
+Given: manifest pin=A，但目前無法讀取 A；main=B 可讀。
+
+Expected: 回報 A 的存取問題，提供恢復存取或 explicit migration 路徑；不宣稱已載入 A，也不自動用 B 主持。
+
+---
+
+## T27 — External writable storage completes onboarding
+
+Given: 公開 upstream 僅 READ；玩家選定自己的 Drive campaign folder，當前 connector 對此 root 具完整 logical API，且 readback 成功。
+
+Expected:
+- 規則仍來自 upstream 的 immutable SHA；manifest／current state／角色主檔只寫所選 Drive root。
+- 保存 exact root／record IDs；重載依這些 refs，規則與存檔各自解析。
+- 完成 bootstrap 後能進正常 runtime；無須 fork D100 或取得 upstream 寫權。
+
+Fail if: 因 upstream 不可寫而阻擋已具可用 storage 的玩家，或把 Drive save text 升格為規則來源。

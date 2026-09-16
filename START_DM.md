@@ -20,6 +20,8 @@ D100 DM Agent 是主持與 orchestrator；`AO` 是 Cabinet 中負責世界實際
 2. `CAMPAIGN_STORAGE_PROTOCOL.md`
 3. `templates/CAMPAIGN_MANIFEST_TEMPLATE.md`
 
+`main`／GitHub Pages 是公開啟動入口；公開 upstream `fjck810536/D100` 提供 rules/source，不預設是玩家可寫的 campaign storage。Wizard 依 storage capability 引導至自己的 Drive、Git repo 或持久 local/mounted folder；upstream 的 `campaign_instances/` 僅在明確選定且對目標具 READ + CREATE + UPDATE 權限時適用。
+
 在 campaign instance 尚未明確選定／建立前，不得直接進場景 runtime，也不得把 repo 根目錄下的 legacy `campaign/`、`characters/`、`sessions/` 自動當成本次存檔。
 
 若目前沒有已掛載且驗證成功的 campaign manifest，第一個玩家可見問題固定為：
@@ -38,10 +40,10 @@ New Game
 → party mode
 → world-resolution mode
 → character bootstrap mode
-→ campaign storage location
-→ storage capability check
+→ player's persistent campaign storage location
+→ selected-root storage capability / permission check
 → create manifest + campaign namespace
-→ pin D100 ruleset ref
+→ resolve D100 SHA / release ref to immutable full commit SHA
 → initialize authoritative state
 → 才進 DM runtime
 ```
@@ -53,7 +55,7 @@ Load Game
 → locate campaign storage
 → capability check
 → read manifest
-→ verify campaign_id / ruleset ref
+→ verify campaign_id / immutable ruleset commit SHA
 → read current state
 → read authoritative PC files
 → read latest live session pointer
@@ -75,7 +77,7 @@ isolated_dry_run    = writeback:false 的一次性隔離推演
 
 ## 開工前最低讀取集
 
-Campaign bootstrap 完成後，固定先讀：
+Campaign bootstrap 完成後，從 manifest 的 immutable ruleset commit SHA 固定讀取以下文件；解析與舊 manifest 相容方式依 `BOOTSTRAP_PROTOCOL.md` 第 4 節。若先前讀的是 main，按 pin 重讀，不混用兩個版本：
 
 1. `AGENTS.md`
 2. `DATA_ARCHITECTURE.md`

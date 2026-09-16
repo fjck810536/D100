@@ -12,6 +12,8 @@ SRD bridge      = D100 缺漏時的 fallback reference
 
 Campaign storage 只能對「這一團發生了什麼」具有 state authority；不能因存檔裡寫了一條規則文字，就覆蓋 `AGENTS.md` 的規則來源優先序。
 
+公開 upstream `fjck810536/D100`（含 GitHub Pages）是 rules/source 入口，不是外部玩家的預設可寫存檔服務。規則 pin 指向 upstream，存檔 locator 指向玩家選定的可持續 backend；兩者不必在同一 provider。
+
 ---
 
 ## 1. Logical campaign API
@@ -89,6 +91,8 @@ storage:
 
 `root_ref` 必須是未來 runtime 可重新取得的穩定 locator；不要只保存當次聊天可見的臨時 URL 或 UI 名稱。
 
+能力驗證針對此 locator 的實際目標與當前身份：新建與恢復 persistent runtime 都需 LOCATE / LIST / READ / CREATE / UPDATE。Git backend 應記錄 repository、branch、campaign path，並驗證 remote branch 的寫回能力；只有本機 clone 可寫，不能宣稱 remote 已保存。Local / mounted folder 需可跨 runtime 持續保存與重新掛載；Google Drive 需驗證選定 folder 的權限。既有 logical API 適用這些 backend，但仍以當前工具實際能完成的操作為準。
+
 Record 索引應優先保存 stable refs：
 
 ```yaml
@@ -129,7 +133,7 @@ Google Drive 可作第一個外部 backend，但初始化前必須確認當前�
 
 ## 5. Repository-local backend
 
-為開發、測試與不具外部 connector 的環境，允許 campaign instance 存在同一 repo，但必須有完整 namespace：
+玩家明確選定 repository，且當前身份對目標 repository／branch／namespace 有 READ + CREATE + UPDATE 權限時，允許 campaign instance 存在同一 repo，使用完整 namespace：
 
 ```text
 campaign_instances/<campaign-id>/
@@ -138,6 +142,8 @@ campaign_instances/<campaign-id>/
 具體規約：
 
 `campaign_instances/README.md`
+
+這是相對於**選定可寫 repository** 的路徑，不是默認指向 `fjck810536/D100`。缺少外部 connector 不會產生 upstream 寫入權限；外部玩家可選自己的 Git repo（`external_git`）、可持續 local/mounted folder（`local_folder`），或已連接的 Drive。只有明確選定且驗證 upstream 寫權者才可在 upstream 使用獨立 namespace；其中既有 campaign 不因此變成本次玩家的存檔。
 
 不得再把所有 campaign 共用：
 
