@@ -38,3 +38,30 @@ characters/bob.md
 - 完整祕密／EX payload 不直接寫進角色檔；只保存 `secret_refs` 與該角色檔合法取得的 role-safe representation。
 - 真玩家 PC 的角色檔不能替玩家預決定下一步行動。
 - 四聲部若處於 `pl_pc` mode，Player Layer 屬 session/meta working data，不寫進角色檔當作 PC 內在心理；若處於 `npc` mode，也不要事後從 NPC 行為反推虛構的玩家偏好。
+
+## Character-state recovery fuse
+
+角色檔缺檔或缺欄位時，**不得**直接推論「該事實從未建立」。特別是已經完成創角並進入正式 runtime 的 PC，`missing record` 是資料完整性事件，不是角色世界事實。
+
+處理順序固定為：
+
+```text
+1. 讀取 characters/<pc>.md。
+2. 若檔案／欄位缺失，查創角 finalization / audit / explicit PL or user declarations。
+3. 查最新與歷史 sessions 中的 established character facts。
+4. 查 source-backed character evidence / prior authoritative migration records。
+5. 找到既有建立事實 → 以原 provenance 回收進 character record。
+6. 只有完成上述 recovery search 仍無證據，才可標 unresolved / unknown。
+```
+
+禁止以下錯誤轉換：
+
+```text
+record missing -> fact never established
+field omitted from live-state -> player never chose it
+chat context absent -> character canon absent
+```
+
+`pending_recovery` 的語義是「已建立角色資料可能遺失／尚未回收到目前 authoritative layer」，不是 `NON_ASSERTION`、`PROHIBITED`，也不是允許重新生成互相衝突的新設定。
+
+對牧師、誓約角色、結社角色等 Pass 7 必填身分欄位，若角色已正式開跑但 authoritative record 缺失，視為 **character-state integrity failure**：先回收，不要在場景內重新問玩家一次，也不要生成替代答案。
