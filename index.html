@@ -3,8 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="D100 DM runtime canonical public bootstrap entrypoint.">
+  <meta name="description" content="D100 DM runtime canonical public bootstrap and crawler navigation entrypoint.">
   <title>D100 DM Runtime</title>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; line-height: 1.6; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; border: 1px solid #8884; border-radius: .5rem; }
+    li { margin: .25rem 0; }
+    .warning { padding: 1rem; border: 1px solid #b66; border-radius: .5rem; }
+  </style>
 </head>
 <body>
   <main>
@@ -12,25 +19,103 @@
 
     <p><strong>Canonical DM entrypoint:</strong> <a href="./START_DM.md">START_DM.md</a></p>
 
-    <section aria-labelledby="agent-readers">
+    <section aria-labelledby="agent-readers" class="warning">
       <h2 id="agent-readers">AI / Agent readers</h2>
-      <p>You must successfully retrieve and read <code>START_DM.md</code> before starting or continuing a D100 game.</p>
-      <p>If <code>START_DM.md</code> cannot be retrieved, stop. Do not infer D100 rules from this page, the README, D&amp;D 3.5, Call of Cthulhu, or generic d100 conventions.</p>
+      <p>You must successfully retrieve and read <code>START_DM.md</code> and the required files it names before starting or continuing a D100 game.</p>
+      <p>If a required file cannot be retrieved, stop and report the exact missing file. Do not infer D100 rules from this page, the README, D&amp;D 3.5, Call of Cthulhu, generic d100 conventions, or model prior knowledge.</p>
+      <p>The public upstream <code>fjck810536/D100</code> and this GitHub Pages site are rules/source entrypoints, not an external player's default writable campaign storage.</p>
     </section>
 
     <section aria-labelledby="bootstrap-files">
-      <h2 id="bootstrap-files">Bootstrap files</h2>
-      <ul>
+      <h2 id="bootstrap-files">Bootstrap gate — required first</h2>
+      <ol>
         <li><a href="./START_DM.md">START_DM.md</a></li>
         <li><a href="./BOOTSTRAP_PROTOCOL.md">BOOTSTRAP_PROTOCOL.md</a></li>
         <li><a href="./CAMPAIGN_STORAGE_PROTOCOL.md">CAMPAIGN_STORAGE_PROTOCOL.md</a></li>
+        <li><a href="./templates/CAMPAIGN_MANIFEST_TEMPLATE.md">templates/CAMPAIGN_MANIFEST_TEMPLATE.md</a></li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="minimum-read-set">
+      <h2 id="minimum-read-set">Minimum runtime read set</h2>
+      <p>After campaign bootstrap is complete, <code>START_DM.md</code> requires these documents from the pinned immutable ruleset commit:</p>
+      <ol>
         <li><a href="./AGENTS.md">AGENTS.md</a></li>
+        <li><a href="./DATA_ARCHITECTURE.md">DATA_ARCHITECTURE.md</a></li>
+        <li><a href="./RUNTIME_SOCIAL_WORLD_CONTRACT.md">RUNTIME_SOCIAL_WORLD_CONTRACT.md</a></li>
+        <li><a href="./DM_CABINET.md">DM_CABINET.md</a></li>
         <li><a href="./DM_PROTOCOL.md">DM_PROTOCOL.md</a></li>
         <li><a href="./MYSTERY_PROTOCOL.md">MYSTERY_PROTOCOL.md</a></li>
+        <li><a href="./00_core/checks.md">00_core/checks.md</a></li>
+        <li><a href="./00_core/character_creation.md">00_core/character_creation.md</a></li>
+        <li><a href="./00_core/resistances.md">00_core/resistances.md</a></li>
+        <li><a href="./00_core/combat.md">00_core/combat.md</a></li>
+        <li><a href="./00_core/magic.md">00_core/magic.md</a></li>
+        <li><a href="./01_skills/core_skills.md">01_skills/core_skills.md</a></li>
+        <li><a href="./99_open_questions/unresolved_rules.md">99_open_questions/unresolved_rules.md</a></li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="character-creation">
+      <h2 id="character-creation">Character creation / validation — conditional read set</h2>
+      <ul>
+        <li><a href="./CHARACTER_CREATION_PROTOCOL.md">CHARACTER_CREATION_PROTOCOL.md</a></li>
+        <li><a href="./01_skills/languages.md">01_skills/languages.md</a></li>
+        <li><a href="./sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md">sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md</a></li>
+        <li><a href="./99_open_questions/character_creation.md">99_open_questions/character_creation.md</a></li>
+        <li><a href="./templates/PC_TEMPLATE.md">templates/PC_TEMPLATE.md</a></li>
+        <li><a href="./90_srd_bridge/CHARACTER_CREATION_CLASS_CULTURE.md">90_srd_bridge/CHARACTER_CREATION_CLASS_CULTURE.md</a></li>
       </ul>
     </section>
 
-    <p>Repository: <a href="https://github.com/fjck810536/D100">fjck810536/D100</a></p>
+    <section aria-labelledby="navigation">
+      <h2 id="navigation">Useful navigation / regression documents</h2>
+      <ul>
+        <li><a href="./sources/SHEET_INDEX.md">sources/SHEET_INDEX.md</a></li>
+        <li><a href="./02_items/artifacts.md">02_items/artifacts.md</a></li>
+        <li><a href="./templates/SITE_RECORD_TEMPLATE.md">templates/SITE_RECORD_TEMPLATE.md</a></li>
+        <li><a href="./templates/TRIGGERED_HAZARD_TEMPLATE.md">templates/TRIGGERED_HAZARD_TEMPLATE.md</a></li>
+        <li><a href="./templates/RELATIONSHIP_GRAPH_TEMPLATE.md">templates/RELATIONSHIP_GRAPH_TEMPLATE.md</a></li>
+        <li><a href="./templates/WORLD_COMMITMENT_TEMPLATE.md">templates/WORLD_COMMITMENT_TEMPLATE.md</a></li>
+        <li><a href="./examples/ADJUDICATION_TESTS.md">examples/ADJUDICATION_TESTS.md</a></li>
+        <li><a href="./examples/GROUNDED_GENERATION_REGRESSION.md">examples/GROUNDED_GENERATION_REGRESSION.md</a></li>
+        <li><a href="./examples/BOOTSTRAP_REGRESSION.md">examples/BOOTSTRAP_REGRESSION.md</a></li>
+        <li><a href="./examples/CHARACTER_CREATION_REGRESSION.md">examples/CHARACTER_CREATION_REGRESSION.md</a></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="copy-prompt">
+      <h2 id="copy-prompt">Copy-and-paste prompt</h2>
+      <p>把下面整段貼給具有網頁存取能力的 AI / Agent：</p>
+      <pre>請直接啟動 D100 跑團，不要先替我摘要規則或自行建立劇情。
+
+公開入口：
+https://fjck810536.github.io/D100/
+
+Canonical DM entrypoint：
+https://fjck810536.github.io/D100/START_DM.md
+
+請先成功讀取 START_DM.md，然後完全依其中的 bootstrap / 導航流程讀取它要求的正式文件。
+
+重要：
+
+- 不要把 D100 當成 D&amp;D 3.5、CoC 或一般 generic d100 系統。
+- 不要用你自己的既有 RPG 常識補寫沒有成功讀到的 D100 規則。
+- 如果 START_DM.md 或它要求的必要文件無法讀取，請停止並明確告訴我是哪個檔案讀不到；不要猜測內容後繼續主持。
+- 這次不要自行沿用 repository 中既有的 campaign、character、session 或 legacy state。
+- 未選定 campaign 前，不得進入正式場景。
+- 如果建立 persistent campaign，存檔必須使用我自己具有持續 READ / CREATE / UPDATE 能力的 storage；公開的 fjck810536/D100 與 GitHub Pages 只作 rules/source，不是我的預設存檔位置。
+- ruleset 必須依 repo protocol pin 到 immutable commit SHA，不得把浮動的 main 當成既有團的固定規則版本。
+
+必要文件成功讀取後，不要向我做規則報告。
+
+直接按照 START_DM.md 規定的第一個玩家可見畫面開始。</pre>
+    </section>
+
+    <section aria-labelledby="repo">
+      <h2 id="repo">Repository</h2>
+      <p><a href="https://github.com/fjck810536/D100">github.com/fjck810536/D100</a></p>
+    </section>
   </main>
 </body>
 </html>
