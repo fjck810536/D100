@@ -6,88 +6,224 @@
   <meta name="description" content="D100 DM runtime canonical public bootstrap and crawler navigation entrypoint.">
   <title>D100 DM Runtime</title>
   <style>
-    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; line-height: 1.6; }
-    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; border: 1px solid #8884; border-radius: .5rem; }
-    li { margin: .25rem 0; }
-    .warning { padding: 1rem; border: 1px solid #b66; border-radius: .5rem; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2rem 1rem 5rem;
+      line-height: 1.65;
+    }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      padding: 1rem;
+      border: 1px solid #8884;
+      border-radius: 0.6rem;
+    }
+    li { margin: 0.3rem 0; }
+    section { margin: 2.5rem 0; }
+    .warning {
+      padding: 1rem;
+      border: 1px solid #b66;
+      border-radius: 0.6rem;
+    }
+    .note {
+      padding: 1rem;
+      border: 1px solid #8884;
+      border-radius: 0.6rem;
+    }
+    button {
+      padding: 0.7rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <main>
-    <h1>D100 DM Runtime</h1>
+<main>
+  <h1>D100 DM Runtime</h1>
+  <p><strong>Canonical DM entrypoint:</strong> <a href="./START_DM.md">START_DM.md</a></p>
 
-    <p><strong>Canonical DM entrypoint:</strong> <a href="./START_DM.md">START_DM.md</a></p>
+  <section id="agent-readers" class="warning" aria-labelledby="agent-readers-title">
+    <h2 id="agent-readers-title">AI / Agent readers</h2>
+    <p>You must successfully retrieve and read <code>START_DM.md</code> and the required files it names before starting or continuing a D100 game.</p>
+    <p>If a required file cannot be retrieved, stop and report the exact missing file.</p>
+    <p>Do not infer D100 rules from this page, the README, D&amp;D 3.5, Call of Cthulhu, generic d100 conventions, or model prior knowledge.</p>
+    <p>The public upstream <code>fjck810536/D100</code> and this GitHub Pages site are rules/source entrypoints. They are not an external player's default writable campaign storage.</p>
+  </section>
 
-    <section aria-labelledby="agent-readers" class="warning">
-      <h2 id="agent-readers">AI / Agent readers</h2>
-      <p>You must successfully retrieve and read <code>START_DM.md</code> and the required files it names before starting or continuing a D100 game.</p>
-      <p>If a required file cannot be retrieved, stop and report the exact missing file. Do not infer D100 rules from this page, the README, D&amp;D 3.5, Call of Cthulhu, generic d100 conventions, or model prior knowledge.</p>
-      <p>The public upstream <code>fjck810536/D100</code> and this GitHub Pages site are rules/source entrypoints, not an external player's default writable campaign storage.</p>
-    </section>
+  <section id="bootstrap">
+    <h2>Bootstrap gate — required first</h2>
+    <ol>
+      <li><a href="./START_DM.md">START_DM.md</a></li>
+      <li><a href="./BOOTSTRAP_PROTOCOL.md">BOOTSTRAP_PROTOCOL.md</a></li>
+      <li><a href="./CAMPAIGN_STORAGE_PROTOCOL.md">CAMPAIGN_STORAGE_PROTOCOL.md</a></li>
+      <li><a href="./templates/CAMPAIGN_MANIFEST_TEMPLATE.md">templates/CAMPAIGN_MANIFEST_TEMPLATE.md</a></li>
+    </ol>
+  </section>
 
-    <section aria-labelledby="bootstrap-files">
-      <h2 id="bootstrap-files">Bootstrap gate — required first</h2>
-      <ol>
-        <li><a href="./START_DM.md">START_DM.md</a></li>
-        <li><a href="./BOOTSTRAP_PROTOCOL.md">BOOTSTRAP_PROTOCOL.md</a></li>
-        <li><a href="./CAMPAIGN_STORAGE_PROTOCOL.md">CAMPAIGN_STORAGE_PROTOCOL.md</a></li>
-        <li><a href="./templates/CAMPAIGN_MANIFEST_TEMPLATE.md">templates/CAMPAIGN_MANIFEST_TEMPLATE.md</a></li>
-      </ol>
-    </section>
+  <section id="minimum-runtime">
+    <h2>Minimum runtime read set</h2>
+    <p>After campaign bootstrap is complete, <code>START_DM.md</code> requires these documents from the pinned immutable ruleset commit.</p>
+    <ol>
+      <li><a href="./AGENTS.md">AGENTS.md</a></li>
+      <li><a href="./DATA_ARCHITECTURE.md">DATA_ARCHITECTURE.md</a></li>
+      <li><a href="./RUNTIME_SOCIAL_WORLD_CONTRACT.md">RUNTIME_SOCIAL_WORLD_CONTRACT.md</a></li>
+      <li><a href="./DM_CABINET.md">DM_CABINET.md</a></li>
+      <li><a href="./DM_PROTOCOL.md">DM_PROTOCOL.md</a></li>
+      <li><a href="./MYSTERY_PROTOCOL.md">MYSTERY_PROTOCOL.md</a></li>
+      <li><a href="./00_core/checks.md">00_core/checks.md</a></li>
+      <li><a href="./00_core/character_creation.md">00_core/character_creation.md</a></li>
+      <li><a href="./00_core/resistances.md">00_core/resistances.md</a></li>
+      <li><a href="./00_core/combat.md">00_core/combat.md</a></li>
+      <li><a href="./00_core/magic.md">00_core/magic.md</a></li>
+      <li><a href="./01_skills/core_skills.md">01_skills/core_skills.md</a></li>
+      <li><a href="./99_open_questions/unresolved_rules.md">99_open_questions/unresolved_rules.md</a></li>
+    </ol>
+  </section>
 
-    <section aria-labelledby="minimum-read-set">
-      <h2 id="minimum-read-set">Minimum runtime read set</h2>
-      <p>After campaign bootstrap is complete, <code>START_DM.md</code> requires these documents from the pinned immutable ruleset commit:</p>
-      <ol>
-        <li><a href="./AGENTS.md">AGENTS.md</a></li>
-        <li><a href="./DATA_ARCHITECTURE.md">DATA_ARCHITECTURE.md</a></li>
-        <li><a href="./RUNTIME_SOCIAL_WORLD_CONTRACT.md">RUNTIME_SOCIAL_WORLD_CONTRACT.md</a></li>
-        <li><a href="./DM_CABINET.md">DM_CABINET.md</a></li>
-        <li><a href="./DM_PROTOCOL.md">DM_PROTOCOL.md</a></li>
-        <li><a href="./MYSTERY_PROTOCOL.md">MYSTERY_PROTOCOL.md</a></li>
-        <li><a href="./00_core/checks.md">00_core/checks.md</a></li>
-        <li><a href="./00_core/character_creation.md">00_core/character_creation.md</a></li>
-        <li><a href="./00_core/resistances.md">00_core/resistances.md</a></li>
-        <li><a href="./00_core/combat.md">00_core/combat.md</a></li>
-        <li><a href="./00_core/magic.md">00_core/magic.md</a></li>
-        <li><a href="./01_skills/core_skills.md">01_skills/core_skills.md</a></li>
-        <li><a href="./99_open_questions/unresolved_rules.md">99_open_questions/unresolved_rules.md</a></li>
-      </ol>
-    </section>
+  <section id="additional-core">
+    <h2>Additional core docs</h2>
+    <ul>
+      <li><a href="./README.md">README.md</a></li>
+      <li><a href="./CHARACTER_CREATION_PROTOCOL.md">CHARACTER_CREATION_PROTOCOL.md</a></li>
+    </ul>
+  </section>
 
-    <section aria-labelledby="character-creation">
-      <h2 id="character-creation">Character creation / validation — conditional read set</h2>
-      <ul>
-        <li><a href="./CHARACTER_CREATION_PROTOCOL.md">CHARACTER_CREATION_PROTOCOL.md</a></li>
-        <li><a href="./01_skills/languages.md">01_skills/languages.md</a></li>
-        <li><a href="./sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md">sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md</a></li>
-        <li><a href="./99_open_questions/character_creation.md">99_open_questions/character_creation.md</a></li>
-        <li><a href="./templates/PC_TEMPLATE.md">templates/PC_TEMPLATE.md</a></li>
-        <li><a href="./90_srd_bridge/CHARACTER_CREATION_CLASS_CULTURE.md">90_srd_bridge/CHARACTER_CREATION_CLASS_CULTURE.md</a></li>
-      </ul>
-    </section>
+  <section id="storage">
+    <h2>Campaign storage docs</h2>
+    <ul>
+      <li><a href="./storage_backends/GOOGLE_DRIVE.md">storage_backends/GOOGLE_DRIVE.md</a></li>
+      <li><a href="./campaign_instances/README.md">campaign_instances/README.md</a></li>
+    </ul>
+    <div class="note">
+      <strong>Important:</strong> <code>campaign_instances/README.md</code> documents the repo-local storage convention. It does not make existing upstream campaign instances available as another player's save state.
+    </div>
+  </section>
 
-    <section aria-labelledby="navigation">
-      <h2 id="navigation">Useful navigation / regression documents</h2>
-      <ul>
-        <li><a href="./sources/SHEET_INDEX.md">sources/SHEET_INDEX.md</a></li>
-        <li><a href="./02_items/artifacts.md">02_items/artifacts.md</a></li>
-        <li><a href="./templates/SITE_RECORD_TEMPLATE.md">templates/SITE_RECORD_TEMPLATE.md</a></li>
-        <li><a href="./templates/TRIGGERED_HAZARD_TEMPLATE.md">templates/TRIGGERED_HAZARD_TEMPLATE.md</a></li>
-        <li><a href="./templates/RELATIONSHIP_GRAPH_TEMPLATE.md">templates/RELATIONSHIP_GRAPH_TEMPLATE.md</a></li>
-        <li><a href="./templates/WORLD_COMMITMENT_TEMPLATE.md">templates/WORLD_COMMITMENT_TEMPLATE.md</a></li>
-        <li><a href="./examples/ADJUDICATION_TESTS.md">examples/ADJUDICATION_TESTS.md</a></li>
-        <li><a href="./examples/GROUNDED_GENERATION_REGRESSION.md">examples/GROUNDED_GENERATION_REGRESSION.md</a></li>
-        <li><a href="./examples/BOOTSTRAP_REGRESSION.md">examples/BOOTSTRAP_REGRESSION.md</a></li>
-        <li><a href="./examples/CHARACTER_CREATION_REGRESSION.md">examples/CHARACTER_CREATION_REGRESSION.md</a></li>
-      </ul>
-    </section>
+  <section id="character-creation">
+    <h2>Character creation / validation</h2>
+    <ul>
+      <li><a href="./CHARACTER_CREATION_PROTOCOL.md">CHARACTER_CREATION_PROTOCOL.md</a></li>
+      <li><a href="./01_skills/languages.md">01_skills/languages.md</a></li>
+      <li><a href="./sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md">sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md</a></li>
+      <li><a href="./99_open_questions/character_creation.md">99_open_questions/character_creation.md</a></li>
+      <li><a href="./templates/PC_TEMPLATE.md">templates/PC_TEMPLATE.md</a></li>
+      <li><a href="./90_srd_bridge/CHARACTER_CREATION_CLASS_CULTURE.md">90_srd_bridge/CHARACTER_CREATION_CLASS_CULTURE.md</a></li>
+    </ul>
+  </section>
 
-    <section aria-labelledby="copy-prompt">
-      <h2 id="copy-prompt">Copy-and-paste prompt</h2>
-      <p>把下面整段貼給具有網頁存取能力的 AI / Agent：</p>
-      <pre>請直接啟動 D100 跑團，不要先替我摘要規則或自行建立劇情。
+  <section id="templates">
+    <h2>Templates</h2>
+    <ul>
+      <li><a href="./templates/CAMPAIGN_MANIFEST_TEMPLATE.md">templates/CAMPAIGN_MANIFEST_TEMPLATE.md</a></li>
+      <li><a href="./templates/CREATURE_WORLD_MODEL_TEMPLATE.md">templates/CREATURE_WORLD_MODEL_TEMPLATE.md</a></li>
+      <li><a href="./templates/PC_TEMPLATE.md">templates/PC_TEMPLATE.md</a></li>
+      <li><a href="./templates/RELATIONSHIP_GRAPH_TEMPLATE.md">templates/RELATIONSHIP_GRAPH_TEMPLATE.md</a></li>
+      <li><a href="./templates/SESSION_STATE_TEMPLATE.md">templates/SESSION_STATE_TEMPLATE.md</a></li>
+      <li><a href="./templates/SITE_RECORD_TEMPLATE.md">templates/SITE_RECORD_TEMPLATE.md</a></li>
+      <li><a href="./templates/TRIGGERED_HAZARD_TEMPLATE.md">templates/TRIGGERED_HAZARD_TEMPLATE.md</a></li>
+      <li><a href="./templates/WORLD_COMMITMENT_TEMPLATE.md">templates/WORLD_COMMITMENT_TEMPLATE.md</a></li>
+    </ul>
+  </section>
+
+  <section id="sources">
+    <h2>Source and GM clarification docs</h2>
+    <ul>
+      <li><a href="./sources/CHARACTER_EVIDENCE.md">sources/CHARACTER_EVIDENCE.md</a></li>
+      <li><a href="./sources/GM_CLARIFICATIONS_2026-09-12_ROUND2.md">sources/GM_CLARIFICATIONS_2026-09-12_ROUND2.md</a></li>
+      <li><a href="./sources/GM_CLARIFICATIONS_2026-09-13_ROUND3.md">sources/GM_CLARIFICATIONS_2026-09-13_ROUND3.md</a></li>
+      <li><a href="./sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md">sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md</a></li>
+      <li><a href="./sources/GM_PROVISIONAL_2026-09-12.md">sources/GM_PROVISIONAL_2026-09-12.md</a></li>
+      <li><a href="./sources/SHEET_INDEX.md">sources/SHEET_INDEX.md</a></li>
+      <li><a href="./sources/SOURCE_AUDIT_2026-09-12.md">sources/SOURCE_AUDIT_2026-09-12.md</a></li>
+    </ul>
+  </section>
+
+  <section id="sheet-mirror">
+    <h2>Sheet mirror — raw D100 source navigation</h2>
+    <ul>
+      <li><a href="./sources/sheet_mirror/README.md">sources/sheet_mirror/README.md</a></li>
+      <li><a href="./sources/sheet_mirror/00_character_creation.json.md">00_character_creation</a></li>
+      <li><a href="./sources/sheet_mirror/01_world_core.json.md">01_world_core</a></li>
+      <li><a href="./sources/sheet_mirror/02_基本專長.json.md">02_基本專長</a></li>
+      <li><a href="./sources/sheet_mirror/03_一般專長.json.md">03_一般專長</a></li>
+      <li><a href="./sources/sheet_mirror/04_製作專長_to_超魔專長.json.md">04_製作專長_to_超魔專長</a></li>
+      <li><a href="./sources/sheet_mirror/05_高級專長_to_傳奇專長.json.md">05_高級專長_to_傳奇專長</a></li>
+      <li><a href="./sources/sheet_mirror/06_德魯伊結社.json.md">06_德魯伊結社</a></li>
+      <li><a href="./sources/sheet_mirror/07_法師學派專精.json.md">07_法師學派專精</a></li>
+      <li><a href="./sources/sheet_mirror/08_術士.json.md">08_術士</a></li>
+      <li><a href="./sources/sheet_mirror/09_吟遊詩人特殊專長.json.md">09_吟遊詩人特殊專長</a></li>
+      <li><a href="./sources/sheet_mirror/10_牧師領域.json.md">10_牧師領域</a></li>
+      <li><a href="./sources/sheet_mirror/11_特殊職業1.json.md">11_特殊職業1</a></li>
+      <li><a href="./sources/sheet_mirror/12_特殊職業2.json.md">12_特殊職業2</a></li>
+      <li><a href="./sources/sheet_mirror/13_特殊職業_武僧_.json.md">13_特殊職業_武僧</a></li>
+      <li><a href="./sources/sheet_mirror/14_特殊職業_warlock_.json.md">14_特殊職業_warlock</a></li>
+      <li><a href="./sources/sheet_mirror/15_狩獵任務.json.md">15_狩獵任務</a></li>
+      <li><a href="./sources/sheet_mirror/16_魔法物品價格表.json.md">16_魔法物品價格表</a></li>
+      <li><a href="./sources/sheet_mirror/17_詞墜_依物品分類_.json.md">17_詞墜_依物品分類</a></li>
+      <li><a href="./sources/sheet_mirror/18_一般詞綴.json.md">18_一般詞綴</a></li>
+      <li><a href="./sources/sheet_mirror/19_高階詞綴.json.md">19_高階詞綴</a></li>
+      <li><a href="./sources/sheet_mirror/20_素材詞綴.json.md">20_素材詞綴</a></li>
+      <li><a href="./sources/sheet_mirror/21_永恆聖器詞綴.json.md">21_永恆聖器詞綴</a></li>
+      <li><a href="./sources/sheet_mirror/22_Patch_note_to_FATE特規.json.md">22_Patch_note_to_FATE特規</a></li>
+    </ul>
+  </section>
+
+  <section id="items">
+    <h2>Items / artifacts</h2>
+    <ul>
+      <li><a href="./02_items/artifacts.md">02_items/artifacts.md</a></li>
+    </ul>
+  </section>
+
+  <section id="srd-bridge">
+    <h2>SRD bridge / fallback conversion docs</h2>
+    <p>These are fallback references. They do not override D100 source authority.</p>
+    <ul>
+      <li><a href="./90_srd_bridge/CHARACTER_CREATION_CLASS_CULTURE.md">CHARACTER_CREATION_CLASS_CULTURE.md</a></li>
+      <li><a href="./90_srd_bridge/COMMON_CONVERSION_REFERENCE.md">COMMON_CONVERSION_REFERENCE.md</a></li>
+      <li><a href="./90_srd_bridge/MONSTER_CONVERSION_PIPELINE.md">MONSTER_CONVERSION_PIPELINE.md</a></li>
+      <li><a href="./90_srd_bridge/OPEN_ALIGNMENT_QUESTIONS.md">OPEN_ALIGNMENT_QUESTIONS.md</a></li>
+      <li><a href="./90_srd_bridge/SRD_ALIGNMENT_2026-09-12.md">SRD_ALIGNMENT_2026-09-12.md</a></li>
+      <li><a href="./90_srd_bridge/conversion_rules.md">conversion_rules.md</a></li>
+    </ul>
+  </section>
+
+  <section id="open-questions">
+    <h2>Open questions</h2>
+    <ul>
+      <li><a href="./99_open_questions/README.md">99_open_questions/README.md</a></li>
+      <li><a href="./99_open_questions/character_creation.md">character_creation.md</a></li>
+      <li><a href="./99_open_questions/economy.md">economy.md</a></li>
+      <li><a href="./99_open_questions/librarian_routing_incident_2026-09-15.md">librarian_routing_incident_2026-09-15.md</a></li>
+      <li><a href="./99_open_questions/librarian_routing_resolution_2026-09-16.md">librarian_routing_resolution_2026-09-16.md</a></li>
+      <li><a href="./99_open_questions/runtime_playtest.md">runtime_playtest.md</a></li>
+      <li><a href="./99_open_questions/social_world.md">social_world.md</a></li>
+      <li><a href="./99_open_questions/unresolved_rules.md">unresolved_rules.md</a></li>
+    </ul>
+  </section>
+
+  <section id="regressions">
+    <h2>Regression / diagnostic docs</h2>
+    <ul>
+      <li><a href="./examples/ADJUDICATION_TESTS.md">examples/ADJUDICATION_TESTS.md</a></li>
+      <li><a href="./examples/GROUNDED_GENERATION_REGRESSION.md">examples/GROUNDED_GENERATION_REGRESSION.md</a></li>
+      <li><a href="./examples/BOOTSTRAP_REGRESSION.md">examples/BOOTSTRAP_REGRESSION.md</a></li>
+      <li><a href="./examples/CHARACTER_CREATION_REGRESSION.md">examples/CHARACTER_CREATION_REGRESSION.md</a></li>
+      <li><a href="./examples/GOOGLE_DRIVE_BACKEND_SMOKE_2026-09-16.md">examples/GOOGLE_DRIVE_BACKEND_SMOKE_2026-09-16.md</a></li>
+      <li><a href="./examples/MIGRATION_REF_ALIAS_REGRESSION.md">examples/MIGRATION_REF_ALIAS_REGRESSION.md</a></li>
+    </ul>
+  </section>
+
+  <section id="copy-prompt">
+    <h2>Copy-and-paste prompt</h2>
+    <p>把下面整段貼給具有網頁存取能力的 AI / Agent：</p>
+    <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('launch-prompt').innerText)">複製啟動提示詞</button>
+    <pre id="launch-prompt">請直接啟動 D100 跑團，不要先替我摘要規則或自行建立劇情。
 
 公開入口：
 https://fjck810536.github.io/D100/
@@ -97,12 +233,14 @@ https://fjck810536.github.io/D100/START_DM.md
 
 請先成功讀取 START_DM.md，然後完全依其中的 bootstrap / 導航流程讀取它要求的正式文件。
 
+如果你的網頁工具無法直接組合或開啟任意 URL，請回到公開入口，沿著頁面已提供的實際連結讀取所需文件。
+
 重要：
 
 - 不要把 D100 當成 D&amp;D 3.5、CoC 或一般 generic d100 系統。
 - 不要用你自己的既有 RPG 常識補寫沒有成功讀到的 D100 規則。
 - 如果 START_DM.md 或它要求的必要文件無法讀取，請停止並明確告訴我是哪個檔案讀不到；不要猜測內容後繼續主持。
-- 這次不要自行沿用 repository 中既有的 campaign、character、session 或 legacy state。
+- 這次不要自行沿用 repository 中既有的 campaign、character、session、mystery 或 legacy state。
 - 未選定 campaign 前，不得進入正式場景。
 - 如果建立 persistent campaign，存檔必須使用我自己具有持續 READ / CREATE / UPDATE 能力的 storage；公開的 fjck810536/D100 與 GitHub Pages 只作 rules/source，不是我的預設存檔位置。
 - ruleset 必須依 repo protocol pin 到 immutable commit SHA，不得把浮動的 main 當成既有團的固定規則版本。
@@ -110,12 +248,18 @@ https://fjck810536.github.io/D100/START_DM.md
 必要文件成功讀取後，不要向我做規則報告。
 
 直接按照 START_DM.md 規定的第一個玩家可見畫面開始。</pre>
-    </section>
+  </section>
 
-    <section aria-labelledby="repo">
-      <h2 id="repo">Repository</h2>
-      <p><a href="https://github.com/fjck810536/D100">github.com/fjck810536/D100</a></p>
-    </section>
-  </main>
+  <section id="excluded-state" class="note">
+    <h2>Not part of crawler onboarding</h2>
+    <p>Existing mutable campaign state, legacy state, live sessions, and Mystery records are intentionally not linked from this hub.</p>
+    <p>They must only be resolved through an explicitly selected campaign manifest / storage root according to the D100 bootstrap protocol.</p>
+  </section>
+
+  <section id="repository">
+    <h2>Repository</h2>
+    <p><a href="https://github.com/fjck810536/D100">github.com/fjck810536/D100</a></p>
+  </section>
+</main>
 </body>
 </html>
