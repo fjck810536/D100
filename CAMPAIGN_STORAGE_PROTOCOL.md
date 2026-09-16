@@ -179,6 +179,65 @@ old session snapshot -> current character master overwrite
 provider global search -> first same-name hit -> authoritative record
 ```
 
+### 6.1 Migrated legacy state refs / exact alias map
+
+Migration may copy historical records byte-for-byte into a new campaign namespace. Those records can still contain old path-like state refs such as：
+
+```text
+campaign/andor_sites.md
+characters/mileia.md
+sessions/2026-09-15_session-1_checkpoint-01.md
+mystery_vault/ANDOR_....md
+```
+
+Rewriting every historical file is not required if the manifest provides an explicit exact alias map：
+
+```yaml
+migration:
+  ref_alias_policy: exact_only
+  ref_aliases:
+    campaign/andor_sites.md: campaign_instances/D100-TEST-ANDOR-001/sites/andor_sites.md
+```
+
+Resolution order for a **campaign-state ref inside a selected migrated campaign**：
+
+```text
+1. if ref already resolves inside selected campaign namespace -> use it
+2. else if exact key exists in manifest migration.ref_aliases -> resolve exact target
+3. verify alias target belongs to selected campaign namespace
+4. otherwise do NOT silently read legacy/global mutable state
+```
+
+Important distinction：
+
+```text
+campaign-state ref
+!=
+repo-level D100 source/rule ref
+```
+
+Source refs such as：
+
+```text
+sources/sheet_mirror/...
+00_core/...
+90_srd_bridge/...
+```
+
+remain repo-level source lookups and are not remapped merely because campaign storage is isolated.
+
+Alias safety fuses：
+
+```text
+exact_only means no fuzzy/path-prefix guessing
+alias target must be inside selected campaign storage
+alias map cannot grant rule authority
+an unaliased external mutable-state ref is unresolved, not permission to fall back to root
+literal legacy path shown only as provenance/history does not itself trigger a state read
+```
+
+This mechanism is for migration compatibility. New records should write current selected-campaign refs directly rather than accumulating permanent alias debt.
+
 ---
 
 ## 7. Persistence verification
@@ -242,6 +301,7 @@ session update persistence
 same-name record ambiguity
 campaign A/B isolation
 write failure visibility
+migration exact-ref alias resolution
 ```
 
 Provider-specific 便利功能不能改變 D100 rule hierarchy、Mystery classification 或 campaign isolation 原則。
