@@ -9,7 +9,7 @@ record_status: active_selected_campaign_state
 ruleset_ref: fc868904c4d9ded6d2f408ee25001dac5b2a70d5
 
 world_time: split-thread chronology
-active_camera: none
+active_camera: Aster
 
 four_voice_control:
   mode: pl_pc
@@ -31,7 +31,7 @@ party:
   PC-ROOK:
     actor_ref: campaign_instances/D100-TEST-ANDOR-001/characters/rook.md
     controller: 鮫島_pl_pc
-    current_boundary: Mercenary Guild; convoy questions pending and not auto-resolved
+    current_boundary: Mercenary Guild; north-road convoy accepted; signup established; departure not yet occurred
   PC-ASTER:
     actor_ref: campaign_instances/D100-TEST-ANDOR-001/characters/aster.md
     controller: 赫茲_pl_pc
@@ -41,8 +41,9 @@ party:
     controller: 彌生_pl_pc
     current_boundary: immediate post-guild-split actor boundary from latest live-state pointer
 
-active_live_session_ref: campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state.md
+active_live_session_ref: campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-02.md
 historical_session_refs:
+  - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state.md
   - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-15_session-1_checkpoint-01.md
   - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-15_session-1_runtime-migration.md
 
@@ -73,11 +74,12 @@ migration_fuses:
 
 ## Interpretation boundary
 
-- `campaign/andor_lathander_morninghall.md` was committed after the Mileia rollback and remains a valid Andor world/site record.
+- `campaign_instances/D100-TEST-ANDOR-001/sites/andor_lathander_morninghall.md` remains a valid Andor world/site record.
 - Its existence does **not** establish that Mileia arrived there, met Cael, or acquired local knowledge. Mileia's actor pointer remains at the latest live-state boundary until play advances it.
 - Root `campaign/current_state.md` is a stale generic legacy placeholder and is not Andor authority.
 - `characters/ACTIVE_PC_MANIFEST.md` is historical recovery-gap evidence, not the current actor index.
 - Migrated records may retain literal legacy paths as historical text. Runtime resolution follows manifest `migration.ref_aliases` exactly; unaliased external mutable-state paths do not fall back to root.
+- Rook's convoy acceptance is authoritative campaign state from `sessions/2026-09-16_session-1_live-state-02.md`; exact departure time and future route events remain unestablished.
 
 ## Verification status
 
