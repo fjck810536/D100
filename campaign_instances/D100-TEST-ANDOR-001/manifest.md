@@ -47,7 +47,7 @@ indexes:
     PC-ASTER: campaign_instances/D100-TEST-ANDOR-001/characters/aster.md
     PC-MILEIA: campaign_instances/D100-TEST-ANDOR-001/characters/mileia.md
     PC-NELLA: campaign_instances/D100-TEST-ANDOR-001/characters/nella.md
-  active_live_session_ref: campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-03.md
+  active_live_session_ref: campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-04.md
 
 four_voice_control:
   mode: pl_pc
