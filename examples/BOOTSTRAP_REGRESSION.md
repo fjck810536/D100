@@ -109,14 +109,17 @@ domain = Life / 生命領域
 Then:
 
 ```text
+write authoritative character master
+verify readback
 end session
 switch chat / agent
 load same campaign from manifest
 ```
 
 Expected:
-- faith/domain recovered from authoritative character record；
+- faith/domain recovered from exact authoritative character record；
 - 不需要從舊聊天猜測；
+- 不需要從 session 反推；
 - session snapshot 不是角色主檔。
 
 ---
@@ -133,6 +136,13 @@ Expected:
 - runtime first reads character master then live state delta；
 - omitted session fields do not become unknown / absent；
 - old checkpoint cannot overwrite current master or later live state。
+
+Fail if:
+
+```text
+session Search=56
+→ runtime pretends this is enough to reconstruct the whole build
+```
 
 ---
 
@@ -177,3 +187,161 @@ Fail if:
 - claims save was created；
 - silently stores only in chat；
 - silently writes into D100 repo root legacy folders。
+
+---
+
+## T11 — Root legacy state is not an implicit campaign
+
+Given:
+- repo root still contains historical `campaign/`、`characters/`、`sessions/`；
+- no selected campaign manifest exists for this runtime。
+
+Expected:
+
+```text
+D100
+
+1. 新遊戲
+2. 讀取存檔
+```
+
+Fail if:
+- runtime chooses the most recently modified root session；
+- runtime assumes root characters are the user's current party；
+- runtime says "繼續上次" without a selected campaign pointer。
+
+---
+
+## T12 — Character finalization requires master write + readback
+
+Given a newly finalized PC with:
+
+```text
+attributes
+skills / feats
+alignment
+CP ledger
+languages
+faith/domain/training if applicable
+HP/SP result
+starting equipment
+```
+
+Expected:
+
+```text
+final validation
+→ write selected-campaign character master
+→ read back exact record ref
+→ verify identity and required fields
+→ only then discard creation working data
+```
+
+Fail if:
+- working data is discarded before successful readback；
+- only session summary is saved；
+- required identity fields disappear after chat switch。
+
+---
+
+## T13 — Same-name characters do not cross campaigns
+
+Given:
+
+```text
+Campaign A: character_id=PC-MILEIA, name=Mileia
+Campaign B: name=Mileia, different record or no matching character_id
+```
+
+Expected:
+- loading A follows A manifest/index exact ref；
+- loading B follows B manifest/index exact ref；
+- global title search does not select A's Mileia while B is active。
+
+---
+
+## T14 — Google Drive exact-ID load
+
+Given a Drive campaign root with manifest refs:
+
+```yaml
+records:
+  manifest_ref: <id-m>
+  current_state_ref: <id-s>
+indexes:
+  characters:
+    PC-MILEIA: <id-c>
+```
+
+Expected load:
+
+```text
+root_ref
+→ exact manifest
+→ exact current state
+→ exact PC-MILEIA record
+```
+
+Fail if runtime globally searches file titles and uses the first matching result。
+
+---
+
+## T15 — Important write must be verified
+
+Given:
+- session-end or character-finalization update reports success；
+- follow-up readback cannot find expected content / parent / stable record ID。
+
+Expected:
+
+```yaml
+persistence:
+  status: uncommitted
+```
+
+Runtime reports save failure and does not claim persistence success。
+
+---
+
+## T16 — Ambiguous manifest blocks load
+
+Given:
+- selected storage root contains two plausible manifest records；
+- no exact `manifest_ref` is available。
+
+Expected:
+- stop with storage ambiguity；
+- ask user / migration logic to resolve once；
+- do not choose newest modified file automatically。
+
+---
+
+## T17 — Ruleset pin does not silently float
+
+Create campaign at D100 ref A. Later repo head becomes ref B.
+
+Expected:
+- campaign manifest still points to A；
+- runtime reports migration/update need if B is requested；
+- it does not silently switch campaign ruleset to B。
+
+---
+
+## T18 — Quick mode does not change rule authority
+
+Given:
+
+```yaml
+world_resolution_mode: quick
+```
+
+Expected:
+- source-resolution effort may be reduced；
+- SRD bridge may be used more aggressively where D100 is truly incomplete；
+- rule hierarchy remains:
+
+```text
+D100 > SRD bridge > raw D&D 3.5
+```
+
+Fail if quick mode makes raw 3.5 equal or superior to D100 canon。
