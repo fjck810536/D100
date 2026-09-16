@@ -72,7 +72,7 @@ These values are established runtime character data. Exact raw-vs-adjustment dec
 
 - Care / medicine / social-presence orientation; does not imply party-mother autopilot.
 - Moderate helping-risk tolerance.
-- Current Andor thread is the south-district chapel / dispensary route; no off-camera outcome has been auto-resolved.
+- **Current rollback boundary:** Mileia has just separated from the party after the Mercenary Guild split. No post-split travel, local site arrival, local NPC contact, volunteering, or newly learned local religious/medical practice is established.
 - Exact availability/preparation of Zone of Truth or any other specific spell is not established by this recovered minimum card unless separately recovered from the original build record.
 
 ## Capability-record recovery status
