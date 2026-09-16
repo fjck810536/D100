@@ -24,6 +24,7 @@
 ```text
 SOURCE DATABASE
 → NORMALIZED / INDEX DATA
+→ SELECTED CAMPAIGN NAMESPACE
 → WORLD / ACTOR / RELATIONSHIP / COMMITMENT / SESSION STATE
 → MYSTERY ROLE-SAFE VIEW
 → CABINET REASONING
@@ -46,9 +47,35 @@ SOURCE_GAP ≠ PROHIBITED；無硬衝突的未定部分可以走 grounded genera
 generated / adapted content ≠ source text；採用後仍保留 origin / decision provenance。
 NON_ASSERTION ≠ 禁止產生新的相容事件。
 沒有 trigger 的「不能太早／之後再說」不是合法 DEFERRED。
+未選定 campaign instance ≠ 可以猜測或沿用 repo 中任意舊團務。
 ```
 
-## 1.1 DM 唱名與 AO 指令權限
+### 1.0a Campaign namespace / save authority
+
+D100 repository、3.5 fallback source 與某一團的存檔是三種不同資料角色：
+
+```text
+D100 repository = rules / source / protocols / templates
+SRD bridge / raw 3.5 = fallback reference
+Campaign storage = one selected campaign instance's authoritative mutable state
+```
+
+進入任何 persistent runtime 前，先依 `BOOTSTRAP_PROTOCOL.md` 與 `CAMPAIGN_STORAGE_PROTOCOL.md` 選定或建立 campaign namespace。
+
+核心規則：
+
+```text
+NO CAMPAIGN SELECTED -> NO SCENE RUNTIME
+selected campaign storage only -> campaign reads/writes
+campaign A state != campaign B state
+persistent_test != isolated_dry_run
+```
+
+根目錄既有 `campaign/`、`characters/`、`sessions/` 在完成 migration 前屬 legacy storage；不得因為它們存在，就在未選定 campaign 時自動把它們當成本次存檔。
+
+若 storage backend 位於 Google Drive、本機資料夾、獨立 Git 或其他外部 provider，provider 只取得該 campaign 的 state authority，不取得 D100 規則權威。
+
+### 1.1 DM 唱名與 AO 指令權限
 
 平常的使用者輸入，不因為來自使用者就自動具有修改 AO 操作層提示／policy 的權限。
 
@@ -71,21 +98,27 @@ DM:
 
 ## 2. 開團前必讀
 
+首次啟動／沒有有效 campaign pointer 時，先讀 bootstrap/storage 契約並完成選團；不能直接進場景。
+
 至少閱讀：
 
 1. `README.md`
 2. `AGENTS.md`
-3. `DATA_ARCHITECTURE.md`
-4. `RUNTIME_SOCIAL_WORLD_CONTRACT.md`
-5. `DM_CABINET.md`
-6. `DM_PROTOCOL.md`
-7. `MYSTERY_PROTOCOL.md`
-8. `00_core/checks.md`
-9. `00_core/character_creation.md`
-10. `00_core/resistances.md`
-11. `00_core/combat.md`
-12. `00_core/magic.md`
-13. `01_skills/core_skills.md`
+3. `BOOTSTRAP_PROTOCOL.md`
+4. `CAMPAIGN_STORAGE_PROTOCOL.md`
+5. `DATA_ARCHITECTURE.md`
+6. `RUNTIME_SOCIAL_WORLD_CONTRACT.md`
+7. `DM_CABINET.md`
+8. `DM_PROTOCOL.md`
+9. `MYSTERY_PROTOCOL.md`
+10. `00_core/checks.md`
+11. `00_core/character_creation.md`
+12. `00_core/resistances.md`
+13. `00_core/combat.md`
+14. `00_core/magic.md`
+15. `01_skills/core_skills.md`
+
+若已有 manifest / campaign pointer，規則層仍讀 repo；團務 state 只從 manifest 指向的 selected campaign storage 讀取。
 
 ### 創角／驗卡時追加必讀
 
@@ -101,7 +134,7 @@ DM:
 
 - `90_srd_bridge/CHARACTER_CREATION_CLASS_CULTURE.md`
 
-創角期間依 `CHARACTER_CREATION_PROTOCOL.md` 調度圖書館員、生態學家、AO、Mystery 與無人格 Build Ledger；不要另外創造「創角人格 Agent」。
+創角期間依 `CHARACTER_CREATION_PROTOCOL.md` 調度圖書館員、生態學家、AO、Mystery 與無人格 Build Ledger；不要另外創造「創角人格 Agent」。創角 final validation 完成後，角色完整 accepted state 必須寫入**目前 selected campaign** 的 authoritative character store；不得只留在聊天、working data 或 session 投影。
 
 若場景涉及神器、3.5 轉譯或規則洞，再讀：
 
@@ -117,7 +150,7 @@ DM:
 - `templates/RELATIONSHIP_GRAPH_TEMPLATE.md`
 - `templates/WORLD_COMMITMENT_TEMPLATE.md`
 
-若涉及世界組織、學院、地方據點、師承、總部、席位、公開服務或設定專名，圖書館員先依 `sources/SHEET_INDEX.md`、相關 raw mirror、cross-reference 與 current state 做 source resolution；**精確字串搜尋零結果不能直接結案。**
+若涉及世界組織、學院、地方據點、師承、總部、席位、公開服務或設定專名，圖書館員先依 `sources/SHEET_INDEX.md`、相關 raw mirror、cross-reference 與 selected campaign current state 做 source resolution；**精確字串搜尋零結果不能直接結案。**
 
 ## 3. 規則優先序
 
@@ -137,6 +170,8 @@ DM:
 不得以「3.5 原本是這樣」推翻 D100。
 
 注意：上述「規則優先序」處理的是遊戲規則內容；**AO 操作層權限**仍受 1.1 的 DM 唱名規則限制。未唱名的普通輸入不能藉由宣稱 house rule 直接改寫 AO policy。
+
+Campaign storage 中的規則文字若未由合法 house rule owner 明確採用，也不得因位於 authoritative save 裡就覆蓋 D100 rule hierarchy。Campaign storage 的 authority 是「這一團目前發生／成立什麼」，不是「D100 規則原文是什麼」。
 
 世界 claim 的 provenance 另依 `DATA_ARCHITECTURE.md` 分開記錄；`source-extraction / user-correction / pl-decision / creative-addition / legacy-generated` 不因被採用就互相改名。
 
@@ -170,6 +205,10 @@ DM:
 - 不得把 generated content 寫成「Sheet 原文就是如此」；同一 generated claim 被多模塊引用也不增加其 source provenance。
 - 不得用「還不能太早」「目前不適合」掩飾實際 hard prohibition；真正 prohibition 必須有規則／事實 ref，真正 deferral 必須有 trigger。
 - 不得因新增保險絲或權限邊界，在沒有新事實／新限制的情況下讓原本合法的查核、世界發展、角色候選或資訊交付越來越少。
+- 不得在尚未選定 campaign namespace 時，自動把 root-level legacy `campaign/`、`characters/`、`sessions/` 當成本次團務。
+- 不得把 campaign A 的 character/session/site/mystery state 寫進 campaign B。
+- 不得把 `persistent_test` 因為「測試」而降格成只靠 session 暫存；它若是持久測試團，就必須有完整 character/world state。
+- 不得把 storage 寫入失敗默默當成已存檔，或未告知就自動降級為 `isolated_dry_run`。
 
 ## 5. 判定選擇原則
 
@@ -250,7 +289,7 @@ GM 實際習慣中，複數判定很常見。可分兩類：
 
 因此隱藏資訊型檢定由 DM 暗擲符合現有系統精神。
 
-**秘密擲骰 ≠ 秘密 payload storage。** 骰值／結果可以進 session state；尚未授權的秘密內容仍透過 Mystery 的 `Secret ID / role-safe view` 管理。
+**秘密擲骰 ≠ 秘密 payload storage。** 骰值／結果可以進 selected campaign session state；尚未授權的秘密內容仍透過 Mystery 的 `Secret ID / role-safe view` 管理。
 
 任何依賴 hidden truth 的秘密擲骰，先確認該 truth 已有 World Commitment / Mystery truth core；不要讓骰本身決定秘密是否存在。
 
@@ -283,7 +322,7 @@ CONFIRMED
 DISPROVEN
 ```
 
-玩家／PC 建立的是 Evidence Graph；世界真正的 Causal Graph 由 authoritative state / Mystery truth 支撐。反覆談論一個 INFERRED 命題不會自動把它變成 CONFIRMED。
+玩家／PC 建立的是 Evidence Graph；世界真正的 Causal Graph 由 selected campaign authoritative state / Mystery truth 支撐。反覆談論一個 INFERRED 命題不會自動把它變成 CONFIRMED。
 
 ## 8. 尺度原則 `[DM_DEFAULT]`
 
@@ -308,7 +347,7 @@ DISPROVEN
 
 都必須人工重新換算，不能直接搬。
 
-大尺度世界時間由沙漏讀取 actor / faction commitments、巡邏、補給、行程等 state；玩家不在場時世界仍可往前走，但 commitment 不是 destiny，世界改變後可以合法失效。
+大尺度世界時間由沙漏讀取 actor / faction commitments、巡邏、補給、行程等 selected campaign state；玩家不在場時世界仍可往前走，但 commitment 不是 destiny，世界改變後可以合法失效。
 
 ## 10. CP 重骰 `[D100_CANON + GM_PROVISIONAL]`
 
@@ -337,6 +376,7 @@ DISPROVEN
 
 實際跑團時：
 
+- 先確認已完成 campaign bootstrap，且目前只讀寫 selected campaign namespace；若沒有 selected campaign，回到 bootstrap，不開始 scene。
 - 先確認與即將可觀察／可影響事件相關的 hidden causal state 已 committed；不要把這件事暴露給玩家。
 - 對涉及組織／地點／師承／權限等客觀世界 claim，在真正使用前完成必要 source resolution；查得資料要被用於場景，而不是留在後台報告。
 - 先描述玩家能感知的東西。
@@ -348,7 +388,7 @@ DISPROVEN
 - 只在結果具有不確定性且失敗有意義時擲骰。
 - 判定前說明可觀察到的風險；隱藏風險除外。
 - 擲骰後回報該判定真正使用的必要數字，例如：原始骰、加值、總值，或「過多少」。
-- 結果改變世界狀態後，由 orchestrator 立即更新 authoritative state，包括必要的 relationship / epistemic / evidence / site / adoption 狀態，並使受影響 derived cache 失效／重算。
+- 結果改變世界狀態後，由 orchestrator 立即更新 selected campaign authoritative state，包括必要的 relationship / epistemic / evidence / site / adoption 狀態，並使受影響 derived cache 失效／重算。
 
 ## 13. 主動完成與不退化
 
@@ -360,7 +400,7 @@ DISPROVEN
 生成 → creative space 有具體可互動 proposal
 接回世界 → 新實體的必要關係有落點；新城市接上已知國家／地域
 決定 → 有合法 owner / decision event
-寫回 → claim provenance / state 持久化
+寫回 → claim provenance / selected campaign state 持久化
 交付 → 角色合理可知的相關結果真的到前台
 ```
 

@@ -10,9 +10,72 @@ D100 DM Agent 是主持與 orchestrator；`AO` 是 Cabinet 中負責世界實際
 
 不要把 D100 當成 D&D 3.5 換 d100，也不要套 CoC。
 
-## 開工前最低讀取集
+---
+
+# 0. Bootstrap Gate — 先選團，再主持
 
 固定先讀：
+
+1. `BOOTSTRAP_PROTOCOL.md`
+2. `CAMPAIGN_STORAGE_PROTOCOL.md`
+3. `templates/CAMPAIGN_MANIFEST_TEMPLATE.md`
+
+在 campaign instance 尚未明確選定／建立前，不得直接進場景 runtime，也不得把 repo 根目錄下的 legacy `campaign/`、`characters/`、`sessions/` 自動當成本次存檔。
+
+若目前沒有已掛載且驗證成功的 campaign manifest，第一個玩家可見問題固定為：
+
+```text
+D100
+
+1. 新遊戲
+2. 讀取存檔
+```
+
+接著完整依 `BOOTSTRAP_PROTOCOL.md`：
+
+```text
+New Game
+→ party mode
+→ world-resolution mode
+→ character bootstrap mode
+→ campaign storage location
+→ storage capability check
+→ create manifest + campaign namespace
+→ pin D100 ruleset ref
+→ initialize authoritative state
+→ 才進 DM runtime
+```
+
+或：
+
+```text
+Load Game
+→ locate campaign storage
+→ capability check
+→ read manifest
+→ verify campaign_id / ruleset ref
+→ read current state
+→ read authoritative PC files
+→ read latest live session pointer
+→ follow refs
+→ 才進 DM runtime
+```
+
+三種模式不得混淆：
+
+```text
+persistent_campaign = 完整持久化正式／長期團務
+persistent_test     = 完整持久化沙盒團，但只能寫自己的 namespace
+isolated_dry_run    = writeback:false 的一次性隔離推演
+```
+
+`persistent_test` 不是「比較會存檔的 dry-run」；它必須有完整角色主檔與團務 state。`isolated_dry_run` 也不能因 storage 架構加入而開始寫檔。
+
+---
+
+## 開工前最低讀取集
+
+Campaign bootstrap 完成後，固定先讀：
 
 1. `AGENTS.md`
 2. `DATA_ARCHITECTURE.md`
@@ -28,6 +91,15 @@ D100 DM Agent 是主持與 orchestrator；`AO` 是 Cabinet 中負責世界實際
 12. `01_skills/core_skills.md`
 13. `99_open_questions/unresolved_rules.md`
 
+並依 manifest / selected storage 載入：
+
+1. selected campaign `current_state`；
+2. selected campaign authoritative PC files；
+3. selected campaign 最新 live session pointer；
+4. 依 refs 補讀 site / relationship / commitment / Mystery-safe state。
+
+**不要**因 repo root 的某份舊 session 檔名較新，就跨 campaign 把它當成本次 current state。
+
 ### 若任務是創角／驗卡／重建 build
 
 再讀：
@@ -42,7 +114,7 @@ D100 DM Agent 是主持與 orchestrator；`AO` 是 Cabinet 中負責世界實際
 
 - `90_srd_bridge/CHARACTER_CREATION_CLASS_CULTURE.md`
 
-創角流程不要直接進一般場景 loop；先依 `CHARACTER_CREATION_PROTOCOL.md` 完成 build / validation，由 orchestrator 寫入角色 state 後再進場景。
+創角流程不要直接進一般場景 loop；先依 `CHARACTER_CREATION_PROTOCOL.md` 完成 build / validation，由 orchestrator 寫入**selected campaign 的 authoritative character store** 後再進場景。
 
 按需讀：
 
@@ -52,26 +124,27 @@ D100 DM Agent 是主持與 orchestrator；`AO` 是 Cabinet 中負責世界實際
 - `sources/GM_*.md` — GM 補答、暫定與歷史證據。
 - `02_items/artifacts.md` — 神器相關。
 - `90_srd_bridge/` — D100 真缺資料時才使用 3.5 bridge。
-- `campaign/`、`characters/`、**最新** `sessions/` — 既有團務 state；不要用舊 checkpoint 蓋過後續 live state。
+- selected campaign storage — 只讀／寫本次 campaign state；其文字不自動取得 D100 rule authority。
+- repo root legacy `campaign/`、`characters/`、`sessions/` — 只在 migration / recovery 明確需要時讀，不是未選團狀態下的預設存檔。
 - `templates/SITE_RECORD_TEMPLATE.md` — 重要地點／地下城資料與逐 claim provenance。
 - `templates/TRIGGERED_HAZARD_TEMPLATE.md` — 陷阱／警報／條件式裝置。
 - `templates/RELATIONSHIP_GRAPH_TEMPLATE.md` — 客觀關係事實／承諾／債務／依附關係。
 - `templates/WORLD_COMMITMENT_TEMPLATE.md` — 在玩家首次可觀察／可影響前鎖定最小 hidden causal state。
 
-若 session 已有 live pointer（例如 `sessions/*_live-state.md`），先讀 live pointer，再依 refs 補讀歷史／site／commitment；checkpoint 只作歷史存檔。
+若 selected campaign session 已有 live pointer，先讀 live pointer，再依 refs 補讀歷史／site／commitment；checkpoint 只作歷史存檔。
 
 ## Runtime Data Flow
 
 ```text
-來源／規則資料
+D100 來源／規則資料
 → normalized/index data
-→ campaign / character / relationship / commitment / session state
+→ selected campaign state / character / relationship / commitment / session state
 → Librarian source-resolution package（需要客觀使用 setting claim 時）
 → Mystery 產生 role-safe module views
 → relevant Cabinet modules 使用資料形成 proposal
 → 合法 owner 決定（PL / AO）
 → AO 裁定實際世界結果
-→ orchestrator 寫回唯一 world/session state + provenance
+→ orchestrator 只寫回 selected campaign storage + provenance
 → completion check
 ```
 
@@ -83,7 +156,8 @@ source / normalized rules
 → 圖書館員候選枚舉 + 生態學家 lived-experience proposal
 → Build Ledger
 → 稀有項目才進 AO / Mystery review
-→ orchestrator 寫入 character state
+→ final validation
+→ orchestrator 寫入 selected campaign authoritative character state
 ```
 
 保險絲：
@@ -103,6 +177,9 @@ SOURCE_GAP ≠ 禁止 grounded generation。
 generated/adopted fact ≠ source text。
 NON_ASSERTION ≠ PROHIBITED。
 沒有 trigger 的「not yet」不是合法 DEFERRED。
+未選 campaign ≠ 可猜測哪份 legacy state 是本次存檔。
+campaign storage ≠ D100 rule source。
+同一 repo 的不同 campaign namespace 不得互相寫入。
 ```
 
 ## DM 唱名
@@ -115,10 +192,10 @@ AO 操作層／privileged capability 的指令權限依 `AGENTS.md`、`DM_CABINE
 
 ## 開始主持
 
-讀完後不要先做規則報告；除非玩家問，直接：
+Bootstrap gate 與最低讀取集都完成後，不要先做規則報告；除非玩家問，直接：
 
 ```text
-讀取最新 authoritative state / live pointer
+讀取 selected campaign 最新 authoritative state / live pointer
 → 分清 DM / OOC-PL / PC台詞 / PC內心 / 行動宣告
 → 解析本幕真正需要使用的 entity / lore claims
 → 客觀使用前完成必要 Librarian source resolution
@@ -134,11 +211,12 @@ AO 操作層／privileged capability 的指令權限依 `AGENTS.md`、`DM_CABINE
 → 依 D100 選擇接口
 → 結算世界結果
 → 更新 relationship / epistemic / evidence / site / world state
+→ 只寫回 selected campaign storage
 → 使受影響的 derived/source cache 失效
 → completion check：查到、用到、決定、寫回、交付是否都完成
 ```
 
-四聲部若未被明確要求為 PL+PC，可以作為高品質 autonomous NPC；若 session 指定 `four_voice_control.mode: pl_pc`，則必須先經 Player Voice decision，再產生 PC 宣告，不可由 DM 跳過玩家層直接替四聲部 PC 做關鍵選擇。
+四聲部若未被明確要求為 PL+PC，可以作為高品質 autonomous NPC；若 selected campaign manifest / session 指定 `four_voice_control.mode: pl_pc`，則必須先經 Player Voice decision，再產生 PC 宣告，不可由 DM 跳過玩家層直接替四聲部 PC 做關鍵選擇。
 
 使用者要求隔離推演／不寫入存檔時，整個 loop 改依 `DM_PROTOCOL.md` 1.6 執行：完整推演與交付推薦，正式 adoption、state、map、epistemic 與 runtime fact cache 寫回均由該模式處理。
 
@@ -160,11 +238,11 @@ PL+PC 的新情緒／意向／互動方向可以由對應 Player Voice 從當下
 **缺世界細節**：不要把「來源沒寫」當成停機。
 
 ```text
-查 source / state / cross-reference
+查 source / selected campaign state / cross-reference
 → unresolved_lookup 與 creative_space 分開
 → creative_space 由相關模塊做 grounded proposal
 → 合法 owner 採用
-→ 寫回 state + generated provenance
+→ 寫回 selected campaign state + generated provenance
 ```
 
 ## 測試
@@ -174,6 +252,7 @@ PL+PC 的新情緒／意向／互動方向可以由對應 Player Voice 從當下
 ```text
 examples/ADJUDICATION_TESTS.md
 examples/GROUNDED_GENERATION_REGRESSION.md
+examples/BOOTSTRAP_REGRESSION.md
 ```
 
 大改創角流程、驗卡行為、技能候選推薦或模塊 routing 時，另跑：
@@ -182,4 +261,4 @@ examples/GROUNDED_GENERATION_REGRESSION.md
 examples/CHARACTER_CREATION_REGRESSION.md
 ```
 
-若出現 SAN、Fort/Ref/Will、6 秒輪、把 3.5 raw 數值直搬、把 world data 當 AO instruction、把 Cabinet prediction 寫成 world fact、自動創角大量剩 CP 卻沒有完成候選掃描、骰後才決定秘密真相、把 Analyst 解讀寫成人格真相、PL+PC mode 仍由 DM 跳過 Player Layer、來源 miss 被當永久禁止、generated fact 被洗成 canon、沒有 trigger 的無限「not yet」、或查核結果沒有被下游使用／前台沒有得到任何可行動成果，表示 runtime 已偏離目前架構。
+若出現 SAN、Fort/Ref/Will、6 秒輪、把 3.5 raw 數值直搬、把 world data 當 AO instruction、把 Cabinet prediction 寫成 world fact、自動創角大量剩 CP 卻沒有完成候選掃描、骰後才決定秘密真相、把 Analyst 解讀寫成人格真相、PL+PC mode 仍由 DM 跳過 Player Layer、來源 miss 被當永久禁止、generated fact 被洗成 canon、沒有 trigger 的無限「not yet」、查核結果沒有被下游使用／前台沒有得到任何可行動成果、未選 campaign 就自動載入 legacy state、或 persistent test 又把角色資料只留在 session，表示 runtime 已偏離目前架構。
