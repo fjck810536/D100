@@ -63,17 +63,19 @@ four_voice_control:
 
 bootstrap_status:
   storage_capability_verified: true
-  manifest_readback_verified: false
+  manifest_readback_verified: true
   ruleset_ref_verified: true
-  initialized: false
+  initialized: true
 
 persistence:
-  last_verified_at: null
-  status: uninitialized
+  last_verified_at: "2026-09-16"
+  status: clean
   last_error: null
 
 migration:
-  status: staged_phase_d_ref_normalization
+  status: verified_ready_for_explicit_cutover
+  cutover: false
+  staging_branch: bootstrap-campaign-storage-v1
   legacy_source_refs:
     - migrations/ANDOR_PHASE_A_INVENTORY_2026-09-16.md
     - sessions/2026-09-16_session-1_live-state.md
@@ -82,7 +84,7 @@ migration:
     - characters/aster.md
     - characters/mileia.md
     - characters/nella.md
-  last_migration_ref: migrations/ANDOR_PHASE_A_INVENTORY_2026-09-16.md
+  last_migration_ref: migrations/ANDOR_PHASE_E_READBACK_2026-09-16.md
   ref_alias_policy: exact_only
   ref_aliases:
     characters/elian.md: campaign_instances/D100-TEST-ANDOR-001/characters/elian.md
@@ -111,4 +113,4 @@ Inside records loaded through this selected campaign manifest, the exact legacy 
 
 Repo-level D100 source/rule refs such as `sources/`, `00_core/` and `90_srd_bridge/` remain repo source refs and are not remapped.
 
-> Staging fuse: this manifest is not the selected/cutover campaign until target-path readback and migration regression pass. Root legacy records remain untouched.
+> Verification passed in `migrations/ANDOR_PHASE_E_READBACK_2026-09-16.md`. The save is valid and initialized inside this feature branch, but `migration.cutover` remains false: it is not automatically selected elsewhere, legacy root records remain, and this branch is still not merged to `main`.
