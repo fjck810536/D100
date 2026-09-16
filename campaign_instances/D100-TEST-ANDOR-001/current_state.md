@@ -9,7 +9,7 @@ record_status: active_selected_campaign_state
 ruleset_ref: fc868904c4d9ded6d2f408ee25001dac5b2a70d5
 
 world_time: split-thread chronology
-active_camera: Aster
+active_camera: Mileia
 
 four_voice_control:
   mode: pl_pc
@@ -35,14 +35,15 @@ party:
   PC-ASTER:
     actor_ref: campaign_instances/D100-TEST-ANDOR-001/characters/aster.md
     controller: 赫茲_pl_pc
-    current_boundary: Mercenary Guild; arcane-residue scheduling/registration pending and not auto-resolved
+    current_boundary: Mercenary Guild; arcane-residue warehouse inspection accepted; registration established; travel to warehouse not yet occurred
   PC-MILEIA:
     actor_ref: campaign_instances/D100-TEST-ANDOR-001/characters/mileia.md
     controller: 彌生_pl_pc
     current_boundary: immediate post-guild-split actor boundary from latest live-state pointer
 
-active_live_session_ref: campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-02.md
+active_live_session_ref: campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-03.md
 historical_session_refs:
+  - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-02.md
   - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state.md
   - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-15_session-1_checkpoint-01.md
   - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-15_session-1_runtime-migration.md
@@ -80,6 +81,7 @@ migration_fuses:
 - `characters/ACTIVE_PC_MANIFEST.md` is historical recovery-gap evidence, not the current actor index.
 - Migrated records may retain literal legacy paths as historical text. Runtime resolution follows manifest `migration.ref_aliases` exactly; unaliased external mutable-state paths do not fall back to root.
 - Rook's convoy acceptance is authoritative campaign state from `sessions/2026-09-16_session-1_live-state-02.md`; exact departure time and future route events remain unestablished.
+- Aster's warehouse residue-job acceptance is authoritative campaign state from `sessions/2026-09-16_session-1_live-state-03.md`; exact warehouse location, client identity, residue nature, and future inspection results remain unestablished.
 
 ## Verification status
 
