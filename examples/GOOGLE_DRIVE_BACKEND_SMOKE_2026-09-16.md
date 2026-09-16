@@ -1,10 +1,10 @@
 # Google Drive Backend Smoke Test — 2026-09-16
 
-> Test scope: live capability / stable-ID / move / read / update / readback only. No campaign data migrated.
+> Test scope: live capability, stable-ID semantics, full campaign namespace creation, actor-master/session separation, fresh-load by root/manifest refs, update/readback, and cleanup. No real campaign data migrated.
 
 ## Environment observation
 
-The active Google Drive connection behaved as OAuth / delegated rather than direct service-account mode for native document creation.
+The active Google Drive connection behaves as OAuth / delegated rather than direct service-account mode for native document creation.
 
 Observed:
 
@@ -18,7 +18,7 @@ Therefore the backend must support:
 ```text
 create native document in default Drive parent
 → get exact file ID + current parent
-→ move same file ID into selected campaign root
+→ move same file ID into selected campaign root / collection
 → verify parent
 ```
 
@@ -26,7 +26,7 @@ This matches `storage_backends/GOOGLE_DRIVE.md` section "Move after create".
 
 ---
 
-## Smoke sequence
+## Smoke A — Core provider operations
 
 Temporary root:
 
@@ -34,31 +34,22 @@ Temporary root:
 D100_BACKEND_SMOKE_TEST_2026-09-16
 ```
 
-Temporary manifest-like document:
-
-```text
-D100 manifest smoke 2026-09-16
-```
-
 Sequence executed:
 
 ```text
-1. CREATE root folder
-2. CREATE native Google Doc
-3. GET metadata -> exact file ID + original parent
-4. MOVE same file ID into smoke root
-5. WRITE content marker v1
-6. READ exact document ID -> v1 confirmed
-7. LIST smoke root -> same exact document ID present
-8. UPDATE same document ID v1 -> v2
-9. READ exact document ID -> v2 confirmed
-10. DELETE temporary document
-11. DELETE temporary root folder
+CREATE root folder
+→ CREATE native Google Doc
+→ GET metadata / exact file ID + original parent
+→ MOVE same ID into root
+→ WRITE v1
+→ exact-ID READ v1
+→ LIST root
+→ UPDATE same ID v1 -> v2
+→ exact-ID READ v2
+→ DELETE document/root
 ```
 
----
-
-## Results
+Results:
 
 ```yaml
 LOCATE: PASS
@@ -71,42 +62,211 @@ READBACK_AFTER_UPDATE: PASS
 CLEANUP: PASS
 ```
 
-The update did not create a second manifest-like document. The exact same Drive document ID was edited in place.
-
-This validates the core storage contract needed for a Google Drive campaign backend in the current connected environment.
+The update did not create a replacement document. The exact same Drive file ID remained authoritative.
 
 ---
 
-## Important connector-specific cleanup note
+## Smoke B — Full persistent-test campaign fresh-load regression
 
-For the current connector, the normal folder URL form:
+Temporary campaign root:
 
 ```text
-https://drive.google.com/drive/folders/<ID>
+D100_FULL_CAMPAIGN_SMOKE_2026-09-16
 ```
 
-was not accepted by the generic delete action, while a generic Drive file-ID URL form using the same folder ID was accepted by the provider delete path.
+Created physical Drive namespace:
 
-This is a connector invocation detail, not a campaign schema rule. Runtime should prefer provider-native stable IDs and capability-tested delete semantics instead of assuming URL shapes are interchangeable.
+```text
+root/
+├── manifest
+├── current_state
+├── characters/
+│   └── PC-SMOKE-MILEIA
+├── sessions/
+│   └── live_session
+├── sites/
+├── relationships/
+├── commitments/
+└── mystery/
+```
+
+All records/folders received stable Drive IDs. `manifest` recorded exact refs for every collection plus:
+
+```text
+current_state_ref
+character_index.PC-SMOKE-MILEIA
+live_session_ref
+ruleset_ref
+storage_root_ref
+```
+
+### Deliberate regression setup
+
+The authoritative character master contained:
+
+```text
+character_id = PC-SMOKE-MILEIA
+faith = Lathander / 晨曦之主
+domain = Life / 生命領域
+alignment = neutral_good
+full master marker = character-master-v1
+```
+
+The live session intentionally contained only a runtime projection:
+
+```text
+hp = 17/20
+sp = 31/35
+Search = 46
+```
+
+and explicitly omitted:
+
+```text
+faith
+domain
+alignment
+full skill list
+```
+
+This reproduces the failure class behind the Mileia incident: a session projection is intentionally incomplete and must never become the whole character.
+
+### Fresh-load simulation
+
+The reload phase was intentionally started from only the campaign `root_ref`:
+
+```text
+root_ref
+→ LIST root
+→ locate the unique manifest
+→ READ manifest
+→ follow exact current_state_ref
+→ follow exact character_index ref
+→ follow exact live_session_ref
+```
+
+No global Drive search for `Mileia` was used to recover the actor.
+
+Readback recovered:
+
+```text
+current state:
+  runtime_mode = persistent_test
+  location = TEST-CHAPEL
+  party includes PC-SMOKE-MILEIA
+
+character master:
+  faith = Lathander / 晨曦之主
+  domain = Life / 生命領域
+  alignment = neutral_good
+
+live session:
+  hp = 17/20
+  sp = 31/35
+  Search = 46
+  faith/domain absent by design
+```
+
+Therefore:
+
+```text
+session projection missing a field
+!=
+character master missing that field
+```
+
+and the fresh-load path successfully recovers permanent actor identity from the exact actor master.
+
+### Full campaign results
+
+```yaml
+ROOT_CREATE: PASS
+COLLECTION_FOLDERS_CREATE: PASS
+MANIFEST_STABLE_ID: PASS
+CURRENT_STATE_STABLE_ID: PASS
+CHARACTER_MASTER_STABLE_ID: PASS
+LIVE_SESSION_STABLE_ID: PASS
+EXACT_PARENT_PLACEMENT: PASS
+MANIFEST_EXACT_REF_INDEX: PASS
+FRESH_LOAD_FROM_ROOT: PASS
+CURRENT_STATE_READ_BY_MANIFEST_REF: PASS
+CHARACTER_READ_BY_EXACT_ID: PASS
+SESSION_READ_BY_EXACT_ID: PASS
+MILEIA_FAITH_SURVIVES_SESSION_OMISSION: PASS
+MILEIA_DOMAIN_SURVIVES_SESSION_OMISSION: PASS
+SESSION_DOES_NOT_REPLACE_CHARACTER_MASTER: PASS
+CLEANUP: PASS
+```
 
 ---
 
-## Not yet tested
+## Cleanup verification
 
-This smoke test does **not** yet prove:
+The entire full-smoke root was permanently deleted after readback. Verification used both:
 
-- full D100 campaign initialization with all child collections;
-- Mileia-like full character finalization on Drive;
-- multi-session reload across a completely fresh chat/agent;
-- ambiguous-manifest handling with real duplicate files;
-- write-permission revocation failure behavior;
-- Mystery clearance separation / HARD_EX;
-- ruleset migration.
+```text
+Drive search for D100_FULL_CAMPAIGN_SMOKE_2026-09-16 -> no result
+exact root ID metadata lookup -> 404 / not found
+```
 
-Those remain covered by the planned regressions in `storage_backends/GOOGLE_DRIVE.md` and `examples/BOOTSTRAP_REGRESSION.md`.
+An accidentally created `relationships-index` subfolder existed only inside the temporary smoke root and was removed with the root. No pre-existing user Drive file was modified.
 
 ---
 
-## Cleanup
+## Connector-specific notes
 
-All temporary Drive objects created by this smoke test were deleted after verification. No existing user Drive files were modified.
+### Native Doc placement
+
+Current OAuth/delegated connection requires:
+
+```text
+create
+→ capture ID/current parent
+→ move same ID
+→ verify parent
+```
+
+rather than creating a native Doc directly under `parent_folder_id`.
+
+### Folder deletion
+
+For the current connector, the normal folder URL form was not accepted by the generic delete action, while a Drive file-ID URL form using the same folder ID was accepted. This is a connector invocation detail, not campaign schema.
+
+---
+
+## What is now proven
+
+For the currently connected Google Drive environment, the backend can support the core D100 campaign save contract:
+
+```text
+one campaign root
+→ stable manifest
+→ stable collection refs
+→ exact actor master refs
+→ session as live delta/projection
+→ fresh reload without chat memory
+→ in-place persistent update/readback
+```
+
+The critical regression target is demonstrated:
+
+```text
+Mileia-like cleric identity stored in actor master
++ live session omits deity/domain
+→ fresh runtime still recovers deity/domain from actor master
+```
+
+---
+
+## Still not proven / intentionally deferred
+
+This test does not claim that every future Drive permission/security case is solved. Remaining dedicated regressions include:
+
+- real permission revocation during a write;
+- real duplicate-manifest ambiguity handling;
+- multi-session long-running campaign stress;
+- Mystery clearance separation / HARD_EX boundaries;
+- ruleset migration between pinned refs;
+- multi-user multiplayer authority (currently unsupported).
+
+These are separate from the now-passing core campaign-storage/fresh-load path.
