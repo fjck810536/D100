@@ -1,5 +1,7 @@
 # D100 GPT / Agent DM Repository
 
+> **想開新團：把這個 repository 給 GPT／Agent，說：「讀取 `main`，從 `START_DM.md` 開始，依 bootstrap protocol 建立一個新遊戲。」**
+
 > 這個 repository 的目標，是讓 GPT／LLM／Agent 在不把 D100 誤讀成 D&D 3.5、CoC 或泛用 d100 的前提下，可靠地主持、測試與維護 D100 跑團。
 
 ## 快速開始
