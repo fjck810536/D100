@@ -3,12 +3,14 @@
 > 狀態：架構契約。目的：把「資料、狀態、推理、裁定」分開，讓現有 Cabinet 模塊共用同一套世界資料，而不是各自養另一份真相。
 >
 > 社會關係、Alignment、PL/PC 控制與 Secret / World commitment 的跨模塊細則見 `RUNTIME_SOCIAL_WORLD_CONTRACT.md`。
+> Campaign 選擇、manifest 與外部／本地 storage backend 邊界見 `BOOTSTRAP_PROTOCOL.md`、`CAMPAIGN_STORAGE_PROTOCOL.md`。
 
 ## 0. 一句話原則
 
 ```text
 SOURCE DATABASE
 → NORMALIZED / INDEX DATA
+→ SELECTED CAMPAIGN NAMESPACE
 → WORLD / ACTOR / RELATIONSHIP / COMMITMENT / SESSION STATE
 → ROLE-SAFE MODULE VIEW
 → CABINET REASONING
@@ -22,7 +24,8 @@ SOURCE DATABASE
 資料不思考。
 模塊不保存自己的世界真相。
 AO 不維護另一份平行資料庫。
-同一世界事實只應有一個 authoritative state；各模塊取得的是 view。
+同一 campaign 的同一世界事實只應有一個 authoritative state；各模塊取得的是 view。
+不同 campaign namespace 互不共享 mutable state，除非經 explicit migration / promotion。
 秘密可以延遲揭露，但與互動結果相關的核心因果必須在首次可觀察／可影響前 committed。
 來源缺口不是生成禁令；生成採用後也不得冒充原文。
 ```
@@ -55,6 +58,7 @@ sources/GM_*.md                    GM 補答、暫定、歷史證據
 - 不把 evidence 升格成 canon，除非來源層級允許。
 - 不在 source mirror 內修正文義、補缺或偷偷正規化。
 - 不把「精確字串沒有命中」直接當作「所有來源都不存在」；應依 `sources/SHEET_INDEX.md`、語義分頁、交叉引用與 state provenance 繼續解析。
+- 不把某 campaign storage 裡的自訂筆記冒充 D100 source；campaign storage 只對該團 state 有權威。
 
 ---
 
@@ -154,13 +158,13 @@ contextual_support_refs 支持「這項創作為什麼合理」
 來源資料約束生成，但未定部分允許創作。合法資料流是：
 
 ```text
-source / state / user correction
+source / selected campaign state / user correction
 → Librarian source package
 → unresolved lookup 與 creative space 分開
 → relevant modules 形成具體 proposal
 → 合法 owner 決定
 → AO / PL adoption event
-→ orchestrator 寫回唯一 authoritative state
+→ orchestrator 寫回 selected campaign 唯一 authoritative state
 ```
 
 保險絲：
@@ -185,7 +189,64 @@ committed generated fact ≠ source text
 
 `examples/` 的測例與推演輸出屬測試資料，不能經搜尋、摘要、恢復 context 或 source package 變成某團已存在的地點／關係。正式採用要有另一次明確的 owner 決定與當時 state 核對。
 
-## 2.5 Character Build Working Data — 創角暫存層
+### 2.4 Campaign Namespace / Storage Boundary
+
+Persistent runtime 必須先有 selected campaign namespace。邏輯上：
+
+```text
+D100 repository
+= immutable-ish rules / sources / protocols / templates
+
+selected campaign storage
+= mutable authoritative state for exactly one campaign instance
+```
+
+每一個 persistent campaign 對 runtime 至少呈現：
+
+```text
+/
+├── manifest
+├── current_state
+├── characters/
+├── sessions/
+├── sites/
+├── relationships/
+├── commitments/
+└── mystery/
+```
+
+provider 可以是 repo-local、Google Drive、本機資料夾、獨立 Git 或其他 backend；state 語義不因 provider 改變。穩定 locator、讀寫能力與 failure behavior 依 `CAMPAIGN_STORAGE_PROTOCOL.md`。
+
+三種生命週期必須分離：
+
+```text
+persistent_campaign = 正式／長期團；完整持久化
+persistent_test     = 沙盒／測試團；同樣完整持久化，但 write_scope=self_only
+isolated_dry_run    = 一次性隔離推演；writeback=false
+```
+
+`persistent_test` 不是「比較會存的 dry-run」。只要角色已 final、世界事件已 committed，它就必須和正式團一樣有完整 actor/world/session state；唯一差異是 namespace 與 promotion policy。
+
+根目錄舊有：
+
+```text
+campaign/
+characters/
+sessions/
+mystery_vault/
+```
+
+在 migration 完成前屬 legacy state location。它們可以被明確 legacy manifest／migration 引用，但**不是未選 campaign 時的隱含全域 current state**。
+
+跨 campaign 規則：
+
+```text
+read/write selected campaign only
+campaign A state ≠ campaign B state
+promotion / import / migration = explicit operation
+```
+
+### 2.5 Character Build Working Data — 創角暫存層
 
 創角／驗卡不是 world runtime；在角色正式接受前，需要一層**暫時的 meta working data**。
 
@@ -226,7 +287,7 @@ counterfactual build ≠ 角色能力
 reserved CP ≠ 世界內貨幣
 ```
 
-只有創角 final validation 通過後，orchestrator 才把**被接受的結果**投影到 `characters/*.md`：
+只有創角 final validation 通過後，orchestrator 才把**被接受的結果**投影到 selected campaign 的 authoritative `characters/` store：
 
 - 實際屬性／技能／專長；
 - alignment；
@@ -245,21 +306,34 @@ reserved CP ≠ 世界內貨幣
 
 ---
 
-## 3. World / Session State — 唯一世界狀態層
+## 3. World / Session State — Selected Campaign 唯一世界狀態層
 
-世界中「目前真的成立什麼」只放在 state layer。
+世界中「目前真的成立什麼」只放在**目前 selected campaign** 的 state layer。
 
-主要容器：
+主要邏輯容器：
 
 ```text
-campaign/current_state.md
-characters/*.md
-sessions/*.md
-templates/CREATURE_WORLD_MODEL_TEMPLATE.md 的實例
-templates/RELATIONSHIP_GRAPH_TEMPLATE.md 的實例
-templates/WORLD_COMMITMENT_TEMPLATE.md 的實例
-其他 Entity / Site / Hazard record
+<campaign-root>/manifest
+<campaign-root>/current_state
+<campaign-root>/characters/*
+<campaign-root>/sessions/*
+<campaign-root>/sites/*
+<campaign-root>/relationships/*
+<campaign-root>/commitments/*
+<campaign-root>/mystery/*
 ```
+
+模板仍由 D100 repo 提供：
+
+```text
+templates/CREATURE_WORLD_MODEL_TEMPLATE.md
+templates/RELATIONSHIP_GRAPH_TEMPLATE.md
+templates/WORLD_COMMITMENT_TEMPLATE.md
+templates/SITE_RECORD_TEMPLATE.md
+...
+```
+
+Provider 不一定有實體 filesystem；`<campaign-root>/characters/*` 等表示 logical record class。Manifest 應保存穩定 refs，避免下一個 runtime 靠名稱猜檔。
 
 State 可以記錄：
 
@@ -292,9 +366,22 @@ State 不應保存：
 
 這些屬於 derived reasoning / build working data，不是 world fact。
 
+### Cross-campaign isolation
+
+任何 state read/write 都必須帶著已解析的 campaign identity。禁止：
+
+```text
+campaign A character -> campaign B session
+campaign B site -> campaign A current_state
+persistent_test -> persistent_campaign implicit promotion
+legacy root snapshot -> selected campaign master overwrite
+```
+
+若要 import / clone / promote / migrate，建立明確 migration event，保留來源 campaign、record refs、時間與衝突處理；不能用一般 runtime write 偽裝成 migration。
+
 ### Relationship facts 與 actor belief 分離
 
-共享 Relationship Graph 只存世界中已成立的 edge / event / commitment。
+共享 Relationship Graph 只存該 campaign 世界中已成立的 edge / event / commitment。
 
 角色「如何理解那段關係」仍放在各 actor 的 Epistemic State / self-image / derived analysis，不因 relationship edge 存在就自動共享。
 
@@ -316,7 +403,7 @@ Evidence status 可以進 state；「這條 evidence 最終代表什麼深層真
 後來補 provenance、site record 或 repair event，不代表該事物在補錄當天才出現在世界裡；同樣不能偽稱它在先前檢定前已經寫進後台。
 
 ```text
-recorded_at = 何時把資料寫進 repo/state
+recorded_at = 何時把資料寫進 campaign store
 effective_from = 世界內從何時成立／本次採用如何追溯
 ```
 
@@ -355,6 +442,8 @@ secret_refs:
 - source cache
 - character-build working data
 
+外部 campaign storage 若承載 Mystery records，也不會因此降低 classification／clearance。Backend capability 與 Mystery visibility 是兩個不同邊界。
+
 ### Secret existence 與 Secret release 分離
 
 Mystery Gate 決定誰可以知道、知道多少、何時揭露；它不應等到玩家檢定後才創造核心秘密。
@@ -365,7 +454,7 @@ Mystery Gate 決定誰可以知道、知道多少、何時揭露；它不應等�
 
 ## 5. Module View — Cabinet 只讀取自己的投影
 
-Cabinet 模塊不是資料庫。它們取得同一 world state 的不同 view。
+Cabinet 模塊不是資料庫。它們取得同一 selected campaign world state 的不同 view。
 
 ### 圖書館員 / Source Resolver
 
@@ -507,13 +596,13 @@ known political information
 
 ### AO
 
-整合合法 module views 與世界事實，回答：
+整合合法 module views 與 selected campaign 世界事實，回答：
 
 > 如果沒有人為了劇情方便作弊，世界現在實際會發生什麼？
 
 創角時只在稀有／世界尺度 review 上提供 plausibility constraints，不參與普通 build optimization。
 
-AO 的輸出經 orchestrator 寫回 state。
+AO 的輸出經 orchestrator 寫回 selected campaign state。
 
 ### 模塊協作不是停止條件
 
@@ -527,7 +616,7 @@ AO 的輸出經 orchestrator 寫回 state。
 → 有權者決定
 ```
 
-例如政治家需要地方據點與總部關係、分析師需要真實師承／職務、生态學家需要當地生活條件，都可以主動請求前置資料。Orchestrator 負責讓工作有人接、成果有去處。
+例如政治家需要地方據點與總部關係、分析師需要真實師承／職務、生態學家需要當地生活條件，都可以主動請求前置資料。Orchestrator 負責讓工作有人接、成果有去處。
 
 ---
 
@@ -566,7 +655,7 @@ Derived cache ≠ world fact
 
 當基礎 state、知識、傷勢、位置、命令、秘密揭露、relationship edge、alignment 明示轉變、玩家重新解釋自己的 PC 或能力狀態改變時，舊 cache 可直接失效。
 
-Derived cache 不得比它所依賴的 evidence 活得更久。
+Derived cache 不得比它所依賴的 evidence 活得更久，也不得跨 campaign namespace 無標記重用。
 
 ---
 
@@ -630,7 +719,7 @@ Politician View         = 對 leverage / coalition / second-order effect 的 for
 
 ## 7.6 World Commitment / Early Causal Commitment
 
-當 NPC、事件、秘密、裝置、faction plan 即將第一次成為玩家**可觀察或可影響**的因果來源時，先依 `templates/WORLD_COMMITMENT_TEMPLATE.md` 建立最小 hidden state。
+當 NPC、事件、秘密、裝置、faction plan 即將第一次成為玩家**可觀察或可影響**的因果來源時，先依 `templates/WORLD_COMMITMENT_TEMPLATE.md` 建立最小 hidden state，並把 commitment 寫入 selected campaign namespace。
 
 原則：
 
@@ -714,11 +803,11 @@ secret_refs:
 典型資料流：
 
 ```text
-Sensor / world state
+Sensor / selected campaign world state
 → AO 判斷 trigger predicate
 → 碼表決定 timing window
 → effect 依 D100 接口結算
-→ state 更新
+→ selected campaign state 更新
 ```
 
 這適用：
@@ -754,6 +843,8 @@ AO        → 物理／空間／建築因果
 詭祕       → 隱藏區域／秘密機制的 view
 ```
 
+Site instance 屬 selected campaign state；template 與共用世界 source 屬 repo。兩者不可混層。
+
 ---
 
 ## 11. 3.5 Integration Contract
@@ -766,7 +857,7 @@ Conversion Reference
 Calibration Service
 ```
 
-不是 Cabinet module。
+不是 Cabinet module，也不是 campaign storage backend。
 
 特別保留現行優點：
 
@@ -804,6 +895,32 @@ sources/*
 99_open_questions/*
 examples/*
 ```
+
+### Legacy root-level campaign state
+
+現有根目錄：
+
+```text
+campaign/*
+characters/*
+sessions/*
+mystery_vault/*
+```
+
+在新 bootstrap/storage 架構下視為 **legacy campaign storage**，不是所有未來團共用的全域 state。
+
+Migration 原則：
+
+```text
+先辨識哪些 records 屬於同一歷史 campaign/test campaign
+→ 建立該 campaign manifest
+→ 建立／選定新 campaign root
+→ 依 provenance 搬移或建立 stable refs
+→ 驗證 character master / current state / live session / site / Mystery refs
+→ 完成後才停止依賴 legacy root paths
+```
+
+不得把多個歷史測試團因為都在 repo 根目錄就合併成同一 campaign。
 
 ### 應重新定義
 
@@ -847,6 +964,7 @@ Relationship / Knowledge mixed notes
 把 derived prediction 寫成 established fact
 把創角候選／counterfactual build 寫成角色既定能力
 把 NPC mode 的四聲部行為事後包裝成 Player choice
+把新 campaign 寫回未指定的 root-level legacy state
 ```
 
 ---
@@ -854,11 +972,12 @@ Relationship / Knowledge mixed notes
 ## 13. Runtime 最小循環
 
 ```text
-1. Orchestrator 讀取 relevant authoritative state 與最新 session，而不是用空白／舊 checkpoint 蓋掉已發生進度。
+0. Bootstrap：解析 selected campaign manifest / storage root / ruleset ref。若沒有 selected campaign，停留 bootstrap，不進 scene runtime。
+1. Orchestrator 只讀 selected campaign relevant authoritative state 與最新 session，而不是用其他 campaign、空白或舊 checkpoint 蓋掉已發生進度。
 2. 辨識輸入層與目的：DM / OOC-PL / PC 台詞 / PC 內心 / 行動宣告 / narrator addition。
 3. 解析本次要實際使用的 entities / claims / relations；保存原稱呼與可能 alias，不先把玩家用詞正規化成世界真相。
 4. 若 narrator / NPC / AO 要把設定 claim 用於地圖、導航、機構關係、限制、資源、角色發展或結算，圖書館員先解析來源或使用仍有效的 source cache；精確搜尋 miss 時改走 Sheet index、語義分頁與交叉引用。
-5. 圖書館員交付可使用的 source package：原文／user correction／state refs／cross-reference／conflicts／searched scope，並把 `unresolved_lookup` 與 `creative_space` 分開。
+5. 圖書館員交付可使用的 source package：原文／user correction／selected campaign state refs／cross-reference／conflicts／searched scope，並把 `unresolved_lookup` 與 `creative_space` 分開。
 6. 詭祕只在需要時產生 role-safe view；角色未知不代表後台停止工作。
 7. 相關 Cabinet 模塊使用 source package 形成具體人物／制度／環境／行動 proposal；缺前提就主動向圖書館員／其他模塊追問。
 8. 在可創作空間內產生有內容的 grounded proposal。`SOURCE_GAP` 不是拒絕理由；已有事實、硬衝突、Mystery 與 owner 權限仍是約束。
@@ -866,9 +985,10 @@ Relationship / Knowledge mixed notes
 10. 對即將首次可觀察／可影響、尤其會影響檢定的 hidden core 建立／確認最小 World Commitment。最小承諾是因果底線，不是世界生成上限。
 11. 主動把角色合理可知、與眼前理解／選擇相關的成果帶入敘事、對話、地圖與可行動入口；具體秘密依 Mystery / epistemic state 交付。
 12. 依 D100 結算需要的行動／骰點。
-13. Orchestrator 將實際結果與 adopted claims 寫回唯一 state，包括 relationship / epistemic / evidence / site / world-clock 變化。
+13. Orchestrator 將實際結果與 adopted claims 寫回 selected campaign 唯一 state，包括 relationship / epistemic / evidence / site / world-clock 變化。
 14. 任何受影響的 derived cache / source resolution cache 失效或重算。
-15. Completion check：查核是否真的有可定位結果、結果是否被下游使用、採用是否有 owner/state record、前台是否有可感知／可行動成果。缺什麼就派回對應工作補完。
+15. Storage write verification：確認 record update 成功；若 backend 寫入失敗，不得宣稱已存檔。
+16. Completion check：查核是否真的有可定位結果、結果是否被下游使用、採用是否有 owner/state record、前台是否有可感知／可行動成果。缺什麼就派回對應工作補完。
 ```
 
 ### 創角最小循環
@@ -881,8 +1001,8 @@ Relationship / Knowledge mixed notes
 5. Build Ledger 計 CP / prerequisite / qualifying pools / reward working values。
 6. 稀有或世界尺度 review 才喚起 AO；秘密走 Mystery。
 7. final validation。
-8. Orchestrator 只把被接受的 final build 寫入 character state。
-9. 丟棄未採用候選與 counterfactual working data。
+8. Orchestrator 把完整 accepted final build 寫入 selected campaign authoritative character store。
+9. 驗證角色 master record 可重新讀取；再丟棄未採用候選與 counterfactual working data。
 ```
 
 最終目標：
@@ -890,6 +1010,7 @@ Relationship / Knowledge mixed notes
 ```text
 少數真正會思考的模塊
 + 多個乾淨、無人格、可查詢的資料／狀態服務
++ 每一團有獨立、可重掛載的 authoritative campaign namespace
 + 玩家不在場時仍會演進、但不因玩家骰點反向生成因果的世界
 + 來源查核不壓死創作、創作採用不冒充來源
 ```
