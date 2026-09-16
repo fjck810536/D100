@@ -63,8 +63,11 @@ persistence:
   last_error: null
 
 migration:
+  status: null
   legacy_source_refs: []
   last_migration_ref: null
+  ref_alias_policy: none            # none | exact_only
+  ref_aliases: {}                   # exact legacy state ref -> exact selected-campaign record ref
 ```
 
 ## Required invariants
@@ -79,6 +82,31 @@ records point to this campaign's own namespace
 manifest_ref / record refs use provider-stable locators when available
 character master lookup prefers character_id -> exact record ref, not global title search
 ```
+
+## Legacy ref alias invariant
+
+Migration may preserve immutable historical record text while remapping old campaign-state paths through exact manifest aliases.
+
+Example：
+
+```yaml
+migration:
+  ref_alias_policy: exact_only
+  ref_aliases:
+    campaign/old_sites.md: campaign_instances/CAMPAIGN-X/sites/old_sites.md
+```
+
+Rules：
+
+```text
+alias match must be exact
+alias target must resolve inside the selected campaign namespace
+alias is for campaign-state refs, not D100 source/rule refs
+unaliased external mutable-state ref is not allowed to silently fall back to another campaign/root
+legacy provenance text may remain literal history and does not automatically trigger a state read
+```
+
+This allows byte-identical migrated records to preserve audit history without making the selected campaign depend on legacy root state.
 
 ## Notes
 
