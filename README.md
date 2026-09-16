@@ -10,10 +10,29 @@
 START_DM.md
 ```
 
-`START_DM.md` 只負責 bootstrap；真正的 runtime 契約分散在以下上位文件：
+`START_DM.md` 只負責 bootstrap / 導航。若尚未選定 campaign，第一個玩家可見入口應是：
 
-- `AGENTS.md` — D100 Agent 操作契約與來源優先序
-- `DATA_ARCHITECTURE.md` — 資料／狀態／module view／Cabinet／AO 的分層
+```text
+D100
+
+1. 新遊戲
+2. 讀取存檔
+```
+
+在 campaign instance 尚未選定前，不進 scene runtime，也不把 repo 根目錄歷史團務當成這次玩家的存檔。
+
+首次啟動與存檔掛載的契約：
+
+- `BOOTSTRAP_PROTOCOL.md` — 新遊戲／讀檔 wizard、party mode、world-resolution mode、storage 選擇與啟動 gate
+- `CAMPAIGN_STORAGE_PROTOCOL.md` — campaign storage backend 的共通讀寫契約
+- `templates/CAMPAIGN_MANIFEST_TEMPLATE.md` — 每團唯一 manifest schema
+- `storage_backends/GOOGLE_DRIVE.md` — Google Drive backend v0 mapping
+- `campaign_instances/README.md` — repo-local campaign instance backend
+
+真正的 runtime 契約另分散在以下上位文件：
+
+- `AGENTS.md` — D100 Agent 操作契約、campaign namespace 與來源優先序
+- `DATA_ARCHITECTURE.md` — 資料／selected campaign state／module view／Cabinet／AO 的分層
 - `RUNTIME_SOCIAL_WORLD_CONTRACT.md` — Alignment、Relationship Graph、Player Layer、Evidence/Causal Graph、秘密預承諾與 world commitments
 - `DM_CABINET.md` — AO、圖書館員、讀心者、會計師與其他認知模塊
 - `DM_PROTOCOL.md` — 實際主持流程與 Action Palette / Ledger
@@ -28,6 +47,7 @@ START_DM.md
 ```text
 SOURCE DATABASE
 → NORMALIZED / INDEX DATA
+→ SELECTED CAMPAIGN NAMESPACE
 → WORLD / ACTOR / RELATIONSHIP / COMMITMENT / SESSION STATE
 → MYSTERY ROLE-SAFE VIEW
 → CABINET REASONING
@@ -38,15 +58,44 @@ SOURCE DATABASE
 核心原則：
 
 ```text
+D100 repo = 規則／來源／協定／模板
+Campaign storage = 某一團的 mutable authoritative save state
+SRD bridge / raw 3.5 = D100 真缺漏時的 fallback source
+```
+
+以及：
+
+```text
 資料不思考。
 模塊不各自保存另一份世界真相。
 Derived prediction 不是 established fact。
+同一 campaign 的 state 只在自己的 namespace 內成立。
+Campaign A state ≠ Campaign B state。
 祕密不建立 Mystery 之外的 plaintext 平行資料庫。
 秘密可以延遲揭露，但與玩家互動相關的核心因果必須先存在。
 Relationship fact、actor belief、Analyst interpretation、Politician forecast 分層。
 ```
 
-詳細見 `DATA_ARCHITECTURE.md` 與 `RUNTIME_SOCIAL_WORLD_CONTRACT.md`。
+詳細見 `DATA_ARCHITECTURE.md`、`CAMPAIGN_STORAGE_PROTOCOL.md` 與 `RUNTIME_SOCIAL_WORLD_CONTRACT.md`。
+
+---
+
+## Campaign lifecycle
+
+目前明確區分三種模式：
+
+```text
+persistent_campaign
+= 正式／長期團；完整持久化
+
+persistent_test
+= 沙盒／測試團；同樣完整持久化，但只寫自己的 namespace，不自動升格
+
+isolated_dry_run
+= 一次性隔離推演；writeback=false
+```
+
+`persistent_test` 不是「暫存比較久」。只要角色已完成創角、世界事件已成立，它就必須有和正式團一樣完整的 character / world / session state。
 
 ---
 
@@ -58,15 +107,37 @@ Relationship fact、actor belief、Analyst interpretation、Politician forecast 
 02_items/            D100 物品／神器規則索引
 90_srd_bridge/       D&D 3.5 SRD 補缺、轉譯與 calibration service
 99_open_questions/   尚未解決的規則問題 registry
-campaign/            該團目前成立的持久 world state
-characters/          PC／重要 NPC state / capability records
-examples/            regression tests / 範例，不參與世界決策
-sessions/            Session live state／歷史紀錄
 sources/             上游規則、raw mirror、角色證據與 GM 補答
-templates/           actor / relationship / commitment / site / hazard 等資料 schema
+templates/           actor / relationship / commitment / site / hazard / campaign manifest schema
+storage_backends/    外部 campaign storage provider mapping
+campaign_instances/  repo-local campaign save namespaces
+examples/            regression tests / 範例，不參與世界決策
 ```
 
-### 主要資料來源
+### Legacy root-level state
+
+以下既有路徑是在 campaign namespace 架構出現前形成的 legacy state：
+
+```text
+campaign/
+characters/
+sessions/
+mystery_vault/
+```
+
+它們目前保留供既有團 recovery / migration，但**不再代表所有新 runtime 共用的隱含全域存檔**。
+
+新團若使用 repo-local backend，應建立在：
+
+```text
+campaign_instances/<campaign-id>/
+```
+
+外部 backend（例如 Google Drive）則由 manifest 的 `storage.root_ref` 指向該團自己的 root。
+
+---
+
+## 主要資料來源
 
 `source` 層：
 
@@ -78,6 +149,8 @@ sources/GM_*.md                GM 補答／暫定／歷史證據
 ```
 
 `00_core/`、`01_skills/`、`02_items/` 是 runtime-friendly curated index，不是獨立人格模塊。
+
+Campaign storage 不屬於 source canon；它對「這一團現在成立什麼」有 state authority，但不因此改寫 D100 規則原文。
 
 ---
 
@@ -98,6 +171,37 @@ sources/GM_*.md                GM 補答／暫定／歷史證據
 
 `[GM_UNCERTAIN]`、`[OPEN_QUESTION]` 等狀態不得偽稱正典。
 
+完整模式／快速模式只改變查找與補完成本，不改變這個來源權威順序。
+
+---
+
+## Character state
+
+角色 master 必須屬於 selected campaign。
+
+角色創角 final validation 完成後，orchestrator 應把完整 accepted state 寫入該團 authoritative character store，包括至少：
+
+```text
+屬性
+技能／專長
+alignment
+final CP ledger
+語言
+信仰／領域／師承等已確認身份資料
+HP/SP 結果
+起始裝備
+```
+
+Session 只保存當幕／即時狀態與歷史，不是角色主檔。
+
+```text
+session Search=56
+!=
+完整角色技能 build
+```
+
+這條是為了避免再次發生「角色明明創完了，但換一個 GPT 後只剩幾個 session 數字」的資料降級。
+
 ---
 
 ## Cabinet 與資料庫的邊界
@@ -114,11 +218,26 @@ Cabinet 不是資料庫。
 - **詭祕**：classification、clearance、need-to-know、role-safe representation、EX；管理秘密可見度，不等玩家骰完才創造真相。
 - **AO**：整合合法 views，裁定世界實際結果。
 
-模塊輸出的是 constraint / hypothesis / proposal；只有實際世界事件或 AO 結算結果才寫回 state。
+模塊輸出的是 constraint / hypothesis / proposal；只有實際世界事件或 AO 結算結果才寫回 selected campaign state。
 
 ---
 
 ## 常用 State / Schema
+
+### Campaign
+
+```text
+templates/CAMPAIGN_MANIFEST_TEMPLATE.md
+```
+
+Manifest 保存：
+
+- campaign identity；
+- runtime / party / world-resolution mode；
+- pinned D100 ruleset ref；
+- storage backend / root ref；
+- current state / actor / session / site / relationship / commitment / mystery stable refs；
+- migration / persistence status。
 
 ### PC / Actor
 
@@ -286,6 +405,8 @@ SECRET IS REVEALED
 
 如果 runtime 只有單一 LLM context、同一 context 已看過完整 payload，只能誠實標為 `SOFT_EX`；真正 `HARD_EX` 需要 storage / context / tool boundary。
 
+外部 storage 本身不會自動產生 HARD_EX；仍要遵守 Mystery clearance / role-safe view。
+
 ---
 
 ## D&D 3.5 的位置
@@ -298,7 +419,7 @@ semantic reference
 conversion / calibration service
 ```
 
-不是第二個 DM，也不是 Cabinet module。
+不是第二個 DM、不是 Campaign Storage，也不是 Cabinet module。
 
 可吸收其成熟資料結構，例如：
 
@@ -322,7 +443,7 @@ conversion / calibration service
 
 ## Character Dossiers
 
-`sources/characters/*_OPERATIONAL_DOSSIER.md` 是 capability cache / evidence projection，不是固定行為 AI。
+`sources/characters/*_OPERATIONAL_DOSSIER.md` 是 capability cache / evidence projection，不是固定行為 AI，也不是某 campaign 的 actor master。
 
 它們可以幫 runtime 快速取得：
 
@@ -335,7 +456,7 @@ live-state distinction
 玩家已證實的使用偏好
 ```
 
-但「下一輪一定怎麼打」「真正人格」「最高威脅目標」等應由當下合法 state 與 Cabinet 重新推理；若 cache 必須標 `derived` 並可失效。
+但「下一輪一定怎麼打」「真正人格」「最高威脅目標」等應由當下合法 selected campaign state 與 Cabinet 重新推理；若 cache 必須標 `derived` 並可失效。
 
 ---
 
@@ -362,6 +483,7 @@ live-state distinction
 
 ```text
 examples/ADJUDICATION_TESTS.md
+examples/BOOTSTRAP_REGRESSION.md
 ```
 
 創角流程改動另跑：
@@ -370,8 +492,22 @@ examples/ADJUDICATION_TESTS.md
 examples/CHARACTER_CREATION_REGRESSION.md
 ```
 
+外部 Google Drive campaign backend 另依：
+
+```text
+storage_backends/GOOGLE_DRIVE.md
+```
+
+內列的 backend regression 驗證。
+
 典型跑偏包括：
 
+- 未選 campaign 就直接開場；
+- 自動把 root legacy session 當成目前存檔；
+- campaign A/B 互相讀寫；
+- persistent test 因為是測試而不保存完整角色 master；
+- session 被拿來反推整張角色卡；
+- storage 寫入失敗卻宣稱已存；
 - 自動使用 SAN / Fort / Ref / Will；
 - 把 D100 一輪當 6 秒；
 - raw 搬 3.5 數值；
@@ -391,5 +527,6 @@ examples/CHARACTER_CREATION_REGRESSION.md
 ```text
 少數真正會思考的模塊
 + 多個乾淨、無人格、可查詢的資料／狀態服務
++ 多個彼此隔離、可重掛載的 campaign save instances
 + 一個在玩家沒看著時仍有自己的關係、時間與因果的世界
 ```
