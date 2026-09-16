@@ -1,6 +1,6 @@
 # Andor Migration Status
 
-> This is the short current-status pointer. Detailed design/history remain in the Phase A / plan / Phase E documents.
+> Current short-status pointer after explicit merge and cutover.
 
 ```yaml
 campaign_id: D100-TEST-ANDOR-001
@@ -13,31 +13,34 @@ phase_B_namespace_build: PASS
 phase_C_actor_master_verification: PASS
 phase_D_ref_alias_closure: PASS
 phase_E_fresh_load_readback: PASS
+post_merge_fresh_load: PASS
 
 storage_valid: true
 manifest_initialized: true
 persistence_status: clean
 ready_for_explicit_cutover: true
 
-cutover: false
-main_merged: false
+cutover: true
+main_merged: true
+merge_commit: a1625f591c9eba20410ec24f3abb89bf7a27a631
+post_merge_verification_ref: migrations/ANDOR_POST_MERGE_READBACK_2026-09-16.md
 legacy_root_modified: false
 legacy_root_cleanup_authorized: false
 ```
 
 ## Current authority
 
-For migration verification on this feature branch：
-
 ```text
 campaign_instances/D100-TEST-ANDOR-001/manifest.md
 → current_state.md
-→ exact actor masters / live session / site / Mystery refs
+→ exact actor masters / active live session / site / Mystery refs
 ```
+
+The repo-local provider is now `main`.
 
 Do not use root `campaign/current_state.md` as Andor current state.
 
-Do not use `characters/ACTIVE_PC_MANIFEST.md` as current actor index; it is stale historical recovery evidence.
+Do not use `characters/ACTIVE_PC_MANIFEST.md` as the current actor index; it remains stale historical recovery evidence.
 
 ## Critical regression status
 
@@ -48,17 +51,13 @@ Rook/Aster/Nella PL+PC mapping reload: PASS
 Morninghall exists without silently moving Mileia: PASS
 exact migrated ref aliases close active runtime refs: PASS
 Google Drive full fresh-load backend smoke: PASS
+main post-merge fresh-load: PASS
 ```
 
-## Cutover gate
+## Legacy cleanup boundary
 
-The target is a valid initialized save, but explicit cutover remains false because：
+Legacy root records remain available as audit/history. Cutover does not authorize deleting or rewriting them.
 
 ```text
-feature branch is still Draft PR #1
-main has not been merged
-legacy root records remain audit/history
-no global campaign selection is performed automatically
+cutover complete ≠ legacy cleanup authorized
 ```
-
-When cutover is explicitly approved, update provider/cutover metadata for the merged storage location and run one final post-merge manifest fresh-load before declaring the migration complete.
