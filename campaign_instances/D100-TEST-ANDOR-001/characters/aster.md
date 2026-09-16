@@ -207,7 +207,7 @@ Superseded provisional material such as `+4 staff〔儲魔+3〕 / +3 ring〔隱�
 ## Character direction / current Andor thread
 
 - Scholar orientation; curious but cautious, not an exposition terminal.
-- Interested in arcane residue and in understanding Academy access changes / why attention fell on him.
+- Interested in arcane residue and in understanding Academy access changes / why Aster was noticed.
 - Current Andor thread: remains at Mercenary Guild asking about residue-work timing and possible registration; no off-camera acceptance/resolution.
 
 ## Provenance / closure
