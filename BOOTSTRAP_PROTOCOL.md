@@ -2,7 +2,7 @@
 
 > 目的：任何 GPT / LLM / Agent 在開始正式 D100 runtime 前，先確定「這次要跑哪一團、該團存檔在哪裡、採用哪個 ruleset ref」。
 >
-> 本檔不保存遊戲規則；規則權威仍依 `AGENTS.md`。Campaign state 的資料分層仍依 `DATA_ARCHITECTURE.md`。
+> 本檔不保存遊戲規則；規則權威仍依 `AGENTS.md`。Campaign state 的資料分層仍依 `DATA_ARCHITECTURE.md`，backend 映射依 `CAMPAIGN_STORAGE_PROTOCOL.md`。
 
 ## 0. 核心原則
 
@@ -103,7 +103,7 @@ D100 > SRD bridge > raw D&D 3.5
 
 若團型包含數位 PL+PC，另建立對應 Player Voice / PC mapping。
 
-任何角色完成 final validation 後，必須立即寫入該 campaign 的 authoritative character store；不得只留在聊天、build working data 或 session log。
+任何角色完成 final validation 後，必須立即寫入該 campaign 的 authoritative character store，並以 exact record ref readback 驗證；不得只留在聊天、build working data 或 session log。
 
 ### D. 團務存放位置
 
@@ -114,6 +114,15 @@ Wizard 結尾必問：
 ```
 
 支援方式由 `CAMPAIGN_STORAGE_PROTOCOL.md` 決定。
+
+目前已定義：
+
+```text
+repo-local       -> campaign_instances/<campaign-id>/
+Google Drive v0  -> storage_backends/GOOGLE_DRIVE.md
+```
+
+其他 backend 未來只要符合同一 logical API 即可擴充。
 
 若當前環境無法讀寫使用者指定的位置，停止初始化並回報缺少的能力；不得假裝掛載成功。
 
@@ -142,6 +151,8 @@ ATOMIC_OR_EQUIVALENT_SAFE_WRITE
 
 最低五項不成立時，不得進入 persistent campaign runtime。
 
+Capability check 只證明 provider 能力存在，不代表某個具體 save record 已成功建立。初始化與重要寫入仍需 readback verification。
+
 ---
 
 ## 4. 建立 Campaign Namespace
@@ -164,6 +175,30 @@ storage provider 不一定真的是 filesystem；Google Drive、資料庫或其�
 
 初始化時以 `templates/CAMPAIGN_MANIFEST_TEMPLATE.md` 建立 manifest。
 
+### Stable refs
+
+Manifest 必須保存 provider 可重讀的 stable refs，而不是只有人類名稱：
+
+```yaml
+storage:
+  root_ref: <stable-root-locator>
+records:
+  manifest_ref: <stable-record-ref>
+  current_state_ref: <stable-record-ref>
+  characters_root_ref: <stable-record-ref>
+  sessions_root_ref: <stable-record-ref>
+```
+
+重要角色可再保存：
+
+```yaml
+indexes:
+  characters:
+    <character_id>: <exact-character-record-ref>
+```
+
+禁止把「全域搜尋名字 → 第一個命中」當正常載入流程。
+
 ### 規則版本
 
 新團預設 pin 建立當下的 D100 ref：
@@ -177,6 +212,20 @@ ruleset:
 
 既有團不得因 repo 更新而無聲切換規則版本；升級需另做 explicit migration。
 
+### 初始化 readback
+
+新 campaign 只有在以下都成功後，才能標 initialized：
+
+```text
+root 可重新定位
+manifest 可由 exact ref 重新讀取
+current state 可重新讀取
+collection refs 指向同一 campaign root
+ruleset ref 可解析
+```
+
+若 provider 建立 manifest 後才知道 manifest 自己的 ID，可做一次 self-reference update，再 readback；這不是建立第二份 manifest。
+
 ---
 
 ## 5. 讀取存檔
@@ -185,16 +234,19 @@ ruleset:
 
 1. 取得或解析 campaign storage root；
 2. capability check；
-3. 讀 manifest；
-4. 驗證 `campaign_id`；
-5. 驗證 ruleset repository / ref；
-6. 讀 current state；
-7. 讀 authoritative PC files；
-8. 讀最新 live session pointer；
-9. 依 refs 補讀 site / relationship / commitment / Mystery-safe view；
-10. 才進入 `START_DM.md` 的正常主持 loop。
+3. 由 exact `manifest_ref` 讀 manifest；若尚無 exact ref，僅在 selected root 內解析唯一 manifest；
+4. 若存在多個同等 manifest 候選，停止並報 storage ambiguity，不以修改時間猜；
+5. 驗證 `campaign_id`；
+6. 驗證 ruleset repository / ref；
+7. 讀 exact current-state ref；
+8. 讀 authoritative PC masters／character index refs；
+9. 讀最新 live session pointer；
+10. 依 refs 補讀 site / relationship / commitment / Mystery-safe view；
+11. 才進入 `START_DM.md` 的正常主持 loop。
 
 不得重新詢問 manifest 已保存的 A/B/C，除非欄位缺失、使用者要求變更或正在執行 migration。
+
+不得為了「找得到」而跳出 selected root 全域搜尋同名角色／session。
 
 ---
 
@@ -217,6 +269,8 @@ promotion_allowed = explicit_only
 
 不得自動污染其他正式 campaign。
 
+`persistent_test` 仍必須保存完整 final character masters、current state、session history、sites／relationships／commitments／Mystery refs；不能因為是測試團就把角色身分資料留在聊天暫存。
+
 ### isolated_dry_run
 
 既有 `DATA_ARCHITECTURE.md` / `DM_PROTOCOL.md` 所定義的一次性隔離推演：
@@ -229,19 +283,68 @@ writeback: false
 
 ---
 
-## 7. 啟動完成條件
+## 7. Persistence boundary
+
+重要 write boundary 至少包含：
+
+```text
+campaign initialization
+character finalization
+session end
+explicit migration / promotion
+```
+
+這些操作都遵守：
+
+```text
+write exact selected-campaign record
+→ read back exact record ref
+→ verify identity / required content / namespace
+→ only then report persisted
+```
+
+若 readback 失敗：
+
+```text
+persistence.status = uncommitted
+```
+
+不得宣稱已存檔，也不得默默用聊天記憶代替 authoritative storage。
+
+---
+
+## 8. 啟動完成條件
 
 只有以下全部成立後，才把控制權交回一般 DM runtime：
 
 ```text
 campaign root resolved
 manifest loaded / created
+manifest exact ref / unique resolution verified
 storage capability verified
 ruleset ref resolved
 party mode resolved
 world-resolution mode resolved
 character bootstrap path resolved
 current authoritative state loaded or initialized
+persistence readback verified
 ```
 
 否則保持 bootstrap state，不生成正式場景。
+
+---
+
+## 9. Legacy state
+
+根目錄舊有：
+
+```text
+campaign/
+characters/
+sessions/
+mystery_vault/
+```
+
+屬 migration 前的 legacy storage，不是 default campaign。
+
+若使用者要讀舊團，先建立／解析對應 legacy migration plan 或 manifest；不要只因最近一份 session 看起來完整就自動選它。
