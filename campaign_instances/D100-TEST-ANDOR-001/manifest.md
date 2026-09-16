@@ -73,7 +73,7 @@ persistence:
   last_error: null
 
 migration:
-  status: staged_phase_b
+  status: staged_phase_d_ref_normalization
   legacy_source_refs:
     - migrations/ANDOR_PHASE_A_INVENTORY_2026-09-16.md
     - sessions/2026-09-16_session-1_live-state.md
@@ -83,6 +83,32 @@ migration:
     - characters/mileia.md
     - characters/nella.md
   last_migration_ref: migrations/ANDOR_PHASE_A_INVENTORY_2026-09-16.md
+  ref_alias_policy: exact_only
+  ref_aliases:
+    characters/elian.md: campaign_instances/D100-TEST-ANDOR-001/characters/elian.md
+    characters/rook.md: campaign_instances/D100-TEST-ANDOR-001/characters/rook.md
+    characters/aster.md: campaign_instances/D100-TEST-ANDOR-001/characters/aster.md
+    characters/mileia.md: campaign_instances/D100-TEST-ANDOR-001/characters/mileia.md
+    characters/nella.md: campaign_instances/D100-TEST-ANDOR-001/characters/nella.md
+    sessions/2026-09-15_session-1_runtime-migration.md: campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-15_session-1_runtime-migration.md
+    sessions/2026-09-15_session-1_checkpoint-01.md: campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-15_session-1_checkpoint-01.md
+    sessions/2026-09-16_session-1_live-state.md: campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state.md
+    campaign/andor_sites.md: campaign_instances/D100-TEST-ANDOR-001/sites/andor_sites.md
+    campaign/andor_map_adoption.md: campaign_instances/D100-TEST-ANDOR-001/sites/andor_map_adoption.md
+    campaign/andor_public_map.md: campaign_instances/D100-TEST-ANDOR-001/sites/andor_public_map.md
+    campaign/andor_lathander_morninghall.md: campaign_instances/D100-TEST-ANDOR-001/sites/andor_lathander_morninghall.md
+    mystery_vault/ANDOR_BARD_ACADEMY_PATRON_01.md: campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_BARD_ACADEMY_PATRON_01.md
+    mystery_vault/ANDOR_BARD_HALL_DEPARTURE_01.md: campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_BARD_HALL_DEPARTURE_01.md
+    mystery_vault/ANDOR_BARD_HALL_OBSERVERS_01.md: campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_BARD_HALL_OBSERVERS_01.md
+    mystery_vault/ANDOR_SESSION1_CHECKPOINT_01.md: campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_SESSION1_CHECKPOINT_01.md
+    mystery_vault/ANDOR_SESSION1_MIGRATION.md: campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_SESSION1_MIGRATION.md
+    mystery_vault/ANDOR_WHISPERS_CONTACT.md: campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_WHISPERS_CONTACT.md
 ```
+
+## Migration ref rule
+
+Inside records loaded through this selected campaign manifest, the exact legacy state refs above resolve to the target paths above before any root/global mutable-state lookup. Unaliased external campaign-state paths are unresolved; they do not authorize fallback to legacy root state.
+
+Repo-level D100 source/rule refs such as `sources/`, `00_core/` and `90_srd_bridge/` remain repo source refs and are not remapped.
 
 > Staging fuse: this manifest is not the selected/cutover campaign until target-path readback and migration regression pass. Root legacy records remain untouched.
