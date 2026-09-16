@@ -1,11 +1,11 @@
-# D100-TEST-ANDOR-001 — Current State (Verified Migration Target)
+# D100-TEST-ANDOR-001 — Current State
 
-> Synthesized campaign pointer for the isolated persistent-test namespace. Fresh-load readback has passed on the feature branch. This target is valid storage but is not automatically selected/cut over to `main`.
+> Authoritative current-state pointer for the selected repo-local persistent-test namespace on `main`.
 
 ```yaml
 campaign_id: D100-TEST-ANDOR-001
 runtime_mode: persistent_test
-record_status: migration_verified_not_selected
+record_status: active_selected_campaign_state
 ruleset_ref: fc868904c4d9ded6d2f408ee25001dac5b2a70d5
 
 world_time: split-thread chronology
@@ -71,21 +71,22 @@ migration_fuses:
   session_projection_does_not_replace_actor_master: true
 ```
 
-## Migration-specific interpretation boundary
+## Interpretation boundary
 
-- `campaign/andor_lathander_morninghall.md` was committed after the Mileia rollback and therefore remains a valid Andor world/site record.
-- Its existence does **not** by itself establish that Mileia arrived there, met Cael, or acquired local knowledge. Until a later authoritative session record proves otherwise, Mileia's actor pointer remains at the latest live-state boundary above.
-- `campaign/current_state.md` is a stale generic placeholder and is not a source for this current state.
-- `characters/ACTIVE_PC_MANIFEST.md` is historical recovery-gap evidence; the five exact actor masters listed in this campaign manifest are the actor index.
-- Migrated records may still display literal legacy state paths as historical text. Runtime resolution follows the manifest's `migration.ref_aliases` exact map; unaliased external mutable-state paths do not fall back to root.
+- `campaign/andor_lathander_morninghall.md` was committed after the Mileia rollback and remains a valid Andor world/site record.
+- Its existence does **not** establish that Mileia arrived there, met Cael, or acquired local knowledge. Mileia's actor pointer remains at the latest live-state boundary until play advances it.
+- Root `campaign/current_state.md` is a stale generic legacy placeholder and is not Andor authority.
+- `characters/ACTIVE_PC_MANIFEST.md` is historical recovery-gap evidence, not the current actor index.
+- Migrated records may retain literal legacy paths as historical text. Runtime resolution follows manifest `migration.ref_aliases` exactly; unaliased external mutable-state paths do not fall back to root.
 
 ## Verification status
 
 ```yaml
-migration_phase: E_fresh_load_verified
+migration_phase: cutover_complete
 storage_valid: true
-cutover: false
+cutover: true
+main_merged: true
 legacy_records_modified: false
 readback_verified: true
-verification_ref: migrations/ANDOR_PHASE_E_READBACK_2026-09-16.md
+verification_ref: migrations/ANDOR_POST_MERGE_READBACK_2026-09-16.md
 ```
