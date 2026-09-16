@@ -9,7 +9,7 @@ record_status: active_selected_campaign_state
 ruleset_ref: fc868904c4d9ded6d2f408ee25001dac5b2a70d5
 
 world_time: split-thread chronology
-active_camera: Elian/Nella boundary
+active_camera: Elian/Nella
 
 four_voice_control:
   mode: pl_pc
@@ -23,11 +23,11 @@ party:
   PC-ELIAN:
     actor_ref: campaign_instances/D100-TEST-ANDOR-001/characters/elian.md
     controller: human_player
-    current_boundary: just outside / leaving SITE-ANDOR-BARD-COLLEGE after common-hall departure; no new action assumed
+    current_boundary: merchant-commercial area with Nella after reconnaissance of the two tail-route offices; no further action assumed
   PC-NELLA:
     actor_ref: campaign_instances/D100-TEST-ANDOR-001/characters/nella.md
     controller: 蟬_pl_pc
-    current_boundary: with Elian at bard-academy departure point unless 蟬 later chooses otherwise
+    current_boundary: with Elian after leading the merchant reconnaissance route; no surveillance operation has begun
   PC-ROOK:
     actor_ref: campaign_instances/D100-TEST-ANDOR-001/characters/rook.md
     controller: 鮫島_pl_pc
@@ -41,8 +41,9 @@ party:
     controller: 彌生_pl_pc
     current_boundary: completed first Morninghall visit; leaving with ordinary nearby-lodging directions; return for morning prayer planned; no lodging transaction established
 
-active_live_session_ref: campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-04.md
+active_live_session_ref: campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-05.md
 historical_session_refs:
+  - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-04.md
   - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-03.md
   - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-02.md
   - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state.md
@@ -53,6 +54,7 @@ site_refs:
   - campaign_instances/D100-TEST-ANDOR-001/sites/andor_sites.md
   - campaign_instances/D100-TEST-ANDOR-001/sites/andor_map_adoption.md
   - campaign_instances/D100-TEST-ANDOR-001/sites/andor_lathander_morninghall.md
+  - campaign_instances/D100-TEST-ANDOR-001/sites/andor_merchant_recon.md
 public_map_ref: campaign_instances/D100-TEST-ANDOR-001/sites/andor_public_map.md
 
 mystery_refs:
@@ -77,8 +79,10 @@ migration_fuses:
 ## Interpretation boundary
 
 - `campaign_instances/D100-TEST-ANDOR-001/sites/andor_lathander_morninghall.md` is valid Andor world/site state.
-- Mileia's arrival there and meeting with Cael are now independently established **after** the rollback by `sessions/2026-09-16_session-1_live-state-04.md`.
+- Mileia's arrival there and meeting with Cael are independently established after the rollback by `sessions/2026-09-16_session-1_live-state-04.md`.
 - The earlier deleted south-care-node branch remains VOID and supplies no premises.
+- `campaign_instances/D100-TEST-ANDOR-001/sites/andor_merchant_recon.md` is authoritative for the player-observed public geometry and reconnaissance results established after the bard-academy departure.
+- The merchant reconnaissance does not confirm the suspicious man's employment, current presence, note recipient/content, or any causal link to Three Silver Coins.
 - Root `campaign/current_state.md` is a stale generic legacy placeholder and is not Andor authority.
 - `characters/ACTIVE_PC_MANIFEST.md` is historical recovery-gap evidence, not the current actor index.
 - Migrated records may retain literal legacy paths as historical text. Runtime resolution follows manifest `migration.ref_aliases` exactly; unaliased external mutable-state paths do not fall back to root.
