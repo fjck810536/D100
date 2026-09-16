@@ -5,10 +5,10 @@
 ```yaml
 session_id: D100-TEST-ANDOR-001
 date_recorded: 2026-09-16
-scene: camera cut from Old City bard-academy departure to Mileia on the south-district chapel / dispensary route
-world_time: Day 1 night; exact clock unset; split-thread chronology is approximate and must not be silently synchronized beyond established facts
+scene: DM rollback pause; Mileia restored to the immediate post-split point while other threads retain their current state
+world_time: split-thread chronology; Mileia pointer restored to her immediate post-guild-split moment; other threads retain their established local positions
 four_voice_control: pl_pc
-active_camera: Mileia
+active_camera: none
 ```
 
 ## Current party positions
@@ -17,7 +17,7 @@ active_camera: Mileia
 - Nella: with Elian at the same departure point unless 蟬 later chooses otherwise. Her thread is intentionally paused here.
 - Rook: off-camera at Mercenary Guild; pending convoy questions not auto-resolved.
 - Aster: off-camera at Mercenary Guild; pending arcane-residue scheduling/registration not auto-resolved.
-- Mileia: active camera now switches to her south-district chapel / dispensary route. No off-camera outcome has yet been auto-resolved for her.
+- Mileia: **rewound by DM directive to the immediate post-split boundary after the Mercenary Guild scene.** She has just separated from the others. No post-split destination arrival, local observation, NPC contact, volunteering, or local religious/medical-system knowledge is established.
 
 ## Current refs
 
@@ -37,6 +37,7 @@ commitment_refs:
   - mystery_vault/ANDOR_BARD_HALL_DEPARTURE_01.md
 runtime_incident_refs:
   - OOC-AMBIG-ANDOR-001
+  - MILEIA-LINE-ROLLBACK-2026-09-16
 ```
 
 ## Stable prior state
@@ -46,6 +47,7 @@ runtime_incident_refs:
 - Elian registered the one-day document/inventory verification job at the Mercenary Guild; `Elian, Three Silver Coins` was used as name/contact-lodging answer, without proving a paid room.
 - Rook's convoy interest and Aster's arcane-residue interest remain pending, not accepted/resolved by off-camera time.
 - Elian player-authored backstory additions remain committed: no prior bardic training; old home/family discouraged it; older brother remembered as more eloquent/charismatic; Elian values useful methods and delegation.
+- Mileia's recovered authoritative character facts remain valid: she is a Life Domain cleric/healer who worships **Lathander / 晨曦之主**, with alignment NG. These facts predate the voided Mileia scene and are not part of the rollback.
 
 ## Bard academy common-hall events — paused thread
 
@@ -129,14 +131,26 @@ Do not promote commitment-file motives into player knowledge.
 
 `OOC-AMBIG-ANDOR-001` remains preserved. Elian later voluntarily disclosed his bardic/family background aloud, so Nella legitimately knows that later disclosure. The earlier ambiguous renderer line still cannot prove earlier IC knowledge/attraction/intimacy.
 
-## Active resume boundary — Mileia
+## DM rollback — Mileia thread
 
-Resume with **Mileia on the south-district chapel / dispensary route**, at the first ordinary public point where she can see/reach the local religious/medical activity she set out to investigate.
+DM directive `MILEIA-LINE-ROLLBACK-2026-09-16`:
+
+- Mileia's personal timeline is rewound to **the immediate moment after the party split at the Mercenary Guild**.
+- All Mileia post-split narration generated after the erroneous camera cut is **VOID / NON-CANON**.
+- The voided material creates **no** world facts, NPCs, site facts, local customs, Mileia epistemic state, relationship edges, evidence, commitments, obligations, or resource changes.
+- In particular, any generated chapel/dispensary pairing, the NPC `Teren`, cloth-carrying/volunteering, patients/visitors, local care-routing practices, and the idea that Mileia learned a local principle about "handoff" or night staffing are void and may not be reused as premises.
+- `campaign/andor_south_care_node.md` has been removed from the authoritative branch.
+- Historical Git commits/chat text may still contain the voided material for audit/history, but they are **not authoritative state and must never be promoted back into play** unless the DM later independently re-establishes a fact.
+- Mileia's recovered character-creation facts in `characters/mileia.md`—including Lathander / 晨曦之主, Life Domain, cleric/healer identity, alignment and established stats/resources—remain valid because they predate the erroneous scene.
+
+## Resume boundary — Mileia reset
+
+If/when the camera returns to Mileia, resume at **the immediate moment after she split from the party following the Mercenary Guild scene**, before she has reached or evaluated any church, chapel, temple, dispensary, healer, clergy member, or related site.
 
 At resume:
 
-- 彌生 controls Mileia's important choices; DM may frame the public environment but must not decide her purpose beyond the already-established chapel/dispensary split.
-- Do not retroactively claim she already spoke to clergy, patients, healers or officials.
-- Do not auto-resolve Rook/Aster while the camera is on Mileia.
+- 彌生 controls Mileia's next destination/action.
+- Before generating or resolving faith-related environment, load `characters/mileia.md` and use her established Lathander / Life Domain identity as an actual premise; source-resolve additional setting claims as needed.
+- No voided post-split Mileia scene detail may be reused, echoed as memory, or treated as previously observed common knowledge.
+- Rook and Aster remain at their pending Mercenary Guild boundaries; no off-camera resolution is added.
 - Elian/Nella remain paused after bard-academy departure; no hidden follow-up occurs off-camera unless separately committed and later surfaced lawfully.
-- Public ordinary environment can be described without a roll; meaningful uncertainty/consequence uses D100.
