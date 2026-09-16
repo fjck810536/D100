@@ -199,8 +199,10 @@ There is insufficient primary recovery evidence to promote a particular provisio
 
 - Care / medicine / social-presence orientation; does not imply party-mother autopilot.
 - Moderate helping-risk tolerance.
-- **Current rollback boundary:** Mileia has just separated from the party after the Mercenary Guild split. No post-split travel, local site arrival, local NPC contact, volunteering, or newly learned local religious/medical practice is established.
-- Morninghall exists as world/site state but does not imply Mileia has arrived there or knows its local details.
+- The earlier DM rollback restored Mileia to the immediate post-guild-split point and voided the erroneous south-care-node branch; those VOID facts remain non-canon.
+- After that rollback, 彌生 lawfully chose for Mileia to seek the local Lathander temple. Mileia reached `SITE-ANDOR-LATHANDER-MORNINGHALL`, met Cael Arven, identified herself as a Lathander / Life Domain cleric, received a public-area orientation, and discussed her healing / temple / poorhouse-care background.
+- Mileia accepted no job and received no automatic local authority. She plans to return for morning prayer and formal introduction before any collaboration.
+- Current boundary: leaving / just left the Morninghall with ordinary directions toward nearby lodging. No exact inn, room, price, payment, or overnight stay is established.
 
 ## Provenance / closure
 
@@ -212,6 +214,7 @@ recovery_sources:
   - sessions/2026-09-15_session-1_runtime-migration.md
   - sessions/2026-09-15_session-1_checkpoint-01.md
   - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state.md
+  - campaign_instances/D100-TEST-ANDOR-001/sessions/2026-09-16_session-1_live-state-04.md
   - deterministic_D100_attribute_formulas
   - git_history_recovery_audit
 recovery_exhausted:
