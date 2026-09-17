@@ -18,7 +18,7 @@ Additional test evidence:
 - [CP Strength Audit v1](./CP_STRENGTH_AUDIT_V1.md)
 - [Kaland player clarification](./KALAND_PLAYER_CLARIFICATION_2026-09-13.md)
 - [Fixture party status](./CURRENT_CAMPAIGN_STATUS.md)
-- [Read-only character-sheet mirrors](./sheet_mirror/)
+- [Authoritative Google Sheet source pointers](./SHEET_SOURCES.md)
 
 ## Combat snapshot contract
 
