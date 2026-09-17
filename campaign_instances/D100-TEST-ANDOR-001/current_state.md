@@ -84,7 +84,7 @@ migration_fuses:
 - `campaign_instances/D100-TEST-ANDOR-001/sites/andor_merchant_recon.md` is authoritative for the player-observed public geometry and reconnaissance results established after the bard-academy departure.
 - The merchant reconnaissance does not confirm the suspicious man's employment, current presence, note recipient/content, or any causal link to Three Silver Coins.
 - Root `campaign/current_state.md` is a stale generic legacy placeholder and is not Andor authority.
-- `characters/ACTIVE_PC_MANIFEST.md` is historical recovery-gap evidence, not the current actor index.
+- `migrations/history/ACTIVE_PC_MANIFEST_2026-09-16.md` is historical recovery-gap evidence, not the current actor index.
 - Migrated records may retain literal legacy paths as historical text. Runtime resolution follows manifest `migration.ref_aliases` exactly; unaliased external mutable-state paths do not fall back to root.
 - Rook's convoy acceptance is authoritative campaign state; exact departure time and future route events remain unestablished.
 - Aster's warehouse residue-job acceptance is authoritative campaign state; exact warehouse location, client identity, residue nature, and future inspection results remain unestablished.
