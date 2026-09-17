@@ -57,11 +57,14 @@ site_refs:
   - campaign_instances/D100-TEST-ANDOR-001/sites/andor_merchant_recon.md
 public_map_ref: campaign_instances/D100-TEST-ANDOR-001/sites/andor_public_map.md
 
+commitment_refs:
+  - campaign_instances/D100-TEST-ANDOR-001/commitments/ANDOR_SESSION1_MIGRATION_COMMITMENTS.md
+  - campaign_instances/D100-TEST-ANDOR-001/commitments/ANDOR_SESSION1_CHECKPOINT_01.md
+  - campaign_instances/D100-TEST-ANDOR-001/commitments/ANDOR_BARD_ACADEMY_PATRON_01.md
+  - campaign_instances/D100-TEST-ANDOR-001/commitments/ANDOR_BARD_HALL_OBSERVERS_01.md
+  - campaign_instances/D100-TEST-ANDOR-001/commitments/ANDOR_BARD_HALL_DEPARTURE_01.md
+
 mystery_refs:
-  - campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_BARD_ACADEMY_PATRON_01.md
-  - campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_BARD_HALL_DEPARTURE_01.md
-  - campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_BARD_HALL_OBSERVERS_01.md
-  - campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_SESSION1_CHECKPOINT_01.md
   - campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_SESSION1_MIGRATION.md
   - campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_WHISPERS_CONTACT.md
 

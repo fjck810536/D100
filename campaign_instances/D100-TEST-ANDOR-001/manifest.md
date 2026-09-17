@@ -96,10 +96,10 @@ migration:
     campaign/andor_map_adoption.md: campaign_instances/D100-TEST-ANDOR-001/sites/andor_map_adoption.md
     campaign/andor_public_map.md: campaign_instances/D100-TEST-ANDOR-001/sites/andor_public_map.md
     campaign/andor_lathander_morninghall.md: campaign_instances/D100-TEST-ANDOR-001/sites/andor_lathander_morninghall.md
-    mystery_vault/ANDOR_BARD_ACADEMY_PATRON_01.md: campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_BARD_ACADEMY_PATRON_01.md
-    mystery_vault/ANDOR_BARD_HALL_DEPARTURE_01.md: campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_BARD_HALL_DEPARTURE_01.md
-    mystery_vault/ANDOR_BARD_HALL_OBSERVERS_01.md: campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_BARD_HALL_OBSERVERS_01.md
-    mystery_vault/ANDOR_SESSION1_CHECKPOINT_01.md: campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_SESSION1_CHECKPOINT_01.md
+    mystery_vault/ANDOR_BARD_ACADEMY_PATRON_01.md: campaign_instances/D100-TEST-ANDOR-001/commitments/ANDOR_BARD_ACADEMY_PATRON_01.md
+    mystery_vault/ANDOR_BARD_HALL_DEPARTURE_01.md: campaign_instances/D100-TEST-ANDOR-001/commitments/ANDOR_BARD_HALL_DEPARTURE_01.md
+    mystery_vault/ANDOR_BARD_HALL_OBSERVERS_01.md: campaign_instances/D100-TEST-ANDOR-001/commitments/ANDOR_BARD_HALL_OBSERVERS_01.md
+    mystery_vault/ANDOR_SESSION1_CHECKPOINT_01.md: campaign_instances/D100-TEST-ANDOR-001/commitments/ANDOR_SESSION1_CHECKPOINT_01.md
     mystery_vault/ANDOR_SESSION1_MIGRATION.md: campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_SESSION1_MIGRATION.md
     mystery_vault/ANDOR_WHISPERS_CONTACT.md: campaign_instances/D100-TEST-ANDOR-001/mystery/ANDOR_WHISPERS_CONTACT.md
 ```
