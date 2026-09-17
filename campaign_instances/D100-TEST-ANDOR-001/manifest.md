@@ -81,11 +81,6 @@ migration:
   legacy_source_refs:
     - migrations/ANDOR_PHASE_A_INVENTORY_2026-09-16.md
     - sessions/2026-09-16_session-1_live-state.md
-    - characters/elian.md
-    - characters/rook.md
-    - characters/aster.md
-    - characters/mileia.md
-    - characters/nella.md
   last_migration_ref: migrations/ANDOR_POST_MERGE_READBACK_2026-09-16.md
   ref_alias_policy: exact_only
   ref_aliases:
@@ -115,4 +110,4 @@ Inside records loaded through this selected campaign manifest, the exact legacy 
 
 Repo-level D100 source/rule refs such as `sources/`, `00_core/` and `90_srd_bridge/` remain repo source refs and are not remapped.
 
-> Post-merge verification passed in `migrations/ANDOR_POST_MERGE_READBACK_2026-09-16.md`. This repo-local persistent-test save is now cut over on `main`. Legacy root records remain audit/history and are not automatically cleaned up or treated as current Andor authority.
+> Post-merge verification passed in `migrations/ANDOR_POST_MERGE_READBACK_2026-09-16.md`. This repo-local persistent-test save is now cut over on `main`. Legacy path aliases are retained for compatibility/history, but the corresponding root-level shadow files are not current Andor authority and need not remain physically present.
