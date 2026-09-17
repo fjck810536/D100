@@ -24,6 +24,7 @@ resolved provenance may remain here as a short pointer if useful
 - `character_creation.md` — 創角、CP、語言、qualifying reward 等未決問題。
 - `unresolved_rules.md` — 核心／戰鬥／技能／物品等未決規則。
 - `social_world.md` — Alignment、角色行為、社會世界與關係層的待設計問題。
+- `social_cognition_frameworks.md` — 外部 social / cognition / memory framework 的取樣評估；追蹤 Cognitiv、Ensemble/CiF、ZifaMem、FAtiMA、Emotion Engine 與現有 Cabinet / state layer 的可能接口，以及 D100 / 3.5 既有尺度審計。
 - `economy.md` — 平民／勞工／專業者收入、基本生活開銷、可支配所得與日常經濟常識基線。
 - `runtime_playtest.md` — 實際跑團暴露出的 runtime interface / timing / investigation 缺口；只收可泛化問題，不收單一 session 尚未填完的普通 state。
 
