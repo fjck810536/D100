@@ -284,3 +284,52 @@ Relationship
 讓 actor 的主觀認知可以和客觀世界安全分離
 讓政治家的 forecast 更容易落成 AO 可處理的 proposal
 ```
+
+---
+
+## 待解決疑難
+
+### Relationship Graph 的「客觀事實 only」是否過窄？
+
+`RUNTIME_SOCIAL_WORLD_CONTRACT.md` 的 Relationship Graph 規則是在 2026-09-15 建立 social-world contract 時先做出的防污染設計：分析師／政治家的心理與關係推論不得因為「看起來合理」就直接寫回 authoritative relationship fact。這條原則原本主要在阻止 **derived interpretation → world fact** 的偷渡。
+
+但在目前對 Cognitiv、ZifaMem、Ensemble / CiF 的重新取樣後，出現新的疑問：**「不是客觀事件」不代表它只能是 derived hypothesis。** 某些主觀社會狀態可能本身就是合法、持久、由 actor owner 建立的 actor-local state，例如：
+
+```text
+Nella 對 Elian：覺得有趣
+```
+
+這不是外部分析師猜測，也不是「兩人已經有某種客觀關係」；但它又比一次性 prose 更像應被持久化、可供後續 cognition / decision / social-state transition 使用的資料。
+
+目前需解的不是「能不能有感情線」，而是**這類資料究竟屬於哪一層、由誰擁有、如何變動，以及 Relationship Graph 是否只應保存硬事件。**
+
+待決問題：
+
+1. Relationship Graph 是否維持目前定位，只保存 event / role / commitment / debt / dependency / shared-resource 等較硬的 authoritative relation；主觀 impression / affect / preference 永遠留在 actor card / actor-local state？
+2. 或者應把 Relationship 擴成有型別的 social-state 容器，在同一資料骨架中明確區分：`objective edge`、`actor-local impression`、`social scale`、`temporary status`、`derived interpretation`？
+3. `trust`、`attraction`、`interest`、`loyalty`、`friendship depth` 這類詞，不應只用「不能自動成立」處理；它們各自應被分類成 actor state、relationship state、social scale、commitment，還是 derived view？
+4. 對 PL+PC，Player Voice 明示的內在 impression／preference 應如何取得 authoritative actor-state 身分；對 NPC，AO 採用的 cognition / affect proposal 又如何留下 provenance？
+5. ZifaMem 的 `strength / evidence / decay / reinforce` 應作用在 evidence、actor-local impression、social scale，還是多層皆可？哪些量可 decay，哪些一旦成立就應只靠新事件轉換？
+6. Ensemble / CiF 的 taxonomy 能否解開「客觀關係」與「主觀社會狀態」目前擠在同一個 Relationship 詞彙下的問題？
+7. Cognitiv 若形成 actor cognition layer，`覺得有趣` 這類 social impression 是否應首先屬於 cognition，而 Relationship Graph 只持有對它的 pointer / provenance？
+8. D100 / D&D 3.5 若已有 NPC attitude、態度／聲望／關係尺度，哪些可以直接承擔上述 social scale，而不另造新值？
+9. 待上述分類完成後，是否應回頭重寫 `RUNTIME_SOCIAL_WORLD_CONTRACT.md` §2.1 與 `RELATIONSHIP_GRAPH_TEMPLATE.md`：把重複的「不能／不得自動」提示，改成更明確的 `type / owner / provenance / transition` schema，而不是靠負面 prompt 維持邊界？
+
+### 目前暫存做法
+
+在這個問題解完以前，先採最小、可回退做法：
+
+```text
+已發生的客觀互動事件
+→ Relationship Graph
+
+明確由 actor owner 成立的主觀 impression / affect
+→ actor-local state / character record
+
+分析師／政治家推論
+→ derived view
+```
+
+Andor 目前的 `Nella → Elian：覺得有趣` 暫存在 Nella 的 actor record；不把它硬升格成 relationship edge，也不把它視為被禁止的發展。
+
+**本節只是待解問題登記，不在此直接修改 runtime contract。**
