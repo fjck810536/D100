@@ -57,6 +57,9 @@ site_refs:
   - campaign_instances/D100-TEST-ANDOR-001/sites/andor_merchant_recon.md
 public_map_ref: campaign_instances/D100-TEST-ANDOR-001/sites/andor_public_map.md
 
+relationship_refs:
+  - campaign_instances/D100-TEST-ANDOR-001/relationships/session1_relationship_graph.md
+
 commitment_refs:
   - campaign_instances/D100-TEST-ANDOR-001/commitments/ANDOR_SESSION1_MIGRATION_COMMITMENTS.md
   - campaign_instances/D100-TEST-ANDOR-001/commitments/ANDOR_SESSION1_CHECKPOINT_01.md

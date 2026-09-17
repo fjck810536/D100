@@ -169,14 +169,17 @@ The dagger/cloak/boots shell is not strong enough recovery evidence to become ex
 
 - Historical tail resolution used `athletic 53 + Hide 30 + synergy 20 = 103`, d100 `14`, success by `89`.
 - Oren tail succeeded; Elian's cloak was later returned unused.
-- No automatic romance/trust fact exists. New attraction or affect may only be established by 蟬 in PL+PC mode from the point of decision forward.
 - Nella legitimately knows Elian's later spoken bardic/family disclosure; the earlier OOC/IC ambiguity does not retroactively establish prior knowledge.
+
+## Current social impression
+
+- 對 Elian：覺得有趣。
 
 ## Character direction / current Andor thread
 
 - Interested in gaps, routes and omissions; no magical spy omniscience.
 - Moderate-high information risk tolerance, low pointless exposure.
-- Current thread remains with Elian at the bard-academy departure boundary unless 蟬 later chooses otherwise.
+- Current thread: with Elian in the merchant-commercial area after leading the two-location reconnaissance route; no surveillance operation has begun.
 
 ## Provenance / closure
 
