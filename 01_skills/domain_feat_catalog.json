@@ -1,5 +1,5 @@
 {
-  "schema": "d100-domain-feat-catalog-v1.1",
+  "schema": "d100-domain-feat-catalog-v1.2",
   "status": "D100_ADAPTATION_PROVISIONAL",
   "generated_from": {
     "existing_d100": "sources/sheet_mirror/10_牧師領域.json.md",
@@ -23,7 +23,9 @@
       4,
       5
     ],
-    "pending_or_provisional_does_not_mean_nonexistent": true
+    "pending_or_provisional_does_not_mean_nonexistent": true,
+    "domain_feat_prerequisite": "角色已取得該領域；牧師環數 >= 專長難度",
+    "d1_base_skill_is_semantic_not_uniform": true
   },
   "domains": [
     {
@@ -65,7 +67,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "planar_domain_two_slot"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 深淵（Abyss）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -74,7 +81,12 @@
           "effect": "你與此技能等級×10英尺內盟友對深淵位面的一般環境危害，以及該位面典型外界生物的法術／類法術效果，五抗增加此技能等級×10。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 深淵（Abyss）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -83,7 +95,12 @@
           "effect": "以即時動作傳送至此技能等級×20英尺內一處可見、未被占據的位置。若跨越封鎖、位面結界或傳送禁制則照常受阻。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 深淵（Abyss）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -92,7 +109,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注深淵，持續此技能等級分鐘：附加（此技能等級＋SPI調整值）D8 暗蝕傷害並穿透此技能等級×10法抗。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 深淵（Abyss）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -104,7 +126,12 @@
           "review_flags": [
             "planar_domain_two_slot",
             "ao_planar_trait_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 深淵（Abyss）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -150,7 +177,12 @@
           "effect": "你可引導神力驅散土元素類生物，或斥喝／控制氣元素類生物。判定以交涉＋此技能等級×10 對抗目標抗控制；每日總使用次數為3＋CHA調整值＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 氣（Air）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -159,7 +191,12 @@
           "effect": "當你或此技能等級×15英尺內一名可見目標受到閃電傷害時，可瞬間反應，使該次傷害結算獲得此技能等級×10的閃電抗性。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 氣（Air）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -168,7 +205,12 @@
           "effect": "你以攻擊或法術實際造成閃電傷害後，可使該目標的閃電抗性承受此技能等級×5減值，持續此技能等級分鐘；同來源不重複疊加。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 氣（Air）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -177,7 +219,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注風與雷，持續此技能等級分鐘：穿透此技能等級×10的閃電抗性，並附加（此技能等級＋SPI調整值）D8 閃電傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 氣（Air）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -186,7 +233,12 @@
           "effect": "瞬間展開半徑此技能等級×30英尺、持續此技能等級分鐘的風與雷神域：盟友閃電抗性＋此技能等級×15，敵人閃電抗性－此技能等級×15；盟友攻擊或法術命中時附加（此技能等級＋SPI調整值）D6 閃電傷害。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 氣（Air）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -228,7 +280,12 @@
           "effect": "你能與動物溝通；進行馴養動物、自然知識時，若原判定值低於交涉＋此技能等級×10，改用該值。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 動物（Animal）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -237,7 +294,12 @@
           "effect": "以即時動作選擇此技能等級×15英尺內一個動物或與動物直接相關的自然生物，使其進行抗控制對抗交涉＋此技能等級×10；失敗則在此技能等級分鐘內停止敵對並接受簡單指令，受傷後可重新抵抗。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 動物（Animal）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -246,7 +308,12 @@
           "effect": "你與此技能等級×15英尺內盟友在自然知識、生存、偵察與對動物的抗性檢定上增加此技能等級×10。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 動物（Animal）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -255,7 +322,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注動物，持續此技能等級分鐘，命中附加（此技能等級＋SPI調整值）D8 物理傷害；對動物額外穿透此技能等級×10物抗或法抗（取適用者）。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 動物（Animal）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -264,7 +336,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的動物聖域：盟友自然／感知檢定＋此技能等級×20，相關動物若非既定死敵會優先停止無理由攻擊；敵對目標抗控制－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 動物（Animal）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -310,7 +387,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "planar_domain_two_slot"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 原野（Arborea）（Arborea）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -319,7 +401,12 @@
           "effect": "你與此技能等級×10英尺內盟友對原野位面的一般環境危害，以及該位面典型外界生物的法術／類法術效果，五抗增加此技能等級×10。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 原野（Arborea）（Arborea）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -328,7 +415,12 @@
           "effect": "以即時動作傳送至此技能等級×20英尺內一處可見、未被占據的位置。若跨越封鎖、位面結界或傳送禁制則照常受阻。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 原野（Arborea）（Arborea）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -337,7 +429,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注原野，持續此技能等級分鐘：附加（此技能等級＋SPI調整值）D8 光耀傷害並穿透此技能等級×10法抗。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 原野（Arborea）（Arborea）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -349,7 +446,12 @@
           "review_flags": [
             "planar_domain_two_slot",
             "ao_planar_trait_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 原野（Arborea）（Arborea）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -388,11 +490,16 @@
         {
           "difficulty": 1,
           "name": "工匠恩賜",
-          "base_skill": "交涉",
+          "base_skill": "操作",
           "effect": "手藝與魔法物品製作相關檢定增加此技能等級×10；施放創造／製作物件性質的領域法術時，總施法者等級額外＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 工匠（Artifice）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -401,7 +508,12 @@
           "effect": "花費一般動作觸碰一件武器、護甲、工具或構裝體，持續此技能等級小時：物件本體對破壞、腐蝕與解除效果的相關抗性／結構判定增加此技能等級×10；若是可穿戴護甲，不因此額外增加閃避。每日使用此技能等級＋SKI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 工匠（Artifice）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -412,7 +524,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "item_durability_interface"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 工匠（Artifice）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -421,7 +538,12 @@
           "effect": "此技能等級×2為可影響的創造、硬化、修復、構裝或魔法物品相關法術環數；受影響法術施法判定＋此技能等級×10、總施法者等級＋此技能等級。永久造物仍支付原成本。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 工匠（Artifice）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -432,7 +554,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "item_durability_interface"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 工匠（Artifice）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -470,11 +597,16 @@
         {
           "difficulty": 1,
           "name": "平衡恩賜",
-          "base_skill": "交涉",
+          "base_skill": "感知",
           "effect": "以即時動作取得平衡護持，持續此技能等級分鐘：閃避增加此技能等級×10；每日使用此技能等級＋WIS調整值次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 平衡（Balance）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -483,7 +615,12 @@
           "effect": "當此技能等級×20英尺內一名可見盟友完成非劇情／非寶藏檢定後，可瞬間允許其重骰一次並接受新結果；每日共享使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 平衡（Balance）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -492,7 +629,12 @@
           "effect": "你或此技能等級×15英尺內盟友出現一般失敗（非自然100）時，可使其結果獲得此技能等級×10的結果修正後重新判定是否通過；同一骰不能同時使用本能力與平衡干涉。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 平衡（Balance）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -501,7 +643,12 @@
           "effect": "以即時動作祝福此技能等級×10英尺內一名目標，持續此技能等級分鐘：其第一次攻擊、豁免或技能檢定失敗可重骰；之後效果結束。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 平衡（Balance）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -510,7 +657,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的平衡領域；盟友共享此技能等級×2次非劇情／非寶藏重骰池，且自然100仍保留其大失敗事件標記，不能只靠加值抹除。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 平衡（Balance）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -555,7 +707,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "absolute_environment_immunity"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 黑水（Blackwater）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -564,7 +721,12 @@
           "effect": "在與深海黑水相符的自然環境中，你與此技能等級×10英尺內盟友忽略由一般地形造成的前此技能等級×10點移動／生存判定減值，並取得物理抗性＋此技能等級×5。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 黑水（Blackwater）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -575,7 +737,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 黑水（Blackwater）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -584,7 +751,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注深海黑水，持續此技能等級分鐘：穿透此技能等級×10的物理抗性，並附加（此技能等級＋SPI調整值）D8 暗蝕傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 黑水（Blackwater）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -595,7 +767,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 黑水（Blackwater）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -635,11 +812,16 @@
         {
           "difficulty": 1,
           "name": "岩穴恩賜",
-          "base_skill": "交涉",
+          "base_skill": "感知",
           "effect": "搜索、偵察與地理／地下城知識在辨識石造結構、岩層異常、天然洞穴與石製機關時，若判定值低於感知＋此技能等級×10，改用該值。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 岩穴（Cavern）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -648,7 +830,12 @@
           "effect": "在與岩穴相符的自然環境中，你與此技能等級×10英尺內盟友忽略由一般地形造成的前此技能等級×10點移動／生存判定減值，並取得物理抗性＋此技能等級×5。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 岩穴（Cavern）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -659,7 +846,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 岩穴（Cavern）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -668,7 +860,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注岩穴，持續此技能等級分鐘：穿透此技能等級×10的物理抗性，並附加（此技能等級＋SPI調整值）D8 物理傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 岩穴（Cavern）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -679,7 +876,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 岩穴（Cavern）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -715,11 +917,16 @@
         {
           "difficulty": 1,
           "name": "迅捷恩賜",
-          "base_skill": "交涉",
+          "base_skill": "運動",
           "effect": "在未穿中／重甲且未承受相當負重時，正常移動上限增加此技能等級×5英尺。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 迅捷（Celerity）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -728,7 +935,12 @@
           "effect": "以即時動作移動或短距傳送至此技能等級×20英尺內可合法抵達的位置；是否屬傳送由領域主題決定，傳送禁制照常生效。每日使用此技能等級＋DEX調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 迅捷（Celerity）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -737,7 +949,12 @@
           "effect": "你與此技能等級×15英尺內一名盟友可在此技能等級分鐘內忽略由普通地形、束縛、緩速造成的前此技能等級×10點移動相關減值；真正封閉空間、位面禁制與傳奇拘束不被自動取消。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 迅捷（Celerity）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -746,7 +963,12 @@
           "effect": "以一般動作標記此技能等級×10英尺內一個位置或自願盟友，持續此技能等級分鐘；受益者可在期間一次立即移動此技能等級×20英尺而不改變其已宣告行動。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 迅捷（Celerity）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -755,7 +977,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的通途領域：盟友移動上限＋此技能等級×10英尺，移動相關檢定＋此技能等級×20；每名盟友在效果期間可一次重定位此技能等級×20英尺。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 迅捷（Celerity）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -797,7 +1024,12 @@
           "effect": "對明確邪惡陣營目標宣告神聖打擊時，本次攻擊命中增加此技能等級×10，命中後附加（此技能等級＋SPI調整值）D6光耀傷害；每日使用此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 天族（Celestial）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -806,7 +1038,12 @@
           "effect": "以即時動作祝福自己或此技能等級×20英尺內盟友，持續此技能等級分鐘：攻擊命中＋此技能等級×10。每日使用此技能等級＋STR調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 天族（Celestial）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -815,7 +1052,12 @@
           "effect": "當你或此技能等級×20英尺內盟友遭命中後，可瞬間使其下一次攻擊命中＋此技能等級×10、傷害＋此技能等級；每日共享使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 天族（Celestial）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -824,7 +1066,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注天族，持續此技能等級分鐘：穿透此技能等級×10相應抗性，並附加（此技能等級＋SPI調整值）D8 光耀傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 天族（Celestial）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -833,7 +1080,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的天族戰域：盟友攻擊命中＋此技能等級×10、相應抗性＋此技能等級×10；敵人閃避與相應抗性各－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 天族（Celestial）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -876,7 +1128,12 @@
           "effect": "施放混亂 descriptor 或本領域法術時，總施法者等級額外＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 混亂（Chaos）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -885,7 +1142,12 @@
           "effect": "以即時動作祝福自己或此技能等級×15英尺內一名盟友，持續此技能等級分鐘：對守序 descriptor 法術與超自然效果的五抗增加此技能等級×10。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 混亂（Chaos）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -894,7 +1156,12 @@
           "effect": "你對守序陣營目標施放本領域法術時，施法判定增加此技能等級×10；若該法術要求抗性，目標相應抗性承受此技能等級×5減值。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 混亂（Chaos）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -903,7 +1170,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注混亂，持續此技能等級分鐘；對守序目標命中時額外造成（此技能等級＋SPI調整值）D8 力場傷害，並穿透此技能等級×10法抗。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 混亂（Chaos）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -912,7 +1184,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的混亂神域：盟友對守序來源的五抗＋此技能等級×15；符合守序的敵對生物五抗－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 混亂（Chaos）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -954,7 +1231,12 @@
           "effect": "進行搜集資訊、地方知識時，若原判定值低於交涉＋此技能等級×10，改用該值。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 城市（City）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -963,7 +1245,12 @@
           "effect": "以即時動作祝福此技能等級×20英尺內一名自願目標，持續此技能等級分鐘；其搜集資訊、地方知識相關檢定增加此技能等級×10。每日使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 城市（City）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -972,7 +1259,12 @@
           "effect": "當你或此技能等級×20英尺內盟友在搜集資訊、地方知識相關檢定失敗後，可瞬間允許其重骰一次並接受新結果；每日共享使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 城市（City）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -981,7 +1273,12 @@
           "effect": "以即時動作選擇此技能等級×10英尺內一名盟友，持續此技能等級分鐘：其交涉與一項由你指定、符合城市目的的檢定＋此技能等級×10，且第一次非自然100的失敗可重骰。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 城市（City）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -990,7 +1287,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的城市領域：盟友的交涉、察言觀色與符合領域主題的技能檢定＋此技能等級×20，並共享此技能等級次重骰池。此效果不直接把NPC態度改成友善。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 城市（City）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -1032,7 +1334,12 @@
           "effect": "你可引導神力驅散火焰類生物，或斥喝／控制寒冷類生物。判定以交涉＋此技能等級×10 對抗目標抗控制；每日總使用次數為3＋CHA調整值＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 寒冷（Cold）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -1041,7 +1348,12 @@
           "effect": "當你或此技能等級×15英尺內一名可見目標受到冰冷傷害時，可瞬間反應，使該次傷害結算獲得此技能等級×10的冰冷抗性。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 寒冷（Cold）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -1050,7 +1362,12 @@
           "effect": "你以攻擊或法術實際造成冰冷傷害後，可使該目標的冰冷抗性承受此技能等級×5減值，持續此技能等級分鐘；同來源不重複疊加。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 寒冷（Cold）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -1059,7 +1376,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注寒冷，持續此技能等級分鐘：穿透此技能等級×10的冰冷抗性，並附加（此技能等級＋SPI調整值）D8 冰冷傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 寒冷（Cold）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -1068,7 +1390,12 @@
           "effect": "瞬間展開半徑此技能等級×30英尺、持續此技能等級分鐘的寒冷神域：盟友冰冷抗性＋此技能等級×15，敵人冰冷抗性－此技能等級×15；盟友攻擊或法術命中時附加（此技能等級＋SPI調整值）D6 冰冷傷害。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 寒冷（Cold）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -1110,7 +1437,12 @@
           "effect": "交涉檢定增加此技能等級×10。另可用即時動作安撫此技能等級×10英尺內一名可見生物；其以抗控制對抗交涉＋此技能等級×10，失敗則激烈敵意／恐慌／狂怒被壓低至可溝通狀態，直到受傷或此技能等級分鐘；每日使用此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 社會／溝通（Community）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -1119,7 +1451,12 @@
           "effect": "以即時動作祝福此技能等級×20英尺內一名自願目標，持續此技能等級分鐘；其交涉、察言觀色相關檢定增加此技能等級×10。每日使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 社會／溝通（Community）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -1128,7 +1465,12 @@
           "effect": "當你或此技能等級×20英尺內盟友在交涉、察言觀色相關檢定失敗後，可瞬間允許其重骰一次並接受新結果；每日共享使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 社會／溝通（Community）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -1137,7 +1479,12 @@
           "effect": "以即時動作選擇此技能等級×10英尺內一名盟友，持續此技能等級分鐘：其交涉與一項由你指定、符合社會目的的檢定＋此技能等級×10，且第一次非自然100的失敗可重骰。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 社會／溝通（Community）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -1146,7 +1493,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的社會領域：盟友的交涉、察言觀色與符合領域主題的技能檢定＋此技能等級×20，並共享此技能等級次重骰池。此效果不直接把NPC態度改成友善。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 社會／溝通（Community）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -1188,7 +1540,12 @@
           "effect": "只要是明確的主動對抗檢定，你的該次判定增加此技能等級×10；固定門檻與非對抗檢定不受益。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 競爭（Competition）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -1197,7 +1554,12 @@
           "effect": "以即時動作祝福自己或此技能等級×20英尺內盟友，持續此技能等級分鐘：攻擊命中＋此技能等級×10。每日使用此技能等級＋STR調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 競爭（Competition）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -1206,7 +1568,12 @@
           "effect": "當你或此技能等級×20英尺內盟友遭命中後，可瞬間使其下一次攻擊命中＋此技能等級×10、傷害＋此技能等級；每日共享使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 競爭（Competition）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -1215,7 +1582,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注競爭，持續此技能等級分鐘：穿透此技能等級×10相應抗性，並附加（此技能等級＋SPI調整值）D8 物理傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 競爭（Competition）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -1224,7 +1596,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的競爭戰域：盟友攻擊命中＋此技能等級×10、相應抗性＋此技能等級×10；敵人閃避與相應抗性各－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 競爭（Competition）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -1266,7 +1643,12 @@
           "effect": "攻擊或破壞無生命物件時，可宣告腐敗穿透，使該次物件物抗／結構減傷減少此技能等級×10；每日使用此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 腐敗（Corruption）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -1275,7 +1657,12 @@
           "effect": "以一般動作選擇此技能等級×15英尺內一目標，使其以強韌或相應五抗對抗交涉＋此技能等級×10；失敗則其暗蝕抗性承受此技能等級×10減值，持續此技能等級分鐘。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 腐敗（Corruption）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -1284,7 +1671,12 @@
           "effect": "你對與腐敗相關的疾病、毒素、飢餓、脫水或腐敗效果進行抗性／強韌時增加此技能等級×10；若D1已提供明確免疫，則此加值延伸至與其不同但相鄰的危害，不重複增強已免疫項目。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 腐敗（Corruption）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -1293,7 +1685,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注腐敗，持續此技能等級分鐘：附加（此技能等級＋SPI調整值）D8 暗蝕傷害，並使目標相應抗性－此技能等級×5至下一個自身行動。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 腐敗（Corruption）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -1302,7 +1699,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的腐敗領域：盟友對毒病／腐敗類強韌與五抗＋此技能等級×15；敵人相應抗性－此技能等級×15。實際疾病、詛咒或傳染效果仍需明確能力／法術來源，不由光環自動生成。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 腐敗（Corruption）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -1342,7 +1744,12 @@
           "effect": "你清醒時，以你為中心此技能等級×10英尺內盟友對恐懼類抗控制檢定增加此技能等級×10。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 勇氣（Courage）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -1351,7 +1758,12 @@
           "effect": "以即時動作鼓舞此技能等級×20英尺內一名盟友，持續此技能等級分鐘：攻擊命中與抗控制各＋此技能等級×10。每日使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 勇氣（Courage）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -1360,7 +1772,12 @@
           "effect": "你或此技能等級×20英尺內盟友對恐懼效果的抗控制失敗後，可瞬間重骰一次並接受新結果；每日共享使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 勇氣（Courage）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -1369,7 +1786,12 @@
           "effect": "以即時動作祝福此技能等級×10英尺內一名目標，持續此技能等級分鐘：第一次攻擊失敗可重骰，且對恐懼免疫；每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 勇氣（Courage）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -1378,7 +1800,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的無畏領域：盟友免疫純粹恐懼效果、攻擊命中＋此技能等級×10；已受恐懼控制者進入範圍時可立即重做一次抗控制。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 勇氣（Courage）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -1414,11 +1841,16 @@
         {
           "difficulty": 1,
           "name": "工藝恩賜",
-          "base_skill": "交涉",
+          "base_skill": "操作",
           "effect": "手藝檢定增加此技能等級×10；施放創造物件性質的領域法術時，總施法者等級額外＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 工藝（Craft）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -1427,7 +1859,12 @@
           "effect": "花費1分鐘利用手邊材料組成一套針對單一工作的臨時工具或治具，持續此技能等級小時；使用它進行該項操作／手藝檢定時＋此技能等級×10。若場景完全沒有可用材料，不能憑空生成。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 工藝（Craft）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -1438,7 +1875,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "temporary_machine"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 工藝（Craft）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -1449,7 +1891,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "craft_time_economy"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 工藝（Craft）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -1460,7 +1907,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "temporary_machine"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 工藝（Craft）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -1497,11 +1949,16 @@
         {
           "difficulty": 1,
           "name": "造物恩賜",
-          "base_skill": "交涉",
+          "base_skill": "知識",
           "effect": "施放創造子學派／明確創造物件的法術時，總施法者等級額外＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 造物（Creation）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -1512,7 +1969,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "anti_economy_abuse"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 造物（Creation）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -1521,7 +1983,12 @@
           "effect": "你的創造類法術所生成的非生物物件，其合法體積／持續時間計算視總施法者等級額外＋此技能等級；創造後的物件仍遵守來源法術的材質、價值與消散條件。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 造物（Creation）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -1530,7 +1997,12 @@
           "effect": "此技能等級×2為可影響的創造類法術環數；受影響法術施法判定＋此技能等級×10、總施法者等級＋此技能等級，且非昂貴的一般材料成分可由神力代替。昂貴／XP／特殊代價不受影響。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 造物（Creation）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -1541,7 +2013,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "anti_economy_abuse"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 造物（Creation）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -1579,11 +2056,16 @@
         {
           "difficulty": 1,
           "name": "黑暗恩賜",
-          "base_skill": "交涉",
+          "base_skill": "感知",
           "effect": "因黑暗、陰影或視覺遮蔽造成的攻擊與近距感知減值，降低此技能等級×10；本能力不會讓角色看見原本不存在的視覺訊號。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 黑暗（Darkness）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -1592,7 +2074,12 @@
           "effect": "以即時動作在此技能等級×15英尺範圍內製造陰影帷幕，持續此技能等級分鐘；敵人依視覺進行偵察／攻擊時承受此技能等級×10減值。真視、其他感官與已有定位資訊照常處理。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 黑暗（Darkness）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -1601,7 +2088,12 @@
           "effect": "你在黑暗與魔法陰影中的偵察、聆聽增加此技能等級×10；大成功可察覺隱形存在，但仍遵守「察覺≠看見」規則。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 黑暗（Darkness）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -1610,7 +2102,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注黑暗，持續此技能等級分鐘：穿透此技能等級×10暗蝕抗性並附加（此技能等級＋SPI調整值）D8暗蝕傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 黑暗（Darkness）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -1619,7 +2116,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的黑暗幽域：盟友暗蝕抗性＋此技能等級×15、躲藏／潛行＋此技能等級×20；敵人偵察與暗蝕抗性－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 黑暗（Darkness）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -1662,7 +2164,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "high_impact_lethal_adaptation"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 死亡（Death）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -1671,7 +2178,12 @@
           "effect": "以即時動作感知此技能等級×30英尺內瀕死生物、不死生物與正在運作的死亡／負能量效果；全掩護或專門反預言保護仍可阻擋。每日使用此技能等級＋RES調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 死亡（Death）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -1680,7 +2192,12 @@
           "effect": "你或此技能等級×15英尺內盟友受到爆擊、死亡效果或暗蝕傷害時，可瞬間使該次暗蝕抗性／強韌增加此技能等級×10；若是爆擊，只取消由爆擊額外產生的效果，不取消正常命中。每日使用此技能等級＋RES調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 死亡（Death）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -1689,7 +2206,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注死亡，持續此技能等級分鐘：穿透此技能等級×10暗蝕抗性並附加（此技能等級＋SPI調整值）D8暗蝕傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 死亡（Death）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -1698,7 +2220,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的死亡神域：盟友暗蝕抗性＋此技能等級×15；敵人暗蝕抗性－此技能等級×15，且其被爆擊時的額外防護視為降低此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 死亡（Death）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -1745,7 +2272,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "capacity_rebuilt_without_hd"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 控死（Deathbound）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -1754,7 +2286,12 @@
           "effect": "以即時動作感知此技能等級×30英尺內瀕死生物、不死生物與正在運作的死亡／負能量效果；全掩護或專門反預言保護仍可阻擋。每日使用此技能等級＋RES調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 控死（Deathbound）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -1763,7 +2300,12 @@
           "effect": "你或此技能等級×15英尺內盟友受到爆擊、死亡效果或暗蝕傷害時，可瞬間使該次暗蝕抗性／強韌增加此技能等級×10；若是爆擊，只取消由爆擊額外產生的效果，不取消正常命中。每日使用此技能等級＋RES調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 控死（Deathbound）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -1772,7 +2314,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注控死，持續此技能等級分鐘：穿透此技能等級×10暗蝕抗性並附加（此技能等級＋SPI調整值）D8暗蝕傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 控死（Deathbound）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -1781,7 +2328,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的控死神域：盟友暗蝕抗性＋此技能等級×15；敵人暗蝕抗性－此技能等級×15，且其被爆擊時的額外防護視為降低此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 控死（Deathbound）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -1826,7 +2378,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "setting_specific_deathless"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 不朽（Deathless）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -1835,7 +2392,12 @@
           "effect": "以即時動作祝福此技能等級×15英尺內一名盟友或deathless，持續此技能等級分鐘：光耀抗性與精神／靈魂檢定＋此技能等級×10。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 不朽（Deathless）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -1844,7 +2406,12 @@
           "effect": "盟友或deathless在此技能等級×15英尺內降至0HP時，你可瞬間讓其保持可被救援狀態而不立即進一步惡化，並回復此技能等級D6 HP；同一目標長休前只能受益一次。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 不朽（Deathless）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -1853,7 +2420,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注不朽正能量，持續此技能等級分鐘：對不死／負能量目標附加（此技能等級＋SPI調整值）D8光耀傷害並穿透此技能等級×10暗蝕抗性。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 不朽（Deathless）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -1862,7 +2434,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的正能量神域：盟友每輪回復此技能等級D4 HP，靈魂與精神＋此技能等級×10；敵對不死／負能量生物暗蝕抗性－此技能等級×15。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 不朽（Deathless）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -1904,7 +2481,12 @@
           "effect": "當此技能等級×15英尺內可見盟友完成非劇情／非寶藏檢定後，你可瞬間允許其重骰一次並採用新結果；每日共享使用次數為此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 宿命（Destiny）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -1913,7 +2495,12 @@
           "effect": "當此技能等級×20英尺內一名可見盟友完成非劇情／非寶藏檢定後，可瞬間允許其重骰一次並接受新結果；每日共享使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 宿命（Destiny）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -1922,7 +2509,12 @@
           "effect": "你或此技能等級×15英尺內盟友出現一般失敗（非自然100）時，可使其結果獲得此技能等級×10的結果修正後重新判定是否通過；同一骰不能同時使用本能力與宿命干涉。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 宿命（Destiny）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -1931,7 +2523,12 @@
           "effect": "以即時動作祝福此技能等級×10英尺內一名目標，持續此技能等級分鐘：其第一次攻擊、豁免或技能檢定失敗可重骰；之後效果結束。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 宿命（Destiny）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -1940,7 +2537,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的宿命領域；盟友共享此技能等級×2次非劇情／非寶藏重骰池，且自然100仍保留其大失敗事件標記，不能只靠加值抹除。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 宿命（Destiny）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -1982,7 +2584,12 @@
           "effect": "宣告毀滅打擊後，本次攻擊命中增加此技能等級×10；命中後額外造成（此技能等級＋SPI調整值）D8物理或暗蝕傷害（宣告時選定）；每日使用此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 破壞（Destruction）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -1991,7 +2598,12 @@
           "effect": "以即時動作祝福自己或此技能等級×20英尺內盟友，持續此技能等級分鐘：攻擊命中＋此技能等級×10。每日使用此技能等級＋STR調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 破壞（Destruction）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -2000,7 +2612,12 @@
           "effect": "當你或此技能等級×20英尺內盟友遭命中後，可瞬間使其下一次攻擊命中＋此技能等級×10、傷害＋此技能等級；每日共享使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 破壞（Destruction）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -2009,7 +2626,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注破壞，持續此技能等級分鐘：穿透此技能等級×10相應抗性，並附加（此技能等級＋SPI調整值）D8 物理傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 破壞（Destruction）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -2018,7 +2640,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的破壞戰域：盟友攻擊命中＋此技能等級×10、相應抗性＋此技能等級×10；敵人閃避與相應抗性各－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 破壞（Destruction）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -2054,11 +2681,16 @@
         {
           "difficulty": 1,
           "name": "支配恩賜",
-          "base_skill": "交涉",
+          "base_skill": "知識",
           "effect": "施放魅惑、支配、強迫類法術時，施法判定增加此技能等級×10；若法術要求抗控制，目標抗控制承受此技能等級×5減值。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 支配（Domination）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -2069,7 +2701,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "epistemic_boundary"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 支配（Domination）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -2078,7 +2715,12 @@
           "effect": "你與此技能等級×15英尺內盟友的抗控制、精神檢定增加此技能等級×10；若遭魅惑、恐懼或精神干擾失敗，每日可共享此技能等級次立即重骰。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 支配（Domination）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -2087,7 +2729,12 @@
           "effect": "此技能等級×2為可影響的魅惑／心靈／夢境類法術環數；受影響法術施法判定＋此技能等級×10，目標抗控制承受此技能等級×5減值。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 支配（Domination）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -2098,7 +2745,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "epistemic_boundary"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 支配（Domination）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -2140,7 +2792,12 @@
           "effect": "唬騙與威嚇檢定若低於交涉＋此技能等級×10，改用該值。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 龍（Dragon）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -2149,7 +2806,12 @@
           "effect": "以即時動作祝福自己或此技能等級×20英尺內盟友，持續此技能等級分鐘：攻擊命中＋此技能等級×10。每日使用此技能等級＋STR調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 龍（Dragon）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -2158,7 +2820,12 @@
           "effect": "當你或此技能等級×20英尺內盟友遭命中後，可瞬間使其下一次攻擊命中＋此技能等級×10、傷害＋此技能等級；每日共享使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 龍（Dragon）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -2167,7 +2834,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注龍威，持續此技能等級分鐘：穿透此技能等級×10相應抗性，並附加（此技能等級＋SPI調整值）D8 物理傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 龍（Dragon）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -2176,7 +2848,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的龍威戰域：盟友攻擊命中＋此技能等級×10、相應抗性＋此技能等級×10；敵人閃避與相應抗性各－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 龍（Dragon）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -2212,13 +2889,18 @@
         {
           "difficulty": 1,
           "name": "夢境恩賜",
-          "base_skill": "交涉",
+          "base_skill": "感知",
           "effect": "你免疫純粹恐懼效果；若同一效果另含傷害、控制或其他獨立成分，只免疫恐懼成分。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
           "review_flags": [
             "absolute_narrow_immunity"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 夢境（Dream）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -2229,7 +2911,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "epistemic_boundary"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 夢境（Dream）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -2238,7 +2925,12 @@
           "effect": "你與此技能等級×15英尺內盟友的抗控制、精神檢定增加此技能等級×10；若遭魅惑、恐懼或精神干擾失敗，每日可共享此技能等級次立即重骰。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 夢境（Dream）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -2247,7 +2939,12 @@
           "effect": "此技能等級×2為可影響的魅惑／心靈／夢境類法術環數；受影響法術施法判定＋此技能等級×10，目標抗控制承受此技能等級×5減值。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 夢境（Dream）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -2258,7 +2955,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "epistemic_boundary"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 夢境（Dream）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -2298,11 +3000,16 @@
         {
           "difficulty": 1,
           "name": "卓爾恩賜",
-          "base_skill": "交涉",
+          "base_skill": "感知",
           "effect": "抗噴吐增加此技能等級×10。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 卓爾（Drow）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -2311,7 +3018,12 @@
           "effect": "以即時動作在此技能等級×15英尺範圍內製造陰影帷幕，持續此技能等級分鐘；敵人依視覺進行偵察／攻擊時承受此技能等級×10減值。真視、其他感官與已有定位資訊照常處理。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 卓爾（Drow）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -2320,7 +3032,12 @@
           "effect": "你在黑暗與魔法陰影中的偵察、聆聽增加此技能等級×10；大成功可察覺隱形存在，但仍遵守「察覺≠看見」規則。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 卓爾（Drow）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -2329,7 +3046,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注卓爾，持續此技能等級分鐘：穿透此技能等級×10暗蝕抗性並附加（此技能等級＋SPI調整值）D8暗蝕傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 卓爾（Drow）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -2338,7 +3060,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的卓爾幽域：盟友暗蝕抗性＋此技能等級×15、躲藏／潛行＋此技能等級×20；敵人偵察與暗蝕抗性－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 卓爾（Drow）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -2381,7 +3108,12 @@
           "effect": "你可引導神力驅散氣元素類生物，或斥喝／控制土元素類生物。判定以交涉＋此技能等級×10 對抗目標抗控制；每日總使用次數為3＋CHA調整值＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 土（Earth）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -2390,7 +3122,12 @@
           "effect": "當你或此技能等級×15英尺內一名可見目標受到物理傷害時，可瞬間反應，使該次傷害結算獲得此技能等級×10的物理抗性。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 土（Earth）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -2399,7 +3136,12 @@
           "effect": "你以攻擊或法術實際造成物理傷害後，可使該目標的物理抗性承受此技能等級×5減值，持續此技能等級分鐘；同來源不重複疊加。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 土（Earth）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -2408,7 +3150,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注大地，持續此技能等級分鐘：穿透此技能等級×10的物理抗性，並附加（此技能等級＋SPI調整值）D8 物理傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 土（Earth）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -2417,7 +3164,12 @@
           "effect": "瞬間展開半徑此技能等級×30英尺、持續此技能等級分鐘的大地神域：盟友物理抗性＋此技能等級×15，敵人物理抗性－此技能等級×15；盟友攻擊或法術命中時附加（此技能等級＋SPI調整值）D6 物理傷害。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 土（Earth）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -2464,7 +3216,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "planar_domain_two_slot"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 極樂（Elysium）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -2473,7 +3230,12 @@
           "effect": "你與此技能等級×10英尺內盟友對極樂位面的一般環境危害，以及該位面典型外界生物的法術／類法術效果，五抗增加此技能等級×10。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 極樂（Elysium）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -2482,7 +3244,12 @@
           "effect": "以即時動作傳送至此技能等級×20英尺內一處可見、未被占據的位置。若跨越封鎖、位面結界或傳送禁制則照常受阻。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 極樂（Elysium）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -2491,7 +3258,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注極樂，持續此技能等級分鐘：附加（此技能等級＋SPI調整值）D8 光耀傷害並穿透此技能等級×10法抗。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 極樂（Elysium）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -2503,7 +3275,12 @@
           "review_flags": [
             "planar_domain_two_slot",
             "ao_planar_trait_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 極樂（Elysium）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -2544,11 +3321,16 @@
         {
           "difficulty": 1,
           "name": "苦難恩賜",
-          "base_skill": "交涉",
+          "base_skill": "運動",
           "effect": "以即時動作激發耐久，持續此技能等級分鐘：強韌增加此技能等級×10，且由疲勞、失血、窒息等造成的CON相關減值降低此技能等級×5；每日使用此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 苦難（Endurance）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -2557,7 +3339,12 @@
           "effect": "以即時動作強化自己，持續此技能等級分鐘：強韌＋此技能等級×10，運動＋此技能等級×10。每日使用此技能等級＋CON調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 苦難（Endurance）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -2566,7 +3353,12 @@
           "effect": "當HP或SP低於一半時，你的物抗增加此技能等級×2，強韌與精神增加此技能等級×10；回到一半以上即停止。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 苦難（Endurance）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -2575,7 +3367,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注苦難與耐久，持續此技能等級分鐘：穿透此技能等級×10物抗並附加（此技能等級＋SPI調整值）D8物理傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 苦難（Endurance）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -2584,7 +3381,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的苦難與耐久化身領域：盟友物抗＋此技能等級×5、強韌＋此技能等級×20；敵人物抗－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 苦難（Endurance）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -2626,7 +3428,12 @@
           "effect": "施放邪惡 descriptor 或本領域法術時，總施法者等級額外＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 邪惡（Evil）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -2635,7 +3442,12 @@
           "effect": "以即時動作祝福自己或此技能等級×15英尺內一名盟友，持續此技能等級分鐘：對善良 descriptor 法術與超自然效果的五抗增加此技能等級×10。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 邪惡（Evil）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -2644,7 +3456,12 @@
           "effect": "你對善良陣營目標施放本領域法術時，施法判定增加此技能等級×10；若該法術要求抗性，目標相應抗性承受此技能等級×5減值。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 邪惡（Evil）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -2653,7 +3470,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注邪惡，持續此技能等級分鐘；對善良目標命中時額外造成（此技能等級＋SPI調整值）D8 暗蝕傷害，並穿透此技能等級×10法抗。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 邪惡（Evil）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -2662,7 +3484,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的邪惡神域：盟友對善良來源的五抗＋此技能等級×15；符合善良的敵對生物五抗－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 邪惡（Evil）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -2704,7 +3531,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "absolute_narrow_immunity"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 筵席（Feast）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -2713,7 +3545,12 @@
           "effect": "在短休或長休時，你可祝福最多此技能等級＋SPI調整值名共同進食者；休息完成時每人額外回復（此技能等級＋SPI調整值）D6 HP與此技能等級D4 SP。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 筵席（Feast）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -2722,7 +3559,12 @@
           "effect": "進行至少10分鐘的共同進食後，參與者在此技能等級小時內對毒素、疾病與恐懼的相關抗性增加此技能等級×10，並取得（此技能等級＋SPI調整值）D6臨時HP。同一長休前不能重複受益。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 筵席（Feast）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -2731,7 +3573,12 @@
           "effect": "花費1小時主持宴席，最多影響此技能等級×2名參與者；在接下來此技能等級小時中，其強韌、精神與抗控制＋此技能等級×10，且第一次陷入中毒／疾病／恐懼時可立即重骰相關檢定。每日使用1次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 筵席（Feast）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -2740,7 +3587,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的豐宴聖域：盟友每輪首次接受治療時額外回復此技能等級D4 HP；毒素、疾病與恐懼相關抗性＋此技能等級×20。食物與飲水不會因本能力自動具有永久經濟價值。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 筵席（Feast）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -2784,7 +3636,12 @@
           "effect": "對精類生物的法術、類法術與魅惑性超自然能力進行抗性／特殊豁免時，判定增加此技能等級×10。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 精類（Fey）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -2793,7 +3650,12 @@
           "effect": "以即時動作選擇此技能等級×15英尺內一個精類或與精類直接相關的自然生物，使其進行抗控制對抗交涉＋此技能等級×10；失敗則在此技能等級分鐘內停止敵對並接受簡單指令，受傷後可重新抵抗。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 精類（Fey）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -2802,7 +3664,12 @@
           "effect": "你與此技能等級×15英尺內盟友在自然知識、生存、偵察與對精類的抗性檢定上增加此技能等級×10。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 精類（Fey）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -2811,7 +3678,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注精類，持續此技能等級分鐘，命中附加（此技能等級＋SPI調整值）D8 力場傷害；對精類額外穿透此技能等級×10物抗或法抗（取適用者）。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 精類（Fey）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -2820,7 +3692,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的精類聖域：盟友自然／感知檢定＋此技能等級×20，相關精類若非既定死敵會優先停止無理由攻擊；敵對目標抗控制－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 精類（Fey）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -2862,7 +3739,12 @@
           "effect": "你可引導神力驅散寒冷／水元素類生物，或斥喝／控制火元素類生物。判定以交涉＋此技能等級×10 對抗目標抗控制；每日總使用次數為3＋CHA調整值＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 火（Fire）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -2871,7 +3753,12 @@
           "effect": "當你或此技能等級×15英尺內一名可見目標受到火焰傷害時，可瞬間反應，使該次傷害結算獲得此技能等級×10的火焰抗性。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 火（Fire）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -2880,7 +3767,12 @@
           "effect": "你以攻擊或法術實際造成火焰傷害後，可使該目標的火焰抗性承受此技能等級×5減值，持續此技能等級分鐘；同來源不重複疊加。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 火（Fire）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -2889,7 +3781,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注火焰，持續此技能等級分鐘：穿透此技能等級×10的火焰抗性，並附加（此技能等級＋SPI調整值）D8 火焰傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 火（Fire）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -2898,7 +3795,12 @@
           "effect": "瞬間展開半徑此技能等級×30英尺、持續此技能等級分鐘的火焰神域：盟友火焰抗性＋此技能等級×15，敵人火焰抗性－此技能等級×15；盟友攻擊或法術命中時附加（此技能等級＋SPI調整值）D6 火焰傷害。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 火（Fire）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -2942,7 +3844,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "capacity_rebuilt_without_hd"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 榮耀（Glory）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -2951,7 +3858,12 @@
           "effect": "以即時動作祝福自己或此技能等級×20英尺內盟友，持續此技能等級分鐘：攻擊命中＋此技能等級×10。每日使用此技能等級＋STR調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 榮耀（Glory）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -2960,7 +3872,12 @@
           "effect": "當你或此技能等級×20英尺內盟友遭命中後，可瞬間使其下一次攻擊命中＋此技能等級×10、傷害＋此技能等級；每日共享使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 榮耀（Glory）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -2969,7 +3886,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注榮耀，持續此技能等級分鐘：穿透此技能等級×10相應抗性，並附加（此技能等級＋SPI調整值）D8 光耀傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 榮耀（Glory）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -2978,7 +3900,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的榮耀戰域：盟友攻擊命中＋此技能等級×10、相應抗性＋此技能等級×10；敵人閃避與相應抗性各－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 榮耀（Glory）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -3017,13 +3944,18 @@
         {
           "difficulty": 1,
           "name": "暴食恩賜",
-          "base_skill": "交涉",
+          "base_skill": "運動",
           "effect": "以即時動作巨大化，持續此技能等級分鐘：STR相關運動與近戰傷害增加此技能等級，閃避承受10減值；每日可啟動此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
           "review_flags": [
             "size_change_simplified"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 暴食（Gluttony）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -3032,7 +3964,12 @@
           "effect": "以即時動作強化自己，持續此技能等級分鐘：強韌＋此技能等級×10，運動＋此技能等級×10。每日使用此技能等級＋CON調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 暴食（Gluttony）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -3041,7 +3978,12 @@
           "effect": "當HP或SP低於一半時，你的物抗增加此技能等級×2，強韌與精神增加此技能等級×10；回到一半以上即停止。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 暴食（Gluttony）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -3050,7 +3992,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注暴食，持續此技能等級分鐘：穿透此技能等級×10物抗並附加（此技能等級＋SPI調整值）D8物理傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 暴食（Gluttony）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -3059,7 +4006,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的暴食化身領域：盟友物抗＋此技能等級×5、強韌＋此技能等級×20；敵人物抗－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 暴食（Gluttony）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -3098,11 +4050,16 @@
         {
           "difficulty": 1,
           "name": "侏儒恩賜",
-          "base_skill": "交涉",
+          "base_skill": "知識",
           "effect": "施放幻術學派法術時，總施法者等級額外＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 侏儒（Gnome）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -3111,7 +4068,12 @@
           "effect": "以即時動作在此技能等級×15英尺內創造一個不具實體傷害的短暫幻象，持續此技能等級分鐘；觀察者若有理由懷疑，以感知／偵察對抗你的知識＋此技能等級×10。每日使用此技能等級＋INT調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 侏儒（Gnome）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -3120,7 +4082,12 @@
           "effect": "你施放幻術時施法判定＋此技能等級×10；盟友在你幻術提供的遮蔽中躲藏／潛行＋此技能等級×10，但幻術不創造真實掩體或物抗。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 侏儒（Gnome）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -3129,7 +4096,12 @@
           "effect": "此技能等級×2為可影響的幻術法術環數；受影響法術總施法者等級＋此技能等級，辨識／看破它們的相關檢定承受此技能等級×10減值。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 侏儒（Gnome）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -3138,7 +4110,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的幻象劇場：你可持續改變可見／可聞的非實體景象；盟友躲藏與幻術施法＋此技能等級×20，敵人辨識幻術－此技能等級×15。AO仍依感官來源區分『察覺異常』與『看破幻象』。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 侏儒（Gnome）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -3180,7 +4157,12 @@
           "effect": "施放善良 descriptor 或本領域法術時，總施法者等級額外＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 善良（Good）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -3189,7 +4171,12 @@
           "effect": "以即時動作祝福自己或此技能等級×15英尺內一名盟友，持續此技能等級分鐘：對邪惡 descriptor 法術與超自然效果的五抗增加此技能等級×10。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 善良（Good）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -3198,7 +4185,12 @@
           "effect": "你對邪惡陣營目標施放本領域法術時，施法判定增加此技能等級×10；若該法術要求抗性，目標相應抗性承受此技能等級×5減值。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 善良（Good）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -3207,7 +4199,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注善良，持續此技能等級分鐘；對邪惡目標命中時額外造成（此技能等級＋SPI調整值）D8 光耀傷害，並穿透此技能等級×10法抗。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 善良（Good）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -3216,7 +4213,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的善良神域：盟友對邪惡來源的五抗＋此技能等級×15；符合邪惡的敵對生物五抗－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 善良（Good）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -3258,7 +4260,12 @@
           "effect": "估價、開鎖、手上功夫檢定若低於操作／交涉中相應基礎值＋此技能等級×10，改用該值。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 貪婪（Greed）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -3267,7 +4274,12 @@
           "effect": "以即時動作祝福此技能等級×20英尺內一名自願目標，持續此技能等級分鐘；其估價、開鎖、手上功夫相關檢定增加此技能等級×10。每日使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 貪婪（Greed）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -3276,7 +4288,12 @@
           "effect": "當你或此技能等級×20英尺內盟友在估價、開鎖、手上功夫相關檢定失敗後，可瞬間允許其重骰一次並接受新結果；每日共享使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 貪婪（Greed）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -3285,7 +4302,12 @@
           "effect": "以即時動作選擇此技能等級×10英尺內一名盟友，持續此技能等級分鐘：其交涉與一項由你指定、符合貪婪目的的檢定＋此技能等級×10，且第一次非自然100的失敗可重骰。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 貪婪（Greed）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -3294,7 +4316,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的貪婪領域：盟友的交涉、察言觀色與符合領域主題的技能檢定＋此技能等級×20，並共享此技能等級次重骰池。此效果不直接把NPC態度改成友善。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 貪婪（Greed）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -3341,7 +4368,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "planar_domain_two_slot"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 黑帝斯／冥土（Hades）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -3350,7 +4382,12 @@
           "effect": "你與此技能等級×10英尺內盟友對冥土位面的一般環境危害，以及該位面典型外界生物的法術／類法術效果，五抗增加此技能等級×10。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 黑帝斯／冥土（Hades）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -3359,7 +4396,12 @@
           "effect": "以即時動作傳送至此技能等級×20英尺內一處可見、未被占據的位置。若跨越封鎖、位面結界或傳送禁制則照常受阻。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 黑帝斯／冥土（Hades）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -3368,7 +4410,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注冥土，持續此技能等級分鐘：附加（此技能等級＋SPI調整值）D8 暗蝕傷害並穿透此技能等級×10法抗。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 黑帝斯／冥土（Hades）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -3380,7 +4427,12 @@
           "review_flags": [
             "planar_domain_two_slot",
             "ao_planar_trait_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 黑帝斯／冥土（Hades）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -3424,7 +4476,12 @@
           "effect": "施放明確恢復HP／治療性法術時，總施法者等級額外＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 醫療（Healing）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -3433,7 +4490,12 @@
           "effect": "以即時動作治療以你為中心此技能等級×15英尺內最多此技能等級名自願盟友，各回復（此技能等級＋SPI調整值）D6 HP；每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 醫療（Healing）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -3442,7 +4504,12 @@
           "effect": "你的治療法術同時可對一名受術者嘗試解除一項毒素、疾病或可治療的身體負面狀態；使用施法判定＋此技能等級×10 對抗該效果的既有難度／來源判定。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 醫療（Healing）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -3451,7 +4518,12 @@
           "effect": "此技能等級×2為可影響的治療法術環數；受影響法術總施法者等級＋此技能等級，且每個治療骰最低視為2。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 醫療（Healing）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -3460,7 +4532,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的療癒聖域：盟友每輪回復此技能等級D4 HP，對毒素與疾病的抗性／強韌＋此技能等級×20；已死亡生物不因此復活。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 醫療（Healing）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -3498,13 +4575,18 @@
         {
           "difficulty": 1,
           "name": "饑餓恩賜",
-          "base_skill": "交涉",
+          "base_skill": "運動",
           "effect": "你取得咬擊天生武器；基礎傷害為1D6＋STR調整值＋此技能等級。若角色已有更高的合法咬擊基礎傷害，採較高者。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
           "review_flags": [
             "natural_weapon_formula_adapted"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 饑餓（Hunger）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -3513,7 +4595,12 @@
           "effect": "以即時動作強化自己，持續此技能等級分鐘：強韌＋此技能等級×10，運動＋此技能等級×10。每日使用此技能等級＋CON調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 饑餓（Hunger）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -3522,7 +4609,12 @@
           "effect": "當HP或SP低於一半時，你的物抗增加此技能等級×2，強韌與精神增加此技能等級×10；回到一半以上即停止。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 饑餓（Hunger）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -3531,7 +4623,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注饑餓，持續此技能等級分鐘：穿透此技能等級×10物抗並附加（此技能等級＋SPI調整值）D8物理傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 饑餓（Hunger）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -3540,7 +4637,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的饑餓化身領域：盟友物抗＋此技能等級×5、強韌＋此技能等級×20；敵人物抗－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 饑餓（Hunger）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -3583,7 +4685,12 @@
           "effect": "交涉檢定增加此技能等級×10；此加值只處理互動能力，不會自動改寫NPC態度或世界事實。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 喜樂（Joy）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -3592,7 +4699,12 @@
           "effect": "以即時動作祝福此技能等級×20英尺內一名自願目標，持續此技能等級分鐘；其交涉、表演相關檢定增加此技能等級×10。每日使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 喜樂（Joy）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -3601,7 +4713,12 @@
           "effect": "當你或此技能等級×20英尺內盟友在交涉、表演相關檢定失敗後，可瞬間允許其重骰一次並接受新結果；每日共享使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 喜樂（Joy）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -3610,7 +4727,12 @@
           "effect": "以即時動作選擇此技能等級×10英尺內一名盟友，持續此技能等級分鐘：其交涉與一項由你指定、符合喜樂目的的檢定＋此技能等級×10，且第一次非自然100的失敗可重骰。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 喜樂（Joy）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -3619,7 +4741,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的喜樂領域：盟友的交涉、察言觀色與符合領域主題的技能檢定＋此技能等級×20，並共享此技能等級次重骰池。此效果不直接把NPC態度改成友善。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 喜樂（Joy）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -3680,7 +4807,12 @@
           "effect": "施放秩序 descriptor 或本領域法術時，總施法者等級額外＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 秩序（Law）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -3689,7 +4821,12 @@
           "effect": "以即時動作祝福自己或此技能等級×15英尺內一名盟友，持續此技能等級分鐘：對混亂 descriptor 法術與超自然效果的五抗增加此技能等級×10。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 秩序（Law）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -3698,7 +4835,12 @@
           "effect": "你對混亂陣營目標施放本領域法術時，施法判定增加此技能等級×10；若該法術要求抗性，目標相應抗性承受此技能等級×5減值。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 秩序（Law）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -3707,7 +4849,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注秩序，持續此技能等級分鐘；對混亂目標命中時額外造成（此技能等級＋SPI調整值）D8 力場傷害，並穿透此技能等級×10法抗。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 秩序（Law）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -3716,7 +4863,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的秩序神域：盟友對混亂來源的五抗＋此技能等級×15；符合混亂的敵對生物五抗－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 秩序（Law）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -3757,7 +4909,12 @@
           "effect": "當你對魅惑、強迫或恐懼效果的抗控制檢定失敗後，可瞬間再擲一次並接受第二結果；每日使用此技能等級＋SPI調整值次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 解放（Liberation）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -3766,7 +4923,12 @@
           "effect": "當此技能等級×20英尺內一名可見盟友完成非劇情／非寶藏檢定後，可瞬間允許其重骰一次並接受新結果；每日共享使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 解放（Liberation）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -3775,7 +4937,12 @@
           "effect": "你或此技能等級×15英尺內盟友出現一般失敗（非自然100）時，可使其結果獲得此技能等級×10的結果修正後重新判定是否通過；同一骰不能同時使用本能力與解放干涉。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 解放（Liberation）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -3784,7 +4951,12 @@
           "effect": "以即時動作祝福此技能等級×10英尺內一名目標，持續此技能等級分鐘：其第一次攻擊、豁免或技能檢定失敗可重骰；之後效果結束。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 解放（Liberation）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -3793,7 +4965,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的解放領域；盟友共享此技能等級×2次非劇情／非寶藏重骰池，且自然100仍保留其大失敗事件標記，不能只靠加值抹除。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 解放（Liberation）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -3839,7 +5016,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "planar_domain_two_slot"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 無定界（Limbo）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -3848,7 +5030,12 @@
           "effect": "你與此技能等級×10英尺內盟友對無定界位面的一般環境危害，以及該位面典型外界生物的法術／類法術效果，五抗增加此技能等級×10。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 無定界（Limbo）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -3857,7 +5044,12 @@
           "effect": "以即時動作傳送至此技能等級×20英尺內一處可見、未被占據的位置。若跨越封鎖、位面結界或傳送禁制則照常受阻。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 無定界（Limbo）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -3866,7 +5058,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注無定界，持續此技能等級分鐘：附加（此技能等級＋SPI調整值）D8 力場傷害並穿透此技能等級×10法抗。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 無定界（Limbo）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -3878,7 +5075,12 @@
           "review_flags": [
             "planar_domain_two_slot",
             "ao_planar_trait_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 無定界（Limbo）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -3922,7 +5124,12 @@
           "effect": "完成一個非劇情／非寶藏檢定後，可宣告機運重骰並接受新結果；每日使用此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 機運（Luck）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -3931,7 +5138,12 @@
           "effect": "當此技能等級×20英尺內一名可見盟友完成非劇情／非寶藏檢定後，可瞬間允許其重骰一次並接受新結果；每日共享使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 機運（Luck）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -3940,7 +5152,12 @@
           "effect": "你或此技能等級×15英尺內盟友出現一般失敗（非自然100）時，可使其結果獲得此技能等級×10的結果修正後重新判定是否通過；同一骰不能同時使用本能力與機運干涉。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 機運（Luck）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -3949,7 +5166,12 @@
           "effect": "以即時動作祝福此技能等級×10英尺內一名目標，持續此技能等級分鐘：其第一次攻擊、豁免或技能檢定失敗可重骰；之後效果結束。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 機運（Luck）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -3958,7 +5180,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的機運領域；盟友共享此技能等級×2次非劇情／非寶藏重骰池，且自然100仍保留其大失敗事件標記，不能只靠加值抹除。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 機運（Luck）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -4002,7 +5229,12 @@
           "review_flags": [
             "source_power_has_self_penalty",
             "formula_rebuilt_for_d100"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 瘋狂／狂亂（Madness）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -4013,7 +5245,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "epistemic_boundary"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 瘋狂／狂亂（Madness）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -4022,7 +5259,12 @@
           "effect": "你與此技能等級×15英尺內盟友的抗控制、精神檢定增加此技能等級×10；若遭魅惑、恐懼或精神干擾失敗，每日可共享此技能等級次立即重骰。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 瘋狂／狂亂（Madness）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -4031,7 +5273,12 @@
           "effect": "此技能等級×2為可影響的魅惑／心靈／夢境類法術環數；受影響法術施法判定＋此技能等級×10，目標抗控制承受此技能等級×5減值。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 瘋狂／狂亂（Madness）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -4042,7 +5289,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "epistemic_boundary"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 瘋狂／狂亂（Madness）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -4082,13 +5334,18 @@
         {
           "difficulty": 1,
           "name": "魔法恩賜",
-          "base_skill": "交涉",
+          "base_skill": "知識",
           "effect": "使用魔法裝置啟動法師卷軸、法杖或其他法師條件物品時，判定增加此技能等級×10；可模擬的法師法術資格最高不超過自身牧師可用環數。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
           "review_flags": [
             "item_qualification_rebuilt"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 魔法（Magic）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -4097,7 +5354,12 @@
           "effect": "當此技能等級×15英尺內出現可辨識的法術或類法術效果時，可瞬間進行感知／辨識法術＋此技能等級×10的對抗；成功可使該效果的施法判定承受此技能等級×10減值，或讓一名受術者對該效果的抗性＋此技能等級×10（二選一）。每日使用此技能等級＋INT調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 魔法（Magic）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -4106,7 +5368,12 @@
           "effect": "你與此技能等級×15英尺內盟友的法術抗性增加此技能等級×10；你自己的本領域法術穿透法抗時亦增加此技能等級×5。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 魔法（Magic）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -4115,7 +5382,12 @@
           "effect": "此技能等級×2為可影響的本領域法術環數；受影響法術施法判定＋此技能等級×10、總施法者等級＋此技能等級。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 魔法（Magic）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -4124,7 +5396,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的魔法奧域：盟友法術抗性＋此技能等級×15、施法判定＋此技能等級×10；敵人法術抗性－此技能等級×15。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 魔法（Magic）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -4173,7 +5450,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "planar_domain_two_slot"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 機械界（Mechanus）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -4182,7 +5464,12 @@
           "effect": "你與此技能等級×10英尺內盟友對機械界位面的一般環境危害，以及該位面典型外界生物的法術／類法術效果，五抗增加此技能等級×10。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 機械界（Mechanus）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -4191,7 +5478,12 @@
           "effect": "以即時動作傳送至此技能等級×20英尺內一處可見、未被占據的位置。若跨越封鎖、位面結界或傳送禁制則照常受阻。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 機械界（Mechanus）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -4200,7 +5492,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注機械界，持續此技能等級分鐘：附加（此技能等級＋SPI調整值）D8 力場傷害並穿透此技能等級×10法抗。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 機械界（Mechanus）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -4212,7 +5509,12 @@
           "review_flags": [
             "planar_domain_two_slot",
             "ao_planar_trait_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 機械界（Mechanus）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -4252,11 +5554,16 @@
         {
           "difficulty": 1,
           "name": "心靈恩賜",
-          "base_skill": "交涉",
+          "base_skill": "感知",
           "effect": "唬騙、交涉、察言觀色檢定若低於交涉＋此技能等級×10，改用該值。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 心靈（Mind）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -4267,7 +5574,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "epistemic_boundary"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 心靈（Mind）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -4276,7 +5588,12 @@
           "effect": "你與此技能等級×15英尺內盟友的抗控制、精神檢定增加此技能等級×10；若遭魅惑、恐懼或精神干擾失敗，每日可共享此技能等級次立即重骰。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 心靈（Mind）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -4285,7 +5602,12 @@
           "effect": "此技能等級×2為可影響的魅惑／心靈／夢境類法術環數；受影響法術施法判定＋此技能等級×10，目標抗控制承受此技能等級×5減值。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 心靈（Mind）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -4296,7 +5618,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "epistemic_boundary"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 心靈（Mind）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -4339,7 +5666,12 @@
           "effect": "你可引導神力驅散／壓制獸化人與明確 lycanthrope 生物；判定以交涉＋此技能等級×10 對抗抗控制，每日使用3＋CHA調整值＋此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 月亮（Moon）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -4348,7 +5680,12 @@
           "effect": "以即時動作選擇此技能等級×15英尺內一個獸化人或與月光直接相關的自然生物，使其進行抗控制對抗交涉＋此技能等級×10；失敗則在此技能等級分鐘內停止敵對並接受簡單指令，受傷後可重新抵抗。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 月亮（Moon）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -4357,7 +5694,12 @@
           "effect": "你與此技能等級×15英尺內盟友在自然知識、生存、偵察與對獸化人的抗性檢定上增加此技能等級×10。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 月亮（Moon）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -4366,7 +5708,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注月光，持續此技能等級分鐘，命中附加（此技能等級＋SPI調整值）D8 光耀傷害；對獸化人額外穿透此技能等級×10物抗或法抗（取適用者）。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 月亮（Moon）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -4375,7 +5722,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的月光聖域：盟友自然／感知檢定＋此技能等級×20，相關獸化人若非既定死敵會優先停止無理由攻擊；敵對目標抗控制－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 月亮（Moon）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -4411,11 +5763,16 @@
         {
           "difficulty": 1,
           "name": "神秘恩賜",
-          "base_skill": "交涉",
+          "base_skill": "感知",
           "effect": "以即時動作取得神秘護持，直到下一次自身行動開始：五大抗性與強韌／精神／靈魂增加此技能等級×10；每日使用此技能等級＋CHA調整值次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 神秘（Mysticism）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -4424,7 +5781,12 @@
           "effect": "當此技能等級×15英尺內出現可辨識的法術或類法術效果時，可瞬間進行感知／辨識法術＋此技能等級×10的對抗；成功可使該效果的施法判定承受此技能等級×10減值，或讓一名受術者對該效果的抗性＋此技能等級×10（二選一）。每日使用此技能等級＋INT調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 神秘（Mysticism）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -4433,7 +5795,12 @@
           "effect": "你與此技能等級×15英尺內盟友的法術抗性增加此技能等級×10；你自己的本領域法術穿透法抗時亦增加此技能等級×5。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 神秘（Mysticism）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -4442,7 +5809,12 @@
           "effect": "此技能等級×2為可影響的本領域法術環數；受影響法術施法判定＋此技能等級×10、總施法者等級＋此技能等級。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 神秘（Mysticism）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -4451,7 +5823,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的神秘奧域：盟友法術抗性＋此技能等級×15、施法判定＋此技能等級×10；敵人法術抗性－此技能等級×15。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 神秘（Mysticism）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -4493,7 +5870,12 @@
           "effect": "你可自由在水下呼吸，總持續時間為此技能等級小時／長休，可分段使用；這不自動提供游泳速度。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 海洋（Ocean）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -4502,7 +5884,12 @@
           "effect": "在與海洋相符的自然環境中，你與此技能等級×10英尺內盟友忽略由一般地形造成的前此技能等級×10點移動／生存判定減值，並取得冰冷抗性＋此技能等級×5。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 海洋（Ocean）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -4513,7 +5900,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 海洋（Ocean）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -4522,7 +5914,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注海洋，持續此技能等級分鐘：穿透此技能等級×10的冰冷抗性，並附加（此技能等級＋SPI調整值）D8 冰冷傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 海洋（Ocean）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -4533,7 +5930,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 海洋（Ocean）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -4576,7 +5978,12 @@
           "effect": "估價、威嚇、察言觀色檢定若低於交涉＋此技能等級×10，改用該值。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 契約／誓約（Pact）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -4585,7 +5992,12 @@
           "effect": "以即時動作祝福此技能等級×20英尺內一名自願目標，持續此技能等級分鐘；其估價、威嚇、察言觀色相關檢定增加此技能等級×10。每日使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 契約／誓約（Pact）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -4594,7 +6006,12 @@
           "effect": "當你或此技能等級×20英尺內盟友在估價、威嚇、察言觀色相關檢定失敗後，可瞬間允許其重骰一次並接受新結果；每日共享使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 契約／誓約（Pact）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -4603,7 +6020,12 @@
           "effect": "以即時動作選擇此技能等級×10英尺內一名盟友，持續此技能等級分鐘：其交涉與一項由你指定、符合契約目的的檢定＋此技能等級×10，且第一次非自然100的失敗可重骰。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 契約／誓約（Pact）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -4612,7 +6034,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的契約領域：盟友的交涉、察言觀色與符合領域主題的技能檢定＋此技能等級×20，並共享此技能等級次重骰池。此效果不直接把NPC態度改成友善。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 契約／誓約（Pact）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -4657,7 +6084,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "absolute_narrow_immunity"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 疫病／瘟疫（Pestilence）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -4666,7 +6098,12 @@
           "effect": "以一般動作選擇此技能等級×15英尺內一目標，使其以強韌或相應五抗對抗交涉＋此技能等級×10；失敗則其暗蝕抗性承受此技能等級×10減值，持續此技能等級分鐘。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 疫病／瘟疫（Pestilence）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -4675,7 +6112,12 @@
           "effect": "你對與疫病相關的疾病、毒素、飢餓、脫水或腐敗效果進行抗性／強韌時增加此技能等級×10；若D1已提供明確免疫，則此加值延伸至與其不同但相鄰的危害，不重複增強已免疫項目。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 疫病／瘟疫（Pestilence）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -4684,7 +6126,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注疫病，持續此技能等級分鐘：附加（此技能等級＋SPI調整值）D8 暗蝕傷害，並使目標相應抗性－此技能等級×5至下一個自身行動。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 疫病／瘟疫（Pestilence）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -4693,7 +6140,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的疫病領域：盟友對毒病／腐敗類強韌與五抗＋此技能等級×15；敵人相應抗性－此技能等級×15。實際疾病、詛咒或傳染效果仍需明確能力／法術來源，不由光環自動生成。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 疫病／瘟疫（Pestilence）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -4738,7 +6190,12 @@
           "effect": "你可引導神力斥喝／控制植物類生物，以交涉＋此技能等級×10 對抗抗控制；自然知識檢定另增加此技能等級×10。每日控制能力使用3＋CHA調整值＋此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 植物（Plant）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -4747,7 +6204,12 @@
           "effect": "以即時動作選擇此技能等級×15英尺內一個植物或與植物直接相關的自然生物，使其進行抗控制對抗交涉＋此技能等級×10；失敗則在此技能等級分鐘內停止敵對並接受簡單指令，受傷後可重新抵抗。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 植物（Plant）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -4756,7 +6218,12 @@
           "effect": "你與此技能等級×15英尺內盟友在自然知識、生存、偵察與對植物的抗性檢定上增加此技能等級×10。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 植物（Plant）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -4765,7 +6232,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注植物，持續此技能等級分鐘，命中附加（此技能等級＋SPI調整值）D8 物理傷害；對植物額外穿透此技能等級×10物抗或法抗（取適用者）。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 植物（Plant）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -4774,7 +6246,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的植物聖域：盟友自然／感知檢定＋此技能等級×20，相關植物若非既定死敵會優先停止無理由攻擊；敵對目標抗控制－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 植物（Plant）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -4818,7 +6295,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "absolute_narrow_immunity"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 歡娛（Pleasure）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -4827,7 +6309,12 @@
           "effect": "以即時動作祝福此技能等級×20英尺內一名自願目標，持續此技能等級分鐘；其交涉、表演相關檢定增加此技能等級×10。每日使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 歡娛（Pleasure）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -4836,7 +6323,12 @@
           "effect": "當你或此技能等級×20英尺內盟友在交涉、表演相關檢定失敗後，可瞬間允許其重骰一次並接受新結果；每日共享使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 歡娛（Pleasure）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -4845,7 +6337,12 @@
           "effect": "以即時動作選擇此技能等級×10英尺內一名盟友，持續此技能等級分鐘：其交涉與一項由你指定、符合歡娛目的的檢定＋此技能等級×10，且第一次非自然100的失敗可重骰。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 歡娛（Pleasure）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -4854,7 +6351,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的歡娛領域：盟友的交涉、察言觀色與符合領域主題的技能檢定＋此技能等級×20，並共享此技能等級次重骰池。此效果不直接把NPC態度改成友善。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 歡娛（Pleasure）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -4892,11 +6394,16 @@
         {
           "difficulty": 1,
           "name": "傳送恩賜",
-          "base_skill": "交涉",
+          "base_skill": "感知",
           "effect": "搜索與辨識法術檢定可用來察覺啟用或休眠中的傳送門；若判定值低於感知＋此技能等級×10，改用該值。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 傳送（Portal）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -4905,7 +6412,12 @@
           "effect": "以即時動作移動或短距傳送至此技能等級×20英尺內可合法抵達的位置；是否屬傳送由領域主題決定，傳送禁制照常生效。每日使用此技能等級＋DEX調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 傳送（Portal）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -4914,7 +6426,12 @@
           "effect": "你與此技能等級×15英尺內一名盟友可在此技能等級分鐘內忽略由普通地形、束縛、緩速造成的前此技能等級×10點移動相關減值；真正封閉空間、位面禁制與傳奇拘束不被自動取消。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 傳送（Portal）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -4923,7 +6440,12 @@
           "effect": "以一般動作標記此技能等級×10英尺內一個位置或自願盟友，持續此技能等級分鐘；受益者可在期間一次立即移動此技能等級×20英尺而不改變其已宣告行動。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 傳送（Portal）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -4932,7 +6454,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的通途領域：盟友移動上限＋此技能等級×10英尺，移動相關檢定＋此技能等級×20；每名盟友在效果期間可一次重定位此技能等級×20英尺。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 傳送（Portal）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -4973,7 +6500,12 @@
           "effect": "以即時動作觸碰自己或盟友，使其下一次抗性／強韌／精神／靈魂檢定增加此技能等級×10；若此技能等級分鐘內未觸發則失效。每日使用此技能等級＋SPI調整值次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 保護（Protection）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -4982,7 +6514,12 @@
           "effect": "當此技能等級×15英尺內出現可辨識的法術或類法術效果時，可瞬間進行感知／辨識法術＋此技能等級×10的對抗；成功可使該效果的施法判定承受此技能等級×10減值，或讓一名受術者對該效果的抗性＋此技能等級×10（二選一）。每日使用此技能等級＋INT調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 保護（Protection）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -4991,7 +6528,12 @@
           "effect": "你與此技能等級×15英尺內盟友的法術抗性增加此技能等級×10；你自己的本領域法術穿透法抗時亦增加此技能等級×5。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 保護（Protection）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -5000,7 +6542,12 @@
           "effect": "此技能等級×2為可影響的本領域法術環數；受影響法術施法判定＋此技能等級×10、總施法者等級＋此技能等級。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 保護（Protection）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -5009,7 +6556,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的保護奧域：盟友法術抗性＋此技能等級×15、施法判定＋此技能等級×10；敵人法術抗性－此技能等級×15。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 保護（Protection）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -5046,11 +6598,16 @@
         {
           "difficulty": 1,
           "name": "淨化恩賜",
-          "base_skill": "交涉",
+          "base_skill": "知識",
           "effect": "施放防護系／明確淨化或解除負面效果的法術時，總施法者等級額外＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 淨化（Purification）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -5059,7 +6616,12 @@
           "effect": "當此技能等級×15英尺內出現可辨識的法術或類法術效果時，可瞬間進行感知／辨識法術＋此技能等級×10的對抗；成功可使該效果的施法判定承受此技能等級×10減值，或讓一名受術者對該效果的抗性＋此技能等級×10（二選一）。每日使用此技能等級＋INT調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 淨化（Purification）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -5068,7 +6630,12 @@
           "effect": "你與此技能等級×15英尺內盟友的法術抗性增加此技能等級×10；你自己的本領域法術穿透法抗時亦增加此技能等級×5。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 淨化（Purification）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -5077,7 +6644,12 @@
           "effect": "此技能等級×2為可影響的本領域法術環數；受影響法術施法判定＋此技能等級×10、總施法者等級＋此技能等級。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 淨化（Purification）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -5086,7 +6658,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的淨化奧域：盟友法術抗性＋此技能等級×15、施法判定＋此技能等級×10；敵人法術抗性－此技能等級×15。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 淨化（Purification）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -5123,14 +6700,19 @@
         {
           "difficulty": 1,
           "name": "安息恩賜",
-          "base_skill": "交涉",
+          "base_skill": "感知",
           "effect": "你可用一般動作進行安息之觸。成功接觸後擲（自身牧師環數＋此技能等級）D10；對活物僅在其自願或瀕死時可用來無痛終止生命；對不死生物則造成等同骰值的光耀傷害。每日使用1次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
           "review_flags": [
             "source_death_touch_reframed_for_repose",
             "high_impact_effect"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 安息（Repose）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -5139,7 +6721,12 @@
           "effect": "以即時動作祝福此技能等級×15英尺內一名生物，持續此技能等級分鐘：對死亡、吸能、靈魂與不死生物能力的相關檢定＋此技能等級×10。每日使用此技能等級＋RES調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 安息（Repose）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -5148,7 +6735,12 @@
           "effect": "對屍體、瀕死者或受不死力量干擾的目標進行1分鐘儀式，可停止自然腐敗與普通屍變此技能等級天；解除既有高階詛咒／亡靈效果仍需正常法術或對抗。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 安息（Repose）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -5157,7 +6749,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注安息之力，持續此技能等級分鐘：對不死生物附加（此技能等級＋SPI調整值）D8光耀傷害並穿透此技能等級×10暗蝕抗性。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 安息（Repose）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -5166,7 +6763,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的安息聖域：盟友對死亡／靈魂效果＋此技能等級×20；敵對不死生物抗控制與暗蝕抗性－此技能等級×15；區域內普通屍體不會自然轉化為不死生物。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 安息（Repose）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -5205,13 +6807,18 @@
         {
           "difficulty": 1,
           "name": "符文恩賜",
-          "base_skill": "交涉",
+          "base_skill": "操作",
           "effect": "你視為具備抄錄卷軸的必要製作接口；製作／抄錄卷軸相關判定增加此技能等級×10。實際金錢、時間與法術要求仍依D100卷軸規則。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
           "review_flags": [
             "crafting_interface_depends_on_d100_scroll_rules"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 符文（Rune）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -5222,7 +6829,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "temporary_item_bonus"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 符文（Rune）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -5231,7 +6843,12 @@
           "effect": "花費1小時進行儀式；製作、修復、抄錄與魔法物品學相關檢定增加此技能等級×20，且本次工作中由低品質工具／臨時工房造成的減值最多降低此技能等級×10。材料與金錢成本不會憑空免除。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 符文（Rune）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -5240,7 +6857,12 @@
           "effect": "此技能等級×2為可影響的本領域／創造類法術環數。受影響法術的施法判定＋此技能等級×10，總施法者等級另＋此技能等級；若法術創造永久物件，仍支付原有材料／代價。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 符文（Rune）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -5251,7 +6873,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "temporary_item_bonus"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 符文（Rune）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -5298,7 +6925,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "volume_rescaled"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 沙（Sand）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -5307,7 +6939,12 @@
           "effect": "在與沙海相符的自然環境中，你與此技能等級×10英尺內盟友忽略由一般地形造成的前此技能等級×10點移動／生存判定減值，並取得物理抗性＋此技能等級×5。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 沙（Sand）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -5318,7 +6955,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 沙（Sand）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -5327,7 +6969,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注沙海，持續此技能等級分鐘：穿透此技能等級×10的物理抗性，並附加（此技能等級＋SPI調整值）D8 物理傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 沙（Sand）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -5338,7 +6985,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 沙（Sand）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
@@ -5378,11 +7030,16 @@
         {
           "difficulty": 1,
           "name": "水族恩賜",
-          "base_skill": "交涉",
+          "base_skill": "運動",
           "effect": "游泳檢定增加此技能等級×10；若已有游泳速度，速度增加此技能等級×5英尺，否則可用一般移動上限的一半作為穩定游泳速度。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 水族（Seafolk）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -5391,7 +7048,12 @@
           "effect": "在與水族相符的自然環境中，你與此技能等級×10英尺內盟友忽略由一般地形造成的前此技能等級×10點移動／生存判定減值，並取得冰冷抗性＋此技能等級×5。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 水族（Seafolk）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -5402,7 +7064,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 水族（Seafolk）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -5411,7 +7078,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注水族，持續此技能等級分鐘：穿透此技能等級×10的冰冷抗性，並附加（此技能等級＋SPI調整值）D8 冰冷傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 水族（Seafolk）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -5422,7 +7094,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 水族（Seafolk）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -5460,11 +7137,16 @@
         {
           "difficulty": 1,
           "name": "天空恩賜",
-          "base_skill": "交涉",
+          "base_skill": "感知",
           "effect": "偵察檢定增加此技能等級×10；若已有飛行或滑翔速度，增加此技能等級×5英尺。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 天空（Sky）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -5473,7 +7155,12 @@
           "effect": "在與天空相符的自然環境中，你與此技能等級×10英尺內盟友忽略由一般地形造成的前此技能等級×10點移動／生存判定減值，並取得閃電抗性＋此技能等級×5。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 天空（Sky）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -5484,7 +7171,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 天空（Sky）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -5493,7 +7185,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注天空，持續此技能等級分鐘：穿透此技能等級×10的閃電抗性，並附加（此技能等級＋SPI調整值）D8 閃電傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 天空（Sky）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -5504,7 +7201,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 天空（Sky）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -5540,11 +7242,16 @@
         {
           "difficulty": 1,
           "name": "法術恩賜",
-          "base_skill": "交涉",
+          "base_skill": "知識",
           "effect": "戰鬥施法與辨識法術檢定增加此技能等級×10。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 法術（Spell）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -5553,7 +7260,12 @@
           "effect": "當此技能等級×15英尺內出現可辨識的法術或類法術效果時，可瞬間進行感知／辨識法術＋此技能等級×10的對抗；成功可使該效果的施法判定承受此技能等級×10減值，或讓一名受術者對該效果的抗性＋此技能等級×10（二選一）。每日使用此技能等級＋INT調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 法術（Spell）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -5562,7 +7274,12 @@
           "effect": "你與此技能等級×15英尺內盟友的法術抗性增加此技能等級×10；你自己的本領域法術穿透法抗時亦增加此技能等級×5。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 法術（Spell）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -5571,7 +7288,12 @@
           "effect": "此技能等級×2為可影響的本領域法術環數；受影響法術施法判定＋此技能等級×10、總施法者等級＋此技能等級。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 法術（Spell）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -5580,7 +7302,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的法術奧域：盟友法術抗性＋此技能等級×15、施法判定＋此技能等級×10；敵人法術抗性－此技能等級×15。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 法術（Spell）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -5623,7 +7350,12 @@
           "effect": "你可引導神力斥喝／控制蜘蛛與蜘蛛類生物，以交涉＋此技能等級×10 對抗抗控制；每日使用3＋CHA調整值＋此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 蜘蛛（Spider）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -5632,7 +7364,12 @@
           "effect": "以即時動作選擇此技能等級×15英尺內一個蜘蛛或與蜘蛛直接相關的自然生物，使其進行抗控制對抗交涉＋此技能等級×10；失敗則在此技能等級分鐘內停止敵對並接受簡單指令，受傷後可重新抵抗。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 蜘蛛（Spider）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -5641,7 +7378,12 @@
           "effect": "你與此技能等級×15英尺內盟友在自然知識、生存、偵察與對蜘蛛的抗性檢定上增加此技能等級×10。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 蜘蛛（Spider）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -5650,7 +7392,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注蜘蛛，持續此技能等級分鐘，命中附加（此技能等級＋SPI調整值）D8 暗蝕傷害；對蜘蛛額外穿透此技能等級×10物抗或法抗（取適用者）。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 蜘蛛（Spider）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -5659,7 +7406,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的蜘蛛聖域：盟友自然／感知檢定＋此技能等級×20，相關蜘蛛若非既定死敵會優先停止無理由攻擊；敵對目標抗控制－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 蜘蛛（Spider）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -5699,7 +7451,12 @@
           "effect": "閃電抗性增加此技能等級×10。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 風暴（Storm）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -5708,7 +7465,12 @@
           "effect": "當你或此技能等級×15英尺內一名可見目標受到閃電或音波傷害時，可瞬間反應，使該次結算獲得此技能等級×10的相應抗性。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 風暴（Storm）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -5717,7 +7479,12 @@
           "effect": "你與此技能等級×15英尺內盟友在強風、暴雨、暴雪與一般風暴造成的移動／偵察／聆聽減值中，最多忽略此技能等級×10；自然雷擊與其他獨立傷害仍正常結算。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 風暴（Storm）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -5726,7 +7493,12 @@
           "effect": "以即時動作在此技能等級×20英尺半徑建立持續此技能等級分鐘的風暴護幕：盟友閃電與音波抗性＋此技能等級×10；穿越護幕的普通遠程攻擊命中承受此技能等級×10減值。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 風暴（Storm）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -5737,7 +7509,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_weather_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 風暴（Storm）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -5776,11 +7553,16 @@
         {
           "difficulty": 1,
           "name": "力量恩賜",
-          "base_skill": "交涉",
+          "base_skill": "運動",
           "effect": "以即時動作取得神力強化，持續此技能等級分鐘：運動檢定增加此技能等級×10，近戰武器傷害增加此技能等級；每日使用此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 力量（Strength）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -5789,7 +7571,12 @@
           "effect": "以即時動作強化自己，持續此技能等級分鐘：強韌＋此技能等級×10，運動＋此技能等級×10。每日使用此技能等級＋CON調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 力量（Strength）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -5798,7 +7585,12 @@
           "effect": "當HP或SP低於一半時，你的物抗增加此技能等級×2，強韌與精神增加此技能等級×10；回到一半以上即停止。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 力量（Strength）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -5807,7 +7599,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注力量，持續此技能等級分鐘：穿透此技能等級×10物抗並附加（此技能等級＋SPI調整值）D8物理傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 力量（Strength）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -5816,7 +7613,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的力量化身領域：盟友物抗＋此技能等級×5、強韌＋此技能等級×20；敵人物抗－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 力量（Strength）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -5858,7 +7660,12 @@
           "effect": "火焰抗性增加此技能等級×5；在高熱、沙漠或夏季環境中，感知與相關生存檢定另增加此技能等級×10。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 盛夏（Summer）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -5867,7 +7674,12 @@
           "effect": "在與盛夏相符的自然環境中，你與此技能等級×10英尺內盟友忽略由一般地形造成的前此技能等級×10點移動／生存判定減值，並取得火焰抗性＋此技能等級×5。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 盛夏（Summer）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -5878,7 +7690,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 盛夏（Summer）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -5887,7 +7704,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注盛夏，持續此技能等級分鐘：穿透此技能等級×10的火焰抗性，並附加（此技能等級＋SPI調整值）D8 火焰傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 盛夏（Summer）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -5898,7 +7720,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 盛夏（Summer）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -5938,7 +7765,12 @@
           "effect": "使用驅散不死生物時，可將一次使用升格為太陽驅散：判定增加此技能等級×20；成功後額外造成（此技能等級＋SPI調整值）D8光耀傷害。每日使用此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 太陽（Sun）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -5947,7 +7779,12 @@
           "effect": "以即時動作祝福此技能等級×15英尺內一名目標，持續此技能等級分鐘：暗蝕抗性＋此技能等級×10，對不死生物造成的恐懼／吸能／死亡類效果相關抗性＋此技能等級×10。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 太陽（Sun）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -5956,7 +7793,12 @@
           "effect": "你在明亮日光或自己製造的神聖日光中使用驅散不死生物時，判定再增加此技能等級×10；受影響的不死生物暗蝕抗性承受此技能等級×10減值，持續此技能等級分鐘。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 太陽（Sun）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -5965,7 +7807,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注日炎，持續此技能等級分鐘：各穿透此技能等級×5的光耀與火焰抗性，命中不死生物時附加（此技能等級＋SPI調整值）D10光耀傷害，其他目標為D6。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 太陽（Sun）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -5974,7 +7821,12 @@
           "effect": "展開半徑此技能等級×40英尺、持續此技能等級分鐘的神聖日光：盟友暗蝕抗性＋此技能等級×15；敵對不死生物抗控制與暗蝕抗性各－此技能等級×15；普通魔法黑暗若強度不高於本技能可影響尺度則被壓制。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 太陽（Sun）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -6016,7 +7868,12 @@
           "effect": "你可斥喝／控制泥形怪，以交涉＋此技能等級×10 對抗抗控制；另在脫水、乾渴與極乾環境的強韌檢定增加此技能等級×10。控制能力每日使用3＋CHA調整值＋此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 乾渴（Thirst）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -6025,7 +7882,12 @@
           "effect": "以一般動作選擇此技能等級×15英尺內一目標，使其以強韌或相應五抗對抗交涉＋此技能等級×10；失敗則其暗蝕抗性承受此技能等級×10減值，持續此技能等級分鐘。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 乾渴（Thirst）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -6034,7 +7896,12 @@
           "effect": "你對與乾渴相關的疾病、毒素、飢餓、脫水或腐敗效果進行抗性／強韌時增加此技能等級×10；若D1已提供明確免疫，則此加值延伸至與其不同但相鄰的危害，不重複增強已免疫項目。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 乾渴（Thirst）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -6043,7 +7910,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注乾渴，持續此技能等級分鐘：附加（此技能等級＋SPI調整值）D8 暗蝕傷害，並使目標相應抗性－此技能等級×5至下一個自身行動。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 乾渴（Thirst）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -6052,7 +7924,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的乾渴領域：盟友對毒病／腐敗類強韌與五抗＋此技能等級×15；敵人相應抗性－此技能等級×15。實際疾病、詛咒或傳染效果仍需明確能力／法術來源，不由光環自動生成。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 乾渴（Thirst）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -6089,11 +7966,16 @@
         {
           "difficulty": 1,
           "name": "貿易恩賜",
-          "base_skill": "交涉",
+          "base_skill": "感知",
           "effect": "以即時動作選擇此技能等級×15英尺內一名可見生物，進行感知對其抗魔法／抗控制（依效果來源）對抗；成功可讀取表面思緒至多此技能等級分鐘。每日使用此技能等級次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 貿易（Trade）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -6102,7 +7984,12 @@
           "effect": "以即時動作祝福此技能等級×20英尺內一名自願目標，持續此技能等級分鐘；其估價、交涉、察言觀色相關檢定增加此技能等級×10。每日使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 貿易（Trade）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -6111,7 +7998,12 @@
           "effect": "當你或此技能等級×20英尺內盟友在估價、交涉、察言觀色相關檢定失敗後，可瞬間允許其重骰一次並接受新結果；每日共享使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 貿易（Trade）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -6120,7 +8012,12 @@
           "effect": "以即時動作選擇此技能等級×10英尺內一名盟友，持續此技能等級分鐘：其交涉與一項由你指定、符合貿易目的的檢定＋此技能等級×10，且第一次非自然100的失敗可重骰。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 貿易（Trade）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -6129,7 +8026,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的貿易領域：盟友的交涉、察言觀色與符合領域主題的技能檢定＋此技能等級×20，並共享此技能等級次重骰池。此效果不直接把NPC態度改成友善。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 貿易（Trade）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -6169,7 +8071,12 @@
           "effect": "生存檢定增加此技能等級×10。當移動被非傳奇束縛、緩速或地形妨礙時，可瞬間忽略該次移動妨礙；每日使用此技能等級＋SPI調整值次。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 旅行（Travel）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -6178,7 +8085,12 @@
           "effect": "以即時動作移動或短距傳送至此技能等級×20英尺內可合法抵達的位置；是否屬傳送由領域主題決定，傳送禁制照常生效。每日使用此技能等級＋DEX調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 旅行（Travel）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -6187,7 +8099,12 @@
           "effect": "你與此技能等級×15英尺內一名盟友可在此技能等級分鐘內忽略由普通地形、束縛、緩速造成的前此技能等級×10點移動相關減值；真正封閉空間、位面禁制與傳奇拘束不被自動取消。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 旅行（Travel）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -6196,7 +8113,12 @@
           "effect": "以一般動作標記此技能等級×10英尺內一個位置或自願盟友，持續此技能等級分鐘；受益者可在期間一次立即移動此技能等級×20英尺而不改變其已宣告行動。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 旅行（Travel）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -6205,7 +8127,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的通途領域：盟友移動上限＋此技能等級×10英尺，移動相關檢定＋此技能等級×20；每名盟友在效果期間可一次重定位此技能等級×20英尺。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 旅行（Travel）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -6283,7 +8210,12 @@
           "effect": "你可引導神力驅散火元素類生物，或斥喝／控制水元素類生物。判定以交涉＋此技能等級×10 對抗目標抗控制；每日總使用次數為3＋CHA調整值＋此技能等級。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 水（Water）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -6292,7 +8224,12 @@
           "effect": "當你或此技能等級×15英尺內一名可見目標受到冰冷傷害時，可瞬間反應，使該次傷害結算獲得此技能等級×10的冰冷抗性。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 水（Water）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -6301,7 +8238,12 @@
           "effect": "你以攻擊或法術實際造成冰冷傷害後，可使該目標的冰冷抗性承受此技能等級×5減值，持續此技能等級分鐘；同來源不重複疊加。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 水（Water）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -6310,7 +8252,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注流水與寒流，持續此技能等級分鐘：穿透此技能等級×10的冰冷抗性，並附加（此技能等級＋SPI調整值）D8 冰冷傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 水（Water）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -6319,7 +8266,12 @@
           "effect": "瞬間展開半徑此技能等級×30英尺、持續此技能等級分鐘的流水與寒流神域：盟友冰冷抗性＋此技能等級×15，敵人冰冷抗性－此技能等級×15；盟友攻擊或法術命中時附加（此技能等級＋SPI調整值）D6 冰冷傷害。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 水（Water）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -6361,7 +8313,12 @@
           "effect": "在冬季、積雪或明確嚴寒環境中，感知、察言觀色、自然知識與生存等以WIS為核心的相關檢定增加此技能等級×10。",
           "origin": "source_granted_power_adaptation",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 隆冬（Winter）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -6370,7 +8327,12 @@
           "effect": "在與隆冬相符的自然環境中，你與此技能等級×10英尺內盟友忽略由一般地形造成的前此技能等級×10點移動／生存判定減值，並取得冰冷抗性＋此技能等級×5。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 隆冬（Winter）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -6381,7 +8343,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 隆冬（Winter）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -6390,7 +8357,12 @@
           "effect": "以即時動作為此技能等級×10英尺內一件武器灌注隆冬，持續此技能等級分鐘：穿透此技能等級×10的冰冷抗性，並附加（此技能等級＋SPI調整值）D8 冰冷傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 隆冬（Winter）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -6401,7 +8373,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "ao_environment_resolution"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 隆冬（Winter）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [],
@@ -6445,7 +8422,12 @@
           "status": "provisional_usable",
           "review_flags": [
             "reaction_economy_adapted"
-          ]
+          ],
+          "prerequisites": [
+            "角色已取得 神譴／憤怒（Wrath）領域",
+            "自身牧師環數 >= 1"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 2,
@@ -6454,7 +8436,12 @@
           "effect": "以即時動作祝福自己或此技能等級×20英尺內盟友，持續此技能等級分鐘：攻擊命中＋此技能等級×10。每日使用此技能等級＋STR調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 神譴／憤怒（Wrath）領域",
+            "自身牧師環數 >= 2"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 3,
@@ -6463,7 +8450,12 @@
           "effect": "當你或此技能等級×20英尺內盟友遭命中後，可瞬間使其下一次攻擊命中＋此技能等級×10、傷害＋此技能等級；每日共享使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 神譴／憤怒（Wrath）領域",
+            "自身牧師環數 >= 3"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 4,
@@ -6472,7 +8464,12 @@
           "effect": "以即時動作為此技能等級×10英尺內武器灌注神譴，持續此技能等級分鐘：穿透此技能等級×10相應抗性，並附加（此技能等級＋SPI調整值）D8 物理傷害。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 神譴／憤怒（Wrath）領域",
+            "自身牧師環數 >= 4"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         },
         {
           "difficulty": 5,
@@ -6481,7 +8478,12 @@
           "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的神譴戰域：盟友攻擊命中＋此技能等級×10、相應抗性＋此技能等級×10；敵人閃避與相應抗性各－此技能等級×10。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [],
+          "prerequisites": [
+            "角色已取得 神譴／憤怒（Wrath）領域",
+            "自身牧師環數 >= 5"
+          ],
+          "cost_rule": "依一般技能CP：該級成本 = 2^(技能等級) × 專長難度"
         }
       ],
       "review_flags": [
