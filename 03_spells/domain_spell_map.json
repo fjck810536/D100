@@ -1,5 +1,5 @@
 {
-  "schema": "d100-domain-spell-reverse-index-v2",
+  "schema": "d100-domain-spell-reverse-index-v2.1",
   "research_snapshot": "2026-09-21",
   "policy": {
     "source_spell_records_are_read_only": true,
@@ -229,7 +229,8 @@
           "artifice",
           "craft"
         ],
-        "note": "Artifice Domain (Hardening/True Creation) and Craft Domain (Fantastic Machine line) are distinct official domains."
+        "note": "Artifice Domain (Hardening/True Creation) and Craft Domain (Fantastic Machine line) are distinct official domains.",
+        "provenance_note": "Legacy taxonomy bucket 工藝 contained both Artifice and Craft records. Raw class labels distinguish 工匠領域 (Artifice) from 工藝 (Craft)."
       },
       {
         "kind": "false_merge_split",
@@ -241,9 +242,15 @@
           "cold",
           "winter"
         ],
-        "note": "Cold Domain and Winter Domain are distinct official domains with different spell lists."
+        "note": "Cold Domain and Winter Domain are distinct official domains with different spell lists.",
+        "provenance_note": "Legacy taxonomy bucket 隆冬 contained both Cold and Winter records. Raw class labels distinguish 寒冷 (Cold) from 隆冬 (Winter)."
       }
-    ]
+    ],
+    "label_provenance": {
+      "raw_class_labels": "Observed directly in Spellbook spell-level/class data.",
+      "legacy_taxonomy_labels": "Labels inherited from the friend's taxonomy bucket; may be lossy and are not proof that every spell in the bucket used that label.",
+      "ambiguous_legacy_taxonomy_labels": "A legacy taxonomy label that previously collapsed two distinct canonical D&D domains."
+    }
   },
   "domain_count": 83,
   "domains": [
@@ -256,9 +263,6 @@
         "page": "282",
         "planar": true
       },
-      "source_labels": [
-        "深淵"
-      ],
       "spell_count": 3,
       "spells": [
         {
@@ -273,9 +277,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "abyss",
-          "source_domain_labels": [
-            "深淵"
-          ],
           "raw_class_labels": [
             "深淵"
           ]
@@ -292,9 +293,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "abyss",
-          "source_domain_labels": [
-            "深淵"
-          ],
           "raw_class_labels": [
             "深淵"
           ]
@@ -311,13 +309,16 @@
             "萬法大全"
           ],
           "canonical_domain_id": "abyss",
-          "source_domain_labels": [
-            "深淵"
-          ],
           "raw_class_labels": [
             "深淵"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "深淵"
+      ],
+      "legacy_taxonomy_labels": [
+        "深淵"
       ]
     },
     {
@@ -329,10 +330,6 @@
         "page": "185",
         "planar": false
       },
-      "source_labels": [
-        "氣",
-        "風"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -345,9 +342,6 @@
           "level_text_raw": "風 1，牧師 1，德魯伊 1，術士/法師 1，水 1",
           "spell_sources": [],
           "canonical_domain_id": "air",
-          "source_domain_labels": [
-            "氣"
-          ],
           "raw_class_labels": [
             "風"
           ]
@@ -362,9 +356,6 @@
           "level_text_raw": "氣 2，牧師 3，德魯伊 3，巡林客 2，術士/法師 3",
           "spell_sources": [],
           "canonical_domain_id": "air",
-          "source_domain_labels": [
-            "氣"
-          ],
           "raw_class_labels": [
             "氣"
           ]
@@ -379,9 +370,6 @@
           "level_text_raw": "氣 3，吟游詩人 3，術士/法師 3",
           "spell_sources": [],
           "canonical_domain_id": "air",
-          "source_domain_labels": [
-            "氣"
-          ],
           "raw_class_labels": [
             "氣"
           ]
@@ -396,9 +384,6 @@
           "level_text_raw": "氣 4，牧師 4，德魯伊 4",
           "spell_sources": [],
           "canonical_domain_id": "air",
-          "source_domain_labels": [
-            "氣"
-          ],
           "raw_class_labels": [
             "氣"
           ]
@@ -413,9 +398,6 @@
           "level_text_raw": "氣 5，德魯伊 5",
           "spell_sources": [],
           "canonical_domain_id": "air",
-          "source_domain_labels": [
-            "氣"
-          ],
           "raw_class_labels": [
             "氣"
           ]
@@ -430,9 +412,6 @@
           "level_text_raw": "氣 6,術士/法師 6",
           "spell_sources": [],
           "canonical_domain_id": "air",
-          "source_domain_labels": [
-            "氣"
-          ],
           "raw_class_labels": [
             "氣"
           ]
@@ -447,9 +426,6 @@
           "level_text_raw": "氣 7，牧師 7，德魯伊 7，術士/法師 7",
           "spell_sources": [],
           "canonical_domain_id": "air",
-          "source_domain_labels": [
-            "氣"
-          ],
           "raw_class_labels": [
             "氣"
           ]
@@ -464,9 +440,6 @@
           "level_text_raw": "氣 8，德魯伊 8",
           "spell_sources": [],
           "canonical_domain_id": "air",
-          "source_domain_labels": [
-            "氣"
-          ],
           "raw_class_labels": [
             "氣"
           ]
@@ -483,13 +456,18 @@
             "完美奧術"
           ],
           "canonical_domain_id": "air",
-          "source_domain_labels": [
-            "氣"
-          ],
           "raw_class_labels": [
             "氣"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "氣",
+        "風"
+      ],
+      "legacy_taxonomy_labels": [
+        "氣",
+        "風"
       ]
     },
     {
@@ -501,9 +479,6 @@
         "page": "186",
         "planar": false
       },
-      "source_labels": [
-        "動物"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -516,9 +491,6 @@
           "level_text_raw": "動物 1，德魯伊 1，巡林客 1",
           "spell_sources": [],
           "canonical_domain_id": "animal",
-          "source_domain_labels": [
-            "動物"
-          ],
           "raw_class_labels": [
             "動物"
           ]
@@ -533,9 +505,6 @@
           "level_text_raw": "動物 2，德魯伊 2，巡林客 2",
           "spell_sources": [],
           "canonical_domain_id": "animal",
-          "source_domain_labels": [
-            "動物"
-          ],
           "raw_class_labels": [
             "動物"
           ]
@@ -550,9 +519,6 @@
           "level_text_raw": "動物 3，德魯伊 3",
           "spell_sources": [],
           "canonical_domain_id": "animal",
-          "source_domain_labels": [
-            "動物"
-          ],
           "raw_class_labels": [
             "動物"
           ]
@@ -567,9 +533,6 @@
           "level_text_raw": "動物 4，德魯伊 4，巡林客 4",
           "spell_sources": [],
           "canonical_domain_id": "animal",
-          "source_domain_labels": [
-            "動物"
-          ],
           "raw_class_labels": [
             "動物"
           ]
@@ -584,9 +547,6 @@
           "level_text_raw": "動物 5，德魯伊 5，巡林客 4",
           "spell_sources": [],
           "canonical_domain_id": "animal",
-          "source_domain_labels": [
-            "動物"
-          ],
           "raw_class_labels": [
             "動物"
           ]
@@ -601,9 +561,6 @@
           "level_text_raw": "動物 6，牧師 6，德魯伊 6",
           "spell_sources": [],
           "canonical_domain_id": "animal",
-          "source_domain_labels": [
-            "動物"
-          ],
           "raw_class_labels": [
             "動物"
           ]
@@ -618,9 +575,6 @@
           "level_text_raw": "動物 7，德魯伊 8",
           "spell_sources": [],
           "canonical_domain_id": "animal",
-          "source_domain_labels": [
-            "動物"
-          ],
           "raw_class_labels": [
             "動物"
           ]
@@ -635,9 +589,6 @@
           "level_text_raw": "動物 8，德魯伊 8",
           "spell_sources": [],
           "canonical_domain_id": "animal",
-          "source_domain_labels": [
-            "動物"
-          ],
           "raw_class_labels": [
             "動物"
           ]
@@ -652,13 +603,16 @@
           "level_text_raw": "動物 9，德魯伊 9，術士/法師 9",
           "spell_sources": [],
           "canonical_domain_id": "animal",
-          "source_domain_labels": [
-            "動物"
-          ],
           "raw_class_labels": [
             "動物"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "動物"
+      ],
+      "legacy_taxonomy_labels": [
+        "動物"
       ]
     },
     {
@@ -670,10 +624,6 @@
         "page": "282–283",
         "planar": true
       },
-      "source_labels": [
-        "原野",
-        "原野領域 Arborea"
-      ],
       "spell_count": 1,
       "spells": [
         {
@@ -688,13 +638,17 @@
             "萬法大全"
           ],
           "canonical_domain_id": "arborea",
-          "source_domain_labels": [
-            "原野"
-          ],
           "raw_class_labels": [
             "原野領域 Arborea"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "原野領域 Arborea"
+      ],
+      "legacy_taxonomy_labels": [
+        "原野",
+        "原野領域 Arborea"
       ]
     },
     {
@@ -706,10 +660,6 @@
         "page": "104",
         "planar": false
       },
-      "source_labels": [
-        "工匠領域",
-        "工藝"
-      ],
       "spell_count": 2,
       "spells": [
         {
@@ -724,9 +674,6 @@
             "ECS"
           ],
           "canonical_domain_id": "artifice",
-          "source_domain_labels": [
-            "工藝"
-          ],
           "raw_class_labels": [
             "工匠領域"
           ]
@@ -743,13 +690,20 @@
             "ECS"
           ],
           "canonical_domain_id": "artifice",
-          "source_domain_labels": [
-            "工藝"
-          ],
           "raw_class_labels": [
             "工匠領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "工匠領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "工匠領域",
+        "工藝"
+      ],
+      "ambiguous_legacy_taxonomy_labels": [
+        "工藝"
       ]
     },
     {
@@ -761,11 +715,6 @@
         "page": "271",
         "planar": false
       },
-      "source_labels": [
-        "平衡",
-        "平衡（Balance ）",
-        "平衡（Balance）"
-      ],
       "spell_count": 4,
       "spells": [
         {
@@ -780,9 +729,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "balance",
-          "source_domain_labels": [
-            "平衡"
-          ],
           "raw_class_labels": [
             "平衡"
           ]
@@ -799,9 +745,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "balance",
-          "source_domain_labels": [
-            "平衡"
-          ],
           "raw_class_labels": [
             "平衡"
           ]
@@ -818,9 +761,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "balance",
-          "source_domain_labels": [
-            "平衡"
-          ],
           "raw_class_labels": [
             "平衡（Balance ）"
           ]
@@ -837,13 +777,20 @@
             "萬法大全"
           ],
           "canonical_domain_id": "balance",
-          "source_domain_labels": [
-            "平衡"
-          ],
           "raw_class_labels": [
             "平衡（Balance）"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "平衡",
+        "平衡（Balance ）",
+        "平衡（Balance）"
+      ],
+      "legacy_taxonomy_labels": [
+        "平衡",
+        "平衡（Balance ）",
+        "平衡（Balance）"
       ]
     },
     {
@@ -855,11 +802,6 @@
         "page": "109",
         "planar": false
       },
-      "source_labels": [
-        "黑水",
-        "黑水領域",
-        "（風暴之書）黑水領域"
-      ],
       "spell_count": 7,
       "spells": [
         {
@@ -874,9 +816,6 @@
             "風暴之書"
           ],
           "canonical_domain_id": "blackwater",
-          "source_domain_labels": [
-            "黑水"
-          ],
           "raw_class_labels": [
             "黑水領域"
           ]
@@ -893,9 +832,6 @@
             "風暴之書"
           ],
           "canonical_domain_id": "blackwater",
-          "source_domain_labels": [
-            "黑水"
-          ],
           "raw_class_labels": [
             "黑水領域"
           ]
@@ -912,9 +848,6 @@
             "風暴之書"
           ],
           "canonical_domain_id": "blackwater",
-          "source_domain_labels": [
-            "黑水"
-          ],
           "raw_class_labels": [
             "黑水領域"
           ]
@@ -931,9 +864,6 @@
             "風暴之書"
           ],
           "canonical_domain_id": "blackwater",
-          "source_domain_labels": [
-            "黑水"
-          ],
           "raw_class_labels": [
             "黑水領域"
           ]
@@ -950,9 +880,6 @@
             "風暴之書"
           ],
           "canonical_domain_id": "blackwater",
-          "source_domain_labels": [
-            "黑水"
-          ],
           "raw_class_labels": [
             "黑水領域"
           ]
@@ -971,9 +898,6 @@
             "風暴之書"
           ],
           "canonical_domain_id": "blackwater",
-          "source_domain_labels": [
-            "黑水"
-          ],
           "raw_class_labels": [
             "（風暴之書）黑水領域"
           ]
@@ -990,13 +914,19 @@
             "風暴之書"
           ],
           "canonical_domain_id": "blackwater",
-          "source_domain_labels": [
-            "黑水"
-          ],
           "raw_class_labels": [
             "黑水領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "黑水領域",
+        "（風暴之書）黑水領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "黑水",
+        "黑水領域",
+        "（風暴之書）黑水領域"
       ]
     },
     {
@@ -1008,9 +938,6 @@
         "page": "271",
         "planar": false
       },
-      "source_labels": [
-        "岩穴"
-      ],
       "spell_count": 1,
       "spells": [
         {
@@ -1025,13 +952,16 @@
             "萬法大全"
           ],
           "canonical_domain_id": "cavern",
-          "source_domain_labels": [
-            "岩穴"
-          ],
           "raw_class_labels": [
             "岩穴"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "岩穴"
+      ],
+      "legacy_taxonomy_labels": [
+        "岩穴"
       ]
     },
     {
@@ -1043,10 +973,6 @@
         "page": "271",
         "planar": false
       },
-      "source_labels": [
-        "迅捷",
-        "迅捷領域（Celerity domain）"
-      ],
       "spell_count": 1,
       "spells": [
         {
@@ -1062,13 +988,17 @@
             "萬法大全"
           ],
           "canonical_domain_id": "celerity",
-          "source_domain_labels": [
-            "迅捷"
-          ],
           "raw_class_labels": [
             "迅捷領域（Celerity domain）"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "迅捷領域（Celerity domain）"
+      ],
+      "legacy_taxonomy_labels": [
+        "迅捷",
+        "迅捷領域（Celerity domain）"
       ]
     },
     {
@@ -1080,10 +1010,6 @@
         "page": "86",
         "planar": false
       },
-      "source_labels": [
-        "天 族",
-        "天族"
-      ],
       "spell_count": 5,
       "spells": [
         {
@@ -1098,9 +1024,6 @@
             "好人書"
           ],
           "canonical_domain_id": "celestial",
-          "source_domain_labels": [
-            "天族"
-          ],
           "raw_class_labels": [
             "天族"
           ]
@@ -1117,9 +1040,6 @@
             "好人書"
           ],
           "canonical_domain_id": "celestial",
-          "source_domain_labels": [
-            "天族"
-          ],
           "raw_class_labels": [
             "天 族"
           ]
@@ -1136,9 +1056,6 @@
             "好人書"
           ],
           "canonical_domain_id": "celestial",
-          "source_domain_labels": [
-            "天族"
-          ],
           "raw_class_labels": [
             "天族"
           ]
@@ -1155,9 +1072,6 @@
             "好人書"
           ],
           "canonical_domain_id": "celestial",
-          "source_domain_labels": [
-            "天族"
-          ],
           "raw_class_labels": [
             "天族"
           ]
@@ -1174,13 +1088,18 @@
             "好人書"
           ],
           "canonical_domain_id": "celestial",
-          "source_domain_labels": [
-            "天族"
-          ],
           "raw_class_labels": [
             "天族"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "天 族",
+        "天族"
+      ],
+      "legacy_taxonomy_labels": [
+        "天 族",
+        "天族"
       ]
     },
     {
@@ -1192,10 +1111,6 @@
         "page": "186",
         "planar": false
       },
-      "source_labels": [
-        "混亂",
-        "混沌"
-      ],
       "spell_count": 10,
       "spells": [
         {
@@ -1208,9 +1123,6 @@
           "level_text_raw": "混亂 1，牧師 1，術士/法師 1",
           "spell_sources": [],
           "canonical_domain_id": "chaos",
-          "source_domain_labels": [
-            "混亂"
-          ],
           "raw_class_labels": [
             "混亂"
           ]
@@ -1227,9 +1139,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "chaos",
-          "source_domain_labels": [
-            "混亂"
-          ],
           "raw_class_labels": [
             "混沌"
           ]
@@ -1244,9 +1153,6 @@
           "level_text_raw": "吟游詩人 2，混亂 2，牧師 2，破壞 2，術士/法師 2",
           "spell_sources": [],
           "canonical_domain_id": "chaos",
-          "source_domain_labels": [
-            "混亂"
-          ],
           "raw_class_labels": [
             "混亂"
           ]
@@ -1261,9 +1167,6 @@
           "level_text_raw": "牧師 3，混亂 3，術士/法師 3",
           "spell_sources": [],
           "canonical_domain_id": "chaos",
-          "source_domain_labels": [
-            "混亂"
-          ],
           "raw_class_labels": [
             "混亂"
           ]
@@ -1278,9 +1181,6 @@
           "level_text_raw": "混亂 4",
           "spell_sources": [],
           "canonical_domain_id": "chaos",
-          "source_domain_labels": [
-            "混亂"
-          ],
           "raw_class_labels": [
             "混亂"
           ]
@@ -1295,9 +1195,6 @@
           "level_text_raw": "混亂 5, 牧師 5",
           "spell_sources": [],
           "canonical_domain_id": "chaos",
-          "source_domain_labels": [
-            "混亂"
-          ],
           "raw_class_labels": [
             "混亂"
           ]
@@ -1312,9 +1209,6 @@
           "level_text_raw": "吟游詩人 6，混亂 6，牧師 6",
           "spell_sources": [],
           "canonical_domain_id": "chaos",
-          "source_domain_labels": [
-            "混亂"
-          ],
           "raw_class_labels": [
             "混亂"
           ]
@@ -1329,9 +1223,6 @@
           "level_text_raw": "混亂 7，牧師 7",
           "spell_sources": [],
           "canonical_domain_id": "chaos",
-          "source_domain_labels": [
-            "混亂"
-          ],
           "raw_class_labels": [
             "混亂"
           ]
@@ -1346,9 +1237,6 @@
           "level_text_raw": "混亂 8，牧師 8",
           "spell_sources": [],
           "canonical_domain_id": "chaos",
-          "source_domain_labels": [
-            "混亂"
-          ],
           "raw_class_labels": [
             "混亂"
           ]
@@ -1363,13 +1251,18 @@
           "level_text_raw": "混亂 9，牧師 9，邪惡 9，善良 9，守序 9，術士/法師 9",
           "spell_sources": [],
           "canonical_domain_id": "chaos",
-          "source_domain_labels": [
-            "混亂"
-          ],
           "raw_class_labels": [
             "混亂"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "混亂",
+        "混沌"
+      ],
+      "legacy_taxonomy_labels": [
+        "混亂",
+        "混沌"
       ]
     },
     {
@@ -1381,10 +1274,6 @@
         "page": "162–163",
         "planar": false
       },
-      "source_labels": [
-        "城市",
-        "城市領域"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -1399,9 +1288,6 @@
             "天命族裔"
           ],
           "canonical_domain_id": "city",
-          "source_domain_labels": [
-            "城市"
-          ],
           "raw_class_labels": [
             "城市領域"
           ]
@@ -1418,9 +1304,6 @@
             "天命族裔"
           ],
           "canonical_domain_id": "city",
-          "source_domain_labels": [
-            "城市"
-          ],
           "raw_class_labels": [
             "城市"
           ]
@@ -1437,9 +1320,6 @@
             "天命族裔"
           ],
           "canonical_domain_id": "city",
-          "source_domain_labels": [
-            "城市"
-          ],
           "raw_class_labels": [
             "城市"
           ]
@@ -1456,9 +1336,6 @@
             "天命族裔"
           ],
           "canonical_domain_id": "city",
-          "source_domain_labels": [
-            "城市"
-          ],
           "raw_class_labels": [
             "城市"
           ]
@@ -1475,9 +1352,6 @@
             "天命族裔"
           ],
           "canonical_domain_id": "city",
-          "source_domain_labels": [
-            "城市"
-          ],
           "raw_class_labels": [
             "城市"
           ]
@@ -1494,9 +1368,6 @@
             "天命族裔"
           ],
           "canonical_domain_id": "city",
-          "source_domain_labels": [
-            "城市"
-          ],
           "raw_class_labels": [
             "城市"
           ]
@@ -1513,9 +1384,6 @@
             "天命族裔"
           ],
           "canonical_domain_id": "city",
-          "source_domain_labels": [
-            "城市"
-          ],
           "raw_class_labels": [
             "城市"
           ]
@@ -1532,9 +1400,6 @@
             "天命族裔"
           ],
           "canonical_domain_id": "city",
-          "source_domain_labels": [
-            "城市"
-          ],
           "raw_class_labels": [
             "城市"
           ]
@@ -1551,13 +1416,18 @@
             "天命族裔"
           ],
           "canonical_domain_id": "city",
-          "source_domain_labels": [
-            "城市"
-          ],
           "raw_class_labels": [
             "城市"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "城市",
+        "城市領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "城市",
+        "城市領域"
       ]
     },
     {
@@ -1569,10 +1439,6 @@
         "page": "271",
         "planar": false
       },
-      "source_labels": [
-        "寒冷",
-        "隆冬"
-      ],
       "spell_count": 1,
       "spells": [
         {
@@ -1587,13 +1453,20 @@
             "萬法大全"
           ],
           "canonical_domain_id": "cold",
-          "source_domain_labels": [
-            "隆冬"
-          ],
           "raw_class_labels": [
             "寒冷"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "寒冷"
+      ],
+      "legacy_taxonomy_labels": [
+        "寒冷",
+        "隆冬"
+      ],
+      "ambiguous_legacy_taxonomy_labels": [
+        "隆冬"
       ]
     },
     {
@@ -1605,11 +1478,6 @@
         "page": "271–272",
         "planar": false
       },
-      "source_labels": [
-        "溝通",
-        "社會",
-        "社會 Community"
-      ],
       "spell_count": 2,
       "spells": [
         {
@@ -1624,9 +1492,6 @@
             "ECS"
           ],
           "canonical_domain_id": "community",
-          "source_domain_labels": [
-            "溝通"
-          ],
           "raw_class_labels": [
             "溝通"
           ]
@@ -1643,13 +1508,19 @@
             "好人書"
           ],
           "canonical_domain_id": "community",
-          "source_domain_labels": [
-            "社會"
-          ],
           "raw_class_labels": [
             "社會 Community"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "溝通",
+        "社會 Community"
+      ],
+      "legacy_taxonomy_labels": [
+        "溝通",
+        "社會",
+        "社會 Community"
       ]
     },
     {
@@ -1661,10 +1532,6 @@
         "page": "272",
         "planar": false
       },
-      "source_labels": [
-        "競爭",
-        "競爭領域"
-      ],
       "spell_count": 3,
       "spells": [
         {
@@ -1680,9 +1547,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "competition",
-          "source_domain_labels": [
-            "競爭"
-          ],
           "raw_class_labels": [
             "競爭領域"
           ]
@@ -1699,9 +1563,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "competition",
-          "source_domain_labels": [
-            "競爭"
-          ],
           "raw_class_labels": [
             "競爭領域"
           ]
@@ -1718,13 +1579,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "competition",
-          "source_domain_labels": [
-            "競爭"
-          ],
           "raw_class_labels": [
             "競爭"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "競爭",
+        "競爭領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "競爭",
+        "競爭領域"
       ]
     },
     {
@@ -1736,10 +1602,6 @@
         "page": "88",
         "planar": false
       },
-      "source_labels": [
-        "腐 敗",
-        "腐敗"
-      ],
       "spell_count": 3,
       "spells": [
         {
@@ -1754,9 +1616,6 @@
             "異怪書"
           ],
           "canonical_domain_id": "corruption",
-          "source_domain_labels": [
-            "腐敗"
-          ],
           "raw_class_labels": [
             "腐 敗"
           ]
@@ -1773,9 +1632,6 @@
             "異怪書"
           ],
           "canonical_domain_id": "corruption",
-          "source_domain_labels": [
-            "腐敗"
-          ],
           "raw_class_labels": [
             "腐敗"
           ]
@@ -1794,13 +1650,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "corruption",
-          "source_domain_labels": [
-            "腐敗"
-          ],
           "raw_class_labels": [
             "腐敗"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "腐 敗",
+        "腐敗"
+      ],
+      "legacy_taxonomy_labels": [
+        "腐 敗",
+        "腐敗"
       ]
     },
     {
@@ -1812,9 +1673,6 @@
         "page": "272",
         "planar": false
       },
-      "source_labels": [
-        "勇氣"
-      ],
       "spell_count": 4,
       "spells": [
         {
@@ -1831,9 +1689,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "courage",
-          "source_domain_labels": [
-            "勇氣"
-          ],
           "raw_class_labels": [
             "勇氣"
           ]
@@ -1851,9 +1706,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "courage",
-          "source_domain_labels": [
-            "勇氣"
-          ],
           "raw_class_labels": [
             "勇氣"
           ]
@@ -1871,9 +1723,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "courage",
-          "source_domain_labels": [
-            "勇氣"
-          ],
           "raw_class_labels": [
             "勇氣"
           ]
@@ -1891,13 +1740,16 @@
             "萬法大全"
           ],
           "canonical_domain_id": "courage",
-          "source_domain_labels": [
-            "勇氣"
-          ],
           "raw_class_labels": [
             "勇氣"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "勇氣"
+      ],
+      "legacy_taxonomy_labels": [
+        "勇氣"
       ]
     },
     {
@@ -1909,9 +1761,6 @@
         "page": "272",
         "planar": false
       },
-      "source_labels": [
-        "工藝"
-      ],
       "spell_count": 2,
       "spells": [
         {
@@ -1926,9 +1775,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "craft",
-          "source_domain_labels": [
-            "工藝"
-          ],
           "raw_class_labels": [
             "工藝"
           ]
@@ -1945,13 +1791,19 @@
             "萬法大全"
           ],
           "canonical_domain_id": "craft",
-          "source_domain_labels": [
-            "工藝"
-          ],
           "raw_class_labels": [
             "工藝"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "工藝"
+      ],
+      "legacy_taxonomy_labels": [
+        "工藝"
+      ],
+      "ambiguous_legacy_taxonomy_labels": [
+        "工藝"
       ]
     },
     {
@@ -1963,11 +1815,6 @@
         "page": "272",
         "planar": false
       },
-      "source_labels": [
-        "創造",
-        "造物",
-        "造物領域（Creation Domain）"
-      ],
       "spell_count": 2,
       "spells": [
         {
@@ -1982,9 +1829,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "creation",
-          "source_domain_labels": [
-            "造物"
-          ],
           "raw_class_labels": [
             "創造"
           ]
@@ -2001,13 +1845,19 @@
             "萬法大全"
           ],
           "canonical_domain_id": "creation",
-          "source_domain_labels": [
-            "造物"
-          ],
           "raw_class_labels": [
             "造物領域（Creation Domain）"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "創造",
+        "造物領域（Creation Domain）"
+      ],
+      "legacy_taxonomy_labels": [
+        "創造",
+        "造物",
+        "造物領域（Creation Domain）"
       ]
     },
     {
@@ -2019,10 +1869,6 @@
         "page": "272",
         "planar": false
       },
-      "source_labels": [
-        "晦暗",
-        "黑暗"
-      ],
       "spell_count": 5,
       "spells": [
         {
@@ -2037,9 +1883,6 @@
             "異怪書"
           ],
           "canonical_domain_id": "darkness",
-          "source_domain_labels": [
-            "黑暗"
-          ],
           "raw_class_labels": [
             "晦暗"
           ]
@@ -2056,9 +1899,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "darkness",
-          "source_domain_labels": [
-            "黑暗"
-          ],
           "raw_class_labels": [
             "黑暗"
           ]
@@ -2075,9 +1915,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "darkness",
-          "source_domain_labels": [
-            "黑暗"
-          ],
           "raw_class_labels": [
             "黑暗"
           ]
@@ -2094,9 +1931,6 @@
             "異怪書"
           ],
           "canonical_domain_id": "darkness",
-          "source_domain_labels": [
-            "黑暗"
-          ],
           "raw_class_labels": [
             "晦暗"
           ]
@@ -2113,13 +1947,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "darkness",
-          "source_domain_labels": [
-            "黑暗"
-          ],
           "raw_class_labels": [
             "黑暗"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "晦暗",
+        "黑暗"
+      ],
+      "legacy_taxonomy_labels": [
+        "晦暗",
+        "黑暗"
       ]
     },
     {
@@ -2131,9 +1970,6 @@
         "page": "186",
         "planar": false
       },
-      "source_labels": [
-        "死亡"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -2146,9 +1982,6 @@
           "level_text_raw": "吟游詩人 1，牧師 1，死亡 1，術士/法師 1",
           "spell_sources": [],
           "canonical_domain_id": "death",
-          "source_domain_labels": [
-            "死亡"
-          ],
           "raw_class_labels": [
             "死亡"
           ]
@@ -2163,9 +1996,6 @@
           "level_text_raw": "牧師 2，死亡 2",
           "spell_sources": [],
           "canonical_domain_id": "death",
-          "source_domain_labels": [
-            "死亡"
-          ],
           "raw_class_labels": [
             "死亡"
           ]
@@ -2180,9 +2010,6 @@
           "level_text_raw": "牧師 3，死亡 3，術士/法師 4",
           "spell_sources": [],
           "canonical_domain_id": "death",
-          "source_domain_labels": [
-            "死亡"
-          ],
           "raw_class_labels": [
             "死亡"
           ]
@@ -2197,9 +2024,6 @@
           "level_text_raw": "牧師 4，死亡 4，德魯伊 5，聖武士 4",
           "spell_sources": [],
           "canonical_domain_id": "death",
-          "source_domain_labels": [
-            "死亡"
-          ],
           "raw_class_labels": [
             "死亡"
           ]
@@ -2214,9 +2038,6 @@
           "level_text_raw": "牧師 5，死亡 5",
           "spell_sources": [],
           "canonical_domain_id": "death",
-          "source_domain_labels": [
-            "死亡"
-          ],
           "raw_class_labels": [
             "死亡"
           ]
@@ -2231,9 +2052,6 @@
           "level_text_raw": "牧師 6，死亡 6，邪惡 6，術士/法師 6",
           "spell_sources": [],
           "canonical_domain_id": "death",
-          "source_domain_labels": [
-            "死亡"
-          ],
           "raw_class_labels": [
             "死亡"
           ]
@@ -2248,9 +2066,6 @@
           "level_text_raw": "牧師 7，死亡 7",
           "spell_sources": [],
           "canonical_domain_id": "death",
-          "source_domain_labels": [
-            "死亡"
-          ],
           "raw_class_labels": [
             "死亡"
           ]
@@ -2265,9 +2080,6 @@
           "level_text_raw": "牧師 8，死亡 8，術士/法師 8",
           "spell_sources": [],
           "canonical_domain_id": "death",
-          "source_domain_labels": [
-            "死亡"
-          ],
           "raw_class_labels": [
             "死亡"
           ]
@@ -2282,13 +2094,16 @@
           "level_text_raw": "死亡 9，術士/法師 9",
           "spell_sources": [],
           "canonical_domain_id": "death",
-          "source_domain_labels": [
-            "死亡"
-          ],
           "raw_class_labels": [
             "死亡"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "死亡"
+      ],
+      "legacy_taxonomy_labels": [
+        "死亡"
       ]
     },
     {
@@ -2300,12 +2115,6 @@
         "page": "272–273",
         "planar": false
       },
-      "source_labels": [
-        "控死",
-        "控死領域",
-        "控死領域（Deathbound）",
-        "（Deathbound）控死領域"
-      ],
       "spell_count": 8,
       "spells": [
         {
@@ -2321,9 +2130,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "deathbound",
-          "source_domain_labels": [
-            "控死"
-          ],
           "raw_class_labels": [
             "控死領域"
           ]
@@ -2341,9 +2147,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "deathbound",
-          "source_domain_labels": [
-            "控死"
-          ],
           "raw_class_labels": [
             "控死領域"
           ]
@@ -2361,9 +2164,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "deathbound",
-          "source_domain_labels": [
-            "控死"
-          ],
           "raw_class_labels": [
             "控死領域"
           ]
@@ -2381,9 +2181,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "deathbound",
-          "source_domain_labels": [
-            "控死"
-          ],
           "raw_class_labels": [
             "控死領域"
           ]
@@ -2401,9 +2198,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "deathbound",
-          "source_domain_labels": [
-            "控死"
-          ],
           "raw_class_labels": [
             "（Deathbound）控死領域"
           ]
@@ -2421,9 +2215,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "deathbound",
-          "source_domain_labels": [
-            "控死"
-          ],
           "raw_class_labels": [
             "控死領域"
           ]
@@ -2441,9 +2232,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "deathbound",
-          "source_domain_labels": [
-            "控死"
-          ],
           "raw_class_labels": [
             "控死領域"
           ]
@@ -2461,13 +2249,21 @@
             "萬法大全"
           ],
           "canonical_domain_id": "deathbound",
-          "source_domain_labels": [
-            "控死"
-          ],
           "raw_class_labels": [
             "控死領域（Deathbound）"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "控死領域",
+        "控死領域（Deathbound）",
+        "（Deathbound）控死領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "控死",
+        "控死領域",
+        "控死領域（Deathbound）",
+        "（Deathbound）控死領域"
       ]
     },
     {
@@ -2479,9 +2275,6 @@
         "page": "105",
         "planar": false
       },
-      "source_labels": [
-        "不朽"
-      ],
       "spell_count": 5,
       "spells": [
         {
@@ -2496,9 +2289,6 @@
             "ECS"
           ],
           "canonical_domain_id": "deathless",
-          "source_domain_labels": [
-            "不朽"
-          ],
           "raw_class_labels": [
             "不朽"
           ]
@@ -2515,9 +2305,6 @@
             "ECS"
           ],
           "canonical_domain_id": "deathless",
-          "source_domain_labels": [
-            "不朽"
-          ],
           "raw_class_labels": [
             "不朽"
           ]
@@ -2534,9 +2321,6 @@
             "ECS"
           ],
           "canonical_domain_id": "deathless",
-          "source_domain_labels": [
-            "不朽"
-          ],
           "raw_class_labels": [
             "不朽"
           ]
@@ -2553,9 +2337,6 @@
             "ECS"
           ],
           "canonical_domain_id": "deathless",
-          "source_domain_labels": [
-            "不朽"
-          ],
           "raw_class_labels": [
             "不朽"
           ]
@@ -2572,13 +2353,16 @@
             "ECS"
           ],
           "canonical_domain_id": "deathless",
-          "source_domain_labels": [
-            "不朽"
-          ],
           "raw_class_labels": [
             "不朽"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "不朽"
+      ],
+      "legacy_taxonomy_labels": [
+        "不朽"
       ]
     },
     {
@@ -2590,9 +2374,6 @@
         "page": "163",
         "planar": false
       },
-      "source_labels": [
-        "宿命"
-      ],
       "spell_count": 5,
       "spells": [
         {
@@ -2607,9 +2388,6 @@
             "天命族裔，萬法大全"
           ],
           "canonical_domain_id": "destiny",
-          "source_domain_labels": [
-            "宿命"
-          ],
           "raw_class_labels": [
             "宿命"
           ]
@@ -2626,9 +2404,6 @@
             "天命族裔"
           ],
           "canonical_domain_id": "destiny",
-          "source_domain_labels": [
-            "宿命"
-          ],
           "raw_class_labels": [
             "宿命"
           ]
@@ -2645,9 +2420,6 @@
             "天命族裔"
           ],
           "canonical_domain_id": "destiny",
-          "source_domain_labels": [
-            "宿命"
-          ],
           "raw_class_labels": [
             "宿命"
           ]
@@ -2666,9 +2438,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "destiny",
-          "source_domain_labels": [
-            "宿命"
-          ],
           "raw_class_labels": [
             "宿命"
           ]
@@ -2685,13 +2454,16 @@
             "天命族裔"
           ],
           "canonical_domain_id": "destiny",
-          "source_domain_labels": [
-            "宿命"
-          ],
           "raw_class_labels": [
             "宿命"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "宿命"
+      ],
+      "legacy_taxonomy_labels": [
+        "宿命"
       ]
     },
     {
@@ -2703,10 +2475,6 @@
         "page": "186",
         "planar": false
       },
-      "source_labels": [
-        "毀滅",
-        "破壞"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -2719,9 +2487,6 @@
           "level_text_raw": "牧師 1，破壞 1",
           "spell_sources": [],
           "canonical_domain_id": "destruction",
-          "source_domain_labels": [
-            "破壞"
-          ],
           "raw_class_labels": [
             "破壞"
           ]
@@ -2736,9 +2501,6 @@
           "level_text_raw": "吟游詩人 2，混亂 2，牧師 2，破壞 2，術士/法師 2",
           "spell_sources": [],
           "canonical_domain_id": "destruction",
-          "source_domain_labels": [
-            "破壞"
-          ],
           "raw_class_labels": [
             "破壞"
           ]
@@ -2753,9 +2515,6 @@
           "level_text_raw": "牧師 3，破壞 3，德魯伊 3，術士/法師 4",
           "spell_sources": [],
           "canonical_domain_id": "destruction",
-          "source_domain_labels": [
-            "破壞"
-          ],
           "raw_class_labels": [
             "破壞"
           ]
@@ -2770,9 +2529,6 @@
           "level_text_raw": "牧師 4，破壞 4",
           "spell_sources": [],
           "canonical_domain_id": "destruction",
-          "source_domain_labels": [
-            "破壞"
-          ],
           "raw_class_labels": [
             "破壞"
           ]
@@ -2787,9 +2543,6 @@
           "level_text_raw": "牧師 5，破壞 5",
           "spell_sources": [],
           "canonical_domain_id": "destruction",
-          "source_domain_labels": [
-            "破壞"
-          ],
           "raw_class_labels": [
             "破壞"
           ]
@@ -2804,9 +2557,6 @@
           "level_text_raw": "牧師 6,破壞 6",
           "spell_sources": [],
           "canonical_domain_id": "destruction",
-          "source_domain_labels": [
-            "破壞"
-          ],
           "raw_class_labels": [
             "破壞"
           ]
@@ -2821,9 +2571,6 @@
           "level_text_raw": "毀滅 7，術士/法師 6",
           "spell_sources": [],
           "canonical_domain_id": "destruction",
-          "source_domain_labels": [
-            "破壞"
-          ],
           "raw_class_labels": [
             "毀滅"
           ]
@@ -2838,9 +2585,6 @@
           "level_text_raw": "牧師 8，毀滅 8，德魯伊 8，土 7",
           "spell_sources": [],
           "canonical_domain_id": "destruction",
-          "source_domain_labels": [
-            "破壞"
-          ],
           "raw_class_labels": [
             "毀滅"
           ]
@@ -2855,13 +2599,18 @@
           "level_text_raw": "牧師 9，破壞 9",
           "spell_sources": [],
           "canonical_domain_id": "destruction",
-          "source_domain_labels": [
-            "破壞"
-          ],
           "raw_class_labels": [
             "破壞"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "毀滅",
+        "破壞"
+      ],
+      "legacy_taxonomy_labels": [
+        "毀滅",
+        "破壞"
       ]
     },
     {
@@ -2873,9 +2622,6 @@
         "page": "273",
         "planar": false
       },
-      "source_labels": [
-        "支配"
-      ],
       "spell_count": 2,
       "spells": [
         {
@@ -2891,9 +2637,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "domination",
-          "source_domain_labels": [
-            "支配"
-          ],
           "raw_class_labels": [
             "支配"
           ]
@@ -2911,13 +2654,16 @@
             "萬法大全"
           ],
           "canonical_domain_id": "domination",
-          "source_domain_labels": [
-            "支配"
-          ],
           "raw_class_labels": [
             "支配"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "支配"
+      ],
+      "legacy_taxonomy_labels": [
+        "支配"
       ]
     },
     {
@@ -2929,10 +2675,6 @@
         "page": "273",
         "planar": false
       },
-      "source_labels": [
-        "龍",
-        "龍領域"
-      ],
       "spell_count": 2,
       "spells": [
         {
@@ -2948,9 +2690,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "dragon",
-          "source_domain_labels": [
-            "龍"
-          ],
           "raw_class_labels": [
             "龍"
           ]
@@ -2968,13 +2707,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "dragon",
-          "source_domain_labels": [
-            "龍"
-          ],
           "raw_class_labels": [
             "龍領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "龍",
+        "龍領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "龍",
+        "龍領域"
       ]
     },
     {
@@ -2986,10 +2730,6 @@
         "page": "273",
         "planar": false
       },
-      "source_labels": [
-        "夢境",
-        "夢境領域"
-      ],
       "spell_count": 1,
       "spells": [
         {
@@ -3004,13 +2744,17 @@
             "萬法大全"
           ],
           "canonical_domain_id": "dream",
-          "source_domain_labels": [
-            "夢境"
-          ],
           "raw_class_labels": [
             "夢境領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "夢境領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "夢境",
+        "夢境領域"
       ]
     },
     {
@@ -3022,10 +2766,6 @@
         "page": "273",
         "planar": false
       },
-      "source_labels": [
-        "卓爾",
-        "卓爾領域"
-      ],
       "spell_count": 3,
       "spells": [
         {
@@ -3040,9 +2780,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "drow",
-          "source_domain_labels": [
-            "卓爾"
-          ],
           "raw_class_labels": [
             "卓爾"
           ]
@@ -3059,9 +2796,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "drow",
-          "source_domain_labels": [
-            "卓爾"
-          ],
           "raw_class_labels": [
             "卓爾領域"
           ]
@@ -3078,13 +2812,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "drow",
-          "source_domain_labels": [
-            "卓爾"
-          ],
           "raw_class_labels": [
             "卓爾"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "卓爾",
+        "卓爾領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "卓爾",
+        "卓爾領域"
       ]
     },
     {
@@ -3096,10 +2835,6 @@
         "page": "186",
         "planar": false
       },
-      "source_labels": [
-        "土",
-        "土領域"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -3112,9 +2847,6 @@
           "level_text_raw": "牧師 1，德魯伊 1，土領域 1",
           "spell_sources": [],
           "canonical_domain_id": "earth",
-          "source_domain_labels": [
-            "土"
-          ],
           "raw_class_labels": [
             "土領域"
           ]
@@ -3129,9 +2861,6 @@
           "level_text_raw": "德魯伊 2，土 2",
           "spell_sources": [],
           "canonical_domain_id": "earth",
-          "source_domain_labels": [
-            "土"
-          ],
           "raw_class_labels": [
             "土"
           ]
@@ -3146,9 +2875,6 @@
           "level_text_raw": "牧師 3，德魯伊 3，土 3，術士/法師 4",
           "spell_sources": [],
           "canonical_domain_id": "earth",
-          "source_domain_labels": [
-            "土"
-          ],
           "raw_class_labels": [
             "土"
           ]
@@ -3163,9 +2889,6 @@
           "level_text_raw": "德魯伊 4，土 4",
           "spell_sources": [],
           "canonical_domain_id": "earth",
-          "source_domain_labels": [
-            "土"
-          ],
           "raw_class_labels": [
             "土"
           ]
@@ -3180,9 +2903,6 @@
           "level_text_raw": "牧師 5，德魯伊 6，土 5，術士/法師 5",
           "spell_sources": [],
           "canonical_domain_id": "earth",
-          "source_domain_labels": [
-            "土"
-          ],
           "raw_class_labels": [
             "土"
           ]
@@ -3197,9 +2917,6 @@
           "level_text_raw": "德魯伊 5，土 6，術士/法師 4，力量 6",
           "spell_sources": [],
           "canonical_domain_id": "earth",
-          "source_domain_labels": [
-            "土"
-          ],
           "raw_class_labels": [
             "土"
           ]
@@ -3214,9 +2931,6 @@
           "level_text_raw": "牧師 8，毀滅 8，德魯伊 8，土 7",
           "spell_sources": [],
           "canonical_domain_id": "earth",
-          "source_domain_labels": [
-            "土"
-          ],
           "raw_class_labels": [
             "土"
           ]
@@ -3231,9 +2945,6 @@
           "level_text_raw": "土 8，術士/法師 8",
           "spell_sources": [],
           "canonical_domain_id": "earth",
-          "source_domain_labels": [
-            "土"
-          ],
           "raw_class_labels": [
             "土"
           ]
@@ -3250,13 +2961,18 @@
             "完美奧術"
           ],
           "canonical_domain_id": "earth",
-          "source_domain_labels": [
-            "土"
-          ],
           "raw_class_labels": [
             "土"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "土",
+        "土領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "土",
+        "土領域"
       ]
     },
     {
@@ -3268,10 +2984,6 @@
         "page": "283–284",
         "planar": true
       },
-      "source_labels": [
-        "極樂",
-        "極樂境"
-      ],
       "spell_count": 2,
       "spells": [
         {
@@ -3286,9 +2998,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "elysium",
-          "source_domain_labels": [
-            "極樂"
-          ],
           "raw_class_labels": [
             "極樂境"
           ]
@@ -3305,13 +3014,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "elysium",
-          "source_domain_labels": [
-            "極樂"
-          ],
           "raw_class_labels": [
             "極樂"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "極樂",
+        "極樂境"
+      ],
+      "legacy_taxonomy_labels": [
+        "極樂",
+        "極樂境"
       ]
     },
     {
@@ -3323,10 +3037,6 @@
         "page": "86",
         "planar": false
       },
-      "source_labels": [
-        "苦難",
-        "苦難 Endurance"
-      ],
       "spell_count": 2,
       "spells": [
         {
@@ -3341,9 +3051,6 @@
             "好人書"
           ],
           "canonical_domain_id": "endurance",
-          "source_domain_labels": [
-            "苦難"
-          ],
           "raw_class_labels": [
             "苦難 Endurance"
           ]
@@ -3360,13 +3067,18 @@
             "好人書"
           ],
           "canonical_domain_id": "endurance",
-          "source_domain_labels": [
-            "苦難"
-          ],
           "raw_class_labels": [
             "苦難"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "苦難",
+        "苦難 Endurance"
+      ],
+      "legacy_taxonomy_labels": [
+        "苦難",
+        "苦難 Endurance"
       ]
     },
     {
@@ -3378,9 +3090,6 @@
         "page": "186",
         "planar": false
       },
-      "source_labels": [
-        "邪惡"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -3393,9 +3102,6 @@
           "level_text_raw": "牧師 1，邪惡 1，術士/法師 1",
           "spell_sources": [],
           "canonical_domain_id": "evil",
-          "source_domain_labels": [
-            "邪惡"
-          ],
           "raw_class_labels": [
             "邪惡"
           ]
@@ -3410,9 +3116,6 @@
           "level_text_raw": "牧師 2，邪惡 2",
           "spell_sources": [],
           "canonical_domain_id": "evil",
-          "source_domain_labels": [
-            "邪惡"
-          ],
           "raw_class_labels": [
             "邪惡"
           ]
@@ -3427,9 +3130,6 @@
           "level_text_raw": "牧師 3，邪惡 3，術士/法師 3",
           "spell_sources": [],
           "canonical_domain_id": "evil",
-          "source_domain_labels": [
-            "邪惡"
-          ],
           "raw_class_labels": [
             "邪惡"
           ]
@@ -3444,9 +3144,6 @@
           "level_text_raw": "邪惡 4",
           "spell_sources": [],
           "canonical_domain_id": "evil",
-          "source_domain_labels": [
-            "邪惡"
-          ],
           "raw_class_labels": [
             "邪惡"
           ]
@@ -3461,9 +3158,6 @@
           "level_text_raw": "牧師 5，邪惡 5",
           "spell_sources": [],
           "canonical_domain_id": "evil",
-          "source_domain_labels": [
-            "邪惡"
-          ],
           "raw_class_labels": [
             "邪惡"
           ]
@@ -3478,9 +3172,6 @@
           "level_text_raw": "牧師 6，死亡 6，邪惡 6，術士/法師 6",
           "spell_sources": [],
           "canonical_domain_id": "evil",
-          "source_domain_labels": [
-            "邪惡"
-          ],
           "raw_class_labels": [
             "邪惡"
           ]
@@ -3495,9 +3186,6 @@
           "level_text_raw": "牧師 7，邪惡 7",
           "spell_sources": [],
           "canonical_domain_id": "evil",
-          "source_domain_labels": [
-            "邪惡"
-          ],
           "raw_class_labels": [
             "邪惡"
           ]
@@ -3512,9 +3200,6 @@
           "level_text_raw": "牧師 8，邪惡 8",
           "spell_sources": [],
           "canonical_domain_id": "evil",
-          "source_domain_labels": [
-            "邪惡"
-          ],
           "raw_class_labels": [
             "邪惡"
           ]
@@ -3529,13 +3214,16 @@
           "level_text_raw": "混亂 9，牧師 9，邪惡 9，善良 9，守序 9，術士/法師 9",
           "spell_sources": [],
           "canonical_domain_id": "evil",
-          "source_domain_labels": [
-            "邪惡"
-          ],
           "raw_class_labels": [
             "邪惡"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "邪惡"
+      ],
+      "legacy_taxonomy_labels": [
+        "邪惡"
       ]
     },
     {
@@ -3547,9 +3235,6 @@
         "page": "106",
         "planar": false
       },
-      "source_labels": [
-        "筵席"
-      ],
       "spell_count": 2,
       "spells": [
         {
@@ -3564,9 +3249,6 @@
             "ECS"
           ],
           "canonical_domain_id": "feast",
-          "source_domain_labels": [
-            "筵席"
-          ],
           "raw_class_labels": [
             "筵席"
           ]
@@ -3583,13 +3265,16 @@
             "ECS"
           ],
           "canonical_domain_id": "feast",
-          "source_domain_labels": [
-            "筵席"
-          ],
           "raw_class_labels": [
             "筵席"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "筵席"
+      ],
+      "legacy_taxonomy_labels": [
+        "筵席"
       ]
     },
     {
@@ -3601,9 +3286,6 @@
         "page": "86",
         "planar": false
       },
-      "source_labels": [
-        "精類"
-      ],
       "spell_count": 3,
       "spells": [
         {
@@ -3618,9 +3300,6 @@
             "好人書"
           ],
           "canonical_domain_id": "fey",
-          "source_domain_labels": [
-            "精類"
-          ],
           "raw_class_labels": [
             "精類"
           ]
@@ -3637,9 +3316,6 @@
             "好人書"
           ],
           "canonical_domain_id": "fey",
-          "source_domain_labels": [
-            "精類"
-          ],
           "raw_class_labels": [
             "精類"
           ]
@@ -3656,13 +3332,16 @@
             "好人書"
           ],
           "canonical_domain_id": "fey",
-          "source_domain_labels": [
-            "精類"
-          ],
           "raw_class_labels": [
             "精類"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "精類"
+      ],
+      "legacy_taxonomy_labels": [
+        "精類"
       ]
     },
     {
@@ -3674,9 +3353,6 @@
         "page": "187",
         "planar": false
       },
-      "source_labels": [
-        "火"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -3689,9 +3365,6 @@
           "level_text_raw": "火 1, 術士/法師 1",
           "spell_sources": [],
           "canonical_domain_id": "fire",
-          "source_domain_labels": [
-            "火"
-          ],
           "raw_class_labels": [
             "火"
           ]
@@ -3706,9 +3379,6 @@
           "level_text_raw": "德魯伊 1，火 2",
           "spell_sources": [],
           "canonical_domain_id": "fire",
-          "source_domain_labels": [
-            "火"
-          ],
           "raw_class_labels": [
             "火"
           ]
@@ -3723,9 +3393,6 @@
           "level_text_raw": "牧師 2，德魯伊 2，火 3，聖武士 2，巡林客 1，術士/法師 2",
           "spell_sources": [],
           "canonical_domain_id": "fire",
-          "source_domain_labels": [
-            "火"
-          ],
           "raw_class_labels": [
             "火"
           ]
@@ -3740,9 +3407,6 @@
           "level_text_raw": "德魯伊 5，火 4，術士/法師 4",
           "spell_sources": [],
           "canonical_domain_id": "fire",
-          "source_domain_labels": [
-            "火"
-          ],
           "raw_class_labels": [
             "火"
           ]
@@ -3757,9 +3421,6 @@
           "level_text_raw": "火 5，術士/法師 4，太陽 4",
           "spell_sources": [],
           "canonical_domain_id": "fire",
-          "source_domain_labels": [
-            "火"
-          ],
           "raw_class_labels": [
             "火"
           ]
@@ -3774,9 +3435,6 @@
           "level_text_raw": "德魯伊 6，火 6，太陽 6",
           "spell_sources": [],
           "canonical_domain_id": "fire",
-          "source_domain_labels": [
-            "火"
-          ],
           "raw_class_labels": [
             "火"
           ]
@@ -3791,9 +3449,6 @@
           "level_text_raw": "牧師 8，德魯伊 7，火 7",
           "spell_sources": [],
           "canonical_domain_id": "fire",
-          "source_domain_labels": [
-            "火"
-          ],
           "raw_class_labels": [
             "火"
           ]
@@ -3808,9 +3463,6 @@
           "level_text_raw": "火 8，術士/法師 8",
           "spell_sources": [],
           "canonical_domain_id": "fire",
-          "source_domain_labels": [
-            "火"
-          ],
           "raw_class_labels": [
             "火"
           ]
@@ -3827,13 +3479,16 @@
             "完美奧術"
           ],
           "canonical_domain_id": "fire",
-          "source_domain_labels": [
-            "火"
-          ],
           "raw_class_labels": [
             "火"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "火"
+      ],
+      "legacy_taxonomy_labels": [
+        "火"
       ]
     },
     {
@@ -3845,10 +3500,6 @@
         "page": "274",
         "planar": false
       },
-      "source_labels": [
-        "榮耀",
-        "榮譽領域"
-      ],
       "spell_count": 10,
       "spells": [
         {
@@ -3863,9 +3514,6 @@
             "好人書"
           ],
           "canonical_domain_id": "glory",
-          "source_domain_labels": [
-            "榮耀"
-          ],
           "raw_class_labels": [
             "榮耀"
           ]
@@ -3882,9 +3530,6 @@
             "好人書"
           ],
           "canonical_domain_id": "glory",
-          "source_domain_labels": [
-            "榮耀"
-          ],
           "raw_class_labels": [
             "榮耀"
           ]
@@ -3899,9 +3544,6 @@
           "level_text_raw": "善良 4【完美神力：榮譽領域（Glory ）4】",
           "spell_sources": [],
           "canonical_domain_id": "glory",
-          "source_domain_labels": [
-            "榮耀"
-          ],
           "raw_class_labels": [
             "榮譽領域"
           ]
@@ -3918,9 +3560,6 @@
             "好人書"
           ],
           "canonical_domain_id": "glory",
-          "source_domain_labels": [
-            "榮耀"
-          ],
           "raw_class_labels": [
             "榮耀"
           ]
@@ -3935,9 +3574,6 @@
           "level_text_raw": "聖武士 4【完美神力：榮譽領域（Glory ）5】",
           "spell_sources": [],
           "canonical_domain_id": "glory",
-          "source_domain_labels": [
-            "榮耀"
-          ],
           "raw_class_labels": [
             "榮譽領域"
           ]
@@ -3956,9 +3592,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "glory",
-          "source_domain_labels": [
-            "榮耀"
-          ],
           "raw_class_labels": [
             "榮耀"
           ]
@@ -3975,9 +3608,6 @@
             "好人書"
           ],
           "canonical_domain_id": "glory",
-          "source_domain_labels": [
-            "榮耀"
-          ],
           "raw_class_labels": [
             "榮耀"
           ]
@@ -3994,9 +3624,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "glory",
-          "source_domain_labels": [
-            "榮耀"
-          ],
           "raw_class_labels": [
             "榮耀"
           ]
@@ -4013,9 +3640,6 @@
             "巨龍書"
           ],
           "canonical_domain_id": "glory",
-          "source_domain_labels": [
-            "榮耀"
-          ],
           "raw_class_labels": [
             "榮耀"
           ]
@@ -4032,13 +3656,18 @@
             "好人書"
           ],
           "canonical_domain_id": "glory",
-          "source_domain_labels": [
-            "榮耀"
-          ],
           "raw_class_labels": [
             "榮耀"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "榮耀",
+        "榮譽領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "榮耀",
+        "榮譽領域"
       ]
     },
     {
@@ -4050,10 +3679,6 @@
         "page": "274",
         "planar": false
       },
-      "source_labels": [
-        "暴食",
-        "暴食領域"
-      ],
       "spell_count": 1,
       "spells": [
         {
@@ -4069,13 +3694,17 @@
             "萬法大全"
           ],
           "canonical_domain_id": "gluttony",
-          "source_domain_labels": [
-            "暴食"
-          ],
           "raw_class_labels": [
             "暴食領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "暴食領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "暴食",
+        "暴食領域"
       ]
     },
     {
@@ -4087,11 +3716,6 @@
         "page": "274",
         "planar": false
       },
-      "source_labels": [
-        "侏儒",
-        "守護",
-        "守護領域"
-      ],
       "spell_count": 2,
       "spells": [
         {
@@ -4106,9 +3730,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "gnome",
-          "source_domain_labels": [
-            "侏儒"
-          ],
           "raw_class_labels": [
             "侏儒"
           ]
@@ -4125,13 +3746,19 @@
             "萬法大全"
           ],
           "canonical_domain_id": "gnome",
-          "source_domain_labels": [
-            "守護"
-          ],
           "raw_class_labels": [
             "守護領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "侏儒",
+        "守護領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "侏儒",
+        "守護",
+        "守護領域"
       ]
     },
     {
@@ -4143,9 +3770,6 @@
         "page": "187",
         "planar": false
       },
-      "source_labels": [
-        "善良"
-      ],
       "spell_count": 8,
       "spells": [
         {
@@ -4158,9 +3782,6 @@
           "level_text_raw": "牧師 1，善良 1，聖武士 1，術士/法師 1",
           "spell_sources": [],
           "canonical_domain_id": "good",
-          "source_domain_labels": [
-            "善良"
-          ],
           "raw_class_labels": [
             "善良"
           ]
@@ -4175,9 +3796,6 @@
           "level_text_raw": "牧師 2，善良 2，機運 2",
           "spell_sources": [],
           "canonical_domain_id": "good",
-          "source_domain_labels": [
-            "善良"
-          ],
           "raw_class_labels": [
             "善良"
           ]
@@ -4192,9 +3810,6 @@
           "level_text_raw": "牧師 3，善良 3，聖騎士 3，術士/法師 3",
           "spell_sources": [],
           "canonical_domain_id": "good",
-          "source_domain_labels": [
-            "善良"
-          ],
           "raw_class_labels": [
             "善良"
           ]
@@ -4209,9 +3824,6 @@
           "level_text_raw": "牧師 5，善良 5，聖武士 4",
           "spell_sources": [],
           "canonical_domain_id": "good",
-          "source_domain_labels": [
-            "善良"
-          ],
           "raw_class_labels": [
             "善良"
           ]
@@ -4226,9 +3838,6 @@
           "level_text_raw": "牧師 6，善良 6，戰爭 6",
           "spell_sources": [],
           "canonical_domain_id": "good",
-          "source_domain_labels": [
-            "善良"
-          ],
           "raw_class_labels": [
             "善良"
           ]
@@ -4243,9 +3852,6 @@
           "level_text_raw": "牧師 7，善良 7",
           "spell_sources": [],
           "canonical_domain_id": "good",
-          "source_domain_labels": [
-            "善良"
-          ],
           "raw_class_labels": [
             "善良"
           ]
@@ -4260,9 +3866,6 @@
           "level_text_raw": "牧師 8，善良 8",
           "spell_sources": [],
           "canonical_domain_id": "good",
-          "source_domain_labels": [
-            "善良"
-          ],
           "raw_class_labels": [
             "善良"
           ]
@@ -4277,13 +3880,16 @@
           "level_text_raw": "混亂 9，牧師 9，邪惡 9，善良 9，守序 9，術士/法師 9",
           "spell_sources": [],
           "canonical_domain_id": "good",
-          "source_domain_labels": [
-            "善良"
-          ],
           "raw_class_labels": [
             "善良"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "善良"
+      ],
+      "legacy_taxonomy_labels": [
+        "善良"
       ]
     },
     {
@@ -4295,10 +3901,6 @@
         "page": "275",
         "planar": false
       },
-      "source_labels": [
-        "貪婪",
-        "貪婪領域（Greed）"
-      ],
       "spell_count": 3,
       "spells": [
         {
@@ -4314,9 +3916,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "greed",
-          "source_domain_labels": [
-            "貪婪"
-          ],
           "raw_class_labels": [
             "貪婪"
           ]
@@ -4334,9 +3933,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "greed",
-          "source_domain_labels": [
-            "貪婪"
-          ],
           "raw_class_labels": [
             "貪婪"
           ]
@@ -4354,13 +3950,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "greed",
-          "source_domain_labels": [
-            "貪婪"
-          ],
           "raw_class_labels": [
             "貪婪領域（Greed）"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "貪婪",
+        "貪婪領域（Greed）"
+      ],
+      "legacy_taxonomy_labels": [
+        "貪婪",
+        "貪婪領域（Greed）"
       ]
     },
     {
@@ -4372,10 +3973,6 @@
         "page": "284",
         "planar": true
       },
-      "source_labels": [
-        "冥土",
-        "黑帝斯"
-      ],
       "spell_count": 3,
       "spells": [
         {
@@ -4390,9 +3987,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "hades",
-          "source_domain_labels": [
-            "冥土"
-          ],
           "raw_class_labels": [
             "冥土"
           ]
@@ -4409,9 +4003,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "hades",
-          "source_domain_labels": [
-            "冥土"
-          ],
           "raw_class_labels": [
             "冥土"
           ]
@@ -4428,13 +4019,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "hades",
-          "source_domain_labels": [
-            "黑帝斯"
-          ],
           "raw_class_labels": [
             "黑帝斯"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "冥土",
+        "黑帝斯"
+      ],
+      "legacy_taxonomy_labels": [
+        "冥土",
+        "黑帝斯"
       ]
     },
     {
@@ -4446,10 +4042,6 @@
         "page": "187",
         "planar": false
       },
-      "source_labels": [
-        "治療",
-        "醫療"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -4462,9 +4054,6 @@
           "level_text_raw": "吟游詩人 1，牧師 1，德魯伊 1，醫療 1，聖武士 1，巡林客 2",
           "spell_sources": [],
           "canonical_domain_id": "healing",
-          "source_domain_labels": [
-            "醫療"
-          ],
           "raw_class_labels": [
             "醫療"
           ]
@@ -4479,9 +4068,6 @@
           "level_text_raw": "吟游詩人 2，牧師 2，德魯伊 3，治療 2，聖武士 3，巡林客 3",
           "spell_sources": [],
           "canonical_domain_id": "healing",
-          "source_domain_labels": [
-            "醫療"
-          ],
           "raw_class_labels": [
             "治療"
           ]
@@ -4496,9 +4082,6 @@
           "level_text_raw": "吟游詩人 3，牧師 3，德魯伊 4，聖武士 4，醫療 3",
           "spell_sources": [],
           "canonical_domain_id": "healing",
-          "source_domain_labels": [
-            "醫療"
-          ],
           "raw_class_labels": [
             "醫療"
           ]
@@ -4513,9 +4096,6 @@
           "level_text_raw": "吟游詩人 4，牧師 4，德魯伊 5，醫療 4",
           "spell_sources": [],
           "canonical_domain_id": "healing",
-          "source_domain_labels": [
-            "醫療"
-          ],
           "raw_class_labels": [
             "醫療"
           ]
@@ -4530,9 +4110,6 @@
           "level_text_raw": "吟游詩人 5，牧師 5，德魯伊 5，醫療 5",
           "spell_sources": [],
           "canonical_domain_id": "healing",
-          "source_domain_labels": [
-            "醫療"
-          ],
           "raw_class_labels": [
             "醫療"
           ]
@@ -4547,9 +4124,6 @@
           "level_text_raw": "牧師 6，德魯伊 7，醫療 6",
           "spell_sources": [],
           "canonical_domain_id": "healing",
-          "source_domain_labels": [
-            "醫療"
-          ],
           "raw_class_labels": [
             "醫療"
           ]
@@ -4564,9 +4138,6 @@
           "level_text_raw": "牧師 7，德魯伊 9，醫療 7",
           "spell_sources": [],
           "canonical_domain_id": "healing",
-          "source_domain_labels": [
-            "醫療"
-          ],
           "raw_class_labels": [
             "醫療"
           ]
@@ -4581,9 +4152,6 @@
           "level_text_raw": "牧師 8，德魯伊 9，醫療 8",
           "spell_sources": [],
           "canonical_domain_id": "healing",
-          "source_domain_labels": [
-            "醫療"
-          ],
           "raw_class_labels": [
             "醫療"
           ]
@@ -4598,13 +4166,18 @@
           "level_text_raw": "牧師 9，醫療 9",
           "spell_sources": [],
           "canonical_domain_id": "healing",
-          "source_domain_labels": [
-            "醫療"
-          ],
           "raw_class_labels": [
             "醫療"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "治療",
+        "醫療"
+      ],
+      "legacy_taxonomy_labels": [
+        "治療",
+        "醫療"
       ]
     },
     {
@@ -4616,11 +4189,6 @@
         "page": "275",
         "planar": false
       },
-      "source_labels": [
-        "饑餓",
-        "饑餓領域",
-        "饑餓領域（Hunger）"
-      ],
       "spell_count": 7,
       "spells": [
         {
@@ -4636,9 +4204,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "hunger",
-          "source_domain_labels": [
-            "饑餓"
-          ],
           "raw_class_labels": [
             "饑餓領域"
           ]
@@ -4656,9 +4221,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "hunger",
-          "source_domain_labels": [
-            "饑餓"
-          ],
           "raw_class_labels": [
             "饑餓領域"
           ]
@@ -4676,9 +4238,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "hunger",
-          "source_domain_labels": [
-            "饑餓"
-          ],
           "raw_class_labels": [
             "饑餓領域"
           ]
@@ -4696,9 +4255,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "hunger",
-          "source_domain_labels": [
-            "饑餓"
-          ],
           "raw_class_labels": [
             "饑餓領域"
           ]
@@ -4716,9 +4272,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "hunger",
-          "source_domain_labels": [
-            "饑餓"
-          ],
           "raw_class_labels": [
             "饑餓領域"
           ]
@@ -4736,9 +4289,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "hunger",
-          "source_domain_labels": [
-            "饑餓"
-          ],
           "raw_class_labels": [
             "饑餓領域"
           ]
@@ -4756,13 +4306,19 @@
             "萬法大全"
           ],
           "canonical_domain_id": "hunger",
-          "source_domain_labels": [
-            "饑餓"
-          ],
           "raw_class_labels": [
             "饑餓領域（Hunger）"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "饑餓領域",
+        "饑餓領域（Hunger）"
+      ],
+      "legacy_taxonomy_labels": [
+        "饑餓",
+        "饑餓領域",
+        "饑餓領域（Hunger）"
       ]
     },
     {
@@ -4774,9 +4330,6 @@
         "page": "87",
         "planar": false
       },
-      "source_labels": [
-        "喜樂"
-      ],
       "spell_count": 5,
       "spells": [
         {
@@ -4791,9 +4344,6 @@
             "好人書"
           ],
           "canonical_domain_id": "joy",
-          "source_domain_labels": [
-            "喜樂"
-          ],
           "raw_class_labels": [
             "喜樂"
           ]
@@ -4810,9 +4360,6 @@
             "好人書"
           ],
           "canonical_domain_id": "joy",
-          "source_domain_labels": [
-            "喜樂"
-          ],
           "raw_class_labels": [
             "喜樂"
           ]
@@ -4829,9 +4376,6 @@
             "好人書"
           ],
           "canonical_domain_id": "joy",
-          "source_domain_labels": [
-            "喜樂"
-          ],
           "raw_class_labels": [
             "喜樂"
           ]
@@ -4848,9 +4392,6 @@
             "好人書"
           ],
           "canonical_domain_id": "joy",
-          "source_domain_labels": [
-            "喜樂"
-          ],
           "raw_class_labels": [
             "喜樂"
           ]
@@ -4867,13 +4408,16 @@
             "好人書"
           ],
           "canonical_domain_id": "joy",
-          "source_domain_labels": [
-            "喜樂"
-          ],
           "raw_class_labels": [
             "喜樂"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "喜樂"
+      ],
+      "legacy_taxonomy_labels": [
+        "喜樂"
       ]
     },
     {
@@ -4885,9 +4429,6 @@
         "page": "187",
         "planar": false
       },
-      "source_labels": [
-        "知識"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -4900,9 +4441,6 @@
           "level_text_raw": "吟游詩人 1，知識 1，術士/法師 1",
           "spell_sources": [],
           "canonical_domain_id": "knowledge",
-          "source_domain_labels": [
-            "知識"
-          ],
           "raw_class_labels": [
             "知識"
           ]
@@ -4917,9 +4455,6 @@
           "level_text_raw": "吟游詩人 2，知識 2，術士/法師 2",
           "spell_sources": [],
           "canonical_domain_id": "knowledge",
-          "source_domain_labels": [
-            "知識"
-          ],
           "raw_class_labels": [
             "知識"
           ]
@@ -4934,9 +4469,6 @@
           "level_text_raw": "吟游詩人 3，知識 3，術士/法師 3",
           "spell_sources": [],
           "canonical_domain_id": "knowledge",
-          "source_domain_labels": [
-            "知識"
-          ],
           "raw_class_labels": [
             "知識"
           ]
@@ -4951,9 +4483,6 @@
           "level_text_raw": "牧師 4，知識 4",
           "spell_sources": [],
           "canonical_domain_id": "knowledge",
-          "source_domain_labels": [
-            "知識"
-          ],
           "raw_class_labels": [
             "知識"
           ]
@@ -4968,9 +4497,6 @@
           "level_text_raw": "牧師 5，德魯伊 7，知識 5，術士/法師 6",
           "spell_sources": [],
           "canonical_domain_id": "knowledge",
-          "source_domain_labels": [
-            "知識"
-          ],
           "raw_class_labels": [
             "知識"
           ]
@@ -4985,9 +4511,6 @@
           "level_text_raw": "吟游詩人 6，牧師 6，德魯伊 6，知識 6，旅行 6",
           "spell_sources": [],
           "canonical_domain_id": "knowledge",
-          "source_domain_labels": [
-            "知識"
-          ],
           "raw_class_labels": [
             "知識"
           ]
@@ -5002,9 +4525,6 @@
           "level_text_raw": "吟游詩人 4，知識 7，術士/法師 6",
           "spell_sources": [],
           "canonical_domain_id": "knowledge",
-          "source_domain_labels": [
-            "知識"
-          ],
           "raw_class_labels": [
             "知識"
           ]
@@ -5019,9 +4539,6 @@
           "level_text_raw": "牧師 8，知識 8，術士/法師 8",
           "spell_sources": [],
           "canonical_domain_id": "knowledge",
-          "source_domain_labels": [
-            "知識"
-          ],
           "raw_class_labels": [
             "知識"
           ]
@@ -5036,13 +4553,16 @@
           "level_text_raw": "德魯伊 9，知識 9，術士/法師 9",
           "spell_sources": [],
           "canonical_domain_id": "knowledge",
-          "source_domain_labels": [
-            "知識"
-          ],
           "raw_class_labels": [
             "知識"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "知識"
+      ],
+      "legacy_taxonomy_labels": [
+        "知識"
       ]
     },
     {
@@ -5054,10 +4574,6 @@
         "page": "187",
         "planar": false
       },
-      "source_labels": [
-        "秩序",
-        "秩序領域"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -5070,9 +4586,6 @@
           "level_text_raw": "牧師 1，秩序領域 1，聖武士 1，術士/法師 1",
           "spell_sources": [],
           "canonical_domain_id": "law",
-          "source_domain_labels": [
-            "秩序"
-          ],
           "raw_class_labels": [
             "秩序領域"
           ]
@@ -5087,9 +4600,6 @@
           "level_text_raw": "吟游詩人 2，牧師 2，秩序 2",
           "spell_sources": [],
           "canonical_domain_id": "law",
-          "source_domain_labels": [
-            "秩序"
-          ],
           "raw_class_labels": [
             "秩序"
           ]
@@ -5104,9 +4614,6 @@
           "level_text_raw": "牧師 3，秩序 3，聖騎士 3，術士/法師 3",
           "spell_sources": [],
           "canonical_domain_id": "law",
-          "source_domain_labels": [
-            "秩序"
-          ],
           "raw_class_labels": [
             "秩序"
           ]
@@ -5121,9 +4628,6 @@
           "level_text_raw": "秩序 4",
           "spell_sources": [],
           "canonical_domain_id": "law",
-          "source_domain_labels": [
-            "秩序"
-          ],
           "raw_class_labels": [
             "秩序"
           ]
@@ -5138,9 +4642,6 @@
           "level_text_raw": "牧師 5，秩序 5，聖武士 4",
           "spell_sources": [],
           "canonical_domain_id": "law",
-          "source_domain_labels": [
-            "秩序"
-          ],
           "raw_class_labels": [
             "秩序"
           ]
@@ -5155,9 +4656,6 @@
           "level_text_raw": "吟游詩人 4，秩序 6，術士/法師 5",
           "spell_sources": [],
           "canonical_domain_id": "law",
-          "source_domain_labels": [
-            "秩序"
-          ],
           "raw_class_labels": [
             "秩序"
           ]
@@ -5172,9 +4670,6 @@
           "level_text_raw": "牧師 7，秩序 7",
           "spell_sources": [],
           "canonical_domain_id": "law",
-          "source_domain_labels": [
-            "秩序"
-          ],
           "raw_class_labels": [
             "秩序"
           ]
@@ -5189,9 +4684,6 @@
           "level_text_raw": "牧師 8，秩序 8",
           "spell_sources": [],
           "canonical_domain_id": "law",
-          "source_domain_labels": [
-            "秩序"
-          ],
           "raw_class_labels": [
             "秩序"
           ]
@@ -5206,13 +4698,18 @@
           "level_text_raw": "混亂 9，牧師 9，邪惡 9，善良 9，守序 9，術士/法師 9",
           "spell_sources": [],
           "canonical_domain_id": "law",
-          "source_domain_labels": [
-            "秩序"
-          ],
           "raw_class_labels": [
             "秩序"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "秩序",
+        "秩序領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "秩序",
+        "秩序領域"
       ]
     },
     {
@@ -5224,11 +4721,6 @@
         "page": "276",
         "planar": false
       },
-      "source_labels": [
-        "解放",
-        "解放領域",
-        "解放領域（Liberation）"
-      ],
       "spell_count": 2,
       "spells": [
         {
@@ -5245,9 +4737,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "liberation",
-          "source_domain_labels": [
-            "解放"
-          ],
           "raw_class_labels": [
             "解放領域"
           ]
@@ -5265,13 +4754,19 @@
             "萬法大全"
           ],
           "canonical_domain_id": "liberation",
-          "source_domain_labels": [
-            "解放"
-          ],
           "raw_class_labels": [
             "解放領域（Liberation）"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "解放領域",
+        "解放領域（Liberation）"
+      ],
+      "legacy_taxonomy_labels": [
+        "解放",
+        "解放領域",
+        "解放領域（Liberation）"
       ]
     },
     {
@@ -5283,9 +4778,6 @@
         "page": "284",
         "planar": true
       },
-      "source_labels": [
-        "無定界"
-      ],
       "spell_count": 1,
       "spells": [
         {
@@ -5300,13 +4792,16 @@
             "萬法大全"
           ],
           "canonical_domain_id": "limbo",
-          "source_domain_labels": [
-            "無定界"
-          ],
           "raw_class_labels": [
             "無定界"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "無定界"
+      ],
+      "legacy_taxonomy_labels": [
+        "無定界"
       ]
     },
     {
@@ -5318,10 +4813,6 @@
         "page": "187",
         "planar": false
       },
-      "source_labels": [
-        "機運",
-        "機運領域"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -5334,9 +4825,6 @@
           "level_text_raw": "牧師 1，機運 1",
           "spell_sources": [],
           "canonical_domain_id": "luck",
-          "source_domain_labels": [
-            "機運"
-          ],
           "raw_class_labels": [
             "機運"
           ]
@@ -5351,9 +4839,6 @@
           "level_text_raw": "牧師 2，善良 2，機運 2",
           "spell_sources": [],
           "canonical_domain_id": "luck",
-          "source_domain_labels": [
-            "機運"
-          ],
           "raw_class_labels": [
             "機運"
           ]
@@ -5368,9 +4853,6 @@
           "level_text_raw": "牧師 3，德魯伊 3，機運領域 3，保護領域 3，巡林客 2，術士/法師 3",
           "spell_sources": [],
           "canonical_domain_id": "luck",
-          "source_domain_labels": [
-            "機運"
-          ],
           "raw_class_labels": [
             "機運領域"
           ]
@@ -5385,9 +4867,6 @@
           "level_text_raw": "吟游詩人 4，牧師 4，德魯伊 4，機運 4，巡林客 4",
           "spell_sources": [],
           "canonical_domain_id": "luck",
-          "source_domain_labels": [
-            "機運"
-          ],
           "raw_class_labels": [
             "機運"
           ]
@@ -5402,9 +4881,6 @@
           "level_text_raw": "吟游詩人 4，牧師 5，機運 5，聖武士 4，術士/法師 5",
           "spell_sources": [],
           "canonical_domain_id": "luck",
-          "source_domain_labels": [
-            "機運"
-          ],
           "raw_class_labels": [
             "機運"
           ]
@@ -5419,9 +4895,6 @@
           "level_text_raw": "吟游詩人 5，機運 6，術士/法師 6，詭術 6",
           "spell_sources": [],
           "canonical_domain_id": "luck",
-          "source_domain_labels": [
-            "機運"
-          ],
           "raw_class_labels": [
             "機運"
           ]
@@ -5436,9 +4909,6 @@
           "level_text_raw": "機運 7，魔法 7，術士/法師 7",
           "spell_sources": [],
           "canonical_domain_id": "luck",
-          "source_domain_labels": [
-            "機運"
-          ],
           "raw_class_labels": [
             "機運"
           ]
@@ -5453,9 +4923,6 @@
           "level_text_raw": "機運 8，術士/法師 8",
           "spell_sources": [],
           "canonical_domain_id": "luck",
-          "source_domain_labels": [
-            "機運"
-          ],
           "raw_class_labels": [
             "機運"
           ]
@@ -5470,13 +4937,18 @@
           "level_text_raw": "牧師 9，機運 9",
           "spell_sources": [],
           "canonical_domain_id": "luck",
-          "source_domain_labels": [
-            "機運"
-          ],
           "raw_class_labels": [
             "機運"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "機運",
+        "機運領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "機運",
+        "機運領域"
       ]
     },
     {
@@ -5488,10 +4960,6 @@
         "page": "276",
         "planar": false
       },
-      "source_labels": [
-        "狂亂",
-        "瘋狂"
-      ],
       "spell_count": 5,
       "spells": [
         {
@@ -5506,9 +4974,6 @@
             "ECS"
           ],
           "canonical_domain_id": "madness",
-          "source_domain_labels": [
-            "瘋狂"
-          ],
           "raw_class_labels": [
             "瘋狂"
           ]
@@ -5525,9 +4990,6 @@
             "ECS"
           ],
           "canonical_domain_id": "madness",
-          "source_domain_labels": [
-            "瘋狂"
-          ],
           "raw_class_labels": [
             "瘋狂"
           ]
@@ -5545,9 +5007,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "madness",
-          "source_domain_labels": [
-            "瘋狂"
-          ],
           "raw_class_labels": [
             "瘋狂"
           ]
@@ -5566,9 +5025,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "madness",
-          "source_domain_labels": [
-            "瘋狂"
-          ],
           "raw_class_labels": [
             "瘋狂"
           ]
@@ -5586,13 +5042,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "madness",
-          "source_domain_labels": [
-            "狂亂"
-          ],
           "raw_class_labels": [
             "狂亂"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "狂亂",
+        "瘋狂"
+      ],
+      "legacy_taxonomy_labels": [
+        "狂亂",
+        "瘋狂"
       ]
     },
     {
@@ -5604,10 +5065,6 @@
         "page": "188",
         "planar": false
       },
-      "source_labels": [
-        "魔法",
-        "魔法領域"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -5620,9 +5077,6 @@
           "level_text_raw": "吟游詩人 1，魔法 1，術士/法師 1",
           "spell_sources": [],
           "canonical_domain_id": "magic",
-          "source_domain_labels": [
-            "魔法"
-          ],
           "raw_class_labels": [
             "魔法"
           ]
@@ -5637,9 +5091,6 @@
           "level_text_raw": "吟游詩人 1，魔法 2，術士/法師 1",
           "spell_sources": [],
           "canonical_domain_id": "magic",
-          "source_domain_labels": [
-            "魔法"
-          ],
           "raw_class_labels": [
             "魔法"
           ]
@@ -5654,9 +5105,6 @@
           "level_text_raw": "吟游詩人 3，牧師 3，德魯伊 4，魔法 3，聖武士 3，術士/法師 3",
           "spell_sources": [],
           "canonical_domain_id": "magic",
-          "source_domain_labels": [
-            "魔法"
-          ],
           "raw_class_labels": [
             "魔法"
           ]
@@ -5671,9 +5119,6 @@
           "level_text_raw": "牧師 4，魔法 4",
           "spell_sources": [],
           "canonical_domain_id": "magic",
-          "source_domain_labels": [
-            "魔法"
-          ],
           "raw_class_labels": [
             "魔法"
           ]
@@ -5688,9 +5133,6 @@
           "level_text_raw": "牧師 5，魔法 5，保護 5",
           "spell_sources": [],
           "canonical_domain_id": "magic",
-          "source_domain_labels": [
-            "魔法"
-          ],
           "raw_class_labels": [
             "魔法"
           ]
@@ -5705,9 +5147,6 @@
           "level_text_raw": "牧師 8，魔法 6，保護 6，術士/法師 6",
           "spell_sources": [],
           "canonical_domain_id": "magic",
-          "source_domain_labels": [
-            "魔法"
-          ],
           "raw_class_labels": [
             "魔法"
           ]
@@ -5722,9 +5161,6 @@
           "level_text_raw": "機運 7，魔法 7，術士/法師 7",
           "spell_sources": [],
           "canonical_domain_id": "magic",
-          "source_domain_labels": [
-            "魔法"
-          ],
           "raw_class_labels": [
             "魔法"
           ]
@@ -5739,9 +5175,6 @@
           "level_text_raw": "魔法領域 8，術士/法師 8",
           "spell_sources": [],
           "canonical_domain_id": "magic",
-          "source_domain_labels": [
-            "魔法"
-          ],
           "raw_class_labels": [
             "魔法領域"
           ]
@@ -5756,13 +5189,18 @@
           "level_text_raw": "魔法 9，術士/法師 9",
           "spell_sources": [],
           "canonical_domain_id": "magic",
-          "source_domain_labels": [
-            "魔法"
-          ],
           "raw_class_labels": [
             "魔法"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "魔法",
+        "魔法領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "魔法",
+        "魔法領域"
       ]
     },
     {
@@ -5774,10 +5212,6 @@
         "page": "284–285",
         "planar": true
       },
-      "source_labels": [
-        "機械界",
-        "機械領域（Mechanus）"
-      ],
       "spell_count": 4,
       "spells": [
         {
@@ -5792,9 +5226,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "mechanus",
-          "source_domain_labels": [
-            "機械界"
-          ],
           "raw_class_labels": [
             "機械界"
           ]
@@ -5811,9 +5242,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "mechanus",
-          "source_domain_labels": [
-            "機械界"
-          ],
           "raw_class_labels": [
             "機械界"
           ]
@@ -5830,9 +5258,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "mechanus",
-          "source_domain_labels": [
-            "機械界"
-          ],
           "raw_class_labels": [
             "機械領域（Mechanus）"
           ]
@@ -5849,13 +5274,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "mechanus",
-          "source_domain_labels": [
-            "機械界"
-          ],
           "raw_class_labels": [
             "機械界"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "機械界",
+        "機械領域（Mechanus）"
+      ],
+      "legacy_taxonomy_labels": [
+        "機械界",
+        "機械領域（Mechanus）"
       ]
     },
     {
@@ -5867,10 +5297,6 @@
         "page": "276–277",
         "planar": false
       },
-      "source_labels": [
-        "心智",
-        "心靈"
-      ],
       "spell_count": 3,
       "spells": [
         {
@@ -5886,9 +5312,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "mind",
-          "source_domain_labels": [
-            "心靈"
-          ],
           "raw_class_labels": [
             "心靈"
           ]
@@ -5907,9 +5330,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "mind",
-          "source_domain_labels": [
-            "心靈"
-          ],
           "raw_class_labels": [
             "心靈"
           ]
@@ -5927,13 +5347,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "mind",
-          "source_domain_labels": [
-            "心靈"
-          ],
           "raw_class_labels": [
             "心智"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "心智",
+        "心靈"
+      ],
+      "legacy_taxonomy_labels": [
+        "心智",
+        "心靈"
       ]
     },
     {
@@ -5945,10 +5370,6 @@
         "page": "277",
         "planar": false
       },
-      "source_labels": [
-        "月亮",
-        "月亮領域"
-      ],
       "spell_count": 4,
       "spells": [
         {
@@ -5963,9 +5384,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "moon",
-          "source_domain_labels": [
-            "月亮"
-          ],
           "raw_class_labels": [
             "月亮領域"
           ]
@@ -5982,9 +5400,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "moon",
-          "source_domain_labels": [
-            "月亮"
-          ],
           "raw_class_labels": [
             "月亮"
           ]
@@ -6001,9 +5416,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "moon",
-          "source_domain_labels": [
-            "月亮"
-          ],
           "raw_class_labels": [
             "月亮領域"
           ]
@@ -6020,13 +5432,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "moon",
-          "source_domain_labels": [
-            "月亮"
-          ],
           "raw_class_labels": [
             "月亮"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "月亮",
+        "月亮領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "月亮",
+        "月亮領域"
       ]
     },
     {
@@ -6038,9 +5455,6 @@
         "page": "277",
         "planar": false
       },
-      "source_labels": [
-        "神秘"
-      ],
       "spell_count": 3,
       "spells": [
         {
@@ -6056,9 +5470,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "mysticism",
-          "source_domain_labels": [
-            "神秘"
-          ],
           "raw_class_labels": [
             "神秘"
           ]
@@ -6075,9 +5486,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "mysticism",
-          "source_domain_labels": [
-            "神秘"
-          ],
           "raw_class_labels": [
             "神秘"
           ]
@@ -6094,13 +5502,16 @@
             "萬法大全"
           ],
           "canonical_domain_id": "mysticism",
-          "source_domain_labels": [
-            "神秘"
-          ],
           "raw_class_labels": [
             "神秘"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "神秘"
+      ],
+      "legacy_taxonomy_labels": [
+        "神秘"
       ]
     },
     {
@@ -6112,10 +5523,6 @@
         "page": "277",
         "planar": false
       },
-      "source_labels": [
-        "海洋",
-        "海洋領域"
-      ],
       "spell_count": 2,
       "spells": [
         {
@@ -6132,9 +5539,6 @@
             "風暴之書"
           ],
           "canonical_domain_id": "ocean",
-          "source_domain_labels": [
-            "海洋"
-          ],
           "raw_class_labels": [
             "海洋領域"
           ]
@@ -6153,13 +5557,17 @@
             "風暴之書"
           ],
           "canonical_domain_id": "ocean",
-          "source_domain_labels": [
-            "海洋"
-          ],
           "raw_class_labels": [
             "海洋領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "海洋領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "海洋",
+        "海洋領域"
       ]
     },
     {
@@ -6171,11 +5579,6 @@
         "page": "278",
         "planar": false
       },
-      "source_labels": [
-        "契約",
-        "契約領域",
-        "誓約"
-      ],
       "spell_count": 3,
       "spells": [
         {
@@ -6190,9 +5593,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "pact",
-          "source_domain_labels": [
-            "契約"
-          ],
           "raw_class_labels": [
             "契約領域"
           ]
@@ -6209,9 +5609,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "pact",
-          "source_domain_labels": [
-            "契約"
-          ],
           "raw_class_labels": [
             "契約"
           ]
@@ -6228,13 +5625,20 @@
             "萬法大全"
           ],
           "canonical_domain_id": "pact",
-          "source_domain_labels": [
-            "誓約"
-          ],
           "raw_class_labels": [
             "誓約"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "契約",
+        "契約領域",
+        "誓約"
+      ],
+      "legacy_taxonomy_labels": [
+        "契約",
+        "契約領域",
+        "誓約"
       ]
     },
     {
@@ -6246,11 +5650,6 @@
         "page": "278",
         "planar": false
       },
-      "source_labels": [
-        "疫病",
-        "瘟疫",
-        "瘟疫領域"
-      ],
       "spell_count": 4,
       "spells": [
         {
@@ -6266,9 +5665,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "pestilence",
-          "source_domain_labels": [
-            "疫病"
-          ],
           "raw_class_labels": [
             "疫病"
           ]
@@ -6285,9 +5681,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "pestilence",
-          "source_domain_labels": [
-            "疫病"
-          ],
           "raw_class_labels": [
             "疫病"
           ]
@@ -6304,9 +5697,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "pestilence",
-          "source_domain_labels": [
-            "疫病"
-          ],
           "raw_class_labels": [
             "瘟疫"
           ]
@@ -6323,13 +5713,20 @@
             "萬法大全"
           ],
           "canonical_domain_id": "pestilence",
-          "source_domain_labels": [
-            "疫病"
-          ],
           "raw_class_labels": [
             "瘟疫領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "疫病",
+        "瘟疫",
+        "瘟疫領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "疫病",
+        "瘟疫",
+        "瘟疫領域"
       ]
     },
     {
@@ -6341,10 +5738,6 @@
         "page": "188",
         "planar": false
       },
-      "source_labels": [
-        "植物",
-        "植物領域"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -6357,9 +5750,6 @@
           "level_text_raw": "德魯伊 1，植物 1，巡林客 1",
           "spell_sources": [],
           "canonical_domain_id": "plant",
-          "source_domain_labels": [
-            "植物"
-          ],
           "raw_class_labels": [
             "植物"
           ]
@@ -6374,9 +5764,6 @@
           "level_text_raw": "德魯伊 2，巡林客 2，植物 2",
           "spell_sources": [],
           "canonical_domain_id": "plant",
-          "source_domain_labels": [
-            "植物"
-          ],
           "raw_class_labels": [
             "植物"
           ]
@@ -6391,9 +5778,6 @@
           "level_text_raw": "德魯伊 3，植物領域 3，巡林客 3",
           "spell_sources": [],
           "canonical_domain_id": "plant",
-          "source_domain_labels": [
-            "植物"
-          ],
           "raw_class_labels": [
             "植物領域"
           ]
@@ -6408,9 +5792,6 @@
           "level_text_raw": "德魯伊 4，植物 4，巡林客 3",
           "spell_sources": [],
           "canonical_domain_id": "plant",
-          "source_domain_labels": [
-            "植物"
-          ],
           "raw_class_labels": [
             "植物"
           ]
@@ -6425,9 +5806,6 @@
           "level_text_raw": "德魯伊 5，植物 5",
           "spell_sources": [],
           "canonical_domain_id": "plant",
-          "source_domain_labels": [
-            "植物"
-          ],
           "raw_class_labels": [
             "植物"
           ]
@@ -6442,9 +5820,6 @@
           "level_text_raw": "德魯伊 6， 植物 6",
           "spell_sources": [],
           "canonical_domain_id": "plant",
-          "source_domain_labels": [
-            "植物"
-          ],
           "raw_class_labels": [
             "植物"
           ]
@@ -6459,9 +5834,6 @@
           "level_text_raw": "德魯伊 7，植物 7",
           "spell_sources": [],
           "canonical_domain_id": "plant",
-          "source_domain_labels": [
-            "植物"
-          ],
           "raw_class_labels": [
             "植物"
           ]
@@ -6476,9 +5848,6 @@
           "level_text_raw": "德魯伊 8，植物 8",
           "spell_sources": [],
           "canonical_domain_id": "plant",
-          "source_domain_labels": [
-            "植物"
-          ],
           "raw_class_labels": [
             "植物"
           ]
@@ -6493,13 +5862,18 @@
           "level_text_raw": "德魯伊 9，植物 9",
           "spell_sources": [],
           "canonical_domain_id": "plant",
-          "source_domain_labels": [
-            "植物"
-          ],
           "raw_class_labels": [
             "植物"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "植物",
+        "植物領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "植物",
+        "植物領域"
       ]
     },
     {
@@ -6511,10 +5885,6 @@
         "page": "87",
         "planar": false
       },
-      "source_labels": [
-        "歡娛",
-        "歡愉"
-      ],
       "spell_count": 7,
       "spells": [
         {
@@ -6529,9 +5899,6 @@
             "好人書"
           ],
           "canonical_domain_id": "pleasure",
-          "source_domain_labels": [
-            "歡娛"
-          ],
           "raw_class_labels": [
             "歡娛"
           ]
@@ -6548,9 +5915,6 @@
             "好人書"
           ],
           "canonical_domain_id": "pleasure",
-          "source_domain_labels": [
-            "歡娛"
-          ],
           "raw_class_labels": [
             "歡娛"
           ]
@@ -6567,9 +5931,6 @@
             "好人書"
           ],
           "canonical_domain_id": "pleasure",
-          "source_domain_labels": [
-            "歡娛"
-          ],
           "raw_class_labels": [
             "歡愉"
           ]
@@ -6586,9 +5947,6 @@
             "好人書"
           ],
           "canonical_domain_id": "pleasure",
-          "source_domain_labels": [
-            "歡娛"
-          ],
           "raw_class_labels": [
             "歡娛"
           ]
@@ -6605,9 +5963,6 @@
             "好人書"
           ],
           "canonical_domain_id": "pleasure",
-          "source_domain_labels": [
-            "歡娛"
-          ],
           "raw_class_labels": [
             "歡娛"
           ]
@@ -6624,9 +5979,6 @@
             "好人書"
           ],
           "canonical_domain_id": "pleasure",
-          "source_domain_labels": [
-            "歡娛"
-          ],
           "raw_class_labels": [
             "歡娛"
           ]
@@ -6643,13 +5995,18 @@
             "好人書"
           ],
           "canonical_domain_id": "pleasure",
-          "source_domain_labels": [
-            "歡娛"
-          ],
           "raw_class_labels": [
             "歡娛"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "歡娛",
+        "歡愉"
+      ],
+      "legacy_taxonomy_labels": [
+        "歡娛",
+        "歡愉"
       ]
     },
     {
@@ -6661,9 +6018,6 @@
         "page": "278",
         "planar": false
       },
-      "source_labels": [
-        "傳送"
-      ],
       "spell_count": 1,
       "spells": [
         {
@@ -6678,13 +6032,16 @@
             "萬法大全"
           ],
           "canonical_domain_id": "portal",
-          "source_domain_labels": [
-            "傳送"
-          ],
           "raw_class_labels": [
             "傳送"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "傳送"
+      ],
+      "legacy_taxonomy_labels": [
+        "傳送"
       ]
     },
     {
@@ -6696,10 +6053,6 @@
         "page": "188",
         "planar": false
       },
-      "source_labels": [
-        "保護",
-        "保護領域"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -6712,9 +6065,6 @@
           "level_text_raw": "牧師 1，保護 1",
           "spell_sources": [],
           "canonical_domain_id": "protection",
-          "source_domain_labels": [
-            "保護"
-          ],
           "raw_class_labels": [
             "保護"
           ]
@@ -6729,9 +6079,6 @@
           "level_text_raw": "牧師 2，聖武士 2，保護 2",
           "spell_sources": [],
           "canonical_domain_id": "protection",
-          "source_domain_labels": [
-            "保護"
-          ],
           "raw_class_labels": [
             "保護"
           ]
@@ -6746,9 +6093,6 @@
           "level_text_raw": "牧師 3，德魯伊 3，機運領域 3，保護領域 3，巡林客 2，術士/法師 3",
           "spell_sources": [],
           "canonical_domain_id": "protection",
-          "source_domain_labels": [
-            "保護"
-          ],
           "raw_class_labels": [
             "保護領域"
           ]
@@ -6763,9 +6107,6 @@
           "level_text_raw": "牧師 4，保護 4，力量 4",
           "spell_sources": [],
           "canonical_domain_id": "protection",
-          "source_domain_labels": [
-            "保護"
-          ],
           "raw_class_labels": [
             "保護"
           ]
@@ -6780,9 +6121,6 @@
           "level_text_raw": "牧師 5，魔法 5，保護 5",
           "spell_sources": [],
           "canonical_domain_id": "protection",
-          "source_domain_labels": [
-            "保護"
-          ],
           "raw_class_labels": [
             "保護"
           ]
@@ -6797,9 +6135,6 @@
           "level_text_raw": "牧師 8，魔法 6，保護 6，術士/法師 6",
           "spell_sources": [],
           "canonical_domain_id": "protection",
-          "source_domain_labels": [
-            "保護"
-          ],
           "raw_class_labels": [
             "保護"
           ]
@@ -6814,9 +6149,6 @@
           "level_text_raw": "牧師 7，保護 7，術士/法師 6",
           "spell_sources": [],
           "canonical_domain_id": "protection",
-          "source_domain_labels": [
-            "保護"
-          ],
           "raw_class_labels": [
             "保護"
           ]
@@ -6831,9 +6163,6 @@
           "level_text_raw": "保護 8，術士/法師 8",
           "spell_sources": [],
           "canonical_domain_id": "protection",
-          "source_domain_labels": [
-            "保護"
-          ],
           "raw_class_labels": [
             "保護"
           ]
@@ -6848,13 +6177,18 @@
           "level_text_raw": "保護 9，術士/法師 9，太陽 9",
           "spell_sources": [],
           "canonical_domain_id": "protection",
-          "source_domain_labels": [
-            "保護"
-          ],
           "raw_class_labels": [
             "保護"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "保護",
+        "保護領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "保護",
+        "保護領域"
       ]
     },
     {
@@ -6866,10 +6200,6 @@
         "page": "279",
         "planar": false
       },
-      "source_labels": [
-        "淨化",
-        "淨化領域"
-      ],
       "spell_count": 8,
       "spells": [
         {
@@ -6885,9 +6215,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "purification",
-          "source_domain_labels": [
-            "淨化"
-          ],
           "raw_class_labels": [
             "淨化"
           ]
@@ -6905,9 +6232,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "purification",
-          "source_domain_labels": [
-            "淨化"
-          ],
           "raw_class_labels": [
             "淨化"
           ]
@@ -6925,9 +6249,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "purification",
-          "source_domain_labels": [
-            "淨化"
-          ],
           "raw_class_labels": [
             "淨化"
           ]
@@ -6945,9 +6266,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "purification",
-          "source_domain_labels": [
-            "淨化"
-          ],
           "raw_class_labels": [
             "淨化"
           ]
@@ -6964,9 +6282,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "purification",
-          "source_domain_labels": [
-            "淨化"
-          ],
           "raw_class_labels": [
             "淨化領域"
           ]
@@ -6983,9 +6298,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "purification",
-          "source_domain_labels": [
-            "淨化"
-          ],
           "raw_class_labels": [
             "淨化"
           ]
@@ -7003,9 +6315,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "purification",
-          "source_domain_labels": [
-            "淨化"
-          ],
           "raw_class_labels": [
             "淨化領域"
           ]
@@ -7022,13 +6331,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "purification",
-          "source_domain_labels": [
-            "淨化"
-          ],
           "raw_class_labels": [
             "淨化"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "淨化",
+        "淨化領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "淨化",
+        "淨化領域"
       ]
     },
     {
@@ -7040,10 +6354,6 @@
         "page": "90",
         "planar": false
       },
-      "source_labels": [
-        "安息",
-        "安息領域"
-      ],
       "spell_count": 1,
       "spells": [
         {
@@ -7058,13 +6368,17 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "repose",
-          "source_domain_labels": [
-            "安息"
-          ],
           "raw_class_labels": [
             "安息領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "安息領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "安息",
+        "安息領域"
       ]
     },
     {
@@ -7076,10 +6390,6 @@
         "page": "279",
         "planar": false
       },
-      "source_labels": [
-        "符文",
-        "符文領域"
-      ],
       "spell_count": 1,
       "spells": [
         {
@@ -7094,13 +6404,17 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "rune",
-          "source_domain_labels": [
-            "符文"
-          ],
           "raw_class_labels": [
             "符文領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "符文領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "符文",
+        "符文領域"
       ]
     },
     {
@@ -7112,11 +6426,6 @@
         "page": "107",
         "planar": false
       },
-      "source_labels": [
-        "沙",
-        "沙領域",
-        "砂領域（Sand ）"
-      ],
       "spell_count": 8,
       "spells": [
         {
@@ -7131,9 +6440,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "sand",
-          "source_domain_labels": [
-            "沙"
-          ],
           "raw_class_labels": [
             "沙領域"
           ]
@@ -7150,9 +6456,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "sand",
-          "source_domain_labels": [
-            "沙"
-          ],
           "raw_class_labels": [
             "沙領域"
           ]
@@ -7169,9 +6472,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "sand",
-          "source_domain_labels": [
-            "沙"
-          ],
           "raw_class_labels": [
             "沙領域"
           ]
@@ -7188,9 +6488,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "sand",
-          "source_domain_labels": [
-            "沙"
-          ],
           "raw_class_labels": [
             "沙領域"
           ]
@@ -7207,9 +6504,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "sand",
-          "source_domain_labels": [
-            "沙"
-          ],
           "raw_class_labels": [
             "沙領域"
           ]
@@ -7226,9 +6520,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "sand",
-          "source_domain_labels": [
-            "沙"
-          ],
           "raw_class_labels": [
             "砂領域（Sand ）"
           ]
@@ -7245,9 +6536,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "sand",
-          "source_domain_labels": [
-            "沙"
-          ],
           "raw_class_labels": [
             "沙領域"
           ]
@@ -7264,13 +6552,19 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "sand",
-          "source_domain_labels": [
-            "沙"
-          ],
           "raw_class_labels": [
             "沙領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "沙領域",
+        "砂領域（Sand ）"
+      ],
+      "legacy_taxonomy_labels": [
+        "沙",
+        "沙領域",
+        "砂領域（Sand ）"
       ]
     },
     {
@@ -7282,10 +6576,6 @@
         "page": "110",
         "planar": false
       },
-      "source_labels": [
-        "水族",
-        "水族領域"
-      ],
       "spell_count": 7,
       "spells": [
         {
@@ -7300,9 +6590,6 @@
             "風暴之書"
           ],
           "canonical_domain_id": "seafolk",
-          "source_domain_labels": [
-            "水族"
-          ],
           "raw_class_labels": [
             "水族領域"
           ]
@@ -7320,9 +6607,6 @@
             "風暴之書"
           ],
           "canonical_domain_id": "seafolk",
-          "source_domain_labels": [
-            "水族"
-          ],
           "raw_class_labels": [
             "水族領域"
           ]
@@ -7339,9 +6623,6 @@
             "風暴之書"
           ],
           "canonical_domain_id": "seafolk",
-          "source_domain_labels": [
-            "水族"
-          ],
           "raw_class_labels": [
             "水族領域"
           ]
@@ -7358,9 +6639,6 @@
             "風暴之書"
           ],
           "canonical_domain_id": "seafolk",
-          "source_domain_labels": [
-            "水族"
-          ],
           "raw_class_labels": [
             "水族領域"
           ]
@@ -7377,9 +6655,6 @@
             "風暴之書"
           ],
           "canonical_domain_id": "seafolk",
-          "source_domain_labels": [
-            "水族"
-          ],
           "raw_class_labels": [
             "水族領域"
           ]
@@ -7396,9 +6671,6 @@
             "風暴之書"
           ],
           "canonical_domain_id": "seafolk",
-          "source_domain_labels": [
-            "水族"
-          ],
           "raw_class_labels": [
             "水族領域"
           ]
@@ -7415,13 +6687,17 @@
             "風暴之書"
           ],
           "canonical_domain_id": "seafolk",
-          "source_domain_labels": [
-            "水族"
-          ],
           "raw_class_labels": [
             "水族領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "水族領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "水族",
+        "水族領域"
       ]
     },
     {
@@ -7433,9 +6709,6 @@
         "page": "174",
         "planar": false
       },
-      "source_labels": [
-        "天空"
-      ],
       "spell_count": 6,
       "spells": [
         {
@@ -7450,9 +6723,6 @@
             "荒野族裔"
           ],
           "canonical_domain_id": "sky",
-          "source_domain_labels": [
-            "天空"
-          ],
           "raw_class_labels": [
             "天空"
           ]
@@ -7469,9 +6739,6 @@
             "荒野族裔"
           ],
           "canonical_domain_id": "sky",
-          "source_domain_labels": [
-            "天空"
-          ],
           "raw_class_labels": [
             "天空"
           ]
@@ -7488,9 +6755,6 @@
             "荒野族裔"
           ],
           "canonical_domain_id": "sky",
-          "source_domain_labels": [
-            "天空"
-          ],
           "raw_class_labels": [
             "天空"
           ]
@@ -7507,9 +6771,6 @@
             "荒野族裔"
           ],
           "canonical_domain_id": "sky",
-          "source_domain_labels": [
-            "天空"
-          ],
           "raw_class_labels": [
             "天空"
           ]
@@ -7526,9 +6787,6 @@
             "荒野族裔"
           ],
           "canonical_domain_id": "sky",
-          "source_domain_labels": [
-            "天空"
-          ],
           "raw_class_labels": [
             "天空"
           ]
@@ -7545,13 +6803,16 @@
             "荒野族裔"
           ],
           "canonical_domain_id": "sky",
-          "source_domain_labels": [
-            "天空"
-          ],
           "raw_class_labels": [
             "天空"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "天空"
+      ],
+      "legacy_taxonomy_labels": [
+        "天空"
       ]
     },
     {
@@ -7563,10 +6824,6 @@
         "page": "280",
         "planar": false
       },
-      "source_labels": [
-        "法術",
-        "法術領域"
-      ],
       "spell_count": 2,
       "spells": [
         {
@@ -7581,9 +6838,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "spell",
-          "source_domain_labels": [
-            "法術"
-          ],
           "raw_class_labels": [
             "法術領域"
           ]
@@ -7600,13 +6854,17 @@
             "萬法大全"
           ],
           "canonical_domain_id": "spell",
-          "source_domain_labels": [
-            "法術"
-          ],
           "raw_class_labels": [
             "法術領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "法術領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "法術",
+        "法術領域"
       ]
     },
     {
@@ -7618,10 +6876,6 @@
         "page": "280",
         "planar": false
       },
-      "source_labels": [
-        "蜘蛛",
-        "蜘蛛領域"
-      ],
       "spell_count": 3,
       "spells": [
         {
@@ -7636,9 +6890,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "spider",
-          "source_domain_labels": [
-            "蜘蛛"
-          ],
           "raw_class_labels": [
             "蜘蛛"
           ]
@@ -7655,9 +6906,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "spider",
-          "source_domain_labels": [
-            "蜘蛛"
-          ],
           "raw_class_labels": [
             "蜘蛛"
           ]
@@ -7674,13 +6922,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "spider",
-          "source_domain_labels": [
-            "蜘蛛"
-          ],
           "raw_class_labels": [
             "蜘蛛領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "蜘蛛",
+        "蜘蛛領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "蜘蛛",
+        "蜘蛛領域"
       ]
     },
     {
@@ -7692,9 +6945,6 @@
         "page": "280",
         "planar": false
       },
-      "source_labels": [
-        "風暴"
-      ],
       "spell_count": 3,
       "spells": [
         {
@@ -7709,9 +6959,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "storm",
-          "source_domain_labels": [
-            "風暴"
-          ],
           "raw_class_labels": [
             "風暴"
           ]
@@ -7728,9 +6975,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "storm",
-          "source_domain_labels": [
-            "風暴"
-          ],
           "raw_class_labels": [
             "風暴"
           ]
@@ -7747,13 +6991,16 @@
             "萬法大全"
           ],
           "canonical_domain_id": "storm",
-          "source_domain_labels": [
-            "風暴"
-          ],
           "raw_class_labels": [
             "風暴"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "風暴"
+      ],
+      "legacy_taxonomy_labels": [
+        "風暴"
       ]
     },
     {
@@ -7765,11 +7012,6 @@
         "page": "188",
         "planar": false
       },
-      "source_labels": [
-        "力",
-        "力量",
-        "力量領域"
-      ],
       "spell_count": 10,
       "spells": [
         {
@@ -7782,9 +7024,6 @@
           "level_text_raw": "術士/法師 1，力量 1",
           "spell_sources": [],
           "canonical_domain_id": "strength",
-          "source_domain_labels": [
-            "力量"
-          ],
           "raw_class_labels": [
             "力量"
           ]
@@ -7799,9 +7038,6 @@
           "level_text_raw": "牧師 2，德魯伊 2，聖武士 2，術士/法師 2，力量領域 2",
           "spell_sources": [],
           "canonical_domain_id": "strength",
-          "source_domain_labels": [
-            "力量"
-          ],
           "raw_class_labels": [
             "力量領域"
           ]
@@ -7819,9 +7055,6 @@
             "萬法大全"
           ],
           "canonical_domain_id": "strength",
-          "source_domain_labels": [
-            "力量"
-          ],
           "raw_class_labels": [
             "力"
           ]
@@ -7836,9 +7069,6 @@
           "level_text_raw": "牧師 3，力量領域 3，戰爭領域 3",
           "spell_sources": [],
           "canonical_domain_id": "strength",
-          "source_domain_labels": [
-            "力量"
-          ],
           "raw_class_labels": [
             "力量領域"
           ]
@@ -7853,9 +7083,6 @@
           "level_text_raw": "牧師 4，保護 4，力量 4",
           "spell_sources": [],
           "canonical_domain_id": "strength",
-          "source_domain_labels": [
-            "力量"
-          ],
           "raw_class_labels": [
             "力量"
           ]
@@ -7870,9 +7097,6 @@
           "level_text_raw": "牧師 5，力量 5",
           "spell_sources": [],
           "canonical_domain_id": "strength",
-          "source_domain_labels": [
-            "力量"
-          ],
           "raw_class_labels": [
             "力量"
           ]
@@ -7887,9 +7111,6 @@
           "level_text_raw": "德魯伊 5，土 6，術士/法師 4，力量 6",
           "spell_sources": [],
           "canonical_domain_id": "strength",
-          "source_domain_labels": [
-            "力量"
-          ],
           "raw_class_labels": [
             "力量"
           ]
@@ -7904,9 +7125,6 @@
           "level_text_raw": "術士/法師 7，力量 7",
           "spell_sources": [],
           "canonical_domain_id": "strength",
-          "source_domain_labels": [
-            "力量"
-          ],
           "raw_class_labels": [
             "力量"
           ]
@@ -7921,9 +7139,6 @@
           "level_text_raw": "術士/法師 8，力量 8",
           "spell_sources": [],
           "canonical_domain_id": "strength",
-          "source_domain_labels": [
-            "力量"
-          ],
           "raw_class_labels": [
             "力量"
           ]
@@ -7938,13 +7153,20 @@
           "level_text_raw": "術士/法師 9，力量 9",
           "spell_sources": [],
           "canonical_domain_id": "strength",
-          "source_domain_labels": [
-            "力量"
-          ],
           "raw_class_labels": [
             "力量"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "力",
+        "力量",
+        "力量領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "力",
+        "力量",
+        "力量領域"
       ]
     },
     {
@@ -7956,10 +7178,6 @@
         "page": "107–108",
         "planar": false
       },
-      "source_labels": [
-        "盛夏",
-        "盛夏領域"
-      ],
       "spell_count": 5,
       "spells": [
         {
@@ -7974,9 +7192,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "summer",
-          "source_domain_labels": [
-            "盛夏"
-          ],
           "raw_class_labels": [
             "盛夏領域"
           ]
@@ -7993,9 +7208,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "summer",
-          "source_domain_labels": [
-            "盛夏"
-          ],
           "raw_class_labels": [
             "盛夏領域"
           ]
@@ -8012,9 +7224,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "summer",
-          "source_domain_labels": [
-            "盛夏"
-          ],
           "raw_class_labels": [
             "盛夏領域"
           ]
@@ -8031,9 +7240,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "summer",
-          "source_domain_labels": [
-            "盛夏"
-          ],
           "raw_class_labels": [
             "盛夏領域"
           ]
@@ -8050,13 +7256,17 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "summer",
-          "source_domain_labels": [
-            "盛夏"
-          ],
           "raw_class_labels": [
             "盛夏領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "盛夏領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "盛夏",
+        "盛夏領域"
       ]
     },
     {
@@ -8068,9 +7278,6 @@
         "page": "188",
         "planar": false
       },
-      "source_labels": [
-        "太陽"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -8083,9 +7290,6 @@
           "level_text_raw": "牧師 1，德魯伊 1，聖武士 1，巡林客 1，術士/法師 1，太陽 1",
           "spell_sources": [],
           "canonical_domain_id": "sun",
-          "source_domain_labels": [
-            "太陽"
-          ],
           "raw_class_labels": [
             "太陽"
           ]
@@ -8100,9 +7304,6 @@
           "level_text_raw": "德魯伊 2，太陽 2",
           "spell_sources": [],
           "canonical_domain_id": "sun",
-          "source_domain_labels": [
-            "太陽"
-          ],
           "raw_class_labels": [
             "太陽"
           ]
@@ -8117,9 +7318,6 @@
           "level_text_raw": "牧師 3，太陽 3",
           "spell_sources": [],
           "canonical_domain_id": "sun",
-          "source_domain_labels": [
-            "太陽"
-          ],
           "raw_class_labels": [
             "太陽"
           ]
@@ -8134,9 +7332,6 @@
           "level_text_raw": "火 5，術士/法師 4，太陽 4",
           "spell_sources": [],
           "canonical_domain_id": "sun",
-          "source_domain_labels": [
-            "太陽"
-          ],
           "raw_class_labels": [
             "太陽"
           ]
@@ -8151,9 +7346,6 @@
           "level_text_raw": "牧師 5，德魯伊 4，太陽 5，戰爭 5",
           "spell_sources": [],
           "canonical_domain_id": "sun",
-          "source_domain_labels": [
-            "太陽"
-          ],
           "raw_class_labels": [
             "太陽"
           ]
@@ -8168,9 +7360,6 @@
           "level_text_raw": "德魯伊 6，火 6，太陽 6",
           "spell_sources": [],
           "canonical_domain_id": "sun",
-          "source_domain_labels": [
-            "太陽"
-          ],
           "raw_class_labels": [
             "太陽"
           ]
@@ -8185,9 +7374,6 @@
           "level_text_raw": "德魯伊 7，太陽 7",
           "spell_sources": [],
           "canonical_domain_id": "sun",
-          "source_domain_labels": [
-            "太陽"
-          ],
           "raw_class_labels": [
             "太陽"
           ]
@@ -8202,9 +7388,6 @@
           "level_text_raw": "德魯伊 8，術士/法師 8，太陽 8",
           "spell_sources": [],
           "canonical_domain_id": "sun",
-          "source_domain_labels": [
-            "太陽"
-          ],
           "raw_class_labels": [
             "太陽"
           ]
@@ -8219,13 +7402,16 @@
           "level_text_raw": "保護 9，術士/法師 9，太陽 9",
           "spell_sources": [],
           "canonical_domain_id": "sun",
-          "source_domain_labels": [
-            "太陽"
-          ],
           "raw_class_labels": [
             "太陽"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "太陽"
+      ],
+      "legacy_taxonomy_labels": [
+        "太陽"
       ]
     },
     {
@@ -8237,10 +7423,6 @@
         "page": "108",
         "planar": false
       },
-      "source_labels": [
-        "乾渴",
-        "乾渴領域"
-      ],
       "spell_count": 7,
       "spells": [
         {
@@ -8255,9 +7437,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "thirst",
-          "source_domain_labels": [
-            "乾渴"
-          ],
           "raw_class_labels": [
             "乾渴領域"
           ]
@@ -8274,9 +7453,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "thirst",
-          "source_domain_labels": [
-            "乾渴"
-          ],
           "raw_class_labels": [
             "乾渴領域"
           ]
@@ -8293,9 +7469,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "thirst",
-          "source_domain_labels": [
-            "乾渴"
-          ],
           "raw_class_labels": [
             "乾渴領域"
           ]
@@ -8312,9 +7485,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "thirst",
-          "source_domain_labels": [
-            "乾渴"
-          ],
           "raw_class_labels": [
             "乾渴領域"
           ]
@@ -8331,9 +7501,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "thirst",
-          "source_domain_labels": [
-            "乾渴"
-          ],
           "raw_class_labels": [
             "乾渴領域"
           ]
@@ -8350,9 +7517,6 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "thirst",
-          "source_domain_labels": [
-            "乾渴"
-          ],
           "raw_class_labels": [
             "乾渴領域"
           ]
@@ -8369,13 +7533,17 @@
             "沙暴之書"
           ],
           "canonical_domain_id": "thirst",
-          "source_domain_labels": [
-            "乾渴"
-          ],
           "raw_class_labels": [
             "乾渴領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "乾渴領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "乾渴",
+        "乾渴領域"
       ]
     },
     {
@@ -8387,10 +7555,6 @@
         "page": "281",
         "planar": false
       },
-      "source_labels": [
-        "貿易",
-        "貿易領域"
-      ],
       "spell_count": 1,
       "spells": [
         {
@@ -8405,13 +7569,17 @@
             "萬法大全"
           ],
           "canonical_domain_id": "trade",
-          "source_domain_labels": [
-            "貿易"
-          ],
           "raw_class_labels": [
             "貿易領域"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "貿易領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "貿易",
+        "貿易領域"
       ]
     },
     {
@@ -8423,9 +7591,6 @@
         "page": "188",
         "planar": false
       },
-      "source_labels": [
-        "旅行"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -8438,9 +7603,6 @@
           "level_text_raw": "德魯伊 1，巡林客 1，旅行 1",
           "spell_sources": [],
           "canonical_domain_id": "travel",
-          "source_domain_labels": [
-            "旅行"
-          ],
           "raw_class_labels": [
             "旅行"
           ]
@@ -8455,9 +7617,6 @@
           "level_text_raw": "吟游詩人 2，牧師 3，術士/法師 2，旅行 2",
           "spell_sources": [],
           "canonical_domain_id": "travel",
-          "source_domain_labels": [
-            "旅行"
-          ],
           "raw_class_labels": [
             "旅行"
           ]
@@ -8472,9 +7631,6 @@
           "level_text_raw": "術士/法師 3，旅行 3",
           "spell_sources": [],
           "canonical_domain_id": "travel",
-          "source_domain_labels": [
-            "旅行"
-          ],
           "raw_class_labels": [
             "旅行"
           ]
@@ -8489,9 +7645,6 @@
           "level_text_raw": "吟游詩人 4，術士/法師 4，旅行 4",
           "spell_sources": [],
           "canonical_domain_id": "travel",
-          "source_domain_labels": [
-            "旅行"
-          ],
           "raw_class_labels": [
             "旅行"
           ]
@@ -8506,9 +7659,6 @@
           "level_text_raw": "術士/法師 5，旅行 5",
           "spell_sources": [],
           "canonical_domain_id": "travel",
-          "source_domain_labels": [
-            "旅行"
-          ],
           "raw_class_labels": [
             "旅行"
           ]
@@ -8523,9 +7673,6 @@
           "level_text_raw": "吟游詩人 6，牧師 6，德魯伊 6，知識 6，旅行 6",
           "spell_sources": [],
           "canonical_domain_id": "travel",
-          "source_domain_labels": [
-            "旅行"
-          ],
           "raw_class_labels": [
             "旅行"
           ]
@@ -8540,9 +7687,6 @@
           "level_text_raw": "術士/法師 7，旅行 7",
           "spell_sources": [],
           "canonical_domain_id": "travel",
-          "source_domain_labels": [
-            "旅行"
-          ],
           "raw_class_labels": [
             "旅行"
           ]
@@ -8557,9 +7701,6 @@
           "level_text_raw": "術士/法師 7，旅行 8",
           "spell_sources": [],
           "canonical_domain_id": "travel",
-          "source_domain_labels": [
-            "旅行"
-          ],
           "raw_class_labels": [
             "旅行"
           ]
@@ -8574,13 +7715,16 @@
           "level_text_raw": "牧師 9，術士/法師 9，旅行 9",
           "spell_sources": [],
           "canonical_domain_id": "travel",
-          "source_domain_labels": [
-            "旅行"
-          ],
           "raw_class_labels": [
             "旅行"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "旅行"
+      ],
+      "legacy_taxonomy_labels": [
+        "旅行"
       ]
     },
     {
@@ -8592,11 +7736,6 @@
         "page": "189",
         "planar": false
       },
-      "source_labels": [
-        "詭術",
-        "詭術領域",
-        "詭計"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -8609,9 +7748,6 @@
           "level_text_raw": "吟游詩人 1，術士/法師 1，詭術 1",
           "spell_sources": [],
           "canonical_domain_id": "trickery",
-          "source_domain_labels": [
-            "詭術"
-          ],
           "raw_class_labels": [
             "詭術"
           ]
@@ -8626,9 +7762,6 @@
           "level_text_raw": "吟游詩人 2，術士/法師 2，詭計 2",
           "spell_sources": [],
           "canonical_domain_id": "trickery",
-          "source_domain_labels": [
-            "詭術"
-          ],
           "raw_class_labels": [
             "詭計"
           ]
@@ -8643,9 +7776,6 @@
           "level_text_raw": "巡林客 4，術士/法師 3，詭術 3",
           "spell_sources": [],
           "canonical_domain_id": "trickery",
-          "source_domain_labels": [
-            "詭術"
-          ],
           "raw_class_labels": [
             "詭術"
           ]
@@ -8660,9 +7790,6 @@
           "level_text_raw": "吟游詩人 3，術士/法師 4，詭術 4",
           "spell_sources": [],
           "canonical_domain_id": "trickery",
-          "source_domain_labels": [
-            "詭術"
-          ],
           "raw_class_labels": [
             "詭術"
           ]
@@ -8677,9 +7804,6 @@
           "level_text_raw": "吟游詩人 5，術士/法師 5，詭術 5",
           "spell_sources": [],
           "canonical_domain_id": "trickery",
-          "source_domain_labels": [
-            "詭術"
-          ],
           "raw_class_labels": [
             "詭術"
           ]
@@ -8694,9 +7818,6 @@
           "level_text_raw": "吟游詩人 5，機運 6，術士/法師 6，詭術 6",
           "spell_sources": [],
           "canonical_domain_id": "trickery",
-          "source_domain_labels": [
-            "詭術"
-          ],
           "raw_class_labels": [
             "詭術"
           ]
@@ -8711,9 +7832,6 @@
           "level_text_raw": "術士/法師 8，詭術 7",
           "spell_sources": [],
           "canonical_domain_id": "trickery",
-          "source_domain_labels": [
-            "詭術"
-          ],
           "raw_class_labels": [
             "詭術"
           ]
@@ -8728,9 +7846,6 @@
           "level_text_raw": "術士/法師 8，詭術領域 8",
           "spell_sources": [],
           "canonical_domain_id": "trickery",
-          "source_domain_labels": [
-            "詭術"
-          ],
           "raw_class_labels": [
             "詭術領域"
           ]
@@ -8745,13 +7860,20 @@
           "level_text_raw": "術士/法師 9，詭術 9",
           "spell_sources": [],
           "canonical_domain_id": "trickery",
-          "source_domain_labels": [
-            "詭術"
-          ],
           "raw_class_labels": [
             "詭術"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "詭術",
+        "詭術領域",
+        "詭計"
+      ],
+      "legacy_taxonomy_labels": [
+        "詭術",
+        "詭術領域",
+        "詭計"
       ]
     },
     {
@@ -8763,10 +7885,6 @@
         "page": "189",
         "planar": false
       },
-      "source_labels": [
-        "戰爭",
-        "戰爭領域"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -8779,9 +7897,6 @@
           "level_text_raw": "牧師 1，聖武士 1，術士/法師 1，戰爭領域 1",
           "spell_sources": [],
           "canonical_domain_id": "war",
-          "source_domain_labels": [
-            "戰爭"
-          ],
           "raw_class_labels": [
             "戰爭領域"
           ]
@@ -8796,9 +7911,6 @@
           "level_text_raw": "牧師 2，戰爭 2",
           "spell_sources": [],
           "canonical_domain_id": "war",
-          "source_domain_labels": [
-            "戰爭"
-          ],
           "raw_class_labels": [
             "戰爭"
           ]
@@ -8813,9 +7925,6 @@
           "level_text_raw": "牧師 3，力量領域 3，戰爭領域 3",
           "spell_sources": [],
           "canonical_domain_id": "war",
-          "source_domain_labels": [
-            "戰爭"
-          ],
           "raw_class_labels": [
             "戰爭領域"
           ]
@@ -8830,9 +7939,6 @@
           "level_text_raw": "牧師 4，戰爭 4",
           "spell_sources": [],
           "canonical_domain_id": "war",
-          "source_domain_labels": [
-            "戰爭"
-          ],
           "raw_class_labels": [
             "戰爭"
           ]
@@ -8847,9 +7953,6 @@
           "level_text_raw": "牧師 5，德魯伊 4，太陽 5，戰爭 5",
           "spell_sources": [],
           "canonical_domain_id": "war",
-          "source_domain_labels": [
-            "戰爭"
-          ],
           "raw_class_labels": [
             "戰爭"
           ]
@@ -8864,9 +7967,6 @@
           "level_text_raw": "牧師 6，善良 6，戰爭 6",
           "spell_sources": [],
           "canonical_domain_id": "war",
-          "source_domain_labels": [
-            "戰爭"
-          ],
           "raw_class_labels": [
             "戰爭"
           ]
@@ -8881,9 +7981,6 @@
           "level_text_raw": "術士/法師 7， 戰爭 7",
           "spell_sources": [],
           "canonical_domain_id": "war",
-          "source_domain_labels": [
-            "戰爭"
-          ],
           "raw_class_labels": [
             "戰爭"
           ]
@@ -8898,9 +7995,6 @@
           "level_text_raw": "術士/法師 8， 戰爭 8",
           "spell_sources": [],
           "canonical_domain_id": "war",
-          "source_domain_labels": [
-            "戰爭"
-          ],
           "raw_class_labels": [
             "戰爭"
           ]
@@ -8915,13 +8009,18 @@
           "level_text_raw": "術士/法師 9， 戰爭 9",
           "spell_sources": [],
           "canonical_domain_id": "war",
-          "source_domain_labels": [
-            "戰爭"
-          ],
           "raw_class_labels": [
             "戰爭"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "戰爭",
+        "戰爭領域"
+      ],
+      "legacy_taxonomy_labels": [
+        "戰爭",
+        "戰爭領域"
       ]
     },
     {
@@ -8933,9 +8032,6 @@
         "page": "189",
         "planar": false
       },
-      "source_labels": [
-        "水"
-      ],
       "spell_count": 9,
       "spells": [
         {
@@ -8948,9 +8044,6 @@
           "level_text_raw": "風 1，牧師 1，德魯伊 1，術士/法師 1，水 1",
           "spell_sources": [],
           "canonical_domain_id": "water",
-          "source_domain_labels": [
-            "水"
-          ],
           "raw_class_labels": [
             "水"
           ]
@@ -8965,9 +8058,6 @@
           "level_text_raw": "德魯伊 2，術士/法師 2，水 2",
           "spell_sources": [],
           "canonical_domain_id": "water",
-          "source_domain_labels": [
-            "水"
-          ],
           "raw_class_labels": [
             "水"
           ]
@@ -8982,9 +8072,6 @@
           "level_text_raw": "牧師 3，德魯依 3，術士/法師 3，水 3",
           "spell_sources": [],
           "canonical_domain_id": "water",
-          "source_domain_labels": [
-            "水"
-          ],
           "raw_class_labels": [
             "水"
           ]
@@ -8999,9 +8086,6 @@
           "level_text_raw": "牧師 4，德魯伊 4，術士/法師 6，水 4",
           "spell_sources": [],
           "canonical_domain_id": "water",
-          "source_domain_labels": [
-            "水"
-          ],
           "raw_class_labels": [
             "水"
           ]
@@ -9016,9 +8100,6 @@
           "level_text_raw": "德魯伊 4，術士/法師 4，水 5",
           "spell_sources": [],
           "canonical_domain_id": "water",
-          "source_domain_labels": [
-            "水"
-          ],
           "raw_class_labels": [
             "水"
           ]
@@ -9033,9 +8114,6 @@
           "level_text_raw": "術士/法師 5，水 6",
           "spell_sources": [],
           "canonical_domain_id": "water",
-          "source_domain_labels": [
-            "水"
-          ],
           "raw_class_labels": [
             "水"
           ]
@@ -9050,9 +8128,6 @@
           "level_text_raw": "術士/法師 6，水 7",
           "spell_sources": [],
           "canonical_domain_id": "water",
-          "source_domain_labels": [
-            "水"
-          ],
           "raw_class_labels": [
             "水"
           ]
@@ -9067,9 +8142,6 @@
           "level_text_raw": "術士/法師 8，水 8",
           "spell_sources": [],
           "canonical_domain_id": "water",
-          "source_domain_labels": [
-            "水"
-          ],
           "raw_class_labels": [
             "水"
           ]
@@ -9086,13 +8158,16 @@
             "完美奧術"
           ],
           "canonical_domain_id": "water",
-          "source_domain_labels": [
-            "水"
-          ],
           "raw_class_labels": [
             "水"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "水"
+      ],
+      "legacy_taxonomy_labels": [
+        "水"
       ]
     },
     {
@@ -9104,9 +8179,6 @@
         "page": "85",
         "planar": false
       },
-      "source_labels": [
-        "隆冬"
-      ],
       "spell_count": 3,
       "spells": [
         {
@@ -9121,9 +8193,6 @@
             "霜燃之書"
           ],
           "canonical_domain_id": "winter",
-          "source_domain_labels": [
-            "隆冬"
-          ],
           "raw_class_labels": [
             "隆冬"
           ]
@@ -9140,9 +8209,6 @@
             "霜燃之書"
           ],
           "canonical_domain_id": "winter",
-          "source_domain_labels": [
-            "隆冬"
-          ],
           "raw_class_labels": [
             "隆冬"
           ]
@@ -9159,13 +8225,19 @@
             "霜燃之書"
           ],
           "canonical_domain_id": "winter",
-          "source_domain_labels": [
-            "隆冬"
-          ],
           "raw_class_labels": [
             "隆冬"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "隆冬"
+      ],
+      "legacy_taxonomy_labels": [
+        "隆冬"
+      ],
+      "ambiguous_legacy_taxonomy_labels": [
+        "隆冬"
       ]
     },
     {
@@ -9177,10 +8249,6 @@
         "page": "282",
         "planar": false
       },
-      "source_labels": [
-        "憤怒",
-        "神譴"
-      ],
       "spell_count": 7,
       "spells": [
         {
@@ -9195,9 +8263,6 @@
             "好人書"
           ],
           "canonical_domain_id": "wrath",
-          "source_domain_labels": [
-            "神譴"
-          ],
           "raw_class_labels": [
             "神譴"
           ]
@@ -9214,9 +8279,6 @@
             "好人書"
           ],
           "canonical_domain_id": "wrath",
-          "source_domain_labels": [
-            "神譴"
-          ],
           "raw_class_labels": [
             "神譴"
           ]
@@ -9233,9 +8295,6 @@
             "好人書"
           ],
           "canonical_domain_id": "wrath",
-          "source_domain_labels": [
-            "神譴"
-          ],
           "raw_class_labels": [
             "神譴"
           ]
@@ -9252,9 +8311,6 @@
             "好人書"
           ],
           "canonical_domain_id": "wrath",
-          "source_domain_labels": [
-            "神譴"
-          ],
           "raw_class_labels": [
             "神譴"
           ]
@@ -9271,9 +8327,6 @@
             "好人書"
           ],
           "canonical_domain_id": "wrath",
-          "source_domain_labels": [
-            "神譴"
-          ],
           "raw_class_labels": [
             "神譴"
           ]
@@ -9290,9 +8343,6 @@
             "好人書"
           ],
           "canonical_domain_id": "wrath",
-          "source_domain_labels": [
-            "神譴"
-          ],
           "raw_class_labels": [
             "神譴"
           ]
@@ -9309,13 +8359,18 @@
             "萬法大全"
           ],
           "canonical_domain_id": "wrath",
-          "source_domain_labels": [
-            "憤怒"
-          ],
           "raw_class_labels": [
             "憤怒"
           ]
         }
+      ],
+      "raw_class_labels": [
+        "憤怒",
+        "神譴"
+      ],
+      "legacy_taxonomy_labels": [
+        "憤怒",
+        "神譴"
       ]
     }
   ]

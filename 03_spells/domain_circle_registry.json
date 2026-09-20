@@ -1,5 +1,5 @@
 {
-  "schema": "d100-domain-circle-registry-v3",
+  "schema": "d100-domain-circle-registry-v3.1",
   "research_snapshot": "2026-09-21",
   "purpose": "Register canonical D&D domain identities for D100 while preserving every imported source label and never rewriting source spell entries.",
   "boundary": {
@@ -63,12 +63,15 @@
           "page": "282",
           "planar": true
         },
-        "source_labels": [
-          "深淵"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "深淵"
+        ],
+        "legacy_taxonomy_labels": [
+          "深淵"
+        ]
       },
       {
         "domain_id": "air",
@@ -79,13 +82,17 @@
           "page": "185",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "氣",
           "風"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "氣",
+          "風"
+        ]
       },
       {
         "domain_id": "animal",
@@ -96,12 +103,15 @@
           "page": "186",
           "planar": false
         },
-        "source_labels": [
-          "動物"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "動物"
+        ],
+        "legacy_taxonomy_labels": [
+          "動物"
+        ]
       },
       {
         "domain_id": "arborea",
@@ -112,13 +122,16 @@
           "page": "282–283",
           "planar": true
         },
-        "source_labels": [
-          "原野",
-          "原野領域 Arborea"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "原野領域 Arborea"
+        ],
+        "legacy_taxonomy_labels": [
+          "原野",
+          "原野領域 Arborea"
+        ]
       },
       {
         "domain_id": "artifice",
@@ -129,13 +142,19 @@
           "page": "104",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
+          "工匠領域"
+        ],
+        "legacy_taxonomy_labels": [
           "工匠領域",
           "工藝"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "ambiguous_legacy_taxonomy_labels": [
+          "工藝"
+        ]
       },
       {
         "domain_id": "balance",
@@ -146,14 +165,19 @@
           "page": "271",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "平衡",
           "平衡（Balance ）",
           "平衡（Balance）"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "平衡",
+          "平衡（Balance ）",
+          "平衡（Balance）"
+        ]
       },
       {
         "domain_id": "blackwater",
@@ -164,14 +188,18 @@
           "page": "109",
           "planar": false
         },
-        "source_labels": [
-          "黑水",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "黑水領域",
           "（風暴之書）黑水領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "黑水",
+          "黑水領域",
+          "（風暴之書）黑水領域"
+        ]
       },
       {
         "domain_id": "cavern",
@@ -182,12 +210,15 @@
           "page": "271",
           "planar": false
         },
-        "source_labels": [
-          "岩穴"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "岩穴"
+        ],
+        "legacy_taxonomy_labels": [
+          "岩穴"
+        ]
       },
       {
         "domain_id": "celerity",
@@ -198,13 +229,16 @@
           "page": "271",
           "planar": false
         },
-        "source_labels": [
-          "迅捷",
-          "迅捷領域（Celerity domain）"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "迅捷領域（Celerity domain）"
+        ],
+        "legacy_taxonomy_labels": [
+          "迅捷",
+          "迅捷領域（Celerity domain）"
+        ]
       },
       {
         "domain_id": "celestial",
@@ -215,13 +249,17 @@
           "page": "86",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "天 族",
           "天族"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "天 族",
+          "天族"
+        ]
       },
       {
         "domain_id": "chaos",
@@ -232,13 +270,17 @@
           "page": "186",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "混亂",
           "混沌"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "混亂",
+          "混沌"
+        ]
       },
       {
         "domain_id": "city",
@@ -249,13 +291,17 @@
           "page": "162–163",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "城市",
           "城市領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "城市",
+          "城市領域"
+        ]
       },
       {
         "domain_id": "cold",
@@ -266,13 +312,19 @@
           "page": "271",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
+          "寒冷"
+        ],
+        "legacy_taxonomy_labels": [
           "寒冷",
           "隆冬"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "ambiguous_legacy_taxonomy_labels": [
+          "隆冬"
+        ]
       },
       {
         "domain_id": "community",
@@ -283,14 +335,18 @@
           "page": "271–272",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
+          "溝通",
+          "社會 Community"
+        ],
+        "legacy_taxonomy_labels": [
           "溝通",
           "社會",
           "社會 Community"
-        ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        ]
       },
       {
         "domain_id": "competition",
@@ -301,13 +357,17 @@
           "page": "272",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "競爭",
           "競爭領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "競爭",
+          "競爭領域"
+        ]
       },
       {
         "domain_id": "corruption",
@@ -318,13 +378,17 @@
           "page": "88",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "腐 敗",
           "腐敗"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "腐 敗",
+          "腐敗"
+        ]
       },
       {
         "domain_id": "courage",
@@ -335,12 +399,15 @@
           "page": "272",
           "planar": false
         },
-        "source_labels": [
-          "勇氣"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "勇氣"
+        ],
+        "legacy_taxonomy_labels": [
+          "勇氣"
+        ]
       },
       {
         "domain_id": "craft",
@@ -351,12 +418,18 @@
           "page": "272",
           "planar": false
         },
-        "source_labels": [
-          "工藝"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "工藝"
+        ],
+        "legacy_taxonomy_labels": [
+          "工藝"
+        ],
+        "ambiguous_legacy_taxonomy_labels": [
+          "工藝"
+        ]
       },
       {
         "domain_id": "creation",
@@ -367,14 +440,18 @@
           "page": "272",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
+          "創造",
+          "造物領域（Creation Domain）"
+        ],
+        "legacy_taxonomy_labels": [
           "創造",
           "造物",
           "造物領域（Creation Domain）"
-        ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        ]
       },
       {
         "domain_id": "darkness",
@@ -385,13 +462,17 @@
           "page": "272",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "晦暗",
           "黑暗"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "晦暗",
+          "黑暗"
+        ]
       },
       {
         "domain_id": "death",
@@ -402,12 +483,15 @@
           "page": "186",
           "planar": false
         },
-        "source_labels": [
-          "死亡"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "死亡"
+        ],
+        "legacy_taxonomy_labels": [
+          "死亡"
+        ]
       },
       {
         "domain_id": "deathbound",
@@ -418,15 +502,20 @@
           "page": "272–273",
           "planar": false
         },
-        "source_labels": [
-          "控死",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "控死領域",
           "控死領域（Deathbound）",
           "（Deathbound）控死領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "控死",
+          "控死領域",
+          "控死領域（Deathbound）",
+          "（Deathbound）控死領域"
+        ]
       },
       {
         "domain_id": "deathless",
@@ -437,12 +526,15 @@
           "page": "105",
           "planar": false
         },
-        "source_labels": [
-          "不朽"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "不朽"
+        ],
+        "legacy_taxonomy_labels": [
+          "不朽"
+        ]
       },
       {
         "domain_id": "destiny",
@@ -453,12 +545,15 @@
           "page": "163",
           "planar": false
         },
-        "source_labels": [
-          "宿命"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "宿命"
+        ],
+        "legacy_taxonomy_labels": [
+          "宿命"
+        ]
       },
       {
         "domain_id": "destruction",
@@ -469,13 +564,17 @@
           "page": "186",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "毀滅",
           "破壞"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "毀滅",
+          "破壞"
+        ]
       },
       {
         "domain_id": "domination",
@@ -486,12 +585,15 @@
           "page": "273",
           "planar": false
         },
-        "source_labels": [
-          "支配"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "支配"
+        ],
+        "legacy_taxonomy_labels": [
+          "支配"
+        ]
       },
       {
         "domain_id": "dragon",
@@ -502,13 +604,17 @@
           "page": "273",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "龍",
           "龍領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "龍",
+          "龍領域"
+        ]
       },
       {
         "domain_id": "dream",
@@ -519,13 +625,16 @@
           "page": "273",
           "planar": false
         },
-        "source_labels": [
-          "夢境",
-          "夢境領域"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "夢境領域"
+        ],
+        "legacy_taxonomy_labels": [
+          "夢境",
+          "夢境領域"
+        ]
       },
       {
         "domain_id": "drow",
@@ -536,13 +645,17 @@
           "page": "273",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "卓爾",
           "卓爾領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "卓爾",
+          "卓爾領域"
+        ]
       },
       {
         "domain_id": "earth",
@@ -553,13 +666,17 @@
           "page": "186",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "土",
           "土領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "土",
+          "土領域"
+        ]
       },
       {
         "domain_id": "elysium",
@@ -570,13 +687,17 @@
           "page": "283–284",
           "planar": true
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "極樂",
           "極樂境"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "極樂",
+          "極樂境"
+        ]
       },
       {
         "domain_id": "endurance",
@@ -587,13 +708,17 @@
           "page": "86",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "苦難",
           "苦難 Endurance"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "苦難",
+          "苦難 Endurance"
+        ]
       },
       {
         "domain_id": "evil",
@@ -604,12 +729,15 @@
           "page": "186",
           "planar": false
         },
-        "source_labels": [
-          "邪惡"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "邪惡"
+        ],
+        "legacy_taxonomy_labels": [
+          "邪惡"
+        ]
       },
       {
         "domain_id": "feast",
@@ -620,12 +748,15 @@
           "page": "106",
           "planar": false
         },
-        "source_labels": [
-          "筵席"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "筵席"
+        ],
+        "legacy_taxonomy_labels": [
+          "筵席"
+        ]
       },
       {
         "domain_id": "fey",
@@ -636,12 +767,15 @@
           "page": "86",
           "planar": false
         },
-        "source_labels": [
-          "精類"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "精類"
+        ],
+        "legacy_taxonomy_labels": [
+          "精類"
+        ]
       },
       {
         "domain_id": "fire",
@@ -652,12 +786,15 @@
           "page": "187",
           "planar": false
         },
-        "source_labels": [
-          "火"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "火"
+        ],
+        "legacy_taxonomy_labels": [
+          "火"
+        ]
       },
       {
         "domain_id": "glory",
@@ -668,13 +805,17 @@
           "page": "274",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "榮耀",
           "榮譽領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "榮耀",
+          "榮譽領域"
+        ]
       },
       {
         "domain_id": "gluttony",
@@ -685,13 +826,16 @@
           "page": "274",
           "planar": false
         },
-        "source_labels": [
-          "暴食",
-          "暴食領域"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "暴食領域"
+        ],
+        "legacy_taxonomy_labels": [
+          "暴食",
+          "暴食領域"
+        ]
       },
       {
         "domain_id": "gnome",
@@ -702,14 +846,18 @@
           "page": "274",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
+          "侏儒",
+          "守護領域"
+        ],
+        "legacy_taxonomy_labels": [
           "侏儒",
           "守護",
           "守護領域"
-        ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        ]
       },
       {
         "domain_id": "good",
@@ -720,12 +868,15 @@
           "page": "187",
           "planar": false
         },
-        "source_labels": [
-          "善良"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "善良"
+        ],
+        "legacy_taxonomy_labels": [
+          "善良"
+        ]
       },
       {
         "domain_id": "greed",
@@ -736,13 +887,17 @@
           "page": "275",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "貪婪",
           "貪婪領域（Greed）"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "貪婪",
+          "貪婪領域（Greed）"
+        ]
       },
       {
         "domain_id": "hades",
@@ -753,13 +908,17 @@
           "page": "284",
           "planar": true
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "冥土",
           "黑帝斯"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "冥土",
+          "黑帝斯"
+        ]
       },
       {
         "domain_id": "healing",
@@ -770,13 +929,17 @@
           "page": "187",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "治療",
           "醫療"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "治療",
+          "醫療"
+        ]
       },
       {
         "domain_id": "hunger",
@@ -787,14 +950,18 @@
           "page": "275",
           "planar": false
         },
-        "source_labels": [
-          "饑餓",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "饑餓領域",
           "饑餓領域（Hunger）"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "饑餓",
+          "饑餓領域",
+          "饑餓領域（Hunger）"
+        ]
       },
       {
         "domain_id": "joy",
@@ -805,12 +972,15 @@
           "page": "87",
           "planar": false
         },
-        "source_labels": [
-          "喜樂"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "喜樂"
+        ],
+        "legacy_taxonomy_labels": [
+          "喜樂"
+        ]
       },
       {
         "domain_id": "knowledge",
@@ -821,12 +991,15 @@
           "page": "187",
           "planar": false
         },
-        "source_labels": [
-          "知識"
-        ],
         "d100_status": "implemented",
         "domain_feat_status": "implemented",
-        "d100_reference": "sources/sheet_mirror/10_牧師領域.json.md"
+        "d100_reference": "sources/sheet_mirror/10_牧師領域.json.md",
+        "raw_class_labels": [
+          "知識"
+        ],
+        "legacy_taxonomy_labels": [
+          "知識"
+        ]
       },
       {
         "domain_id": "law",
@@ -837,13 +1010,17 @@
           "page": "187",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "秩序",
           "秩序領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "秩序",
+          "秩序領域"
+        ]
       },
       {
         "domain_id": "liberation",
@@ -854,14 +1031,18 @@
           "page": "276",
           "planar": false
         },
-        "source_labels": [
-          "解放",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "解放領域",
           "解放領域（Liberation）"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "解放",
+          "解放領域",
+          "解放領域（Liberation）"
+        ]
       },
       {
         "domain_id": "limbo",
@@ -872,12 +1053,15 @@
           "page": "284",
           "planar": true
         },
-        "source_labels": [
-          "無定界"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "無定界"
+        ],
+        "legacy_taxonomy_labels": [
+          "無定界"
+        ]
       },
       {
         "domain_id": "luck",
@@ -888,13 +1072,17 @@
           "page": "187",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "機運",
           "機運領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "機運",
+          "機運領域"
+        ]
       },
       {
         "domain_id": "madness",
@@ -905,13 +1093,17 @@
           "page": "276",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "狂亂",
           "瘋狂"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "狂亂",
+          "瘋狂"
+        ]
       },
       {
         "domain_id": "magic",
@@ -922,13 +1114,17 @@
           "page": "188",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "魔法",
           "魔法領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "魔法",
+          "魔法領域"
+        ]
       },
       {
         "domain_id": "mechanus",
@@ -939,13 +1135,17 @@
           "page": "284–285",
           "planar": true
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "機械界",
           "機械領域（Mechanus）"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "機械界",
+          "機械領域（Mechanus）"
+        ]
       },
       {
         "domain_id": "mind",
@@ -956,13 +1156,17 @@
           "page": "276–277",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "心智",
           "心靈"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "心智",
+          "心靈"
+        ]
       },
       {
         "domain_id": "moon",
@@ -973,13 +1177,17 @@
           "page": "277",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "月亮",
           "月亮領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "月亮",
+          "月亮領域"
+        ]
       },
       {
         "domain_id": "mysticism",
@@ -990,12 +1198,15 @@
           "page": "277",
           "planar": false
         },
-        "source_labels": [
-          "神秘"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "神秘"
+        ],
+        "legacy_taxonomy_labels": [
+          "神秘"
+        ]
       },
       {
         "domain_id": "ocean",
@@ -1006,13 +1217,16 @@
           "page": "277",
           "planar": false
         },
-        "source_labels": [
-          "海洋",
-          "海洋領域"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "海洋領域"
+        ],
+        "legacy_taxonomy_labels": [
+          "海洋",
+          "海洋領域"
+        ]
       },
       {
         "domain_id": "pact",
@@ -1023,14 +1237,19 @@
           "page": "278",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "契約",
           "契約領域",
           "誓約"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "契約",
+          "契約領域",
+          "誓約"
+        ]
       },
       {
         "domain_id": "pestilence",
@@ -1041,14 +1260,19 @@
           "page": "278",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "疫病",
           "瘟疫",
           "瘟疫領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "疫病",
+          "瘟疫",
+          "瘟疫領域"
+        ]
       },
       {
         "domain_id": "plant",
@@ -1059,13 +1283,17 @@
           "page": "188",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "植物",
           "植物領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "植物",
+          "植物領域"
+        ]
       },
       {
         "domain_id": "pleasure",
@@ -1076,13 +1304,17 @@
           "page": "87",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "歡娛",
           "歡愉"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "歡娛",
+          "歡愉"
+        ]
       },
       {
         "domain_id": "portal",
@@ -1093,12 +1325,15 @@
           "page": "278",
           "planar": false
         },
-        "source_labels": [
-          "傳送"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "傳送"
+        ],
+        "legacy_taxonomy_labels": [
+          "傳送"
+        ]
       },
       {
         "domain_id": "protection",
@@ -1109,13 +1344,17 @@
           "page": "188",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "保護",
           "保護領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "保護",
+          "保護領域"
+        ]
       },
       {
         "domain_id": "purification",
@@ -1126,13 +1365,17 @@
           "page": "279",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "淨化",
           "淨化領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "淨化",
+          "淨化領域"
+        ]
       },
       {
         "domain_id": "repose",
@@ -1143,13 +1386,16 @@
           "page": "90",
           "planar": false
         },
-        "source_labels": [
-          "安息",
-          "安息領域"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "安息領域"
+        ],
+        "legacy_taxonomy_labels": [
+          "安息",
+          "安息領域"
+        ]
       },
       {
         "domain_id": "rune",
@@ -1160,13 +1406,16 @@
           "page": "279",
           "planar": false
         },
-        "source_labels": [
-          "符文",
-          "符文領域"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "符文領域"
+        ],
+        "legacy_taxonomy_labels": [
+          "符文",
+          "符文領域"
+        ]
       },
       {
         "domain_id": "sand",
@@ -1177,14 +1426,18 @@
           "page": "107",
           "planar": false
         },
-        "source_labels": [
-          "沙",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "沙領域",
           "砂領域（Sand ）"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "沙",
+          "沙領域",
+          "砂領域（Sand ）"
+        ]
       },
       {
         "domain_id": "seafolk",
@@ -1195,13 +1448,16 @@
           "page": "110",
           "planar": false
         },
-        "source_labels": [
-          "水族",
-          "水族領域"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "水族領域"
+        ],
+        "legacy_taxonomy_labels": [
+          "水族",
+          "水族領域"
+        ]
       },
       {
         "domain_id": "sky",
@@ -1212,12 +1468,15 @@
           "page": "174",
           "planar": false
         },
-        "source_labels": [
-          "天空"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "天空"
+        ],
+        "legacy_taxonomy_labels": [
+          "天空"
+        ]
       },
       {
         "domain_id": "spell",
@@ -1228,13 +1487,16 @@
           "page": "280",
           "planar": false
         },
-        "source_labels": [
-          "法術",
-          "法術領域"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "法術領域"
+        ],
+        "legacy_taxonomy_labels": [
+          "法術",
+          "法術領域"
+        ]
       },
       {
         "domain_id": "spider",
@@ -1245,13 +1507,17 @@
           "page": "280",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "蜘蛛",
           "蜘蛛領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "蜘蛛",
+          "蜘蛛領域"
+        ]
       },
       {
         "domain_id": "storm",
@@ -1262,12 +1528,15 @@
           "page": "280",
           "planar": false
         },
-        "source_labels": [
-          "風暴"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "風暴"
+        ],
+        "legacy_taxonomy_labels": [
+          "風暴"
+        ]
       },
       {
         "domain_id": "strength",
@@ -1278,14 +1547,19 @@
           "page": "188",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "力",
           "力量",
           "力量領域"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "力",
+          "力量",
+          "力量領域"
+        ]
       },
       {
         "domain_id": "summer",
@@ -1296,13 +1570,16 @@
           "page": "107–108",
           "planar": false
         },
-        "source_labels": [
-          "盛夏",
-          "盛夏領域"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "盛夏領域"
+        ],
+        "legacy_taxonomy_labels": [
+          "盛夏",
+          "盛夏領域"
+        ]
       },
       {
         "domain_id": "sun",
@@ -1313,12 +1590,15 @@
           "page": "188",
           "planar": false
         },
-        "source_labels": [
-          "太陽"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "太陽"
+        ],
+        "legacy_taxonomy_labels": [
+          "太陽"
+        ]
       },
       {
         "domain_id": "thirst",
@@ -1329,13 +1609,16 @@
           "page": "108",
           "planar": false
         },
-        "source_labels": [
-          "乾渴",
-          "乾渴領域"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "乾渴領域"
+        ],
+        "legacy_taxonomy_labels": [
+          "乾渴",
+          "乾渴領域"
+        ]
       },
       {
         "domain_id": "trade",
@@ -1346,13 +1629,16 @@
           "page": "281",
           "planar": false
         },
-        "source_labels": [
-          "貿易",
-          "貿易領域"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "貿易領域"
+        ],
+        "legacy_taxonomy_labels": [
+          "貿易",
+          "貿易領域"
+        ]
       },
       {
         "domain_id": "travel",
@@ -1363,12 +1649,15 @@
           "page": "188",
           "planar": false
         },
-        "source_labels": [
-          "旅行"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "旅行"
+        ],
+        "legacy_taxonomy_labels": [
+          "旅行"
+        ]
       },
       {
         "domain_id": "trickery",
@@ -1379,14 +1668,19 @@
           "page": "189",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "implemented",
+        "domain_feat_status": "implemented",
+        "d100_reference": "sources/sheet_mirror/10_牧師領域.json.md",
+        "raw_class_labels": [
           "詭術",
           "詭術領域",
           "詭計"
         ],
-        "d100_status": "implemented",
-        "domain_feat_status": "implemented",
-        "d100_reference": "sources/sheet_mirror/10_牧師領域.json.md"
+        "legacy_taxonomy_labels": [
+          "詭術",
+          "詭術領域",
+          "詭計"
+        ]
       },
       {
         "domain_id": "war",
@@ -1397,13 +1691,17 @@
           "page": "189",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "implemented",
+        "domain_feat_status": "implemented",
+        "d100_reference": "sources/sheet_mirror/10_牧師領域.json.md",
+        "raw_class_labels": [
           "戰爭",
           "戰爭領域"
         ],
-        "d100_status": "implemented",
-        "domain_feat_status": "implemented",
-        "d100_reference": "sources/sheet_mirror/10_牧師領域.json.md"
+        "legacy_taxonomy_labels": [
+          "戰爭",
+          "戰爭領域"
+        ]
       },
       {
         "domain_id": "water",
@@ -1414,12 +1712,15 @@
           "page": "189",
           "planar": false
         },
-        "source_labels": [
-          "水"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "水"
+        ],
+        "legacy_taxonomy_labels": [
+          "水"
+        ]
       },
       {
         "domain_id": "winter",
@@ -1430,12 +1731,18 @@
           "page": "85",
           "planar": false
         },
-        "source_labels": [
-          "隆冬"
-        ],
         "d100_status": "registered",
         "domain_feat_status": "pending",
-        "d100_reference": null
+        "d100_reference": null,
+        "raw_class_labels": [
+          "隆冬"
+        ],
+        "legacy_taxonomy_labels": [
+          "隆冬"
+        ],
+        "ambiguous_legacy_taxonomy_labels": [
+          "隆冬"
+        ]
       },
       {
         "domain_id": "wrath",
@@ -1446,13 +1753,17 @@
           "page": "282",
           "planar": false
         },
-        "source_labels": [
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null,
+        "raw_class_labels": [
           "憤怒",
           "神譴"
         ],
-        "d100_status": "registered",
-        "domain_feat_status": "pending",
-        "d100_reference": null
+        "legacy_taxonomy_labels": [
+          "憤怒",
+          "神譴"
+        ]
       }
     ],
     "registered_count": 83,
@@ -1523,7 +1834,8 @@
           "artifice",
           "craft"
         ],
-        "note": "Artifice Domain (Hardening/True Creation) and Craft Domain (Fantastic Machine line) are distinct official domains."
+        "note": "Artifice Domain (Hardening/True Creation) and Craft Domain (Fantastic Machine line) are distinct official domains.",
+        "provenance_note": "Legacy taxonomy bucket 工藝 contained both Artifice and Craft records. Raw class labels distinguish 工匠領域 (Artifice) from 工藝 (Craft)."
       },
       {
         "kind": "false_merge_split",
@@ -1535,7 +1847,8 @@
           "cold",
           "winter"
         ],
-        "note": "Cold Domain and Winter Domain are distinct official domains with different spell lists."
+        "note": "Cold Domain and Winter Domain are distinct official domains with different spell lists.",
+        "provenance_note": "Legacy taxonomy bucket 隆冬 contained both Cold and Winter records. Raw class labels distinguish 寒冷 (Cold) from 隆冬 (Winter)."
       }
     ],
     "unsafe_generic_aliases_removed": [
@@ -1785,7 +2098,22 @@
         "domain_id": "glory",
         "note": "Crown of Glory also predates its later 3e domain packaging; preserve spell lineage separately from domain identity."
       }
-    ]
+    ],
+    "source_label_resolution_policy": {
+      "exact_source_labels_only": true,
+      "note": "Resolver entries are exact imported domain/class labels. They do not authorize character-level replacement in prose.",
+      "mistranslated_but_explicit_labels": {
+        "榮譽領域": "glory",
+        "守護領域": "gnome"
+      },
+      "forbidden_generic_rewrites": {
+        "榮譽": "榮耀",
+        "工匠": "工藝",
+        "機械": "機械界",
+        "砂": "沙",
+        "寒冷": "隆冬"
+      }
+    }
   },
   "d100_druid_circles": {
     "source": "sources/sheet_mirror/06_德魯伊結社.json.md",
