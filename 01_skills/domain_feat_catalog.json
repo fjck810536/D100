@@ -1,5 +1,5 @@
 {
-  "schema": "d100-domain-feat-catalog-v1.2",
+  "schema": "d100-domain-feat-catalog-v1.3",
   "status": "D100_ADAPTATION_PROVISIONAL",
   "generated_from": {
     "existing_d100": "sources/sheet_mirror/10_牧師領域.json.md",
@@ -25,7 +25,10 @@
     ],
     "pending_or_provisional_does_not_mean_nonexistent": true,
     "domain_feat_prerequisite": "角色已取得該領域；牧師環數 >= 專長難度",
-    "d1_base_skill_is_semantic_not_uniform": true
+    "d1_base_skill_is_semantic_not_uniform": true,
+    "deity_or_faith_domain_match_required": true,
+    "alignment_domains_require_matching_alignment": true,
+    "planar_domains_cost_two_domain_choices": true
   },
   "domains": [
     {
@@ -35,8 +38,9 @@
       "status": "adapted_provisional",
       "selection_rules": {
         "domain_choice_cost": 2,
-        "alignment_requirement": "依來源位面領域要求",
-        "review_required": true
+        "alignment_requirement": "混亂邪惡（CE）",
+        "review_required": true,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "Planar Domain：短時間強化力量但犧牲防禦，並強化威嚇。",
@@ -147,7 +151,8 @@
       "display_zh": "氣",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "可驅散／摧毀土類元素生物，或斥喝／控制氣類元素生物。",
@@ -251,7 +256,8 @@
       "display_zh": "動物",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日可使用一次動物交談，並取得自然知識相關能力。",
@@ -355,8 +361,9 @@
       "status": "adapted_provisional",
       "selection_rules": {
         "domain_choice_cost": 2,
-        "alignment_requirement": "依來源位面領域要求",
-        "review_required": true
+        "alignment_requirement": "混亂善良（CG）",
+        "review_required": true,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "Planar Domain：以魅力帶來武器傷害與抗魅惑／恐懼的士氣增益，並取得野外能力。",
@@ -467,7 +474,8 @@
       "display_zh": "工匠",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "工藝製作檢定獲得顯著加值，創造類法術的 caster level 提升。",
@@ -572,7 +580,8 @@
       "display_zh": "平衡",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次把 Wisdom 修正加入 AC，持續一段時間。",
@@ -675,7 +684,8 @@
       "display_zh": "黑水",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "免疫深海水壓造成的傷害。",
@@ -787,7 +797,8 @@
       "display_zh": "岩穴",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "取得 stonecunning；原本已有者則能力提高。",
@@ -894,7 +905,8 @@
       "display_zh": "迅捷",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "輕裝時陸行速度提高10 ft。",
@@ -995,7 +1007,8 @@
       "display_zh": "天族",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次 smite evil。",
@@ -1098,7 +1111,9 @@
       "display_zh": "混亂",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true,
+        "alignment_requirement": "角色陣營必須含混亂"
       },
       "source_seed": {
         "summary": "混亂 descriptor 法術 caster level +1。",
@@ -1202,7 +1217,8 @@
       "display_zh": "城市",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "Gather Information 與 Knowledge (local) 成為 class skills。",
@@ -1305,7 +1321,8 @@
       "display_zh": "寒冷",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "驅散／摧毀火類生物，或斥喝／控制寒冷類生物。",
@@ -1408,7 +1425,8 @@
       "display_zh": "社會／溝通",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日可使用 calm emotions，並強化 Diplomacy。",
@@ -1511,7 +1529,8 @@
       "display_zh": "競爭",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "所有 opposed checks +1。",
@@ -1614,7 +1633,8 @@
       "display_zh": "腐敗",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次攻擊物件時可忽略 hardness。",
@@ -1717,7 +1737,8 @@
       "display_zh": "勇氣",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "清醒時，附近盟友對恐懼取得士氣加值。",
@@ -1818,7 +1839,8 @@
       "display_zh": "工藝",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "creation spells caster level +1，並獲得 Craft 專精。",
@@ -1925,7 +1947,8 @@
       "display_zh": "造物",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "conjuration (creation) caster level +1。",
@@ -2031,7 +2054,8 @@
       "display_zh": "黑暗",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "取得 Blind-Fight。",
@@ -2134,7 +2158,8 @@
       "display_zh": "死亡",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次 death touch，以 cleric level 的骰池對比目標現有 HP。",
@@ -2240,7 +2265,8 @@
       "display_zh": "控死",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "控制不死生物的容量由2× caster level 提高到3×。",
@@ -2348,7 +2374,8 @@
       "display_zh": "不朽",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次 greater rebuking，可直接命令 deathless。",
@@ -2454,7 +2481,8 @@
       "display_zh": "宿命",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次即時讓30 ft內盟友重骰攻擊、豁免、能力或技能檢定。",
@@ -2555,7 +2583,8 @@
       "display_zh": "破壞",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次 smite。",
@@ -2658,7 +2687,8 @@
       "display_zh": "支配",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "取得 Spell Focus (Enchantment)。",
@@ -2763,7 +2793,8 @@
       "display_zh": "龍",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "Bluff 與 Intimidate 成為 class skills。",
@@ -2866,7 +2897,8 @@
       "display_zh": "夢境",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "免疫 fear effects。",
@@ -2975,7 +3007,8 @@
       "display_zh": "卓爾",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "取得 Lightning Reflexes。",
@@ -3078,7 +3111,8 @@
       "display_zh": "土",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "驅散／摧毀氣類元素生物，或斥喝／控制土類元素生物。",
@@ -3183,8 +3217,9 @@
       "status": "adapted_provisional",
       "selection_rules": {
         "domain_choice_cost": 2,
-        "alignment_requirement": "依來源位面領域要求",
-        "review_required": true
+        "alignment_requirement": "中立善良（NG）",
+        "review_required": true,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "Planar Domain：smite evil，隨等級取得額外次數。",
@@ -3296,7 +3331,8 @@
       "display_zh": "苦難",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次提升 Constitution，持續1分鐘。",
@@ -3399,7 +3435,9 @@
       "display_zh": "邪惡",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true,
+        "alignment_requirement": "角色陣營必須含邪惡"
       },
       "source_seed": {
         "summary": "邪惡 descriptor 法術 caster level +1。",
@@ -3502,7 +3540,8 @@
       "display_zh": "筵席",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "免疫吞食型毒物與經吞食傳播的疾病。",
@@ -3607,7 +3646,8 @@
       "display_zh": "精類",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "對 fey spell-like abilities 的 saving throws +4。",
@@ -3710,7 +3750,8 @@
       "display_zh": "火",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "驅散／摧毀寒冷／水類生物，或斥喝／控制火類生物。",
@@ -3813,7 +3854,8 @@
       "display_zh": "榮耀",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "強化 turn undead 的 turning check 與 turning damage。",
@@ -3920,7 +3962,8 @@
       "display_zh": "暴食",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日可把自己放大，總持續時間依 cleric level 累積。",
@@ -4026,7 +4069,8 @@
       "display_zh": "侏儒",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "illusion spells caster level +1。",
@@ -4128,7 +4172,9 @@
       "display_zh": "善良",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true,
+        "alignment_requirement": "角色陣營必須含善良"
       },
       "source_seed": {
         "summary": "善良 descriptor 法術 caster level +1。",
@@ -4231,7 +4277,8 @@
       "display_zh": "貪婪",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "Appraise、Open Lock、Sleight of Hand +2。",
@@ -4335,8 +4382,9 @@
       "status": "adapted_provisional",
       "selection_rules": {
         "domain_choice_cost": 2,
-        "alignment_requirement": "依來源位面領域要求",
-        "review_required": true
+        "alignment_requirement": "中立邪惡（NE）",
+        "review_required": true,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "Planar Domain：smite good。",
@@ -4448,7 +4496,8 @@
       "display_zh": "醫療",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "healing spells caster level +1。",
@@ -4550,7 +4599,8 @@
       "display_zh": "饑餓",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "取得 bite natural attack。",
@@ -4657,7 +4707,8 @@
       "display_zh": "喜樂",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "Diplomacy +4。",
@@ -4777,7 +4828,9 @@
       "display_zh": "秩序",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true,
+        "alignment_requirement": "角色陣營必須含守序"
       },
       "source_seed": {
         "summary": "秩序 descriptor 法術 caster level +1。",
@@ -4881,7 +4934,8 @@
       "display_zh": "解放",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "失敗於 charm/compulsion/fear save 後可再次嘗試一次。",
@@ -4984,8 +5038,9 @@
       "status": "adapted_provisional",
       "selection_rules": {
         "domain_choice_cost": 2,
-        "alignment_requirement": "依來源位面領域要求",
-        "review_required": true
+        "alignment_requirement": "混亂中立（CN）",
+        "review_required": true,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "Planar Domain：smite law。",
@@ -5096,7 +5151,8 @@
       "display_zh": "機運",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次重骰，必須接受新結果。",
@@ -5198,7 +5254,8 @@
       "display_zh": "瘋狂／狂亂",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "承受 Wisdom-based checks/Will 的持續代價，但每日可獲得一次更大的洞見加值。",
@@ -5310,7 +5367,8 @@
       "display_zh": "魔法",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "可像半等級 wizard 一樣使用 spell-trigger / spell-completion items。",
@@ -5417,8 +5475,9 @@
       "status": "adapted_provisional",
       "selection_rules": {
         "domain_choice_cost": 2,
-        "alignment_requirement": "依來源位面領域要求",
-        "review_required": true
+        "alignment_requirement": "守序中立（LN）",
+        "review_required": true,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "Planar Domain：smite chaos。",
@@ -5530,7 +5589,8 @@
       "display_zh": "心靈",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "Bluff、Diplomacy、Sense Motive +2。",
@@ -5636,7 +5696,8 @@
       "display_zh": "月亮",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "可像 turn undead 一樣 turn/destroy lycanthropes。",
@@ -5740,7 +5801,8 @@
       "display_zh": "神秘",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次，短時間把 Charisma modifier 加到 saves。",
@@ -5841,7 +5903,8 @@
       "display_zh": "海洋",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "可在有限總輪數內水下呼吸。",
@@ -5948,7 +6011,8 @@
       "display_zh": "契約／誓約",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "Appraise、Intimidate、Sense Motive 成為 class skills。",
@@ -6052,7 +6116,8 @@
       "display_zh": "疫病／瘟疫",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "免疫所有疾病效果，但仍能攜帶傳染病。",
@@ -6160,7 +6225,8 @@
       "display_zh": "植物",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "可 rebuke/command plant creatures，且獲得自然知識。",
@@ -6264,7 +6330,8 @@
       "display_zh": "歡娛",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "免疫 Charisma damage/drain。",
@@ -6371,7 +6438,8 @@
       "display_zh": "傳送",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "可把 active/inactive portal 當普通 secret door 搜尋。",
@@ -6472,7 +6540,8 @@
       "display_zh": "保護",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次 protective ward，給下一次 save 等同 cleric level 的 resistance bonus。",
@@ -6574,7 +6643,8 @@
       "display_zh": "淨化",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "abjuration spells caster level +1。",
@@ -6676,7 +6746,8 @@
       "display_zh": "安息",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "與 Death Domain 類似，具有每日一次 death touch；法術表偏安息、反亡靈。",
@@ -6784,7 +6855,8 @@
       "display_zh": "符文",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "取得 Scribe Scroll bonus feat。",
@@ -6893,7 +6965,8 @@
       "display_zh": "沙",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次塑造一定體積的砂，複雜形狀需 Wisdom check。",
@@ -7005,7 +7078,8 @@
       "display_zh": "水族",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "取得 Expert Swimmer 或 Rapid Swimming。",
@@ -7112,7 +7186,8 @@
       "display_zh": "天空",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "飛行／滑翔速度+5 ft，並取得 Spot。",
@@ -7219,7 +7294,8 @@
       "display_zh": "法術",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "Concentration 與 Spellcraft +2。",
@@ -7320,7 +7396,8 @@
       "display_zh": "蜘蛛",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "可 rebuke spiders，次數3+CHA。",
@@ -7424,7 +7501,8 @@
       "display_zh": "風暴",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "electricity resistance 5。",
@@ -7527,7 +7605,8 @@
       "display_zh": "力量",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次短時間提高 Strength。",
@@ -7631,7 +7710,8 @@
       "display_zh": "盛夏",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "視為荒地原生者以抵抗熱害；夏季 Wisdom-based skills +2。",
@@ -7738,7 +7818,8 @@
       "display_zh": "太陽",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次 greater turning。",
@@ -7839,7 +7920,8 @@
       "display_zh": "乾渴",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "可 rebuke/command oozes，並提高抗脫水的 Constitution checks。",
@@ -7942,7 +8024,8 @@
       "display_zh": "貿易",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "每日一次 detect thoughts，單一目標。",
@@ -8044,7 +8127,8 @@
       "display_zh": "旅行",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "總計 cleric level 輪／日可如 freedom of movement 正常行動，並取得 Survival。",
@@ -8181,7 +8265,8 @@
       "display_zh": "水",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "驅散／摧毀火類元素生物，或斥喝／控制水類元素生物。",
@@ -8284,7 +8369,8 @@
       "display_zh": "隆冬",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "冬季所有 Wisdom-based skill checks +2。",
@@ -8391,7 +8477,8 @@
       "display_zh": "神譴／憤怒",
       "status": "adapted_provisional",
       "selection_rules": {
-        "domain_choice_cost": 1
+        "domain_choice_cost": 1,
+        "deity_or_faith_must_support_domain": true
       },
       "source_seed": {
         "summary": "受到近戰傷害後，每日一次可獲得額外 attack of opportunity。",

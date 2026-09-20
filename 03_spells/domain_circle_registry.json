@@ -1,5 +1,5 @@
 {
-  "schema": "d100-domain-circle-registry-v4.1",
+  "schema": "d100-domain-circle-registry-v4.2",
   "research_snapshot": "2026-09-21",
   "purpose": "Register canonical D&D domain identities for D100 while preserving every imported source label and never rewriting source spell entries.",
   "boundary": {
@@ -2212,6 +2212,41 @@
         "feast_is_support_not_weapon",
         "courage_is_fear_support"
       ]
+    },
+    "selection_contract": {
+      "deity_or_faith_domain_match_required": true,
+      "alignment_domains": {
+        "chaos": "角色陣營必須含混亂",
+        "evil": "角色陣營必須含邪惡",
+        "good": "角色陣營必須含善良",
+        "law": "角色陣營必須含守序"
+      },
+      "planar_domains": {
+        "abyss": {
+          "alignment": "CE",
+          "domain_choice_cost": 2
+        },
+        "arborea": {
+          "alignment": "CG",
+          "domain_choice_cost": 2
+        },
+        "elysium": {
+          "alignment": "NG",
+          "domain_choice_cost": 2
+        },
+        "hades": {
+          "alignment": "NE",
+          "domain_choice_cost": 2
+        },
+        "limbo": {
+          "alignment": "CN",
+          "domain_choice_cost": 2
+        },
+        "mechanus": {
+          "alignment": "LN",
+          "domain_choice_cost": 2
+        }
+      }
     }
   },
   "d100_druid_circles": {
