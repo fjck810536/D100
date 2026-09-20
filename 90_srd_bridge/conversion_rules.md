@@ -83,6 +83,68 @@ D100 house rule / campaign rule
 
 其中**共享能力值 STR/DEX/CON/INT/WIS/CHA 也不建議 raw score 直接照抄**；若沒有 D100 canonical 值，優先使用 `COMMON_CONVERSION_REFERENCE.md` 的 modifier-equivalent anchor。
 
+## 4.1 禁止直搬 ≠ 禁止轉譯：AO 必須完成可結算 adaptation
+
+本節是 anti-paralysis contract。
+
+前節「不可直接搬」禁止的是：
+
+```text
+來源數字 / d20 接口
+→ 不經語義判斷直接塞進 D100
+```
+
+它**不表示**：
+
+```text
+來源效果已知
++ D100 有相近功能接口
+→ 因沒有現成換算公式而禁止結算
+```
+
+若來源效果的功能、對象與因果已足夠明確，AO / orchestrator 應依下列順序完成轉譯：
+
+```text
+1. 抽取來源功能：它原本改變什麼？
+2. 對應 D100 已存在的功能層：命中／閃避／格擋／鎧甲／抗性／狀態／world-state mutation...
+3. 用 D100 現有裝備、技能、法術或概率作 calibration anchor。
+4. 產生最小、可逆、可結算的 [SRD_BRIDGE] / [D100_ADAPTATION_CANDIDATE]。
+5. 保留 provenance 與 conversion note；之後有更高權威資料時可 supersede。
+```
+
+只有在「來源本身不清楚」、「與 D100 硬規則直接衝突」或「多個候選接口會造成實質不同因果且當下沒有任何 calibration anchor」時，才可把精確轉譯標成 unresolved。
+
+即使如此，若場景現在必須結算，仍依 AGENTS.md 的缺規則原則做**最小可逆裁定**；不得把 unresolved_conversion 演成「法術失效／不能使用」。
+
+核心保險絲：
+
+```text
+NO RAW COPY ≠ NO CONVERSION
+UNKNOWN EXACT VALUE ≠ PROHIBITED EFFECT
+SOURCE GAP ≠ RUNTIME STOP
+```
+
+### Armor-bonus 類法術的預設方向
+
+若來源給的是 armor bonus to AC，不要映射成 D100 閃避。先保留它的功能類別：
+
+```text
+source armor protection
+→ D100 armor / protective-layer semantics
+```
+
+數值用來源中的**裝甲保護階級**對照 D100 `擅長鎧甲` 的基礎減傷階級做 calibration，而不是把 AC 數字乘五或塞進命中率。
+
+例如 Mage Armor / Greater Mage Armor 類：
+
+- 是魔法保護層，不要求真的穿鎧甲；
+- 不因沒有鎧甲熟練而產生實體鎧甲的技能減值；
+- force 性質應保留為 effect tag，讓虛體／穿透等特殊互動能由 AO 判斷；
+- 普通版與 Greater 版的相對強弱必須保留；
+- 若 D100 尚無專門 force-armor 條目，AO 以最接近的 D100 鎧甲保護階級建立 provisional protective layer，而不是停止結算。
+
+---
+
 ## 5. 時間陷阱：不是所有 3.5 round 都 ×6，也不是都 1:1
 
 ```text
