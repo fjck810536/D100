@@ -1,0 +1,23 @@
+{
+  "schema": "d100-spell-index-v1",
+  "total_spells": 2405,
+  "generated_from": "spellbook.sqlite",
+  "source_access_policy": {
+    "default": "basic_only",
+    "basic_only": "include source_access.kind == basic; ignore source-scoped level variants",
+    "selected": "basic + spells/level variants matching selected sources",
+    "all": "all spell sources; ambiguous source records remain visible with review flags",
+    "semantic_intent": {
+      "all_examples": ["我要讀萬法", "萬法模式", "全部法術都看", "擴充全開", "所有書都可以"],
+      "selected_examples": ["讀霜燃", "加霜燃之書", "這隻可以用完美奧術"],
+      "basic_examples": ["只看基本", "不要擴充", "核心法術就好"],
+      "note": "examples are semantic anchors, not exact-string requirements"
+    },
+    "term_disambiguation": {
+      "萬法": "operation alias meaning all registered spell sources",
+      "萬法大全": "one concrete source book; selecting it does not imply all sources"
+    }
+  },
+  "access_counts": {"basic":637,"expansion":1702,"unresolved_expansion":66},
+  "review_record_count": 251
+}
