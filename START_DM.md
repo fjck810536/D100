@@ -111,6 +111,7 @@ Campaign bootstrap 完成後，從 manifest 的 immutable ruleset commit SHA 固
 3. `sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md`
 4. `99_open_questions/character_creation.md`
 5. `templates/PC_TEMPLATE.md`
+6. `03_spells/README.md` — 施法者法術候選的 source scope（預設 basic；語意「讀萬法」= all；指定書名 = basic + selected source）。
 
 若需要用 3.5 反查職業文化／自由 CP 化可能遺失的資訊，再讀：
 
