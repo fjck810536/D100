@@ -87,10 +87,5 @@
     "龍之魔力",
     "龍之魔法"
   ],
-  "review_record_count": 251,
-  "domain_circle_registry": "03_spells/domain_circle_registry.json",
-  "domain_normalization": {
-    "repaired_spell_records": 2396,
-    "spell_records_with_domain_levels": 87
-  }
+  "review_record_count": 251
 }

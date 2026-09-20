@@ -1,379 +1,16 @@
 {
-  "schema": "d100-spell-domain-circle-registry-v1",
-  "purpose": "Normalize Spellbook domain level labels and preserve D100 cleric-domain / druid-circle vocabularies without treating domains or circles as ordinary classes.",
-  "spellbook_domains": {
-    "source": "Spellbook spellbook/taxonomy.json",
-    "count_from_original_taxonomy": 86,
-    "domains": [
-      {
-        "name": "保護",
-        "name_en": "Protection"
-      },
-      {
-        "name": "力量",
-        "name_en": "Strength"
-      },
-      {
-        "name": "土",
-        "name_en": "Earth"
-      },
-      {
-        "name": "城市",
-        "name_en": "City"
-      },
-      {
-        "name": "太陽",
-        "name_en": "Sun"
-      },
-      {
-        "name": "戰爭",
-        "name_en": "War"
-      },
-      {
-        "name": "旅行",
-        "name_en": "Travel"
-      },
-      {
-        "name": "植物",
-        "name_en": "Plant"
-      },
-      {
-        "name": "機運",
-        "name_en": "Luck"
-      },
-      {
-        "name": "死亡",
-        "name_en": "Death"
-      },
-      {
-        "name": "水",
-        "name_en": "Water"
-      },
-      {
-        "name": "混亂",
-        "name_en": "Chaos"
-      },
-      {
-        "name": "火",
-        "name_en": "Fire"
-      },
-      {
-        "name": "知識",
-        "name_en": "Knowledge"
-      },
-      {
-        "name": "詭術",
-        "name_en": "Trickery"
-      },
-      {
-        "name": "醫療",
-        "name_en": "Healing"
-      },
-      {
-        "name": "魔法",
-        "name_en": "Magic"
-      },
-      {
-        "name": "榮耀",
-        "name_en": "Glory"
-      },
-      {
-        "name": "氣",
-        "name_en": "Air"
-      },
-      {
-        "name": "淨化",
-        "name_en": ""
-      },
-      {
-        "name": "秩序",
-        "name_en": "Law"
-      },
-      {
-        "name": "邪惡",
-        "name_en": "Evil"
-      },
-      {
-        "name": "乾渴",
-        "name_en": ""
-      },
-      {
-        "name": "動物",
-        "name_en": "Animal"
-      },
-      {
-        "name": "善良",
-        "name_en": "Good"
-      },
-      {
-        "name": "控死",
-        "name_en": "Deathbound"
-      },
-      {
-        "name": "歡娛",
-        "name_en": ""
-      },
-      {
-        "name": "破壞",
-        "name_en": "Destruction"
-      },
-      {
-        "name": "饑餓",
-        "name_en": "Hunger"
-      },
-      {
-        "name": "黑水",
-        "name_en": ""
-      },
-      {
-        "name": "天空",
-        "name_en": ""
-      },
-      {
-        "name": "水族",
-        "name_en": ""
-      },
-      {
-        "name": "沙",
-        "name_en": ""
-      },
-      {
-        "name": "神譴",
-        "name_en": ""
-      },
-      {
-        "name": "不朽",
-        "name_en": ""
-      },
-      {
-        "name": "喜樂",
-        "name_en": ""
-      },
-      {
-        "name": "天族",
-        "name_en": ""
-      },
-      {
-        "name": "宿命",
-        "name_en": ""
-      },
-      {
-        "name": "盛夏",
-        "name_en": ""
-      },
-      {
-        "name": "勇氣",
-        "name_en": ""
-      },
-      {
-        "name": "工藝",
-        "name_en": ""
-      },
-      {
-        "name": "平衡",
-        "name_en": "Balance"
-      },
-      {
-        "name": "月亮",
-        "name_en": ""
-      },
-      {
-        "name": "機械界",
-        "name_en": "Mechanus"
-      },
-      {
-        "name": "瘋狂",
-        "name_en": ""
-      },
-      {
-        "name": "卓爾",
-        "name_en": ""
-      },
-      {
-        "name": "深淵",
-        "name_en": ""
-      },
-      {
-        "name": "神秘",
-        "name_en": ""
-      },
-      {
-        "name": "精類",
-        "name_en": ""
-      },
-      {
-        "name": "腐敗",
-        "name_en": ""
-      },
-      {
-        "name": "蜘蛛",
-        "name_en": "Spider"
-      },
-      {
-        "name": "貪婪",
-        "name_en": "Greed"
-      },
-      {
-        "name": "隆冬",
-        "name_en": ""
-      },
-      {
-        "name": "風暴",
-        "name_en": ""
-      },
-      {
-        "name": "黑暗",
-        "name_en": ""
-      },
-      {
-        "name": "冥土",
-        "name_en": ""
-      },
-      {
-        "name": "契約",
-        "name_en": "Pact"
-      },
-      {
-        "name": "心靈",
-        "name_en": ""
-      },
-      {
-        "name": "支配",
-        "name_en": ""
-      },
-      {
-        "name": "極樂",
-        "name_en": ""
-      },
-      {
-        "name": "法術",
-        "name_en": ""
-      },
-      {
-        "name": "疫病",
-        "name_en": ""
-      },
-      {
-        "name": "競爭",
-        "name_en": ""
-      },
-      {
-        "name": "筵席",
-        "name_en": ""
-      },
-      {
-        "name": "苦難",
-        "name_en": "Endurance"
-      },
-      {
-        "name": "解放",
-        "name_en": "Liberation"
-      },
-      {
-        "name": "造物",
-        "name_en": "Creation"
-      },
-      {
-        "name": "龍",
-        "name_en": "Dragon"
-      },
-      {
-        "name": "侏儒",
-        "name_en": ""
-      },
-      {
-        "name": "傳送",
-        "name_en": ""
-      },
-      {
-        "name": "原野",
-        "name_en": "Arborea"
-      },
-      {
-        "name": "夢境",
-        "name_en": ""
-      },
-      {
-        "name": "守護",
-        "name_en": ""
-      },
-      {
-        "name": "岩穴",
-        "name_en": ""
-      },
-      {
-        "name": "憤怒",
-        "name_en": ""
-      },
-      {
-        "name": "暴食",
-        "name_en": ""
-      },
-      {
-        "name": "海洋",
-        "name_en": "Ocean"
-      },
-      {
-        "name": "溝通",
-        "name_en": ""
-      },
-      {
-        "name": "無定界",
-        "name_en": ""
-      },
-      {
-        "name": "狂亂",
-        "name_en": ""
-      },
-      {
-        "name": "社會",
-        "name_en": "Community"
-      },
-      {
-        "name": "符文",
-        "name_en": ""
-      },
-      {
-        "name": "誓約",
-        "name_en": ""
-      },
-      {
-        "name": "貿易",
-        "name_en": ""
-      },
-      {
-        "name": "迅捷",
-        "name_en": "Celerity"
-      },
-      {
-        "name": "黑帝斯",
-        "name_en": ""
-      }
-    ],
-    "observed_additions": [
-      {
-        "name": "安息",
-        "label": "安息領域",
-        "reason": "Observed in spell level text (Surelife) but absent from original taxonomy."
-      }
-    ],
-    "aliases": {
-      "砂": "沙",
-      "工匠": "工藝",
-      "機械": "機械界",
-      "瘟疫": "疫病",
-      "榮譽": "榮耀"
-    },
-    "normalization": [
-      "Strip source-book annotations and English parentheticals before classification.",
-      "A token ending in 領域 is kind=domain, not kind=class.",
-      "Strip trailing 領域, then apply aliases; preserve raw label alongside canonical name.",
-      "If a domain appears in raw level text but not in the registry, keep it as observed_domain + review flag rather than dropping the level."
-    ]
+  "schema": "d100-domain-circle-registry-v2",
+  "purpose": "Register D100 cleric domains and druid circles, including expansion domains found in Spellbook, without rewriting source spell entries.",
+  "boundary": {
+    "spell_entries_are_read_only": true,
+    "domain_registration_does_not_modify_spell_levels": true,
+    "pending_domain_feat_is_not_absent_domain": true,
+    "lookup_aliases_do_not_rewrite_source_text": true,
+    "reverse_index": "03_spells/domain_spell_map.json"
   },
-  "d100_cleric_domains": {
-    "source": "sources/sheet_mirror/10_牧師領域.json.md",
-    "canon": [
+  "d100_domain_system": {
+    "generic_domain_skill_source": "sources/sheet_mirror/10_牧師領域.json.md",
+    "implemented_domains": [
       {
         "name": "生命",
         "name_en": "Life"
@@ -415,14 +52,720 @@
         "name_en": "Grave"
       }
     ],
-    "note": "Do not silently equate near-but-different 3.5 domains (e.g. Life↔Healing, Arcana↔Magic, Grave↔Repose) without an explicit adaptation decision."
+    "registered_domains": [
+      {
+        "name": "保護",
+        "name_en": "Protection",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "力量",
+        "name_en": "Strength",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "土",
+        "name_en": "Earth",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "城市",
+        "name_en": "City",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "太陽",
+        "name_en": "Sun",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "戰爭",
+        "name_en": "War",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "implemented",
+        "domain_feat_status": "implemented",
+        "d100_reference": "sources/sheet_mirror/10_牧師領域.json.md"
+      },
+      {
+        "name": "旅行",
+        "name_en": "Travel",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "植物",
+        "name_en": "Plant",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "機運",
+        "name_en": "Luck",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "死亡",
+        "name_en": "Death",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "水",
+        "name_en": "Water",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "混亂",
+        "name_en": "Chaos",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "火",
+        "name_en": "Fire",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "知識",
+        "name_en": "Knowledge",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "implemented",
+        "domain_feat_status": "implemented",
+        "d100_reference": "sources/sheet_mirror/10_牧師領域.json.md"
+      },
+      {
+        "name": "詭術",
+        "name_en": "Trickery",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "implemented",
+        "domain_feat_status": "implemented",
+        "d100_reference": "sources/sheet_mirror/10_牧師領域.json.md"
+      },
+      {
+        "name": "醫療",
+        "name_en": "Healing",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "魔法",
+        "name_en": "Magic",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "榮耀",
+        "name_en": "Glory",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "氣",
+        "name_en": "Air",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "淨化",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "秩序",
+        "name_en": "Law",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "邪惡",
+        "name_en": "Evil",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "乾渴",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "動物",
+        "name_en": "Animal",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "善良",
+        "name_en": "Good",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "控死",
+        "name_en": "Deathbound",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "歡娛",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "破壞",
+        "name_en": "Destruction",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "饑餓",
+        "name_en": "Hunger",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "黑水",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "天空",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "水族",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "沙",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "神譴",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "不朽",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "喜樂",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "天族",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "宿命",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "盛夏",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "勇氣",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "工藝",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "平衡",
+        "name_en": "Balance",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "月亮",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "機械界",
+        "name_en": "Mechanus",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "瘋狂",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "卓爾",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "深淵",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "神秘",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "精類",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "腐敗",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "蜘蛛",
+        "name_en": "Spider",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "貪婪",
+        "name_en": "Greed",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "隆冬",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "風暴",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "黑暗",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "冥土",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "契約",
+        "name_en": "Pact",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "心靈",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "支配",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "極樂",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "法術",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "疫病",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "競爭",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "筵席",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "苦難",
+        "name_en": "Endurance",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "解放",
+        "name_en": "Liberation",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "造物",
+        "name_en": "Creation",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "龍",
+        "name_en": "Dragon",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "侏儒",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "傳送",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "原野",
+        "name_en": "Arborea",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "夢境",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "守護",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "岩穴",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "憤怒",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "暴食",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "海洋",
+        "name_en": "Ocean",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "溝通",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "無定界",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "狂亂",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "社會",
+        "name_en": "Community",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "符文",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "誓約",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "貿易",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "迅捷",
+        "name_en": "Celerity",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "黑帝斯",
+        "name_en": "",
+        "origin": "spellbook_taxonomy",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      },
+      {
+        "name": "安息",
+        "name_en": "",
+        "origin": "observed_raw_level_reference",
+        "d100_status": "registered",
+        "domain_feat_status": "pending",
+        "d100_reference": null
+      }
+    ],
+    "registered_count": 87,
+    "policy": "Expansion domains may exist and carry domain spell associations before their domain-specific feats are implemented. Do not reject them as nonexistent; mark feat_status=pending."
+  },
+  "lookup_aliases": {
+    "砂": "沙",
+    "機械": "機械界",
+    "榮譽": "榮耀",
+    "工匠": "工藝",
+    "瘟疫": "疫病"
   },
   "d100_druid_circles": {
     "source": "sources/sheet_mirror/06_德魯伊結社.json.md",
     "circles": [
       {
         "name": "大地結社",
-        "kind": "circle",
+        "d100_status": "implemented",
         "subtypes": [
           "凍土",
           "海岸",
@@ -436,15 +779,15 @@
       },
       {
         "name": "牧人之環結社",
-        "kind": "circle"
+        "d100_status": "implemented"
       },
       {
         "name": "夢境之環結社",
-        "kind": "circle"
+        "d100_status": "implemented"
       },
       {
         "name": "月亮結社",
-        "kind": "circle"
+        "d100_status": "implemented"
       }
     ],
     "land_circle_spell_tables": {
@@ -592,6 +935,7 @@
           "疫病蟲群"
         ]
       }
-    }
+    },
+    "spellbook_scan_note": "No 結社 / 之環 / Circle class labels were found in the imported Spellbook class table or raw level lines; no extra Spellbook circles were invented."
   }
 }

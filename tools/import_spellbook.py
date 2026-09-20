@@ -50,78 +50,6 @@ SOURCE_LIKE_RE = re.compile(
 
 LEVEL_LINE_RE = re.compile(r"(?:^|\n)等級[：:]\s*([^\n]+)")
 FULLWIDTH_PARENS_RE = re.compile(r"[（(]([^（）()]{1,80})[）)]")
-DOMAIN_TOKEN_RE = re.compile(r"([\\u4e00-\\u9fff]{1,16}領域)")
-FULLWIDTH_DIGIT_TRANS = str.maketrans("０１２３４５６７８９", "0123456789")
-
-
-def load_domain_registry(out_root: Path) -> dict:
-    path = out_root / "03_spells" / "domain_circle_registry.json"
-    if not path.exists():
-        return {"spellbook_domains": {"domains": [], "observed_additions": [], "aliases": {}}}
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
-def domain_vocabulary(registry: dict) -> tuple[set[str], dict[str, str]]:
-    spec = registry.get("spellbook_domains", {})
-    names = {x["name"] for x in spec.get("domains", []) if x.get("name")}
-    names.update(x["name"] for x in spec.get("observed_additions", []) if x.get("name"))
-    aliases = dict(spec.get("aliases", {}))
-    return names, aliases
-
-
-def canonical_domain_from_label(raw: str, registry: dict) -> str | None:
-    if not raw or "領域" not in raw:
-        return None
-    names, aliases = domain_vocabulary(registry)
-    hits = DOMAIN_TOKEN_RE.findall(raw)
-    if not hits:
-        return None
-    base = hits[-1][:-2].strip()
-    base = aliases.get(base, base)
-    if base in names:
-        return base
-    # Unknown domains are still semantic domains; preserve them rather than
-    # demoting them to an opaque class string.
-    return base or None
-
-
-def _ascii_digits(text: str) -> str:
-    return (text or "").translate(FULLWIDTH_DIGIT_TRANS)
-
-
-def recover_domain_levels(level_line: str, registry: dict) -> list[dict]:
-    """Recover X領域 N from raw level text even when upstream normalization missed it."""
-    if not level_line:
-        return []
-    out = []
-    normalized = _ascii_digits(level_line)
-    for m in DOMAIN_TOKEN_RE.finditer(normalized):
-        label = m.group(1)
-        domain = canonical_domain_from_label(label, registry)
-        if not domain:
-            continue
-        tail = normalized[m.end():m.end() + 32]
-        level_match = re.search(r"[^0-9]{0,20}([0-9])(?:\\s*級)?", tail)
-        if not level_match:
-            continue
-        level = int(level_match.group(1))
-        if 0 <= level <= 9:
-            out.append({
-                "kind": "domain",
-                "class": f"{domain}領域",
-                "domain": domain,
-                "level": level,
-                "note": "recovered_from_raw_level_text",
-                "raw_class": label,
-            })
-    seen = set()
-    deduped = []
-    for item in out:
-        key = (item["domain"], item["level"])
-        if key not in seen:
-            seen.add(key)
-            deduped.append(item)
-    return deduped
 
 
 def split_source_name(raw: str) -> list[str]:
@@ -234,7 +162,6 @@ def fetchall_dict(con: sqlite3.Connection, sql: str, args=()) -> list[dict]:
 def import_spellbook(db_path: Path, out_root: Path) -> dict:
     con = sqlite3.connect(str(db_path))
     con.row_factory = sqlite3.Row
-    domain_registry = load_domain_registry(out_root)
 
     source_by_entry: dict[str, list[str]] = collections.defaultdict(list)
     raw_source_by_entry: dict[str, list[str]] = collections.defaultdict(list)
@@ -339,21 +266,6 @@ def import_spellbook(db_path: Path, out_root: Path) -> dict:
         # or alternate class level.
         level_annotations = level_source_annotations(level_line)
 
-        entry_levels = list(levels_by_entry.get(entry_id, []))
-        recovered_domain_levels = recover_domain_levels(level_line, domain_registry)
-        existing_domain_levels = {
-            (x.get("domain"), x.get("level"))
-            for x in entry_levels
-            if x.get("kind") == "domain"
-        }
-        added_recovered_domain = False
-        for recovered in recovered_domain_levels:
-            key = (recovered.get("domain"), recovered.get("level"))
-            if key not in existing_domain_levels:
-                entry_levels.append(recovered)
-                existing_domain_levels.add(key)
-                added_recovered_domain = True
-
         review_flags = []
         if access_kind == "unresolved_expansion":
             review_flags.append("source_inferred_not_relational")
@@ -363,9 +275,7 @@ def import_spellbook(db_path: Path, out_root: Path) -> dict:
             review_flags.append("upstream_extraction_issue")
         if level_annotations:
             review_flags.append("source_scoped_level_variant_present")
-        if added_recovered_domain:
-            review_flags.append("domain_level_recovered_from_registry")
-        if not entry_levels:
+        if not levels_by_entry.get(entry_id):
             review_flags.append("no_normalized_spell_levels")
 
         record = {
@@ -382,7 +292,7 @@ def import_spellbook(db_path: Path, out_root: Path) -> dict:
                 "raw_source_labels": raw_sources,
                 "default_character_creation": access_kind == "basic",
             },
-            "levels": entry_levels,
+            "levels": levels_by_entry.get(entry_id, []),
             "level_text_raw": level_line,
             "level_source_annotations": level_annotations,
             "school": r["school"],
