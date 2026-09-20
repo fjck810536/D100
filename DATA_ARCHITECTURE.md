@@ -42,6 +42,7 @@ AO 不維護另一份平行資料庫。
 sources/sheet_mirror/              上游 Google Sheet raw mirror
 sources/CHARACTER_EVIDENCE.md      角色卡／Actual Play 證據
 sources/GM_*.md                    GM 補答、暫定、歷史證據
+sources/spellbook/                   Spellbook 靜態拆包來源／匯入 provenance
 ```
 
 ### D&D 3.5
@@ -70,6 +71,7 @@ sources/GM_*.md                    GM 補答、暫定、歷史證據
 00_core/
 01_skills/
 02_items/
+03_spells/                           法術 lookup / compact catalog / source-scope index
 90_srd_bridge/* conversion references
 ```
 

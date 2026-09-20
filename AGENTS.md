@@ -136,6 +136,13 @@ DM:
 
 創角期間依 `CHARACTER_CREATION_PROTOCOL.md` 調度圖書館員、生態學家、AO、Mystery 與無人格 Build Ledger；不要另外創造「創角人格 Agent」。創角 final validation 完成後，角色完整 accepted state 必須寫入**目前 selected campaign** 的 authoritative character store；不得只留在聊天、working data 或 session 投影。
 
+若任務涉及施法角色的起始法術、協助／自動創角法術候選、或法術查找，再讀：
+
+- `03_spells/README.md`
+- `03_spells/manifest.json`
+
+創角法術候選必須先經 `spell_source_scope`：預設只讀基本；「讀萬法」及近似的全開語意代表所有已收錄來源；指定書名則只加開指定來源。這是語意擬合，不是固定提示詞比對。`萬法`（操作別名）不得誤解成《萬法大全》（單一來源書）。
+
 若場景涉及神器、3.5 轉譯或規則洞，再讀：
 
 - `sources/GM_PROVISIONAL_2026-09-12.md`

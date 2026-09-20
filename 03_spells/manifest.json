@@ -1,0 +1,91 @@
+{
+  "schema": "d100-spell-index-v1",
+  "total_spells": 2405,
+  "generated_from": "spellbook.sqlite",
+  "source_access_policy": {
+    "default": "basic_only",
+    "basic_only": "include source_access.kind == basic; ignore source-scoped level variants",
+    "selected": "basic + spells/level variants matching selected sources",
+    "all": "all spell sources; ambiguous source records remain visible with review flags",
+    "semantic_intent": {
+      "all_examples": [
+        "我要讀萬法",
+        "萬法模式",
+        "全部法術都看",
+        "擴充全開",
+        "所有書都可以"
+      ],
+      "selected_examples": [
+        "讀霜燃",
+        "加霜燃之書",
+        "這隻可以用完美奧術"
+      ],
+      "basic_examples": [
+        "只看基本",
+        "不要擴充",
+        "核心法術就好"
+      ],
+      "note": "examples are semantic anchors, not exact-string requirements"
+    },
+    "term_disambiguation": {
+      "萬法": "operation alias meaning all registered spell sources",
+      "萬法大全": "one concrete source book; selecting it does not imply all sources"
+    }
+  },
+  "access_counts": {
+    "basic": 637,
+    "expansion": 1702,
+    "unresolved_expansion": 66
+  },
+  "source_counts": {
+    "ECS": 26,
+    "PHB2": 97,
+    "天命族裔": 28,
+    "好人書": 118,
+    "完美冒險": 69,
+    "完美奧術": 144,
+    "完美巫師": 129,
+    "完美戰力": 8,
+    "完美流氓": 27,
+    "完美神力": 43,
+    "完美聖鬥士": 52,
+    "巨龍之書": 9,
+    "巨龍書": 25,
+    "戰鬥英雄": 22,
+    "死者之書": 56,
+    "沙暴之書": 68,
+    "異怪書": 19,
+    "荒野族裔": 9,
+    "萬法大全": 970,
+    "霜燃之書": 35,
+    "風暴之書": 45,
+    "龍之魔力": 2,
+    "龍之魔法": 40
+  },
+  "sources": [
+    "ECS",
+    "PHB2",
+    "天命族裔",
+    "好人書",
+    "完美冒險",
+    "完美奧術",
+    "完美巫師",
+    "完美戰力",
+    "完美流氓",
+    "完美神力",
+    "完美聖鬥士",
+    "巨龍之書",
+    "巨龍書",
+    "戰鬥英雄",
+    "死者之書",
+    "沙暴之書",
+    "異怪書",
+    "荒野族裔",
+    "萬法大全",
+    "霜燃之書",
+    "風暴之書",
+    "龍之魔力",
+    "龍之魔法"
+  ],
+  "review_record_count": 251
+}

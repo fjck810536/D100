@@ -120,6 +120,7 @@ Campaign bootstrap 完成後，從 manifest 的 immutable ruleset commit SHA 固
 
 按需讀：
 
+- `03_spells/README.md` / `03_spells/manifest.json` — 法術查找與創角 source scope。施法角色創角／起始法術配置時必讀；預設 basic-only，「讀萬法」近似語意 = 全來源，指定書名 = 基本 + 指定來源。
 - `sources/SHEET_INDEX.md` — Sheet 語義導航；世界／組織／學院／技能來源查核時優先用來找正確 raw tab。
 - `sources/sheet_mirror/` — 查 raw D100 canon。
 - `sources/CHARACTER_EVIDENCE.md` — 角色卡／Actual Play 證據。

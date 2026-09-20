@@ -50,6 +50,7 @@ CP / 前置 / 獎勵骰由無人格 Build Ledger 計算
    - rarity/review flag；
 3. 若 3.5 class-related language / class skill / automatic feature 暗示 D100 可能漏掉職業文化資訊，另列 `source_gap_candidate`；
 4. 不得把 3.5 class skill 直接升格成 D100 必修。
+5. 若角色會施法，先讀 `03_spells/catalog/` 依 `spell_source_scope` 過濾，再做法術候選廣搜；需要具體法術內容時才進 `03_spells/index/`。不得先讓 Builder 看全部擴充法術，再靠提示自己不要選。
 
 保險絲：
 
@@ -147,6 +148,46 @@ Build Ledger 不提供角色人格、不決定世界結果、不猜玩家意圖�
 
 ---
 
+## 1.1 法術來源 Scope — Spell Candidate Gate
+
+法術庫可以完整收錄基本與擴充來源；**可查詢**與**本次創角可作為候選**分開。
+
+預設：
+
+```text
+spell_source_scope = basic_only
+```
+
+語意解析採近似擬合，不要求固定提示詞：
+
+```text
+「我要讀萬法」／「萬法模式」／「擴充全開」／「所有書都可以」等近似語意
+→ all
+→ 所有已收錄來源
+
+「讀霜燃」／「這隻可以用完美奧術」／「加開萬法大全」等指定書名語意
+→ selected
+→ 基本 + 指定來源
+
+「只看基本」／「不要擴充」等
+→ basic_only
+```
+
+若明確說「只讀某書」，可以把 basic 也排除；若明確說「全開但不要某書」，採 all 再 exclude。歧義不足以確定時維持 `basic_only`，不偷偷放寬。
+
+術語保險絲：
+
+```text
+萬法      = 操作別名，表示 all
+萬法大全  = 一個具體來源書名；只指定它時不等於 all
+```
+
+一般法術查詢不受創角 source scope 阻擋；玩家直接查某個擴充法術時仍可讀取並回報來源。scope 主要限制自動創角、協助創角推薦、起始法術配置與其他「可查 → 可選」流程。
+
+實作與來源清單見 `03_spells/README.md`、`03_spells/manifest.json`。
+
+---
+
 # 2. 創角八階段
 
 ## Pass 1 — 起始配置與概念
@@ -160,6 +201,7 @@ Build Ledger 不提供角色人格、不決定世界結果、不猜玩家意圖�
 - **alignment 九宮格**；
 - 是否施法者／職業方向；
 - GM／玩家明示 house rule。
+- 若為施法角色：本次 `spell_source_scope`；未明示時固定 `basic_only`。
 
 Alignment 欄位使用：
 
@@ -352,7 +394,7 @@ Lv3 是正常熟練級，不應因 Lv4+ 稀有而連帶壓低。
 → 擲 reward HP/SP
 → 計算 base HP/SP
 → 額外 CP 購買 HP/SP（若有）
-→ 配置起始魔法物品／法術／資源
+→ 配置起始魔法物品／法術／資源（法術候選先經 `spell_source_scope`）
 → final validation
 → orchestrator 寫入 character state（含 alignment）
 ```
