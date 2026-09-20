@@ -1,0 +1,59 @@
+name: One-time Spellbook import
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    if: contains(github.event.head_commit.message, '[spellbook-import]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download verified import pack
+        shell: bash
+        env:
+          PACK_URL: "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-90e0-8209-842d-caadb6da2604/raw?se=2026-09-20T21%3A15%3A24Z&sp=r&sv=2026-02-06&sr=b&scid=17ab2cbd-4bd8-504d-a632-5cf86a643234&skoid=0b778285-7b0b-4cdc-ac3b-fb93e8c3686f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-20T20%3A34%3A17Z&ske=2026-09-21T20%3A34%3A17Z&sks=b&skv=2026-02-06&sig=xoCQ8MI6MoHm9ugs1tkv2uhUF%2BPHlYR8g0XdhEiqSdQ%3D"
+        run: |
+          set -euo pipefail
+          curl -fL "$PACK_URL" -o /tmp/d100_spellbook_final.tar.gz
+          echo "ff230905085ebb1c8607dc893513e001af782b8185e9fdc06c3afff17bdbbb98  /tmp/d100_spellbook_final.tar.gz" | sha256sum -c -
+          tar -xzf /tmp/d100_spellbook_final.tar.gz -C .
+
+      - name: Wire spell source scope into D100
+        run: |
+          set -euo pipefail
+          python3 tools/apply_spellbook_integration.py
+
+      - name: Validate generated lookup
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import glob, json
+          manifest = json.load(open("03_spells/manifest.json", encoding="utf-8"))
+          index_n = sum(sum(1 for _ in open(p, encoding="utf-8")) for p in glob.glob("03_spells/index/*.jsonl"))
+          catalog_n = sum(sum(1 for _ in open(p, encoding="utf-8")) for p in glob.glob("03_spells/catalog/*.jsonl"))
+          assert manifest["total_spells"] == 2405
+          assert index_n == 2405, index_n
+          assert catalog_n == 2405, catalog_n
+          assert manifest["source_access_policy"]["default"] == "basic_only"
+          assert manifest["source_access_policy"]["term_disambiguation"]["萬法"].startswith("operation alias")
+          print(manifest["access_counts"])
+          PY
+
+      - name: Commit import and remove one-time workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/import-spellbook.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Import Spellbook spell lookup index"
+          git push origin HEAD:main
