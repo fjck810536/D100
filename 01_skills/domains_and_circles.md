@@ -41,3 +41,9 @@ source label ≠ canonical domain identity
 
 目前 D100 上游明確存在：大地結社、牧人之環結社、夢境之環結社、月亮結社；大地結社含凍土、海岸、荒原、森林、草原、山脈、沼澤、地底八個環境法術表。Spellbook 掃描沒有找到額外 `結社 / 之環 / Circle` 等級標記，因此不憑空新增。
 
+
+## 領域專長調整工程
+
+擴充領域已進入五階專長建置。設計規約見 `domain_feat_adaptation_protocol.md`，完整 provisional 機械見 `domain_feat_catalog.json`，可讀版見 `domain_feats_expansion.md`。
+
+目前 83 個 imported canonical domains 中，Knowledge / Trickery / War 直接沿用既有 D100；其餘 80 個皆已有 D1–D5 provisional 專長。這些條目是可壓測的 D100 adjustment，不冒充上游 Sheet 原文。

@@ -1,5 +1,5 @@
 {
-  "schema": "d100-domain-circle-registry-v3.1",
+  "schema": "d100-domain-circle-registry-v4",
   "research_snapshot": "2026-09-21",
   "purpose": "Register canonical D&D domain identities for D100 while preserving every imported source label and never rewriting source spell entries.",
   "boundary": {
@@ -64,14 +64,15 @@
           "planar": true
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "深淵"
         ],
         "legacy_taxonomy_labels": [
           "深淵"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "air",
@@ -83,7 +84,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "氣",
@@ -92,7 +93,8 @@
         "legacy_taxonomy_labels": [
           "氣",
           "風"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "animal",
@@ -104,14 +106,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "動物"
         ],
         "legacy_taxonomy_labels": [
           "動物"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "arborea",
@@ -123,7 +126,7 @@
           "planar": true
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "原野領域 Arborea"
@@ -131,7 +134,8 @@
         "legacy_taxonomy_labels": [
           "原野",
           "原野領域 Arborea"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "artifice",
@@ -143,7 +147,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "工匠領域"
@@ -154,7 +158,8 @@
         ],
         "ambiguous_legacy_taxonomy_labels": [
           "工藝"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "balance",
@@ -166,7 +171,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "平衡",
@@ -177,7 +182,8 @@
           "平衡",
           "平衡（Balance ）",
           "平衡（Balance）"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "blackwater",
@@ -189,7 +195,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "黑水領域",
@@ -199,7 +205,8 @@
           "黑水",
           "黑水領域",
           "（風暴之書）黑水領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "cavern",
@@ -211,14 +218,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "岩穴"
         ],
         "legacy_taxonomy_labels": [
           "岩穴"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "celerity",
@@ -230,7 +238,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "迅捷領域（Celerity domain）"
@@ -238,7 +246,8 @@
         "legacy_taxonomy_labels": [
           "迅捷",
           "迅捷領域（Celerity domain）"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "celestial",
@@ -250,7 +259,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "天 族",
@@ -259,7 +268,8 @@
         "legacy_taxonomy_labels": [
           "天 族",
           "天族"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "chaos",
@@ -271,7 +281,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "混亂",
@@ -280,7 +290,8 @@
         "legacy_taxonomy_labels": [
           "混亂",
           "混沌"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "city",
@@ -292,7 +303,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "城市",
@@ -301,7 +312,8 @@
         "legacy_taxonomy_labels": [
           "城市",
           "城市領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "cold",
@@ -313,7 +325,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "寒冷"
@@ -324,7 +336,8 @@
         ],
         "ambiguous_legacy_taxonomy_labels": [
           "隆冬"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "community",
@@ -336,7 +349,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "溝通",
@@ -346,7 +359,8 @@
           "溝通",
           "社會",
           "社會 Community"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "competition",
@@ -358,7 +372,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "競爭",
@@ -367,7 +381,8 @@
         "legacy_taxonomy_labels": [
           "競爭",
           "競爭領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "corruption",
@@ -379,7 +394,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "腐 敗",
@@ -388,7 +403,8 @@
         "legacy_taxonomy_labels": [
           "腐 敗",
           "腐敗"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "courage",
@@ -400,14 +416,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "勇氣"
         ],
         "legacy_taxonomy_labels": [
           "勇氣"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "craft",
@@ -419,7 +436,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "工藝"
@@ -429,7 +446,8 @@
         ],
         "ambiguous_legacy_taxonomy_labels": [
           "工藝"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "creation",
@@ -441,7 +459,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "創造",
@@ -451,7 +469,8 @@
           "創造",
           "造物",
           "造物領域（Creation Domain）"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "darkness",
@@ -463,7 +482,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "晦暗",
@@ -472,7 +491,8 @@
         "legacy_taxonomy_labels": [
           "晦暗",
           "黑暗"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "death",
@@ -484,14 +504,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "死亡"
         ],
         "legacy_taxonomy_labels": [
           "死亡"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "deathbound",
@@ -503,7 +524,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "控死領域",
@@ -515,7 +536,8 @@
           "控死領域",
           "控死領域（Deathbound）",
           "（Deathbound）控死領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "deathless",
@@ -527,14 +549,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "不朽"
         ],
         "legacy_taxonomy_labels": [
           "不朽"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "destiny",
@@ -546,14 +569,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "宿命"
         ],
         "legacy_taxonomy_labels": [
           "宿命"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "destruction",
@@ -565,7 +589,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "毀滅",
@@ -574,7 +598,8 @@
         "legacy_taxonomy_labels": [
           "毀滅",
           "破壞"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "domination",
@@ -586,14 +611,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "支配"
         ],
         "legacy_taxonomy_labels": [
           "支配"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "dragon",
@@ -605,7 +631,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "龍",
@@ -614,7 +640,8 @@
         "legacy_taxonomy_labels": [
           "龍",
           "龍領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "dream",
@@ -626,7 +653,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "夢境領域"
@@ -634,7 +661,8 @@
         "legacy_taxonomy_labels": [
           "夢境",
           "夢境領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "drow",
@@ -646,7 +674,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "卓爾",
@@ -655,7 +683,8 @@
         "legacy_taxonomy_labels": [
           "卓爾",
           "卓爾領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "earth",
@@ -667,7 +696,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "土",
@@ -676,7 +705,8 @@
         "legacy_taxonomy_labels": [
           "土",
           "土領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "elysium",
@@ -688,7 +718,7 @@
           "planar": true
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "極樂",
@@ -697,7 +727,8 @@
         "legacy_taxonomy_labels": [
           "極樂",
           "極樂境"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "endurance",
@@ -709,7 +740,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "苦難",
@@ -718,7 +749,8 @@
         "legacy_taxonomy_labels": [
           "苦難",
           "苦難 Endurance"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "evil",
@@ -730,14 +762,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "邪惡"
         ],
         "legacy_taxonomy_labels": [
           "邪惡"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "feast",
@@ -749,14 +782,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "筵席"
         ],
         "legacy_taxonomy_labels": [
           "筵席"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "fey",
@@ -768,14 +802,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "精類"
         ],
         "legacy_taxonomy_labels": [
           "精類"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "fire",
@@ -787,14 +822,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "火"
         ],
         "legacy_taxonomy_labels": [
           "火"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "glory",
@@ -806,7 +842,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "榮耀",
@@ -815,7 +851,8 @@
         "legacy_taxonomy_labels": [
           "榮耀",
           "榮譽領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "gluttony",
@@ -827,7 +864,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "暴食領域"
@@ -835,7 +872,8 @@
         "legacy_taxonomy_labels": [
           "暴食",
           "暴食領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "gnome",
@@ -847,7 +885,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "侏儒",
@@ -857,7 +895,8 @@
           "侏儒",
           "守護",
           "守護領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "good",
@@ -869,14 +908,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "善良"
         ],
         "legacy_taxonomy_labels": [
           "善良"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "greed",
@@ -888,7 +928,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "貪婪",
@@ -897,7 +937,8 @@
         "legacy_taxonomy_labels": [
           "貪婪",
           "貪婪領域（Greed）"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "hades",
@@ -909,7 +950,7 @@
           "planar": true
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "冥土",
@@ -918,7 +959,8 @@
         "legacy_taxonomy_labels": [
           "冥土",
           "黑帝斯"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "healing",
@@ -930,7 +972,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "治療",
@@ -939,7 +981,8 @@
         "legacy_taxonomy_labels": [
           "治療",
           "醫療"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "hunger",
@@ -951,7 +994,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "饑餓領域",
@@ -961,7 +1004,8 @@
           "饑餓",
           "饑餓領域",
           "饑餓領域（Hunger）"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "joy",
@@ -973,14 +1017,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "喜樂"
         ],
         "legacy_taxonomy_labels": [
           "喜樂"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "knowledge",
@@ -999,7 +1044,8 @@
         ],
         "legacy_taxonomy_labels": [
           "知識"
-        ]
+        ],
+        "domain_feat_reference": "sources/sheet_mirror/10_牧師領域.json.md"
       },
       {
         "domain_id": "law",
@@ -1011,7 +1057,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "秩序",
@@ -1020,7 +1066,8 @@
         "legacy_taxonomy_labels": [
           "秩序",
           "秩序領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "liberation",
@@ -1032,7 +1079,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "解放領域",
@@ -1042,7 +1089,8 @@
           "解放",
           "解放領域",
           "解放領域（Liberation）"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "limbo",
@@ -1054,14 +1102,15 @@
           "planar": true
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "無定界"
         ],
         "legacy_taxonomy_labels": [
           "無定界"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "luck",
@@ -1073,7 +1122,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "機運",
@@ -1082,7 +1131,8 @@
         "legacy_taxonomy_labels": [
           "機運",
           "機運領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "madness",
@@ -1094,7 +1144,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "狂亂",
@@ -1103,7 +1153,8 @@
         "legacy_taxonomy_labels": [
           "狂亂",
           "瘋狂"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "magic",
@@ -1115,7 +1166,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "魔法",
@@ -1124,7 +1175,8 @@
         "legacy_taxonomy_labels": [
           "魔法",
           "魔法領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "mechanus",
@@ -1136,7 +1188,7 @@
           "planar": true
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "機械界",
@@ -1145,7 +1197,8 @@
         "legacy_taxonomy_labels": [
           "機械界",
           "機械領域（Mechanus）"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "mind",
@@ -1157,7 +1210,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "心智",
@@ -1166,7 +1219,8 @@
         "legacy_taxonomy_labels": [
           "心智",
           "心靈"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "moon",
@@ -1178,7 +1232,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "月亮",
@@ -1187,7 +1241,8 @@
         "legacy_taxonomy_labels": [
           "月亮",
           "月亮領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "mysticism",
@@ -1199,14 +1254,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "神秘"
         ],
         "legacy_taxonomy_labels": [
           "神秘"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "ocean",
@@ -1218,7 +1274,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "海洋領域"
@@ -1226,7 +1282,8 @@
         "legacy_taxonomy_labels": [
           "海洋",
           "海洋領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "pact",
@@ -1238,7 +1295,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "契約",
@@ -1249,7 +1306,8 @@
           "契約",
           "契約領域",
           "誓約"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "pestilence",
@@ -1261,7 +1319,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "疫病",
@@ -1272,7 +1330,8 @@
           "疫病",
           "瘟疫",
           "瘟疫領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "plant",
@@ -1284,7 +1343,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "植物",
@@ -1293,7 +1352,8 @@
         "legacy_taxonomy_labels": [
           "植物",
           "植物領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "pleasure",
@@ -1305,7 +1365,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "歡娛",
@@ -1314,7 +1374,8 @@
         "legacy_taxonomy_labels": [
           "歡娛",
           "歡愉"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "portal",
@@ -1326,14 +1387,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "傳送"
         ],
         "legacy_taxonomy_labels": [
           "傳送"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "protection",
@@ -1345,7 +1407,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "保護",
@@ -1354,7 +1416,8 @@
         "legacy_taxonomy_labels": [
           "保護",
           "保護領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "purification",
@@ -1366,7 +1429,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "淨化",
@@ -1375,7 +1438,8 @@
         "legacy_taxonomy_labels": [
           "淨化",
           "淨化領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "repose",
@@ -1387,7 +1451,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "安息領域"
@@ -1395,7 +1459,8 @@
         "legacy_taxonomy_labels": [
           "安息",
           "安息領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "rune",
@@ -1407,7 +1472,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "符文領域"
@@ -1415,7 +1480,8 @@
         "legacy_taxonomy_labels": [
           "符文",
           "符文領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "sand",
@@ -1427,7 +1493,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "沙領域",
@@ -1437,7 +1503,8 @@
           "沙",
           "沙領域",
           "砂領域（Sand ）"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "seafolk",
@@ -1449,7 +1516,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "水族領域"
@@ -1457,7 +1524,8 @@
         "legacy_taxonomy_labels": [
           "水族",
           "水族領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "sky",
@@ -1469,14 +1537,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "天空"
         ],
         "legacy_taxonomy_labels": [
           "天空"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "spell",
@@ -1488,7 +1557,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "法術領域"
@@ -1496,7 +1565,8 @@
         "legacy_taxonomy_labels": [
           "法術",
           "法術領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "spider",
@@ -1508,7 +1578,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "蜘蛛",
@@ -1517,7 +1587,8 @@
         "legacy_taxonomy_labels": [
           "蜘蛛",
           "蜘蛛領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "storm",
@@ -1529,14 +1600,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "風暴"
         ],
         "legacy_taxonomy_labels": [
           "風暴"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "strength",
@@ -1548,7 +1620,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "力",
@@ -1559,7 +1631,8 @@
           "力",
           "力量",
           "力量領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "summer",
@@ -1571,7 +1644,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "盛夏領域"
@@ -1579,7 +1652,8 @@
         "legacy_taxonomy_labels": [
           "盛夏",
           "盛夏領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "sun",
@@ -1591,14 +1665,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "太陽"
         ],
         "legacy_taxonomy_labels": [
           "太陽"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "thirst",
@@ -1610,7 +1685,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "乾渴領域"
@@ -1618,7 +1693,8 @@
         "legacy_taxonomy_labels": [
           "乾渴",
           "乾渴領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "trade",
@@ -1630,7 +1706,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "貿易領域"
@@ -1638,7 +1714,8 @@
         "legacy_taxonomy_labels": [
           "貿易",
           "貿易領域"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "travel",
@@ -1650,14 +1727,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "旅行"
         ],
         "legacy_taxonomy_labels": [
           "旅行"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "trickery",
@@ -1680,7 +1758,8 @@
           "詭術",
           "詭術領域",
           "詭計"
-        ]
+        ],
+        "domain_feat_reference": "sources/sheet_mirror/10_牧師領域.json.md"
       },
       {
         "domain_id": "war",
@@ -1701,7 +1780,8 @@
         "legacy_taxonomy_labels": [
           "戰爭",
           "戰爭領域"
-        ]
+        ],
+        "domain_feat_reference": "sources/sheet_mirror/10_牧師領域.json.md"
       },
       {
         "domain_id": "water",
@@ -1713,14 +1793,15 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "水"
         ],
         "legacy_taxonomy_labels": [
           "水"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "winter",
@@ -1732,7 +1813,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "隆冬"
@@ -1742,7 +1823,8 @@
         ],
         "ambiguous_legacy_taxonomy_labels": [
           "隆冬"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       },
       {
         "domain_id": "wrath",
@@ -1754,7 +1836,7 @@
           "planar": false
         },
         "d100_status": "registered",
-        "domain_feat_status": "pending",
+        "domain_feat_status": "adapted_provisional",
         "d100_reference": null,
         "raw_class_labels": [
           "憤怒",
@@ -1763,7 +1845,8 @@
         "legacy_taxonomy_labels": [
           "憤怒",
           "神譴"
-        ]
+        ],
+        "domain_feat_reference": "01_skills/domain_feat_catalog.json"
       }
     ],
     "registered_count": 83,
@@ -2113,7 +2196,10 @@
         "砂": "沙",
         "寒冷": "隆冬"
       }
-    }
+    },
+    "domain_feat_catalog": "01_skills/domain_feat_catalog.json",
+    "domain_feat_protocol": "01_skills/domain_feat_adaptation_protocol.md",
+    "adapted_provisional_count": 80
   },
   "d100_druid_circles": {
     "source": "sources/sheet_mirror/06_德魯伊結社.json.md",
