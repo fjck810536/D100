@@ -236,6 +236,43 @@ Alignment 本身不是 Hard legality 的骰值或行動限制；除非某能力�
 
 牧師在此不得只留機械 build，還要進 Pass 7 驗證信仰／領域資料。
 
+### Pass 4.1 — 法術來源 scope
+
+任何「協助創角／自動創角／自動配置起始法術」在枚舉法術候選前，先解析本次 `spell_source_scope`。完整資料接口見 `03_spells/README.md`。
+
+預設：
+
+```text
+basic_only
+```
+
+只讓基本來源法術與基本來源的職業／環數資料進入候選池。完整法術資料仍可被圖書館員查詢；**可查 ≠ 本次創角可選**。
+
+來源 scope 由自然語言做近似語意擬合，不要求固定提示詞完全命中：
+
+```text
+「我要讀萬法」／「擴充全開」／「所有書都可以」等同義意圖
+→ all
+→ 開啟所有已收錄法術來源
+
+「讀霜燃」／「這隻可以用完美奧術」／「加開萬法大全」等指定來源意圖
+→ selected
+→ 基本 + 指定來源
+```
+
+詞義保險絲：
+
+```text
+「萬法」 = 操作別名：all
+《萬法大全》 = 一個具體來源書；指定它只加開該來源
+```
+
+只有語意明確要求「只讀某書」才排除基本；明確排除某來源時依使用者限制。語意不足或模糊時保持 `basic_only`，不要為了猜測自動全開。
+
+法術條目若同時帶有基本版本與擴充書新增／修改的職業、領域或環數，source scope 必須作用到該 source-scoped level variant；不能因法術本體屬 basic，就把擴充環數一起帶進基本創角。
+
+來源解析不要求 100% 完美：標成 `unresolved_expansion` 的條目預設不進 `basic_only`，但在 `all` 中可讀並保留 review flag。
+
 ## Pass 5 — Life-history enrichment
 
 把背景交給生態學家，取得 competence domains，再由圖書館員映射成 D100 技能候選。
@@ -352,7 +389,8 @@ Lv3 是正常熟練級，不應因 Lv4+ 稀有而連帶壓低。
 → 擲 reward HP/SP
 → 計算 base HP/SP
 → 額外 CP 購買 HP/SP（若有）
-→ 配置起始魔法物品／法術／資源
+→ 依 spell_source_scope 配置起始法術／資源
+→ 配置起始魔法物品
 → final validation
 → orchestrator 寫入 character state（含 alignment）
 ```
@@ -434,6 +472,7 @@ Alignment
 技能／專長 + 難度 + 等級 + CP
 prerequisite status
 施法核心與 usable circle（若有）
+spell_source_scope + 起始法術來源（若有）
 Required RP fields
 Review flags
 qualifying melee/spell CP
