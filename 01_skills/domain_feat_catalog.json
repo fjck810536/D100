@@ -1,5 +1,5 @@
 {
-  "schema": "d100-domain-feat-catalog-v1",
+  "schema": "d100-domain-feat-catalog-v1.1",
   "status": "D100_ADAPTATION_PROVISIONAL",
   "generated_from": {
     "existing_d100": "sources/sheet_mirror/10_牧師領域.json.md",
@@ -110,7 +110,9 @@
       "review_flags": [
         "planar_domain_two_slot",
         "planar_domain_stronger_than_standard_domain"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "air",
@@ -187,7 +189,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "animal",
@@ -263,7 +267,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "arborea",
@@ -349,7 +355,9 @@
       "review_flags": [
         "planar_domain_two_slot",
         "planar_domain_stronger_than_standard_domain"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "artifice",
@@ -373,8 +381,8 @@
         "spell_count": 2
       },
       "design_profile": {
-        "arch": "craft",
-        "theme": "工匠"
+        "arch": "artifice_magic_items",
+        "theme": "魔法工匠／構裝"
       },
       "feats": [
         {
@@ -388,46 +396,48 @@
         },
         {
           "difficulty": 2,
-          "name": "工匠塑作",
+          "name": "工匠硬化",
           "base_skill": "操作",
-          "effect": "花費一般動作觸碰一件非消耗性裝備，使其在此技能等級小時內取得此技能等級點臨時魔法物品等效加值；不得藉此生成新詞綴或突破物品原有可承載上限。每日使用此技能等級＋SKI調整值次。",
-          "origin": "d100_domain_pattern",
-          "status": "provisional_usable",
-          "review_flags": [
-            "temporary_item_bonus"
-          ]
-        },
-        {
-          "difficulty": 3,
-          "name": "工匠工房儀式",
-          "base_skill": "操作",
-          "effect": "花費1小時進行儀式；製作、修復、抄錄與魔法物品學相關檢定增加此技能等級×20，且本次工作中由低品質工具／臨時工房造成的減值最多降低此技能等級×10。材料與金錢成本不會憑空免除。",
+          "effect": "花費一般動作觸碰一件武器、護甲、工具或構裝體，持續此技能等級小時：物件本體對破壞、腐蝕與解除效果的相關抗性／結構判定增加此技能等級×10；若是可穿戴護甲，不因此額外增加閃避。每日使用此技能等級＋SKI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
+          "difficulty": 3,
+          "name": "構裝修復",
+          "base_skill": "操作",
+          "effect": "你可用1分鐘修復非神器物件或構裝體。若目標只是受損而非完全毀滅，回復等同（此技能等級＋SKI調整值）D8的結構HP／等效耐久；若該物件沒有HP制，AO把骰值作為修復幅度，不可無材料重造缺失的大型部件。",
+          "origin": "d100_domain_pattern",
+          "status": "provisional_usable",
+          "review_flags": [
+            "item_durability_interface"
+          ]
+        },
+        {
           "difficulty": 4,
-          "name": "工匠創造奧義",
+          "name": "工匠奧義",
           "base_skill": "知識",
-          "effect": "此技能等級×2為可影響的本領域／創造類法術環數。受影響法術的施法判定＋此技能等級×10，總施法者等級另＋此技能等級；若法術創造永久物件，仍支付原有材料／代價。",
+          "effect": "此技能等級×2為可影響的創造、硬化、修復、構裝或魔法物品相關法術環數；受影響法術施法判定＋此技能等級×10、總施法者等級＋此技能等級。永久造物仍支付原成本。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 5,
-          "name": "工匠神工領域",
+          "name": "工匠神域",
           "base_skill": "交涉",
-          "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的神工領域：盟友持有的武器／護甲／合法魔法物品取得此技能等級點臨時等效加值；製作與操作檢定＋此技能等級×20。臨時加值不能用來永久生成詞綴。每日使用此技能等級次。",
+          "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的工匠神域：盟友持有的非神器裝備對破壞／解除的抗性＋此技能等級×20；構裝體與魔法物品相關操作檢定＋此技能等級×20；區域內受損裝備在每輪首次受修復時額外回復此技能等級點耐久。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": [
-            "temporary_item_bonus"
+            "item_durability_interface"
           ]
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "balance",
@@ -503,7 +513,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "blackwater",
@@ -588,7 +600,9 @@
       ],
       "review_flags": [
         "absolute_environment_immunity"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "cavern",
@@ -668,7 +682,9 @@
           ]
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "celerity",
@@ -742,7 +758,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "celestial",
@@ -818,7 +836,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "chaos",
@@ -895,7 +915,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "city",
@@ -971,7 +993,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "cold",
@@ -1047,7 +1071,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "community",
@@ -1123,7 +1149,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "competition",
@@ -1199,7 +1227,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "corruption",
@@ -1275,7 +1305,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "courage",
@@ -1299,9 +1331,8 @@
         "spell_count": 4
       },
       "design_profile": {
-        "arch": "social",
-        "theme": "勇氣",
-        "skills": "交涉、抗控制"
+        "arch": "courage_support",
+        "theme": "無畏／鼓舞"
       },
       "feats": [
         {
@@ -1315,42 +1346,44 @@
         },
         {
           "difficulty": 2,
-          "name": "勇氣祝詞",
+          "name": "勇氣鼓舞",
           "base_skill": "交涉",
-          "effect": "以即時動作祝福此技能等級×20英尺內一名自願目標，持續此技能等級分鐘；其交涉、抗控制相關檢定增加此技能等級×10。每日使用此技能等級＋CHA調整值次。",
+          "effect": "以即時動作鼓舞此技能等級×20英尺內一名盟友，持續此技能等級分鐘：攻擊命中與抗控制各＋此技能等級×10。每日使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 3,
-          "name": "勇氣共鳴",
+          "name": "無畏反應",
           "base_skill": "交涉",
-          "effect": "當你或此技能等級×20英尺內盟友在交涉、抗控制相關檢定失敗後，可瞬間允許其重骰一次並接受新結果；每日共享使用此技能等級＋CHA調整值次。",
+          "effect": "你或此技能等級×20英尺內盟友對恐懼效果的抗控制失敗後，可瞬間重骰一次並接受新結果；每日共享使用此技能等級＋CHA調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 4,
-          "name": "勇氣權威",
+          "name": "勇者祝福",
           "base_skill": "交涉",
-          "effect": "以即時動作選擇此技能等級×10英尺內一名盟友，持續此技能等級分鐘：其交涉與一項由你指定、符合勇氣目的的檢定＋此技能等級×10，且第一次非自然100的失敗可重骰。每日使用此技能等級×2次。",
+          "effect": "以即時動作祝福此技能等級×10英尺內一名目標，持續此技能等級分鐘：第一次攻擊失敗可重骰，且對恐懼免疫；每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 5,
-          "name": "勇氣共同體",
+          "name": "無畏戰歌",
           "base_skill": "交涉",
-          "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的勇氣領域：盟友的交涉、察言觀色與符合領域主題的技能檢定＋此技能等級×20，並共享此技能等級次重骰池。此效果不直接把NPC態度改成友善。每日使用此技能等級次。",
+          "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的無畏領域：盟友免疫純粹恐懼效果、攻擊命中＋此技能等級×10；已受恐懼控制者進入範圍時可立即重做一次抗控制。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "craft",
@@ -1374,8 +1407,8 @@
         "spell_count": 2
       },
       "design_profile": {
-        "arch": "craft",
-        "theme": "工藝"
+        "arch": "craft_machine",
+        "theme": "手藝／神奇機械"
       },
       "feats": [
         {
@@ -1389,46 +1422,50 @@
         },
         {
           "difficulty": 2,
-          "name": "工藝塑作",
+          "name": "巧匠工具",
           "base_skill": "操作",
-          "effect": "花費一般動作觸碰一件非消耗性裝備，使其在此技能等級小時內取得此技能等級點臨時魔法物品等效加值；不得藉此生成新詞綴或突破物品原有可承載上限。每日使用此技能等級＋SKI調整值次。",
+          "effect": "花費1分鐘利用手邊材料組成一套針對單一工作的臨時工具或治具，持續此技能等級小時；使用它進行該項操作／手藝檢定時＋此技能等級×10。若場景完全沒有可用材料，不能憑空生成。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": [
-            "temporary_item_bonus"
-          ]
+          "review_flags": []
         },
         {
           "difficulty": 3,
-          "name": "工藝工房儀式",
+          "name": "神奇機械",
           "base_skill": "操作",
-          "effect": "花費1小時進行儀式；製作、修復、抄錄與魔法物品學相關檢定增加此技能等級×20，且本次工作中由低品質工具／臨時工房造成的減值最多降低此技能等級×10。材料與金錢成本不會憑空免除。",
-          "origin": "d100_domain_pattern",
-          "status": "provisional_usable",
-          "review_flags": []
-        },
-        {
-          "difficulty": 4,
-          "name": "工藝創造奧義",
-          "base_skill": "知識",
-          "effect": "此技能等級×2為可影響的本領域／創造類法術環數。受影響法術的施法判定＋此技能等級×10，總施法者等級另＋此技能等級；若法術創造永久物件，仍支付原有材料／代價。",
-          "origin": "d100_domain_pattern",
-          "status": "provisional_usable",
-          "review_flags": []
-        },
-        {
-          "difficulty": 5,
-          "name": "工藝神工領域",
-          "base_skill": "交涉",
-          "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的神工領域：盟友持有的武器／護甲／合法魔法物品取得此技能等級點臨時等效加值；製作與操作檢定＋此技能等級×20。臨時加值不能用來永久生成詞綴。每日使用此技能等級次。",
+          "effect": "花費10分鐘與適當材料，製作一台只能執行一項明確、重複、非自主工作的臨時機械，持續此技能等級小時。其操作判定值視為你的操作＋此技能等級×10；不能自行戰鬥、判斷秘密或取代具有主體性的NPC。每日同時維持上限為此技能等級台。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": [
-            "temporary_item_bonus"
+            "temporary_machine"
+          ]
+        },
+        {
+          "difficulty": 4,
+          "name": "工藝精通",
+          "base_skill": "操作",
+          "effect": "進行製作、修復或搭建工作時，檢定＋此技能等級×20；若原工作時間至少1小時，所需時間降低10%×此技能等級，最多降低50%。材料與金錢成本不因本能力自動降低。",
+          "origin": "d100_domain_pattern",
+          "status": "provisional_usable",
+          "review_flags": [
+            "craft_time_economy"
+          ]
+        },
+        {
+          "difficulty": 5,
+          "name": "萬機工房",
+          "base_skill": "交涉",
+          "effect": "展開半徑此技能等級×30英尺、持續此技能等級小時的臨時工房：盟友操作／手藝＋此技能等級×20；你製作的臨時工具與神奇機械可在區域內即時重新指定一次工作。離開區域後恢復原設定。每日使用此技能等級次。",
+          "origin": "d100_domain_pattern",
+          "status": "provisional_usable",
+          "review_flags": [
+            "temporary_machine"
           ]
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "creation",
@@ -1453,8 +1490,8 @@
         "spell_count": 2
       },
       "design_profile": {
-        "arch": "craft",
-        "theme": "造物"
+        "arch": "creation_conjuration",
+        "theme": "創造魔法"
       },
       "feats": [
         {
@@ -1468,46 +1505,48 @@
         },
         {
           "difficulty": 2,
-          "name": "造物塑作",
-          "base_skill": "操作",
-          "effect": "花費一般動作觸碰一件非消耗性裝備，使其在此技能等級小時內取得此技能等級點臨時魔法物品等效加值；不得藉此生成新詞綴或突破物品原有可承載上限。每日使用此技能等級＋SKI調整值次。",
+          "name": "造物供給",
+          "base_skill": "知識",
+          "effect": "以一般動作創造一件簡單、非魔法、無高價材料的臨時工具或日用品，體積不超過此技能等級立方英尺，持續此技能等級小時。物件不能作為金錢、昂貴施法材料或永久製作品出售／消耗。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": [
-            "temporary_item_bonus"
+            "anti_economy_abuse"
           ]
         },
         {
           "difficulty": 3,
-          "name": "造物工房儀式",
-          "base_skill": "操作",
-          "effect": "花費1小時進行儀式；製作、修復、抄錄與魔法物品學相關檢定增加此技能等級×20，且本次工作中由低品質工具／臨時工房造成的減值最多降低此技能等級×10。材料與金錢成本不會憑空免除。",
+          "name": "大造物",
+          "base_skill": "知識",
+          "effect": "你的創造類法術所生成的非生物物件，其合法體積／持續時間計算視總施法者等級額外＋此技能等級；創造後的物件仍遵守來源法術的材質、價值與消散條件。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 4,
-          "name": "造物創造奧義",
+          "name": "創造奧義",
           "base_skill": "知識",
-          "effect": "此技能等級×2為可影響的本領域／創造類法術環數。受影響法術的施法判定＋此技能等級×10，總施法者等級另＋此技能等級；若法術創造永久物件，仍支付原有材料／代價。",
+          "effect": "此技能等級×2為可影響的創造類法術環數；受影響法術施法判定＋此技能等級×10、總施法者等級＋此技能等級，且非昂貴的一般材料成分可由神力代替。昂貴／XP／特殊代價不受影響。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 5,
-          "name": "造物神工領域",
+          "name": "創世領域",
           "base_skill": "交涉",
-          "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的神工領域：盟友持有的武器／護甲／合法魔法物品取得此技能等級點臨時等效加值；製作與操作檢定＋此技能等級×20。臨時加值不能用來永久生成詞綴。每日使用此技能等級次。",
+          "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的創世領域：區域內由你或盟友創造出的非生物魔法造物，其結構／抗解除判定＋此技能等級×20；每名盟友可在區域內取得一件造物供給等級的臨時普通工具。不得由此產生永久財富。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": [
-            "temporary_item_bonus"
+            "anti_economy_abuse"
           ]
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "darkness",
@@ -1583,7 +1622,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "death",
@@ -1662,7 +1703,9 @@
       ],
       "review_flags": [
         "high_impact_lethal_adaptation"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "deathbound",
@@ -1743,7 +1786,9 @@
       ],
       "review_flags": [
         "capacity_rebuilt_without_hd"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "deathless",
@@ -1822,7 +1867,9 @@
       ],
       "review_flags": [
         "setting_specific_deathless"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "destiny",
@@ -1896,7 +1943,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "destruction",
@@ -1972,7 +2021,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "domination",
@@ -2050,7 +2101,9 @@
           ]
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "dragon",
@@ -2126,7 +2179,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "dream",
@@ -2208,7 +2263,9 @@
       ],
       "review_flags": [
         "absolute_narrow_immunity"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "drow",
@@ -2284,7 +2341,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "earth",
@@ -2361,7 +2420,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "elysium",
@@ -2448,7 +2509,9 @@
       "review_flags": [
         "planar_domain_two_slot",
         "planar_domain_stronger_than_standard_domain"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "endurance",
@@ -2524,7 +2587,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "evil",
@@ -2600,7 +2665,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "feast",
@@ -2624,9 +2691,8 @@
         "spell_count": 2
       },
       "design_profile": {
-        "arch": "body",
-        "theme": "筵席",
-        "damage": "物理"
+        "arch": "feast_support",
+        "theme": "宴飲／共享恢復"
       },
       "feats": [
         {
@@ -2642,36 +2708,36 @@
         },
         {
           "difficulty": 2,
-          "name": "筵席強身",
-          "base_skill": "運動",
-          "effect": "以即時動作強化自己，持續此技能等級分鐘：強韌＋此技能等級×10，運動＋此技能等級×10。每日使用此技能等級＋CON調整值次。",
+          "name": "共享食糧",
+          "base_skill": "交涉",
+          "effect": "在短休或長休時，你可祝福最多此技能等級＋SPI調整值名共同進食者；休息完成時每人額外回復（此技能等級＋SPI調整值）D6 HP與此技能等級D4 SP。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 3,
-          "name": "筵席不屈",
-          "base_skill": "運動",
-          "effect": "當HP或SP低於一半時，你的物抗增加此技能等級×2，強韌與精神增加此技能等級×10；回到一半以上即停止。",
+          "name": "盛宴祝福",
+          "base_skill": "交涉",
+          "effect": "進行至少10分鐘的共同進食後，參與者在此技能等級小時內對毒素、疾病與恐懼的相關抗性增加此技能等級×10，並取得（此技能等級＋SPI調整值）D6臨時HP。同一長休前不能重複受益。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 4,
-          "name": "筵席灌注",
+          "name": "英雄之宴",
           "base_skill": "交涉",
-          "effect": "以即時動作為此技能等級×10英尺內武器灌注筵席，持續此技能等級分鐘：穿透此技能等級×10物抗並附加（此技能等級＋SPI調整值）D8物理傷害。每日使用此技能等級×2次。",
+          "effect": "花費1小時主持宴席，最多影響此技能等級×2名參與者；在接下來此技能等級小時中，其強韌、精神與抗控制＋此技能等級×10，且第一次陷入中毒／疾病／恐懼時可立即重骰相關檢定。每日使用1次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 5,
-          "name": "筵席化身",
+          "name": "豐宴聖域",
           "base_skill": "交涉",
-          "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的筵席化身領域：盟友物抗＋此技能等級×5、強韌＋此技能等級×20；敵人物抗－此技能等級×10。每日使用此技能等級次。",
+          "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的豐宴聖域：盟友每輪首次接受治療時額外回復此技能等級D4 HP；毒素、疾病與恐懼相關抗性＋此技能等級×20。食物與飲水不會因本能力自動具有永久經濟價值。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
@@ -2679,7 +2745,9 @@
       ],
       "review_flags": [
         "absolute_narrow_immunity"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "fey",
@@ -2755,7 +2823,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "fire",
@@ -2831,7 +2901,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "glory",
@@ -2911,7 +2983,9 @@
       ],
       "review_flags": [
         "capacity_rebuilt_without_hd"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "gluttony",
@@ -2990,7 +3064,9 @@
       ],
       "review_flags": [
         "size_change_simplified"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "gnome",
@@ -3015,7 +3091,7 @@
         "spell_count": 2
       },
       "design_profile": {
-        "arch": "craft",
+        "arch": "gnome_illusion",
         "theme": "侏儒幻術"
       },
       "feats": [
@@ -3030,46 +3106,44 @@
         },
         {
           "difficulty": 2,
-          "name": "侏儒塑作",
-          "base_skill": "操作",
-          "effect": "花費一般動作觸碰一件非消耗性裝備，使其在此技能等級小時內取得此技能等級點臨時魔法物品等效加值；不得藉此生成新詞綴或突破物品原有可承載上限。每日使用此技能等級＋SKI調整值次。",
+          "name": "侏儒戲法",
+          "base_skill": "知識",
+          "effect": "以即時動作在此技能等級×15英尺內創造一個不具實體傷害的短暫幻象，持續此技能等級分鐘；觀察者若有理由懷疑，以感知／偵察對抗你的知識＋此技能等級×10。每日使用此技能等級＋INT調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": [
-            "temporary_item_bonus"
-          ]
+          "review_flags": []
         },
         {
           "difficulty": 3,
-          "name": "侏儒工房儀式",
-          "base_skill": "操作",
-          "effect": "花費1小時進行儀式；製作、修復、抄錄與魔法物品學相關檢定增加此技能等級×20，且本次工作中由低品質工具／臨時工房造成的減值最多降低此技能等級×10。材料與金錢成本不會憑空免除。",
+          "name": "幻景巧匠",
+          "base_skill": "知識",
+          "effect": "你施放幻術時施法判定＋此技能等級×10；盟友在你幻術提供的遮蔽中躲藏／潛行＋此技能等級×10，但幻術不創造真實掩體或物抗。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 4,
-          "name": "侏儒創造奧義",
+          "name": "侏儒幻術奧義",
           "base_skill": "知識",
-          "effect": "此技能等級×2為可影響的本領域／創造類法術環數。受影響法術的施法判定＋此技能等級×10，總施法者等級另＋此技能等級；若法術創造永久物件，仍支付原有材料／代價。",
+          "effect": "此技能等級×2為可影響的幻術法術環數；受影響法術總施法者等級＋此技能等級，辨識／看破它們的相關檢定承受此技能等級×10減值。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 5,
-          "name": "侏儒神工領域",
+          "name": "萬象劇場",
           "base_skill": "交涉",
-          "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的神工領域：盟友持有的武器／護甲／合法魔法物品取得此技能等級點臨時等效加值；製作與操作檢定＋此技能等級×20。臨時加值不能用來永久生成詞綴。每日使用此技能等級次。",
+          "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的幻象劇場：你可持續改變可見／可聞的非實體景象；盟友躲藏與幻術施法＋此技能等級×20，敵人辨識幻術－此技能等級×15。AO仍依感官來源區分『察覺異常』與『看破幻象』。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": [
-            "temporary_item_bonus"
-          ]
+          "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "good",
@@ -3145,7 +3219,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "greed",
@@ -3221,7 +3297,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "hades",
@@ -3308,7 +3386,9 @@
       "review_flags": [
         "planar_domain_two_slot",
         "planar_domain_stronger_than_standard_domain"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "healing",
@@ -3383,7 +3463,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "hunger",
@@ -3463,7 +3545,9 @@
       ],
       "review_flags": [
         "natural_weapon_formula_adapted"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "joy",
@@ -3538,7 +3622,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "knowledge",
@@ -3633,7 +3719,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "liberation",
@@ -3708,7 +3796,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "limbo",
@@ -3794,7 +3884,9 @@
       "review_flags": [
         "planar_domain_two_slot",
         "planar_domain_stronger_than_standard_domain"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "luck",
@@ -3869,7 +3961,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "madness",
@@ -3954,7 +4048,9 @@
       "review_flags": [
         "source_power_has_self_penalty",
         "formula_rebuilt_for_d100"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "magic",
@@ -4033,7 +4129,9 @@
       ],
       "review_flags": [
         "item_qualification_rebuilt"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "mechanus",
@@ -4120,7 +4218,9 @@
       "review_flags": [
         "planar_domain_two_slot",
         "planar_domain_stronger_than_standard_domain"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "mind",
@@ -4199,7 +4299,9 @@
           ]
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "moon",
@@ -4276,7 +4378,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "mysticism",
@@ -4350,7 +4454,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "ocean",
@@ -4430,7 +4536,9 @@
           ]
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "pact",
@@ -4507,7 +4615,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "pestilence",
@@ -4588,7 +4698,9 @@
       ],
       "review_flags": [
         "absolute_narrow_immunity"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "plant",
@@ -4665,7 +4777,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "pleasure",
@@ -4745,7 +4859,9 @@
       ],
       "review_flags": [
         "absolute_narrow_immunity"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     },
     {
       "domain_id": "portal",
@@ -4819,7 +4935,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "protection",
@@ -4894,7 +5012,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "purification",
@@ -4969,7 +5089,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "repose",
@@ -5050,7 +5172,9 @@
       "review_flags": [
         "source_death_touch_reframed_for_repose",
         "high_impact_effect"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "rune",
@@ -5132,7 +5256,9 @@
       ],
       "review_flags": [
         "crafting_interface_depends_on_d100_scroll_rules"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "sand",
@@ -5217,7 +5343,9 @@
       ],
       "review_flags": [
         "volume_rescaled"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "seafolk",
@@ -5297,7 +5425,9 @@
           ]
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "sky",
@@ -5377,7 +5507,9 @@
           ]
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "spell",
@@ -5451,7 +5583,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "spider",
@@ -5528,7 +5662,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "storm",
@@ -5552,10 +5688,8 @@
         "spell_count": 3
       },
       "design_profile": {
-        "arch": "element",
-        "theme": "風暴",
-        "damage": "閃電",
-        "resist": "閃電"
+        "arch": "storm_weather",
+        "theme": "風雨防護"
       },
       "feats": [
         {
@@ -5569,42 +5703,46 @@
         },
         {
           "difficulty": 2,
-          "name": "風暴護持",
+          "name": "風暴避雷",
           "base_skill": "交涉",
-          "effect": "當你或此技能等級×15英尺內一名可見目標受到閃電傷害時，可瞬間反應，使該次傷害結算獲得此技能等級×10的閃電抗性。每日使用此技能等級＋SPI調整值次。",
+          "effect": "當你或此技能等級×15英尺內一名可見目標受到閃電或音波傷害時，可瞬間反應，使該次結算獲得此技能等級×10的相應抗性。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 3,
-          "name": "風暴掌握",
-          "base_skill": "交涉",
-          "effect": "你以攻擊或法術實際造成閃電傷害後，可使該目標的閃電抗性承受此技能等級×5減值，持續此技能等級分鐘；同來源不重複疊加。",
+          "name": "風雨行者",
+          "base_skill": "運動",
+          "effect": "你與此技能等級×15英尺內盟友在強風、暴雨、暴雪與一般風暴造成的移動／偵察／聆聽減值中，最多忽略此技能等級×10；自然雷擊與其他獨立傷害仍正常結算。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 4,
-          "name": "風暴灌注",
+          "name": "風暴護幕",
           "base_skill": "交涉",
-          "effect": "以即時動作為此技能等級×10英尺內一件武器灌注風暴，持續此技能等級分鐘：穿透此技能等級×10的閃電抗性，並附加（此技能等級＋SPI調整值）D8 閃電傷害。每日使用此技能等級×2次。",
+          "effect": "以即時動作在此技能等級×20英尺半徑建立持續此技能等級分鐘的風暴護幕：盟友閃電與音波抗性＋此技能等級×10；穿越護幕的普通遠程攻擊命中承受此技能等級×10減值。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 5,
-          "name": "風暴神域",
+          "name": "風暴之眼",
           "base_skill": "交涉",
-          "effect": "瞬間展開半徑此技能等級×30英尺、持續此技能等級分鐘的風暴神域：盟友閃電抗性＋此技能等級×15，敵人閃電抗性－此技能等級×15；盟友攻擊或法術命中時附加（此技能等級＋SPI調整值）D6 閃電傷害。每日使用此技能等級次。",
+          "effect": "展開半徑此技能等級×30英尺、持續此技能等級分鐘的風暴眼：盟友不受一般強風／降雨造成的行動減值且閃電、音波抗性＋此技能等級×15；敵人移動與依視覺／聽覺的檢定承受此技能等級×10減值。AO依實際天候處理飛行、火焰與拋射物等物理後果。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
-          "review_flags": []
+          "review_flags": [
+            "ao_weather_resolution"
+          ]
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "strength",
@@ -5681,7 +5819,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "summer",
@@ -5761,7 +5901,9 @@
           ]
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "sun",
@@ -5785,10 +5927,8 @@
         "spell_count": 9
       },
       "design_profile": {
-        "arch": "element",
-        "theme": "太陽",
-        "damage": "光耀",
-        "resist": "光耀"
+        "arch": "sun_anti_undead",
+        "theme": "太陽／驅邪"
       },
       "feats": [
         {
@@ -5802,42 +5942,44 @@
         },
         {
           "difficulty": 2,
-          "name": "太陽護持",
+          "name": "太陽庇佑",
           "base_skill": "交涉",
-          "effect": "當你或此技能等級×15英尺內一名可見目標受到光耀傷害時，可瞬間反應，使該次傷害結算獲得此技能等級×10的光耀抗性。每日使用此技能等級＋SPI調整值次。",
+          "effect": "以即時動作祝福此技能等級×15英尺內一名目標，持續此技能等級分鐘：暗蝕抗性＋此技能等級×10，對不死生物造成的恐懼／吸能／死亡類效果相關抗性＋此技能等級×10。每日使用此技能等級＋SPI調整值次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 3,
-          "name": "太陽掌握",
+          "name": "太陽日輪驅邪",
           "base_skill": "交涉",
-          "effect": "你以攻擊或法術實際造成光耀傷害後，可使該目標的光耀抗性承受此技能等級×5減值，持續此技能等級分鐘；同來源不重複疊加。",
+          "effect": "你在明亮日光或自己製造的神聖日光中使用驅散不死生物時，判定再增加此技能等級×10；受影響的不死生物暗蝕抗性承受此技能等級×10減值，持續此技能等級分鐘。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 4,
-          "name": "太陽灌注",
+          "name": "太陽日炎祝福",
           "base_skill": "交涉",
-          "effect": "以即時動作為此技能等級×10英尺內一件武器灌注太陽，持續此技能等級分鐘：穿透此技能等級×10的光耀抗性，並附加（此技能等級＋SPI調整值）D8 光耀傷害。每日使用此技能等級×2次。",
+          "effect": "以即時動作為此技能等級×10英尺內一件武器灌注日炎，持續此技能等級分鐘：各穿透此技能等級×5的光耀與火焰抗性，命中不死生物時附加（此技能等級＋SPI調整值）D10光耀傷害，其他目標為D6。每日使用此技能等級×2次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         },
         {
           "difficulty": 5,
-          "name": "太陽神域",
+          "name": "太陽正午聖域",
           "base_skill": "交涉",
-          "effect": "瞬間展開半徑此技能等級×30英尺、持續此技能等級分鐘的太陽神域：盟友光耀抗性＋此技能等級×15，敵人光耀抗性－此技能等級×15；盟友攻擊或法術命中時附加（此技能等級＋SPI調整值）D6 光耀傷害。每日使用此技能等級次。",
+          "effect": "展開半徑此技能等級×40英尺、持續此技能等級分鐘的神聖日光：盟友暗蝕抗性＋此技能等級×15；敵對不死生物抗控制與暗蝕抗性各－此技能等級×15；普通魔法黑暗若強度不高於本技能可影響尺度則被壓制。每日使用此技能等級次。",
           "origin": "d100_domain_pattern",
           "status": "provisional_usable",
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "thirst",
@@ -5913,7 +6055,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "trade",
@@ -5988,7 +6132,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "travel",
@@ -6062,7 +6208,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "trickery",
@@ -6174,7 +6322,9 @@
           "review_flags": []
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "winter",
@@ -6254,7 +6404,9 @@
           ]
         }
       ],
-      "review_flags": []
+      "review_flags": [],
+      "health_status": "usable_provisional",
+      "playtest_priority": "normal"
     },
     {
       "domain_id": "wrath",
@@ -6334,7 +6486,22 @@
       ],
       "review_flags": [
         "reaction_economy_adapted"
-      ]
+      ],
+      "health_status": "usable_provisional",
+      "playtest_priority": "high"
     }
-  ]
+  ],
+  "health_summary": {
+    "usable_provisional": 80,
+    "high_priority_playtest": 15,
+    "existing_d100": 3,
+    "semantic_overrides": [
+      "sun_vs_light",
+      "storm_vs_tempest",
+      "artifice_vs_craft_vs_creation_vs_forge",
+      "gnome_is_illusion_domain",
+      "feast_is_support_not_weapon",
+      "courage_is_fear_support"
+    ]
+  }
 }

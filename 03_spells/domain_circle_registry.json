@@ -1,5 +1,5 @@
 {
-  "schema": "d100-domain-circle-registry-v4",
+  "schema": "d100-domain-circle-registry-v4.1",
   "research_snapshot": "2026-09-21",
   "purpose": "Register canonical D&D domain identities for D100 while preserving every imported source label and never rewriting source spell entries.",
   "boundary": {
@@ -2199,7 +2199,20 @@
     },
     "domain_feat_catalog": "01_skills/domain_feat_catalog.json",
     "domain_feat_protocol": "01_skills/domain_feat_adaptation_protocol.md",
-    "adapted_provisional_count": 80
+    "adapted_provisional_count": 80,
+    "domain_feat_health": {
+      "catalog_schema": "d100-domain-feat-catalog-v1.1",
+      "adapted_usable_provisional": 80,
+      "high_priority_playtest": 15,
+      "semantic_fuses": [
+        "sun_vs_light",
+        "storm_vs_tempest",
+        "artifice_vs_craft_vs_creation_vs_forge",
+        "gnome_is_illusion_domain",
+        "feast_is_support_not_weapon",
+        "courage_is_fear_support"
+      ]
+    }
   },
   "d100_druid_circles": {
     "source": "sources/sheet_mirror/06_德魯伊結社.json.md",
