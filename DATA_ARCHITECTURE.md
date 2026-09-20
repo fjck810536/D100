@@ -70,6 +70,7 @@ sources/GM_*.md                    GM 補答、暫定、歷史證據
 00_core/
 01_skills/
 02_items/
+03_spells/                       法術查找／來源 scope／normalized spell index
 90_srd_bridge/* conversion references
 ```
 
