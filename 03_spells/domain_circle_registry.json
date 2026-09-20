@@ -1,0 +1,597 @@
+{
+  "schema": "d100-spell-domain-circle-registry-v1",
+  "purpose": "Normalize Spellbook domain level labels and preserve D100 cleric-domain / druid-circle vocabularies without treating domains or circles as ordinary classes.",
+  "spellbook_domains": {
+    "source": "Spellbook spellbook/taxonomy.json",
+    "count_from_original_taxonomy": 86,
+    "domains": [
+      {
+        "name": "保護",
+        "name_en": "Protection"
+      },
+      {
+        "name": "力量",
+        "name_en": "Strength"
+      },
+      {
+        "name": "土",
+        "name_en": "Earth"
+      },
+      {
+        "name": "城市",
+        "name_en": "City"
+      },
+      {
+        "name": "太陽",
+        "name_en": "Sun"
+      },
+      {
+        "name": "戰爭",
+        "name_en": "War"
+      },
+      {
+        "name": "旅行",
+        "name_en": "Travel"
+      },
+      {
+        "name": "植物",
+        "name_en": "Plant"
+      },
+      {
+        "name": "機運",
+        "name_en": "Luck"
+      },
+      {
+        "name": "死亡",
+        "name_en": "Death"
+      },
+      {
+        "name": "水",
+        "name_en": "Water"
+      },
+      {
+        "name": "混亂",
+        "name_en": "Chaos"
+      },
+      {
+        "name": "火",
+        "name_en": "Fire"
+      },
+      {
+        "name": "知識",
+        "name_en": "Knowledge"
+      },
+      {
+        "name": "詭術",
+        "name_en": "Trickery"
+      },
+      {
+        "name": "醫療",
+        "name_en": "Healing"
+      },
+      {
+        "name": "魔法",
+        "name_en": "Magic"
+      },
+      {
+        "name": "榮耀",
+        "name_en": "Glory"
+      },
+      {
+        "name": "氣",
+        "name_en": "Air"
+      },
+      {
+        "name": "淨化",
+        "name_en": ""
+      },
+      {
+        "name": "秩序",
+        "name_en": "Law"
+      },
+      {
+        "name": "邪惡",
+        "name_en": "Evil"
+      },
+      {
+        "name": "乾渴",
+        "name_en": ""
+      },
+      {
+        "name": "動物",
+        "name_en": "Animal"
+      },
+      {
+        "name": "善良",
+        "name_en": "Good"
+      },
+      {
+        "name": "控死",
+        "name_en": "Deathbound"
+      },
+      {
+        "name": "歡娛",
+        "name_en": ""
+      },
+      {
+        "name": "破壞",
+        "name_en": "Destruction"
+      },
+      {
+        "name": "饑餓",
+        "name_en": "Hunger"
+      },
+      {
+        "name": "黑水",
+        "name_en": ""
+      },
+      {
+        "name": "天空",
+        "name_en": ""
+      },
+      {
+        "name": "水族",
+        "name_en": ""
+      },
+      {
+        "name": "沙",
+        "name_en": ""
+      },
+      {
+        "name": "神譴",
+        "name_en": ""
+      },
+      {
+        "name": "不朽",
+        "name_en": ""
+      },
+      {
+        "name": "喜樂",
+        "name_en": ""
+      },
+      {
+        "name": "天族",
+        "name_en": ""
+      },
+      {
+        "name": "宿命",
+        "name_en": ""
+      },
+      {
+        "name": "盛夏",
+        "name_en": ""
+      },
+      {
+        "name": "勇氣",
+        "name_en": ""
+      },
+      {
+        "name": "工藝",
+        "name_en": ""
+      },
+      {
+        "name": "平衡",
+        "name_en": "Balance"
+      },
+      {
+        "name": "月亮",
+        "name_en": ""
+      },
+      {
+        "name": "機械界",
+        "name_en": "Mechanus"
+      },
+      {
+        "name": "瘋狂",
+        "name_en": ""
+      },
+      {
+        "name": "卓爾",
+        "name_en": ""
+      },
+      {
+        "name": "深淵",
+        "name_en": ""
+      },
+      {
+        "name": "神秘",
+        "name_en": ""
+      },
+      {
+        "name": "精類",
+        "name_en": ""
+      },
+      {
+        "name": "腐敗",
+        "name_en": ""
+      },
+      {
+        "name": "蜘蛛",
+        "name_en": "Spider"
+      },
+      {
+        "name": "貪婪",
+        "name_en": "Greed"
+      },
+      {
+        "name": "隆冬",
+        "name_en": ""
+      },
+      {
+        "name": "風暴",
+        "name_en": ""
+      },
+      {
+        "name": "黑暗",
+        "name_en": ""
+      },
+      {
+        "name": "冥土",
+        "name_en": ""
+      },
+      {
+        "name": "契約",
+        "name_en": "Pact"
+      },
+      {
+        "name": "心靈",
+        "name_en": ""
+      },
+      {
+        "name": "支配",
+        "name_en": ""
+      },
+      {
+        "name": "極樂",
+        "name_en": ""
+      },
+      {
+        "name": "法術",
+        "name_en": ""
+      },
+      {
+        "name": "疫病",
+        "name_en": ""
+      },
+      {
+        "name": "競爭",
+        "name_en": ""
+      },
+      {
+        "name": "筵席",
+        "name_en": ""
+      },
+      {
+        "name": "苦難",
+        "name_en": "Endurance"
+      },
+      {
+        "name": "解放",
+        "name_en": "Liberation"
+      },
+      {
+        "name": "造物",
+        "name_en": "Creation"
+      },
+      {
+        "name": "龍",
+        "name_en": "Dragon"
+      },
+      {
+        "name": "侏儒",
+        "name_en": ""
+      },
+      {
+        "name": "傳送",
+        "name_en": ""
+      },
+      {
+        "name": "原野",
+        "name_en": "Arborea"
+      },
+      {
+        "name": "夢境",
+        "name_en": ""
+      },
+      {
+        "name": "守護",
+        "name_en": ""
+      },
+      {
+        "name": "岩穴",
+        "name_en": ""
+      },
+      {
+        "name": "憤怒",
+        "name_en": ""
+      },
+      {
+        "name": "暴食",
+        "name_en": ""
+      },
+      {
+        "name": "海洋",
+        "name_en": "Ocean"
+      },
+      {
+        "name": "溝通",
+        "name_en": ""
+      },
+      {
+        "name": "無定界",
+        "name_en": ""
+      },
+      {
+        "name": "狂亂",
+        "name_en": ""
+      },
+      {
+        "name": "社會",
+        "name_en": "Community"
+      },
+      {
+        "name": "符文",
+        "name_en": ""
+      },
+      {
+        "name": "誓約",
+        "name_en": ""
+      },
+      {
+        "name": "貿易",
+        "name_en": ""
+      },
+      {
+        "name": "迅捷",
+        "name_en": "Celerity"
+      },
+      {
+        "name": "黑帝斯",
+        "name_en": ""
+      }
+    ],
+    "observed_additions": [
+      {
+        "name": "安息",
+        "label": "安息領域",
+        "reason": "Observed in spell level text (Surelife) but absent from original taxonomy."
+      }
+    ],
+    "aliases": {
+      "砂": "沙",
+      "工匠": "工藝",
+      "機械": "機械界",
+      "瘟疫": "疫病",
+      "榮譽": "榮耀"
+    },
+    "normalization": [
+      "Strip source-book annotations and English parentheticals before classification.",
+      "A token ending in 領域 is kind=domain, not kind=class.",
+      "Strip trailing 領域, then apply aliases; preserve raw label alongside canonical name.",
+      "If a domain appears in raw level text but not in the registry, keep it as observed_domain + review flag rather than dropping the level."
+    ]
+  },
+  "d100_cleric_domains": {
+    "source": "sources/sheet_mirror/10_牧師領域.json.md",
+    "canon": [
+      {
+        "name": "生命",
+        "name_en": "Life"
+      },
+      {
+        "name": "詭術",
+        "name_en": "Trickery"
+      },
+      {
+        "name": "知識",
+        "name_en": "Knowledge"
+      },
+      {
+        "name": "戰爭",
+        "name_en": "War"
+      },
+      {
+        "name": "光明",
+        "name_en": "Light"
+      },
+      {
+        "name": "奧秘",
+        "name_en": "Arcana"
+      },
+      {
+        "name": "自然",
+        "name_en": "Nature"
+      },
+      {
+        "name": "鍛造",
+        "name_en": "Forge"
+      },
+      {
+        "name": "暴風",
+        "name_en": "Tempest"
+      },
+      {
+        "name": "墳墓",
+        "name_en": "Grave"
+      }
+    ],
+    "note": "Do not silently equate near-but-different 3.5 domains (e.g. Life↔Healing, Arcana↔Magic, Grave↔Repose) without an explicit adaptation decision."
+  },
+  "d100_druid_circles": {
+    "source": "sources/sheet_mirror/06_德魯伊結社.json.md",
+    "circles": [
+      {
+        "name": "大地結社",
+        "kind": "circle",
+        "subtypes": [
+          "凍土",
+          "海岸",
+          "荒原",
+          "森林",
+          "草原",
+          "山脈",
+          "沼澤",
+          "地底"
+        ]
+      },
+      {
+        "name": "牧人之環結社",
+        "kind": "circle"
+      },
+      {
+        "name": "夢境之環結社",
+        "kind": "circle"
+      },
+      {
+        "name": "月亮結社",
+        "kind": "circle"
+      }
+    ],
+    "land_circle_spell_tables": {
+      "凍土": {
+        "1": [
+          "人類定身術",
+          "荊棘叢生"
+        ],
+        "2": [
+          "雪風暴",
+          "減速術"
+        ],
+        "3": [
+          "自由行動",
+          "冰風暴"
+        ],
+        "4": [
+          "問道自然",
+          "寒冰錐"
+        ]
+      },
+      "海岸": {
+        "1": [
+          "鏡影術",
+          "迷蹤步"
+        ],
+        "2": [
+          "水下呼吸",
+          "水面行走"
+        ],
+        "3": [
+          "操縱水位",
+          "自由行動"
+        ],
+        "4": [
+          "召喚元素",
+          "探知"
+        ]
+      },
+      "荒原": {
+        "1": [
+          "朦朧術",
+          "沈默術"
+        ],
+        "2": [
+          "創造食物和水",
+          "防護能量傷害"
+        ],
+        "3": [
+          "枯萎術",
+          "幻景"
+        ],
+        "4": [
+          "疫病蟲群",
+          "石墻術"
+        ]
+      },
+      "森林": {
+        "1": [
+          "樹膚術",
+          "蛛行術"
+        ],
+        "2": [
+          "召雷術",
+          "植物滋長"
+        ],
+        "3": [
+          "預言術",
+          "自由行動"
+        ],
+        "4": [
+          "問道自然",
+          "融身入林"
+        ]
+      },
+      "草原": {
+        "1": [
+          "隱形術",
+          "行蹤無跡"
+        ],
+        "2": [
+          "晝明術",
+          "加速術"
+        ],
+        "3": [
+          "預言術",
+          "自由行動"
+        ],
+        "4": [
+          "托夢術",
+          "疫病蟲群"
+        ]
+      },
+      "山脈": {
+        "1": [
+          "蛛行術",
+          "荊棘叢生"
+        ],
+        "2": [
+          "閃電箭",
+          "融身入石"
+        ],
+        "3": [
+          "塑石術",
+          "石膚術"
+        ],
+        "4": [
+          "穿墻術",
+          "石墻術"
+        ]
+      },
+      "沼澤": {
+        "1": [
+          "黑暗術",
+          "馬友夫強酸箭"
+        ],
+        "2": [
+          "水面行走",
+          "臭雲術"
+        ],
+        "3": [
+          "自由行動",
+          "生物定位術"
+        ],
+        "4": [
+          "疫病蟲群",
+          "探知"
+        ]
+      },
+      "地底": {
+        "1": [
+          "蛛行術",
+          "蛛網術"
+        ],
+        "2": [
+          "氣化形體",
+          "臭雲術"
+        ],
+        "3": [
+          "高級隱形術",
+          "塑石術"
+        ],
+        "4": [
+          "死雲術",
+          "疫病蟲群"
+        ]
+      }
+    }
+  }
+}
