@@ -129,6 +129,7 @@ DM:
 - `sources/GM_CLARIFICATIONS_2026-09-14_CHARACTER_CREATION.md`
 - `99_open_questions/character_creation.md`
 - `99_open_questions/unresolved_rules.md`
+- `03_spells/README.md` — 施法者創角的法術來源 scope；預設 basic，語意「讀萬法」才全開，指定書名則只加開指定來源。
 
 只有在需要用 3.5 反查職業文化／自由 CP 化缺漏時，再讀：
 
