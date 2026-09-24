@@ -142,13 +142,40 @@ GM 目前仍不確定。
 
 ## P0-2 自然大成功／大失敗與其他機制的交互
 
-**骰面本身已確認，不再是未決。** 本項只保留交互問題：
+**骰面與攻擊型 exceptional outcome 已確認。**
 
-- 自然大成功／大失敗與武器自己的爆擊範圍如何交互？
+已確認：
+
+- 自然 01 = 保證大成功。
+- 自然 100 = 保證大失敗。
+- 攻擊／傷害的自然 01 包含武器既有爆擊品質，最終結果由 AO 依角色 intent 與世界條件裁定。
+- 大成功／大失敗採「可能性的野獸」原則：心想事成式 exceptional success／墨菲定律式 exceptional failure。
+
+本項剩餘交互問題：
+
 - 技能條文中的個別「大成功」是否完全沿用自然 01，還是另有特例？
 - 疊骰與自然 01 / 100 同時出現時，若有監聽疊骰的技能，事件如何並存？
+- 個別武器／專長若同時指定自己的爆擊範圍與特殊效果，和自然 01 的 exceptional outcome 在複合效果下如何排列與記錄？
 
-禁止因此重新把「01/100 各代表什麼」升格成 open question。
+詳細補答見 `sources/GM_CLARIFICATIONS_2026-09-24_CRITICAL_RESULTS.md`。
+
+---
+
+## P0-2A 章節張力／情節張力的正式定義
+
+2026-09-24 GM 補答允許 AO 在自然大成功／大失敗等 exceptional adjudication 中，把「章節張力／情節張力」作為次級權重，生成與既有世界因果相容的額外事件。
+
+待規格化：
+
+- 章節張力與情節張力分別代表哪些可觀察／可記錄狀態？
+- tension state 的 owner、來源與生命週期。
+- AO 取得 tension signal 的資料結構。
+- tension 對結果可以影響哪些維度：事件追加、時機、揭露、位置、代價、機會等。
+- tension basis 如何記錄 provenance，讓事後能區分「世界因果」與「敘事權重」。
+- tension 如何和 Mystery / World Commitment / hidden truth 共存。
+- tension 在 persistent campaign 與 isolated dry-run 中的相同／不同資料需求。
+
+在正式 schema 建立前，AO 使用 tension 時留下明確 basis，並以 committed world causality 作為第一層錨點。
 
 ---
 
@@ -502,7 +529,7 @@ Sheet 有獨立 `FATE特規` tab。除非當團明示採用，不應把其中規
 4. 連續施法懲罰的 reset 條件。
 5. 現行移動 base / v1.3 `+1`、`+2` 的來源。
 6. 全域小數中間值 vs 最終值取整。
-7. 自然大成功／大失敗與武器爆擊、個別技能大成功、疊骰 hook 的交互。
+7. 個別技能大成功、疊骰 hook、個別武器／專長爆擊效果與自然極值的複合交互。\n8. 章節張力／情節張力的正式定義、資料結構、權重與 provenance 邊界。
 
 ---
 
